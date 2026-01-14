@@ -1,4 +1,4 @@
-# AI Foundations (AI-900) Pass The Exam, Deeply Understand AI
+# AI Fundamentals (AI-900) Pass The Exam, Deeply Understand AI
 
 This repository is designed to help you pass the **Microsoft Azure AI Fundamentals (AI-900)** exam with a clear, structured learning path.
 
@@ -9,8 +9,8 @@ After the fundamentals are clear, each concept is mapped to Azure services and t
 <img src="./source/images/mics/az-ai-900.png"/>
 
 ## Who this is for
-- **AI-900 candidates** who want a clear, structured path to pass confidently
-- Junior software engineers who have not worked with AI before
+- **Azure AI Fundamentals (AI-900) candidates** who want a clear, structured path to pass exam confidently
+- Junior/senior software engineers who have not worked with AI before
 - Developers who want a practical mental model of common AI workloads and the ML lifecycle
 - Readers who want to understand both the “why” and the “how” of foundational AI topics
 - **Deep-knowledge learners** who want strong fundamentals first, then mapping to Azure services and tooling
