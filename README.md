@@ -29,24 +29,32 @@ After the fundamentals are clear, each concept is mapped to Azure services and t
 - What “model monitoring” means and why models can degrade over time
 - How these concepts map to Azure services (reference page)
 
+## Why use this repo for revision?
+This repo doesn’t replace **official Microsoft documentation**. It **compresses** it into **high signal** study material.
+
+If you feel **overwhelmed by the high volume of knowledge** and want **distilled signal** without losing **what matters**, this is built for you: **concise summaries** where **every sentence earns its place**. The goal is to shorten the path to **exam ready, deep understanding** by focusing on the **injected key information** without drowning you in detail.
+
+Use **official docs** when you want the **full depth in details** and **original context**. Use this repo when you want to **learn faster**, **stay accurate**, and still understand the **“why”** without having to **wade through everything**.
+
 ## How to use this repo
-1. Start with the docs in order. Each page builds on the previous one.
-2. Read for understanding first, then revisit pages when you need a decision rule or a reminder.
-3. Use the practice tests to check understanding and catch common confusion points.
-4. Use the detailed practice tests when you miss a question and want the full explanation.
-5. Use the compressed practice tests for fast, high-impact revision before the exam.
+1. Start with the documents in order. Each document builds on the previous one.
+2. Read for understanding first, then revisit documents when you want a fast, high signal refresher (definitions, decision rules, etc).
+3. Use the practice tests as a diagnostic: they tell you what to revisit, not just what you got wrong.
+4. When you miss a question, use the Detailed version to repair the underlying concept—not to memorize the answer.
+5. Use the Compressed version for high impact revision especially on the night before the exam (maximum coverage, low volume).
+6. As you revise, prioritize clarity: aim to explain each concept in your own words before moving on.
 
 ## Documentation
-1. [AI and ML Foundations](docs/01-ai-and-ml-foundations.md)
-2. [ML Lifecycle: Data Prep and Splitting](docs/02-ml-lifecycle-data-prep-and-splitting.md)
-3. [ML Tasks and Evaluation Metrics](docs/03-ml-tasks-and-evaluation-metrics.md)
-4. [Responsible AI and Generative AI Safety](docs/04-responsible-ai-and-genai-safety.md)
-5. [Language and Conversational Workloads](docs/05-language-and-conversational-workloads.md)
-6. [Vision and Document Workloads](docs/06-vision-and-document-workloads.md)
-7. [Azure Mapping: ML, Search, and Services Reference](docs/07-azure-ml-and-search-mapping.md)
+1. [AI and ML Foundations](source/docs/kb/01-ai-and-ml-foundations.kb.md)
+2. [ML Lifecycle: Data Prep and Splitting](source/docs/kb/02-ml-lifecycle-data-prep-and-splitting.kb.md)
+3. [ML Tasks and Evaluation Metrics](source/docs/kb/03-ml-tasks-and-evaluation-metrics.kb.md)
+4. [Responsible AI and Generative AI Safety](source/docs/kb/04-responsible-ai-and-genai-safety.kb.md)
+5. [Language and Conversational Workloads](source/docs/kb/05-language-and-conversational-workloads.kb.md)
+6. [Vision and Document Workloads](source/docs/kb/06-vision-and-document-workloads.kb.md)
+7. [Azure Mapping: ML, Search, and Services Reference](source/docs/kb/07-azure-ml-and-search-mapping.kb.md)
+
 
 ## Practice Tests
-
 This repo includes practice tests to validate understanding and catch common confusion points. The goal is not only to test recall, but to make sure the concepts are clear and usable in real scenarios.
 
 These practice tests are designed as a connected set with three types (Raw, Detailed, Compressed):
@@ -67,8 +75,8 @@ This will include all questions with no explanations, just the question and the 
 It acts like the source material.
 
 Markdown Files
-- [Practice Test 01 (Raw)](practice-tests/raw/practice-test-01.md)
-- [Practice Test 02 (Raw)](practice-tests/raw/practice-test-02.md)
+- [Practice Test 01 (Raw)](/docs/practice/raw/01-practice-test.raw.md)
+- [Practice Test 02 (Raw)](/docs/practice/raw/02-practice-test.raw.md)
 
 ### Detailed Practice Tests (Deep Explanations And References)
 This version includes deep explanations, breakdowns, and additional clarifications.
@@ -80,8 +88,8 @@ Microsoft Forms
 - Practice Test 02 (Detailed) (Link TBD)
 
 Markdown Files
-- [Practice Test 01 (Detailed)](practice-tests/detailed/practice-test-01.md)
-- [Practice Test 02 (Detailed)](practice-tests/detailed/practice-test-02.md)
+- [Practice Test 01 (Detailed)](/docs/practice/detailed/01-practice-test.detailed.md)
+- [Practice Test 02 (Detailed)](/docs/practice/detailed/02-practice-test.detailed.md)
 
 ### Compressed Practice Tests (High-Coverage And Low-Volume Review)
 This compresses many detailed questions into a smaller number of high-coverage questions.
@@ -93,13 +101,13 @@ Microsoft Forms
 - Practice Test 02 (Compressed) (Link TBD)
 
 Markdown Files
-- [Practice Test 01 (Compressed)](practice-tests/compressed/practice-test-01.md)
-- [Practice Test 02 (Compressed)](practice-tests/compressed/practice-test-02.md)
+- [Practice Test 01 (Compressed)](/docs/practice/compressed/01-practice-test.compressed.md)
+- [Practice Test 02 (Compressed)](/docs/practice/compressed/02-practice-test.compressed.md)
 
 ## Contributing
 
 If you spot an unclear explanation or want to suggest an improvement, open an issue with:
-- the page name
+- the document name
 - the section title
 - what felt confusing and what you expected instead
 
