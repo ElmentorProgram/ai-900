@@ -61,7 +61,7 @@ Things to avoid:
 
 ## Why We Split Data (Training vs Validation vs Test)
 
-When you build an AI model, you want it to make good predictions on **new data you haven’t seen yet** (real life). So you separate two activities:
+When you build an AI model, you want it to make good predictions on **new data you haven’t seen yet** (real life). So you separate **the data** (by splitting it) to support two activities:
 
 - **Learning (Training):** give the model many examples so it can learn patterns that connect the inputs to the outcome you care about.
 - **Checking (Evaluation/Testing):** test whether it learned a general rule, or if it just memorized the training examples, by evaluating it on different examples it did not learn from.
@@ -70,8 +70,35 @@ If you test the model on the same examples it learned from, the score isn’t tr
 
 A proper split holds out **examples (rows)** so evaluation reflects performance on **new cases**, while keeping the same set of input fields available in both training and evaluation.
 
+### Why There Are Multiple Sets
+Even though there are two activities (learning and checking), the “checking” activity is commonly split into two sets:
+
+- **Validation set:** used during development to compare model versions and tune settings.
+- **Test set:** a final “unbiased” check on unseen examples after decisions are made.
+
 Key sets:
 - **Training set:** examples used to learn patterns.
 - **Validation set:** examples used during development to compare model versions and tune settings.
 - **Test set:** a final “unbiased” check on unseen examples after decisions are made.
+
+## How Splitting Works (Rows vs Columns)
+
+Splitting is how you simulate “real life” before deployment. You want the model to learn from one set of examples, then prove it can handle **new examples** it has never seen before.
+
+### Split by Rows (What You Usually Want)
+To simulate “new data,” you hold out entire **examples (rows)** that the model never sees during training.
+
+- If you split by **rows**, evaluation reflects performance on **new cases**.
+- You keep the **same columns** (same feature inputs) so training and evaluation are solving the same task.
+
+### Split by Columns (Why It Is Usually Wrong for Evaluation)
+If you split by **columns**, you are not holding out new examples. Instead, you are removing some input fields.
+
+That changes the problem into: “Can the model work with less information?”  
+It does not answer the evaluation question: “Will this model generalize to new cases?”
+
+### Key Rule
+- Split by **rows** so evaluation uses unseen examples.
+- Keep the **same feature columns** in both training and evaluation so the task stays consistent.
+
 
