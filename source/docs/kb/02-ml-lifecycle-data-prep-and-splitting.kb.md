@@ -101,4 +101,34 @@ It does not answer the evaluation question: “Will this model generalize to new
 - Split by **rows** so evaluation uses unseen examples.
 - Keep the **same feature columns** in both training and evaluation so the task stays consistent.
 
+## Split Patterns and When Random Split Fails (Time-Based and Group-Based)
+
+Randomly splitting rows is a common default when each row is an independent example. It helps create training and evaluation subsets that are similar in distribution, so evaluation reflects the same kind of data the model will see in real life.
+
+However, random splitting is not always the best choice.
+
+### Time-Based Split
+If data is **time-ordered**, you usually want to train on the past and evaluate on the future. This better matches real deployment, especially for “next month” style predictions.
+
+### Group-Based Split
+If rows are **grouped/related** (for example, multiple rows from the same user/patient/device), you usually want each group to stay in only one subset. This avoids the model seeing the same group in training and evaluation.
+
+## Common Pitfalls (Leakage, Peeking, Ordering Bias, and Overfitting)
+
+This section highlights common mistakes that make evaluation unreliable, and how those mistakes can hide problems like overfitting or underfitting.
+
+### Data Leakage
+Data leakage happens when evaluation information accidentally influences training. A common example is using the **target** as an input feature, which makes performance look unrealistically strong.
+
+### Peeking at the Test Set
+The **test set** is a final “unbiased” check. If you repeatedly check the test set during tuning, you turn it into part of your development loop and reduce trust in the final score.
+
+### Ordering Bias (Non-Random Splits on Ordered Data)
+If data is time-ordered and you do a non-random split without thinking, early rows can differ from later rows (seasonality, collection changes), which can bias evaluation.
+
+### Overfitting and Underfitting (What Splits Help You See)
+Splitting data helps you detect whether the model is learning general patterns or not:
+
+- **Overfitting:** performance looks strong on the **training set** but drops on **validation/test** (the model memorized training examples instead of generalizing).  
+- **Underfitting:** performance is weak on both the **training set** and **validation/test** (the model did not learn useful patterns).
 
