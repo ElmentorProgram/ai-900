@@ -29,3 +29,33 @@ These are part of building the model.
 Using the model happens later (deployment & sending new input data for predictions).
 
 These stages focus on building a reliable dataset for learning, not on measuring model performance. Training, scoring, and evaluation happen later in the lifecycle.
+
+
+## Features, Labels, and IDs (Choosing Inputs Safely)
+
+Before you can train a model, you need a dataset that represents the problem you are trying to solve. In supervised learning, each example contains inputs the model can use and an outcome you want the model to predict. The goal is to choose inputs that will still be available when you use the model in real life.
+
+Example (mapping the terms):
+- Imagine you want to predict **house sale price**.
+- One **row (example/record)** could represent **one house sale**.
+- The **columns** are the fields in that row.
+- The **features (inputs, X)** could include living area, number of bedrooms/bathrooms, neighborhood, and property age.
+- The **label (target, y)** is the sale price.
+
+A dataset is typically organized as:
+- **Rows = examples/records** (each row is one case)
+- **Columns = fields/features** (inputs) plus the **label/target** (what you predict)
+
+Each row typically includes:
+- **Features (X):** the input fields the model uses
+- **Label (y):** the outcome/target you want to predict
+
+When you build a model, each row should contain:
+- **Features (inputs):** information available at prediction time (what you know before the outcome happens)
+- **Label (target):** the value you want the model to predict
+
+Things to avoid:
+- **Using the target as an input**
+- **Using IDs as features**
+- **Using dataset-level totals** when predicting a per-row outcome
+
