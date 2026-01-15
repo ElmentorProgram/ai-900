@@ -2,6 +2,13 @@
 
 This document introduces the core AI concepts and the most common AI workloads. It focuses on how to choose the right workload based on your input data and the output you need, then connects those ideas to Azure services in a compact mapping section.
 
+**This Document Covers**
+- Core Definitions  
+- Common AI Workloads (How to Choose)  
+- Workloads and What They Do  
+- Common Confusions (Choose This, Not That)  
+- Azure Mapping (Concept → Azure Service Family)  
+- Summary
 ## Core Definitions
 
 - **Artificial Intelligence (AI):** systems that perform tasks that usually require human intelligence (perception, language, reasoning, decision support).  
