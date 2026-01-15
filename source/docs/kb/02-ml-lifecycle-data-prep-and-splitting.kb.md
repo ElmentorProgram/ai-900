@@ -2,6 +2,16 @@
 
 This document explains where data ingestion and data preparation fit in the ML lifecycle. In machine learning, you need data because the model learns patterns from examples (data) so it can make predictions on new data you haven’t seen yet. It then explains why training, validation, and testing require careful splitting. It focuses on how to split data correctly to estimate real-world performance and avoid common mistakes like leakage and “peeking.”
 
+**This Document Covers**
+- ML Lifecycle Overview  
+- ML Lifecycle Context (Where Data Prep Fits)  
+- Features, Labels, and IDs (Choosing Inputs Safely)  
+- Why We Split Data (Training vs Validation vs Test)  
+- How Splitting Works (Rows vs Columns)  
+- Split Patterns and When Random Split Fails (Time-Based and Group-Based)  
+- Common Pitfalls (Leakage, Peeking, Ordering Bias, and Overfitting)  
+- Summary  
+
 ## ML Lifecycle Overview
 
 When you build an ML model, you want it to make good predictions on **new data you haven’t seen yet** (real life). To get there, you move through a lifecycle that starts with building a reliable dataset and ends with running the model in production.
@@ -132,3 +142,14 @@ Splitting data helps you detect whether the model is learning general patterns o
 - **Overfitting:** performance looks strong on the **training set** but drops on **validation/test** (the model memorized training examples instead of generalizing).  
 - **Underfitting:** performance is weak on both the **training set** and **validation/test** (the model did not learn useful patterns).
 
+## Summary
+
+You should now be able to:
+- Understand the end-to-end ML lifecycle and where **data** fits.
+- Explain how data flows from **ingestion** and **preparation** through **splitting**, **training**, and **deployment**.
+- Explain where **Data ingestion** and **Data preparation** fit in the ML lifecycle.
+- Describe **features**, **labels**, and why **IDs** and **targets** are not safe inputs.
+- Explain why we split data into **training**, **validation**, and **test** sets.
+- Split correctly by **rows** (not columns) to simulate performance on unseen examples.
+- Choose **time-based** and **group-based** splits when random splitting is not appropriate.
+- Recognize pitfalls like **leakage**, **peeking**, **ordering bias**, and how splits reveal **overfitting** and **underfitting**.
