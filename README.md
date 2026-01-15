@@ -29,8 +29,8 @@ After the fundamentals are clear, each concept is mapped to Azure services and t
 - What “model monitoring” means and why models can degrade over time
 - How these concepts map to Azure services (reference page)
 
-## Why use this repo for revision?
-This repo doesn’t replace **official Microsoft documentation**. It **compresses** it into **high signal** study material.
+## Why use this repo for study/revision?
+This repo doesn’t replace **official Microsoft documentation**. It **compresses** it into **high signal** study material and practice tests that cover all important signals and key points.
 
 If you feel **overwhelmed by the high volume of knowledge** and want **distilled signal** without losing **what matters**, this is built for you: **concise summaries** where **every sentence earns its place**. The goal is to shorten the path to **exam ready, deep understanding** by focusing on the **injected key information** without drowning you in detail.
 
