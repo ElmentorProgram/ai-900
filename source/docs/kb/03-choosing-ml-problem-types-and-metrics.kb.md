@@ -34,3 +34,102 @@ What is the **output** you want the model to produce?
 - If the output is one of **fixed categories (labels)**, treat it as **Classification** (supervised).
 - If you do not have labels and want to discover groups, use **Clustering** (unsupervised).
 - If you want to flag rare or unusual cases compared to normal, use **Anomaly Detection** (often unsupervised, but can be supervised when labels exist).
+
+## Regression (Predicting Numbers) and Common Metrics
+
+Use **Regression** when the output you want is a **number** (a numeric value), such as:
+- “How many items will be sold next month?”
+- “What will the house price be?”
+
+### Why Metrics Matter
+A regression model produces numeric predictions, but you need a way to answer:
+- How close are the predictions to the real numbers?
+- Is model A better than model B?
+- Are changes you make improving the model or making it worse?
+
+Regression metrics measure **prediction error**, meaning “how far off” your predicted numbers are compared to the actual numbers. Your goal is usually to reduce error (or reduce the kinds of errors you care about most).
+
+### MAE (Mean Absolute Error)
+**MAE** is the average absolute difference between prediction and actual.
+
+How to read it:
+- If **MAE = 5**, your predictions are off by about **5 units** on average.
+- If you improve the model and **MAE drops from 5 to 3**, your “average mistake size” got smaller.
+
+Example:
+- Actual sales: 100, Predicted sales: 92 → error = 8  
+- Actual sales: 50, Predicted sales: 55 → error = 5  
+MAE averages these absolute errors.
+
+Why it’s useful:
+- MAE is easy to explain and compare across model versions.
+
+### RMSE (Root Mean Squared Error)
+**RMSE** measures error like MAE, but it **penalizes large mistakes more**.
+
+A small worked example:
+- Actual values: 100, 100, 100  
+- Model predictions: 100, 98, 80  
+- Errors: 0, 2, 20  
+
+How the two metrics react:
+- **MAE** averages the absolute errors: (0 + 2 + 20) / 3 = **7.33**  
+  This says: “On average, we’re off by about 7.33 units.”
+- **RMSE** squares errors before averaging, so the big miss matters more:  
+  sqrt((0² + 2² + 20²) / 3) = sqrt((0 + 4 + 400) / 3) = sqrt(134.67) ≈ **11.61**
+
+Interpretation:
+- Both metrics notice the 20-unit miss, but RMSE reacts more strongly because squaring amplifies large errors.
+
+RMSE penalizes big mistakes more, which matters when a rare large error is dangerous.
+
+High-stakes examples where large errors are especially harmful:
+- Healthcare risk scoring: missing a high-risk patient (a large error) can delay urgent care.
+- Critical infrastructure / nuclear operations: large prediction errors in sensor-based monitoring can trigger unsafe decisions or missed alarms.
+- Fraud detection loss forecasting: a few large misses can cause major financial impact.
+
+### When to Prefer MAE vs RMSE (Real-Life)
+Use **MAE** when you want a stable, easy-to-explain “typical mistake size”:
+- Example: predicting delivery time in minutes where being off by 5 vs 10 minutes is not dramatically different.
+- MAE is often preferred when you want a metric that is less dominated by a few rare spikes.
+
+Use **RMSE** when large mistakes are especially harmful and you want the metric to punish them:
+- Example: predicting next month inventory demand where a big under-forecast causes stockouts and lost sales.
+- Example: predicting energy load where big misses can cause operational risk or high cost.
+
+When RMSE is not preferred:
+- If your data has occasional extreme outliers you don’t want to dominate the metric, RMSE can over-focus on them. In those cases, MAE can be a better “typical error” view.
+
+### R² (R-squared)
+**R²** is a “fit” summary: how much of the variation in the target your model explains compared to a simple baseline.
+
+A concrete intuition:
+- If **R² is higher**, the model explains more of the ups and downs in the real values.
+- If **R² is low**, the model is not capturing much signal (it may behave close to a baseline).
+
+Think of R² as: “How much better is the model than a simple baseline at explaining why values vary?”
+
+Example (simple numbers, not a rule):
+- Model version 1: **R² = 0.50**  
+  Meaning: it explains about 50% of why the target values vary in your dataset.
+- After adding a useful feature (like location for house prices), model version 2: **R² = 0.70**  
+  Meaning: it now explains about 70% of the variation, so it’s capturing more real signal.
+
+Another cue:
+- If R² drops from **0.70** to **0.40**, the model is explaining less variation, often because you removed useful signal or the model got worse.
+
+Important note:
+- R² does not tell you the typical “mistake size”, so you still use **MAE/RMSE** alongside it.
+
+How to read it (high level):
+- **Higher R²** means the model explains more variation than a simple baseline.
+- **Lower R²** means the model explains little (or performs close to a baseline).
+- R² is helpful as a summary, but it does not tell you the typical “mistake size”, so you still need MAE or RMSE.
+
+### What You Are Trying to Achieve
+- Choose a metric that matches your risk:
+  - Want a clear “average error” number → **MAE**
+  - Want to penalize large mistakes more → **RMSE**
+  - Want a quick “fit” summary alongside error → **R²**
+- Improve the model by comparing metric values across versions and reducing error on unseen data.
+
