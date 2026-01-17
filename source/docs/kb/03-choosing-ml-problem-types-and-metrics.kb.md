@@ -90,12 +90,16 @@ Why it’s useful:
 ### RMSE (Root Mean Squared Error)
 **RMSE** measures error like MAE, but it **penalizes large mistakes more**.
 
+Why it penalizes large mistakes more:
+- RMSE **squares** each error before averaging.
+- Squaring makes big errors grow a lot (for example, 20² is much larger than 2²).
+
 A small worked example:
 - Actual values: 100, 100, 100  
 - Model predictions: 100, 98, 80  
 - Errors: 0, 2, 20  
 
-How the two metrics react:
+How MAE vs RMSE react:
 - **MAE** averages the absolute errors: (0 + 2 + 20) / 3 = **7.33**  
   This says: “On average, we’re off by about 7.33 units.”
 - **RMSE** squares errors before averaging, so the big miss matters more:  
@@ -104,6 +108,7 @@ How the two metrics react:
 Interpretation:
 - Both metrics notice the 20-unit miss, but RMSE reacts more strongly because squaring amplifies large errors.
 
+When RMSE is useful:
 RMSE penalizes big mistakes more, which matters when a rare large error is dangerous.
 
 High-stakes examples where large errors are especially harmful:
