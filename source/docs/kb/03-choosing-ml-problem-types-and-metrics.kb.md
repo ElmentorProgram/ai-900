@@ -129,13 +129,31 @@ When RMSE is not preferred:
 - If your data has occasional extreme outliers you don’t want to dominate the metric, RMSE can over-focus on them. In those cases, MAE can be a better “typical error” view.
 
 ### R² (R-squared)
-**R²** is a “fit” summary: how much of the variation in the target your model explains compared to a simple baseline.
+**R²** is a “fit” summary: it tells you how much of the **variation** in the **target (actual) values** your model explains compared to a simple **baseline**.
+
+What “target” means:
+- The **target** is the real number you want to predict (so **target = actual**).
+
+What the baseline is:
+- A simple reference model that always predicts the **average** target value (it does not learn patterns).
 
 A concrete intuition:
 - If **R² is higher**, the model explains more of the ups and downs in the real values.
 - If **R² is low**, the model is not capturing much signal (it may behave close to a baseline).
+- Think of R² as: “How much better is the model than a simple baseline at explaining why values vary?”
 
-Think of R² as: “How much better is the model than a simple baseline at explaining why values vary?”
+Tiny example:
+- Target/actual values: **10, 20, 30**
+- Average target = **20**
+- Baseline predictions: **20, 20, 20** (flat line)
+
+What R² is telling you (intuition):
+- If your model follows the ups and downs better than the baseline, **R² is higher**.
+  - Example model predictions: **12, 19, 29** → follows the trend → **R² is high**
+- If your model is about the same as the baseline, **R² ≈ 0**
+  - Example model predictions: **20, 20, 20**
+- If your model is worse than the baseline, **R² can be negative**
+  - Example model predictions: **30, 20, 10** (reversed trend)
 
 Example (simple numbers, not a rule):
 - Model version 1: **R² = 0.50**  
@@ -147,12 +165,7 @@ Another cue:
 - If R² drops from **0.70** to **0.40**, the model is explaining less variation, often because you removed useful signal or the model got worse.
 
 Important note:
-- R² does not tell you the typical “mistake size”, so you still use **MAE/RMSE** alongside it.
-
-How to read it (high level):
-- **Higher R²** means the model explains more variation than a simple baseline.
-- **Lower R²** means the model explains little (or performs close to a baseline).
-- R² is helpful as a summary, but it does not tell you the typical “mistake size”, so you still need MAE or RMSE.
+- R² does **not** tell you typical “mistake size”, so you still use **MAE/RMSE** alongside it.
 
 ### What You Are Trying to Achieve
 - Choose a metric that matches your risk:
