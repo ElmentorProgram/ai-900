@@ -42,12 +42,27 @@ Use **Regression** when the output you want is a **number** (a numeric value), s
 - “What will the house price be?”
 
 ### Why Metrics Matter
-A regression model produces numeric predictions, but you need a way to answer:
-- How close are the predictions to the real numbers?
-- Is model A better than model B?
-- Are changes you make improving the model or making it worse?
+A **metric** is a number that tells you **how well your model is performing**.  
+In regression, that means: **how far your predicted numbers are from the real numbers**.
 
-Regression metrics measure **prediction error**, meaning “how far off” your predicted numbers are compared to the actual numbers. Your goal is usually to reduce error (or reduce the kinds of errors you care about most).
+Metrics matter because they let you:
+- measure **how close** predictions are to actual values,
+- compare **model A vs model B** fairly,
+- check whether a change you made **helped or hurt**.
+
+Also: metrics depend on the **ML problem type**.  
+- **Regression** predicts a **number** → metrics like **MAE, RMSE, R²** (this section).  
+- **Classification** predicts a **label/category** → uses different metrics (not these).
+
+In practice you improve a regression model using this loop:
+- Measure metrics on the **current model** (baseline).
+- Change something (add/remove a feature, change algorithm, tune hyperparameters, clean data).
+- Measure metrics again (same data split / same test set).
+- Compare:
+  - If **MAE/RMSE go down** (or **R² goes up**), the change likely **improved** the model.
+  - If they move the opposite way, the change likely **made it worse**.
+
+So it’s literally: **before change vs after change**.
 
 ### MAE (Mean Absolute Error)
 **MAE** is the average absolute difference between prediction and actual.
