@@ -46,9 +46,9 @@ A **metric** is a number that tells you **how well your model is performing**.
 In regression, that means: **how far your predicted numbers are from the real numbers**.
 
 Metrics matter because they let you:
-- measure **how close** predictions are to actual values,
-- compare **model A vs model B** fairly,
-- check whether a change you made **helped or hurt**.
+- Measure **how close** predictions are to actual values,
+- Compare **model A vs model B** fairly,
+- Check whether a change you made **helped or hurt**.
 
 Also: metrics depend on the **ML problem type**.  
 - **Regression** predicts a **number** → metrics like **MAE, RMSE, R²** (this section).  
@@ -65,19 +65,27 @@ In practice you improve a regression model using this loop:
 So it’s literally: **before change vs after change**.
 
 ### MAE (Mean Absolute Error)
-**MAE** is the average absolute difference between prediction and actual.
+**MAE** is the average **absolute** difference between prediction and actual.
 
-How to read it:
-- If **MAE = 5**, your predictions are off by about **5 units** on average.
-- If you improve the model and **MAE drops from 5 to 3**, your “average mistake size” got smaller.
+What “absolute” means:
+- You only care about **how big** the mistake is, not the direction (**too low** or **too high**).
 
 Example:
-- Actual sales: 100, Predicted sales: 92 → error = 8  
-- Actual sales: 50, Predicted sales: 55 → error = 5  
-MAE averages these absolute errors.
+- Actual: 100, Predicted: 92 → **absolute error = 8** (8 too low)  
+- Actual: 100, Predicted: 108 → **absolute error = 8** (8 too high)  
+Both count as **8** because MAE ignores whether you were over or under.
+
+How to calculate and read it:
+- Using the sales example:
+  - Actual sales: 100, Predicted sales: 92 → absolute error = 8  
+  - Actual sales: 50, Predicted sales: 55 → absolute error = 5  
+- MAE averages these absolute errors: (8 + 5) / 2 = **6.5**
+- If **MAE = 6.5**, your predictions are off by about **6.5 units** on average.
+- If MAE drops from **6.5** to **3**, your typical mistake got smaller.
 
 Why it’s useful:
-- MAE is easy to explain and compare across model versions.
+- MAE is easy to explain because it stays in the **same units as the target** (minutes, dollars, units sold).
+- It gives a clear “typical mistake size” you can compare across model versions.
 
 ### RMSE (Root Mean Squared Error)
 **RMSE** measures error like MAE, but it **penalizes large mistakes more**.
