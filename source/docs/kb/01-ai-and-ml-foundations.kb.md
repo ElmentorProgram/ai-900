@@ -19,6 +19,9 @@ This document introduces the core AI concepts and the most common AI workloads. 
 - **Language Models:** models encapsulate semantic relationships between language elements (that’s what enables them to generate a meaningful sequence of text).  
 - **LLMs vs SLMs:** LLMs are powerful and generalize well but can be more costly; SLMs tend to work well in more focused scenarios or when you need small models for local applications and agents on devices.
 
+> [!IMPORTANT]
+> AI is the umbrella, ML is one way to build AI by learning patterns from data, Deep Learning is a neural-network approach inside ML, Generative AI generates new content from prompts.
+
 ## Common AI Workloads (How to Choose)
 
 Start with two questions:
@@ -37,12 +40,18 @@ Start with two questions:
 - Extracted text/fields/tables → **Document Processing**
 - Answer a user in chat → **Conversational AI**
 
+> [!IMPORTANT]
+> Start from the workload, input type and output need, then map to the service, don’t start from the Azure service name and work backwards.
+
 ## Workloads and What They Do
 
 ### Machine Learning
 - **Classification:** predicts a **label/category** (for example: yes/no, fraud/not fraud, class A/B/C).  
 - **Regression:** predicts a **numeric value** (a number).  
 - **Clustering:** groups data into **clusters** without predefined labels (you do not have labels and want the algorithm to discover structure).
+
+> [!NOTE]
+> Machine Learning is for predicting labels or numbers from features, Computer Vision is for visual input, NLP is for meaning in text, Document Processing is for extracting text, fields, and tables from documents, Knowledge Mining is for making large content searchable.
 
 ### Anomaly Detection
 Anomaly detection is about finding data points or events that are **unusual compared to normal behavior**.  
@@ -148,6 +157,10 @@ What it usually looks like:
 - **Translator vs Speech:** Translator is **text → text** translation; Speech is used when audio is involved (speech-to-text, text-to-speech, speech translation).  
 - **Computer Vision vs Anomaly Detection:** if the input is images and the goal is recognizing objects by appearance/shape, treat it as computer vision; anomaly detection is about unusual behavior compared to a normal baseline.
 
+> [!WARNING]
+> OCR, Document Processing, NLP are often chained, OCR and Document Processing extract text and structure from images or PDFs, NLP analyzes meaning after you already have text, mixing them leads to the wrong design and wrong service choice.
+
+
 ## Azure Mapping (Concept → Azure Service Family)
 
 This document is Vendor-Neutral. This section maps the concepts to common Azure services so you can connect the ideas to real implementations.
@@ -155,6 +168,9 @@ This document is Vendor-Neutral. This section maps the concepts to common Azure 
 In Azure, you will often see AI services presented in two layers:
 - **Service Family:** the main product area that groups related AI features.
 - **Specific Capability:** a named feature inside that family that solves a specific problem.
+
+> [!IMPORTANT]
+> Service Family is the product area, Specific Capability is the feature you actually use, keep that separation so you map concepts to the right Azure tool.
 
 Now let's map the AI and ML concepts in this document to Azure services like **AI and ML concept → Service Family (Specific Capability Name)**:
 
