@@ -428,3 +428,14 @@ These are new or transformed signals that can make patterns easier for the model
 > [!IMPORTANT]
 > A common pitfall is engineering a feature using information you would not know at prediction time. That creates leakage, even if the feature looks “helpful”.
 
+## Summary
+
+You should now be able to:
+- Choose the right ML problem type by focusing on the **output** (Regression, Classification, Clustering, Anomaly Detection).
+- Explain why metrics matter and how they help you compare model versions on unseen data.
+- Use **MAE, RMSE, and R²** to evaluate regression models and understand what each one emphasizes.
+- Use the confusion matrix (**TP, FP, TN, FN**) to reason about classification errors.
+- Use **accuracy, precision, recall/TPR, F1, and AUC** to evaluate classification models and match metrics to error costs.
+- Recognize clustering scenarios and explain that clustering uses **features (X)** without labels.
+- Recognize anomaly detection scenarios and explain that it flags unusual behavior compared to a **normal baseline**.
+- Avoid common mistakes like choosing the wrong problem type, relying on accuracy for imbalanced data, mixing metric families, forgetting the positive class, and introducing leakage through unsafe features.
