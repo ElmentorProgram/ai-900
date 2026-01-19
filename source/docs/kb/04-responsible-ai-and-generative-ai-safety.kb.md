@@ -41,3 +41,7 @@ Transparency means making it understandable what the system does, why it makes p
 
 **Example:** A hospital uses an ML model to prioritize patients for follow-up. If clinicians only see “High risk” with no explanation of what inputs drove the score and no guidance on limitations (for example, which patient groups it performs poorly on), they cannot review or trust the decision process, which is a transparency issue.  
 
+### Accountability  
+Accountability means people remain responsible for the system, including governance, oversight, and meeting legal and ethical standards.  
+
+**Example:** A company deploys an AI system that rejects insurance claims automatically. If there is no owner responsible for outcomes, no process to audit decisions, and no way for customers to appeal or escalate to a human, accountability is missing because the system is operating without clear responsibility and oversight.  
