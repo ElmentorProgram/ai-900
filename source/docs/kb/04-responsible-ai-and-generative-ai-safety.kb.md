@@ -131,3 +131,14 @@ Measure is about evaluating and monitoring risks using tests, metrics, and asses
 
 ### Manage  
 Manage is about prioritizing and taking actions to mitigate, accept, or transfer risks, and improving over time (including incident response).  
+
+## Summary
+
+You should now be able to:  
+- Explain the Responsible AI principles and recognize what each principle is trying to protect.  
+- Recognize fairness risks when similar applicants receive different outcomes across groups for similar financial profiles.  
+- Explain what transparency means and why sharing strong metrics alone (for example, accuracy) does not explain model behavior.  
+- Distinguish **global explanations** from **local explanations** and explain how each supports review and debugging.  
+- Use feature importance as an influence signal while remembering it is not the same as causation.  
+- Recognize that content filters apply at the **Safety system** layer and that **System messages** set response constraints and style.  
+- Explain what **NIST** is, what **AI RMF** stands for, and how **Govern, Map, Measure, Manage** structure risk work.  
