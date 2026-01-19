@@ -36,3 +36,8 @@ Inclusiveness means designing AI systems so people with different abilities, bac
 
 **Example:** A hiring screener uses an AI score from recorded video interviews. If it expects “typical” eye contact and facial expressions, it can systematically score neurodivergent candidates lower even when their answers and skills are strong, which is an inclusiveness issue.  
 
+### Transparency  
+Transparency means making it understandable what the system does, why it makes predictions, and what its limits are.  
+
+**Example:** A hospital uses an ML model to prioritize patients for follow-up. If clinicians only see “High risk” with no explanation of what inputs drove the score and no guidance on limitations (for example, which patient groups it performs poorly on), they cannot review or trust the decision process, which is a transparency issue.  
+
