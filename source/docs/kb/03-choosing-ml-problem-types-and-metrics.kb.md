@@ -174,3 +174,18 @@ Important note:
   - Want a quick “fit” summary alongside error → **R²**
 - Improve the model by comparing metric values across versions and reducing error on unseen data.
 
+
+## Classification (Predicting Labels) and Common Metrics
+
+Use **Classification** when the output you want is a **label/category** from a fixed set.
+
+Example (email triage):
+A support team receives many customer emails every day. They want a model that reads a new email and assigns it to one predefined ticket type so it can be routed to the right team, for example:
+- **Billing**
+- **Technical Issue**
+- **Account Access**
+- **Feature Request**
+
+In this scenario:
+- The **input** is the email text (and possibly metadata like subject line).
+- The **output** is one label from the predefined list, so it’s **classification**.
