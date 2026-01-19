@@ -38,6 +38,9 @@ When you build an ML model, you need data before training.
 These are part of building the model.  
 Using the model happens later (deployment & sending new input data for predictions).
 
+> [!NOTE]
+> Data ingestion and preparation build a trainable dataset, they don’t prove the model is good, evaluation happens after training using held-out data.
+
 These stages focus on building a reliable dataset for learning, not on measuring model performance. Training, scoring, and evaluation happen later in the lifecycle.
 
 
@@ -78,6 +81,9 @@ When you build an AI model, you want it to make good predictions on **new data y
 
 If you test the model on the same examples it learned from, the score isn’t trustworthy.
 
+> [!IMPORTANT]
+> Splitting is how you simulate real life, train on one set of rows, evaluate on different unseen rows, if you evaluate on training rows, the score is not trustworthy.
+
 A proper split holds out **examples (rows)** so evaluation reflects performance on **new cases**, while keeping the same set of input fields available in both training and evaluation.
 
 ### Why There Are Multiple Sets
@@ -90,6 +96,10 @@ Key sets:
 - **Training set:** examples used to learn patterns.
 - **Validation set:** examples used during development to compare model versions and tune settings.
 - **Test set:** a final “unbiased” check on unseen examples after decisions are made.
+
+> [!WARNING]
+> Do not use the test set during tuning, if you keep “checking” the test set and making decisions, it stops being an unbiased final check.
+
 
 ## How Splitting Works (Rows vs Columns)
 
@@ -107,6 +117,10 @@ If you split by **columns**, you are not holding out new examples. Instead, you 
 That changes the problem into: “Can the model work with less information?”  
 It does not answer the evaluation question: “Will this model generalize to new cases?”
 
+> [!WARNING]
+> Split by rows for evaluation, splitting by columns changes the problem into “less information”, it does not measure generalization to new examples.
+
+
 ### Key Rule
 - Split by **rows** so evaluation uses unseen examples.
 - Keep the **same feature columns** in both training and evaluation so the task stays consistent.
@@ -120,12 +134,18 @@ However, random splitting is not always the best choice.
 ### Time-Based Split
 If data is **time-ordered**, you usually want to train on the past and evaluate on the future. This better matches real deployment, especially for “next month” style predictions.
 
+> [!IMPORTANT]
+> Random split is fine only when rows are independent, use time-based split for time-ordered data, use group-based split when multiple rows belong to the same user, patient, or device.
+
 ### Group-Based Split
 If rows are **grouped/related** (for example, multiple rows from the same user/patient/device), you usually want each group to stay in only one subset. This avoids the model seeing the same group in training and evaluation.
 
 ## Common Pitfalls (Leakage, Peeking, Ordering Bias, and Overfitting)
 
 This section highlights common mistakes that make evaluation unreliable, and how those mistakes can hide problems like overfitting or underfitting.
+
+> [!WARNING]
+> Leakage and peeking make metrics look better than real life, you must keep anything that reveals the answer out of training, and keep the test set untouched until the end.
 
 ### Data Leakage
 Data leakage happens when evaluation information accidentally influences training. A common example is using the **target** as an input feature, which makes performance look unrealistically strong.
