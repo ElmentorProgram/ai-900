@@ -14,6 +14,14 @@ This document introduces the core ideas behind Responsible AI, focusing on the p
 
 Responsible AI is about building and using AI systems in ways that reduce harm and increase trust. In practice, it means checking not only “Does the model work?”, but also “Is it safe, fair, secure, understandable, and governed responsibly?”  
 
+The following are the Responsible AI principles:
+- Fairness  
+- Reliability & safety  
+- Privacy & security  
+- Inclusiveness  
+- Transparency  
+- Accountability  
+
 The principles below are a common way to organize these concerns. Each principle includes a short meaning and a concrete example.
 
 ### Fairness  
