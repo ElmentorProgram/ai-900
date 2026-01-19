@@ -245,3 +245,49 @@ In imbalanced or high-risk scenarios, rely more on:
 - **Recall** (avoid missing positives)
 - **F1** (balance both)
 - Confusion matrix (see TP/FP/TN/FN counts)
+
+## Clustering (Grouping Similar Examples Without Labels)
+
+Use **Clustering** when you want to group examples into **clusters** based on similarity, and you **do not have labels** (no “correct category” column).
+
+A clustering model does not learn “the right answer” per row. Instead, it looks at patterns in the **features (X)** and discovers groups that tend to look alike.
+
+> [!NOTE]
+> Clusters are discovered first, then humans often interpret them. For example, “Cluster 1” might later be described as “high spenders”, but that name is an interpretation, not a label the model trained on.
+
+### What Data Clustering Needs
+
+Because clustering is **unsupervised**, the dataset does **not** need a label/target column (`y`).  
+What it must contain is:
+
+- **Rows (examples):** the things you want to group (customers, devices, neighborhoods, etc.)
+- **Feature columns (X):** attributes that represent each example’s behavior or characteristics
+- Enough **variation** and **volume** for meaningful group patterns to appear
+
+So the essential requirement is: clustering needs **features**, not target labels.
+
+### Example: “Similar Purchasing Habits” (Customer Segmentation)
+
+If you want to group customers by similar purchasing habits, typical feature columns could be:
+
+- **Purchase frequency** (orders/month)
+- **Average order value**
+- **Total spend** (last 3 months / 12 months)
+- **Discount usage rate**
+- **Product category mix** (percent spend per category)
+- **Recency** (days since last purchase)
+
+The clustering algorithm groups customers with similar feature patterns into segments.  
+After clustering, you usually validate and interpret clusters by checking:
+
+- Summary statistics by cluster
+- Business sanity checks (do clusters make sense?)
+- Stability checks (do segments persist over time?)
+
+### How Clustering Is “Evaluated” (High Level)
+
+Clustering does not usually have one simple metric like accuracy, because there is no single “correct label” to compare against. In practice, you check whether the clusters are:
+
+- **Useful** for the goal (segmentation, personalization, targeting, monitoring)
+- **Stable** (not changing wildly with small data changes)
+- **Interpretable** (you can explain what makes clusters different)
