@@ -7,7 +7,7 @@ This document introduces the core ideas behind Responsible AI, focusing on the p
 - Transparency (What It Is, What It Enables, Common Pitfalls)  
 - Explainability Basics (Global vs Local, Feature Importance, Not Causation)  
 - Responsible Generative AI Layers (Safety System, System Messages)  
-- Risk Framing With NIST AI RMF (Govern, Map, Measure, Manage, “Identify Harms” First)  
+- Risk Framing With NIST AI RMF (Govern, Map, Measure, Manage)  
 - Summary  
 
 ## Responsible AI Principles (What They Mean in Practice)
