@@ -113,3 +113,21 @@ You use them to set expectations like format, safety boundaries, refusal behavio
 
 > [!NOTE]  
 > If asked “what identifies constraints and styles for responses?” the answer is System messages.  
+
+## Risk Framing With NIST AI RMF (Govern, Map, Measure, Manage)  
+NIST is the National Institute of Standards and Technology, a U.S. standards body that publishes widely used guidance. AI RMF stands for the AI Risk Management Framework, a framework from NIST for organizing how you identify, measure, and manage AI risks. It groups risk management into four core functions: Govern, Map, Measure, Manage.  
+
+### Govern  
+Govern covers policies, roles, accountability, and documentation. It is cross-cutting across the lifecycle.  
+
+### Map  
+Map is about defining context and intended use, stakeholders, and identifying potential impacts and harms.  
+
+> [!IMPORTANT]  
+> The first stage to consider is to identify potential harms.  
+
+### Measure  
+Measure is about evaluating and monitoring risks using tests, metrics, and assessments.  
+
+### Manage  
+Manage is about prioritizing and taking actions to mitigate, accept, or transfer risks, and improving over time (including incident response).  
