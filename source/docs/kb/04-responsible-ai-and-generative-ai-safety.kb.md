@@ -95,3 +95,21 @@ Example: If “ZIP code” is highly important, it may be acting as a proxy for 
 
 > [!WARNING]  
 > Explanations are not causation. They describe what the model used, not what truly caused the outcome.  
+
+## Responsible Generative AI Layers (Safety System, System Messages)  
+When designing a responsible generative AI solution, it helps to think in layers. One key layer is the safety system layer, where content filtering controls are applied.  
+
+### Safety System Layer (Content Filters)  
+Content filters that suppress prompts and/or model responses are applied at the safety system layer.  
+This layer represents platform-level safety controls that can detect and block potentially harmful content. Filters commonly classify content into severity levels (for example, safe/low/medium/high) across harm categories (for example, hate, sexual, violence, self-harm).  
+The practical outcome is that certain prompts and/or responses can be suppressed or modified based on policy thresholds you configure.  
+
+> [!NOTE]  
+> If the question is “at which layer do content filters suppress prompts and responses?” the answer is Safety system.  
+
+### System Messages (How You Set Constraints & Style)  
+System messages define the model’s role, rules, tone, and constraints (the “how to respond” instructions).  
+You use them to set expectations like format, safety boundaries, refusal behavior, and response style.  
+
+> [!NOTE]  
+> If asked “what identifies constraints and styles for responses?” the answer is System messages.  
