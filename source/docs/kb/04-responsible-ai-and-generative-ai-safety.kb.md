@@ -50,7 +50,7 @@ Accountability means people remain responsible for the system, including governa
 
 Transparency in Responsible AI means people can understand what an AI system is doing, why it makes predictions, and what its limits are before and after deployment.
 
-### Key terms (quick definitions)  
+### Key Terms (Quick Definitions)
 - Transparency: making the system’s behavior, purpose, and limits understandable to humans (users, reviewers, auditors).  
 - Explainability/Interpretability: methods that help humans understand which inputs influenced a prediction and in what way.  
 - Global explanation: overall drivers of the model across many examples (for example, top influential features).  
@@ -58,20 +58,20 @@ Transparency in Responsible AI means people can understand what an AI system is 
 - Feature importance: a ranked view of which inputs tend to matter most to the model (not the same as causality).  
 - Service transparency: what a deployed solution exposes to users/developers (docs, outputs, errors, logs, and guidance).  
 
-### What transparency is trying to achieve  
+### What Transparency Is Trying to Achieve  
 - Help stakeholders answer: “What does this model rely on, and does that make sense?”  
 - Make the model’s behavior reviewable for risk, compliance, and trust.  
 - Reduce surprises in production by documenting assumptions, constraints, and expected failure modes.  
 
-### How it works in practice in AutoML  
+### How It Works in Practice in AutoML  
 To support transparency in an automated ML workflow, you typically generate explanations for the selected/best-performing model and review both global drivers and local drivers.  
 You use what you learn to confirm the model uses reasonable inputs, detect suspicious signals (for example, leakage-like fields, proxy variables), and improve documentation and stakeholder readiness.  
 
-### How it works in practice in a deployed service  
+### How It Works in Practice in a Deployed Service  
 To support transparency once the model is exposed as a service, you typically provide clear documentation so developers and users understand what the service does and does not do, expected inputs/outputs, limitations, edge cases, and how to interpret results and probabilities.  
 You also provide helpful error messages and guidance, and ensure explanations and documentation are accessible (for example, provide text alternatives for visuals).  
 
-### Common pitfalls and confusion points  
+### Common Pitfalls and Confusion Points  
 - Strong metrics (for example, accuracy) are not transparency, a score tells you performance, it does not explain what the model relies on or why it made a decision.  
 - Validation settings aren’t transparency controls, they improve evaluation quality but do not explain model behavior to humans.  
 - Parallelism and concurrency settings aren’t transparency controls, they affect speed and compute usage, not interpretability.  
