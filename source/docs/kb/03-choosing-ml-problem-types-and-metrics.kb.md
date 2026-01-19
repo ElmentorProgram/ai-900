@@ -189,3 +189,18 @@ A support team receives many customer emails every day. They want a model that r
 In this scenario:
 - The **input** is the email text (and possibly metadata like subject line).
 - The **output** is one label from the predefined list, so it’s **classification**.
+
+### Confusion Matrix (TP, FP, TN, FN)
+A confusion matrix counts:
+- **True Positive (TP):** predicted positive and actually positive
+- **False Positive (FP):** predicted positive but actually negative
+- **True Negative (TN):** predicted negative and actually negative
+- **False Negative (FN):** predicted negative but actually positive
+
+Example (Fraud Detection, where “Positive” = Fraud):
+- **True Positive (TP):** model flags a transaction as fraud, and it really is fraud (caught it).
+- **False Positive (FP):** model flags a transaction as fraud, but it was legitimate (false alarm).
+- **True Negative (TN):** model says “not fraud,” and it really is legitimate (correctly allowed).
+- **False Negative (FN):** model says “not fraud,” but it was fraud (missed it).
+
+This is why “positive” should be defined clearly before reading metrics.
