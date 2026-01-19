@@ -329,3 +329,102 @@ Anomaly detection can be implemented in different ways depending on what data yo
 - “Unusual” depends on context. Seasonality, time of day, and user segments can make normal behavior look abnormal.  
 - Anomalies are rare, so too many false positives can make the system unusable.  
 - What is “normal” can change over time (data drift), so baselines must be updated.
+
+## Common Pitfalls (Problem Type and Metric Mistakes)
+
+This section highlights common mistakes that make model results look better than they are, or make you choose the wrong problem type or metric.
+
+### Mixing Up the Problem Type
+
+A fast way to choose the problem type is to focus on the output:
+- If the output is a **number**, it is **Regression**.  
+- If the output is one of **fixed categories**, it is **Classification**.  
+- If you have **no labels** and want to discover groups, it is **Clustering**.  
+- If you want to flag **rare or unusual cases**, it is **Anomaly Detection**.
+
+A common mistake is to choose based on the input only.  
+For example, “sales data” could lead to regression (predict a number), classification (predict high/low category), clustering (segment customers), or anomaly detection (flag unusual activity), depending on the output you want.
+
+### Treating Accuracy as “Good Enough” for Classification
+
+Accuracy is useful when classes are reasonably balanced and error costs are similar, but it can hide poor performance on the rare class you care about.
+
+Example:
+- If 99 out of 100 transactions are legitimate, a model that always predicts “legitimate” gets **99% accuracy**, but it catches **0 fraud**.
+
+In imbalanced or high-risk scenarios, rely more on:
+- Confusion matrix (TP/FP/TN/FN counts)  
+- **Precision** (control false alarms)  
+- **Recall** (avoid missing positives)  
+- **F1** (balance precision and recall)
+
+### Using Regression Metrics for Classification (and Vice Versa)
+
+Regression metrics like **MAE, RMSE, and R²** measure numeric prediction error.  
+They do not describe label prediction behavior.
+
+Classification metrics like **accuracy, precision, recall, F1, and AUC** measure label performance.  
+They do not measure numeric error.
+
+> [!WARNING]
+> If you pick the wrong metric family for the problem type, you can believe a model is “good” while measuring the wrong thing.
+
+### Forgetting the “Positive Class” Definition
+
+Many classification metrics depend on what you define as “positive.”  
+Precision and recall are always about the positive class.
+
+If you do not define the positive class clearly, you can misinterpret the metrics.
+
+Example:
+- In fraud detection, “positive” is usually **fraud** (the rare, high-risk class).
+- In medical screening, “positive” is usually **disease present**.
+
+### Choosing Features That Leak the Answer
+
+Even if you choose the right problem type and metric, leakage can make evaluation misleading.
+
+Examples:
+- Using the target as an input feature (sale price used to predict sale price).  
+- Using information that is only known after the outcome happens.
+
+### Feature Engineering vs Feature Selection (Common Confusion)
+
+These two sound similar, but they mean different actions.
+
+**Feature engineering** means you **create new features** or transform raw data into more useful signals.
+
+**Feature selection** means you **choose which features to keep** and drop the rest.
+
+#### Example (Real Data Feel): Predicting House Sale Price (Regression)
+
+Imagine a dataset where each row is one house sale, and your label is:
+
+- `SalePrice` = the actual price (a number)
+
+Raw fields might include:
+- `LivingAreaSqFt`
+- `Bedrooms`
+- `Bathrooms`
+- `Neighborhood`
+- `YearBuilt`
+- `SaleDate`
+- `RenovationDate` (sometimes missing)
+
+**Feature engineering examples (you create new inputs):**
+- Create `HouseAge` from `SaleYear - YearBuilt`  
+- Create `YearsSinceRenovation` from `SaleYear - RenovationYear` (when renovation exists)  
+- Convert `SaleDate` into `SaleMonth` or `Season` (to capture seasonality)  
+- Encode `Neighborhood` into a machine-friendly form (for example, indicator columns)  
+- Create `PricePerSqFt` is **not** a feature here, because it uses the label (`SalePrice`) and would leak the answer.
+
+These are new or transformed signals that can make patterns easier for the model to learn.
+
+**Feature selection examples (you choose what to keep):**
+- Keep `LivingAreaSqFt`, `HouseAge`, `Neighborhood`, drop `YearBuilt` after `HouseAge` is created (because it is less directly useful once you have age).  
+- Drop a field that is often missing or too noisy (for example, drop `RenovationDate` if it is missing for most rows and you cannot trust it).  
+- Drop ID-like fields such as `ListingID` or `MLS_ID` because they do not generalize to new houses.
+
+> [!IMPORTANT]
+> A common pitfall is engineering a feature using information you would not know at prediction time. That creates leakage, even if the feature looks “helpful”.
+
