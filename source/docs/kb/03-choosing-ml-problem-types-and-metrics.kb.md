@@ -21,6 +21,9 @@ You can choose the ML problem type by looking at the **output** you want:
 - **Clustering:** group examples into **clusters** without predefined labels (for example, customer segments by purchasing habits).
 - **Anomaly Detection:** flag **unusual behavior** compared to a normal baseline (for example, suspicious transactions).
 
+> [!NOTE]
+> Choose the problem type from the **output** you want the model to produce. The same input data can support different problem types depending on the output you choose.
+
 ### Related Problem Types You Will Also See
 These are common in real projects, but they go beyond the foundational scope of this document. They are included here to give the wider picture:
 
@@ -36,6 +39,9 @@ There are two common learning types:
 - **Supervised learning:** you have labeled examples, meaning each row includes the input features and the correct output you want to predict.
 - **Unsupervised learning:** you do not have labels, so the model looks for structure or patterns in the input features.
 
+> [!IMPORTANT]
+> Decide in this order, do you have labels, what output do you want, then pick Regression, Classification, Clustering, or Anomaly Detection, don’t pick based on input alone.
+
 Now start with one question:
 
 What is the **output** you want the model to produce?
@@ -50,6 +56,9 @@ What is the **output** you want the model to produce?
 Use **Regression** when the output you want is a **number** (a numeric value), such as:
 - “How many items will be sold next month?”
 - “What will the house price be?”
+
+> [!IMPORTANT]
+> Compare model versions on the same split using unseen data, MAE or RMSE should go down, R² should go up, otherwise the change likely didn’t help.
 
 ### Why Metrics Matter
 A **metric** is a number that tells you **how well your model is performing**.  
@@ -199,6 +208,9 @@ A support team receives many customer emails every day. They want a model that r
 In this scenario:
 - The **input** is the email text (and possibly metadata like subject line).
 - The **output** is one label from the predefined list, so it’s **classification**.
+
+> [!IMPORTANT]
+> Define the positive class first, then read precision and recall, otherwise you can optimize the wrong outcome.
 
 ### Confusion Matrix (TP, FP, TN, FN)
 A confusion matrix counts:
