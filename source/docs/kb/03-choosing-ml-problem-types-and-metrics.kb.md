@@ -291,3 +291,41 @@ Clustering does not usually have one simple metric like accuracy, because there 
 - **Useful** for the goal (segmentation, personalization, targeting, monitoring)
 - **Stable** (not changing wildly with small data changes)
 - **Interpretable** (you can explain what makes clusters different)
+
+## Anomaly Detection (Flagging Unusual Behavior)
+
+Use **Anomaly Detection** when you want to find data points or events that are **unusual compared to normal behavior**. The goal is to surface “outliers” that may represent risk, failure, fraud, or important rare conditions.
+
+### What It Is Trying to Achieve
+
+Anomaly detection is used to detect rare or abnormal cases that are important to act on, such as:
+- Fraud or suspicious transactions  
+- Equipment faults and predictive maintenance alerts  
+- Network intrusions or unusual login behavior  
+- Defective products on a production line  
+- Unusual spikes or drops in metrics (usage, revenue, sensor readings)
+
+> [!IMPORTANT]
+> An anomaly flag is not a diagnosis. It is a signal to investigate.
+
+### How It Works (High Level)
+
+A typical anomaly detection workflow looks like this:
+- Define what “normal” looks like (baseline period, typical ranges, seasonality).  
+- Choose what you will detect anomalies in (transactions, sensors, logs, images).  
+- Produce an **anomaly score** or a “normal vs abnormal” flag.  
+- Tune thresholds to balance false alarms vs missed issues.
+
+### Common Approaches (High Level)
+
+Anomaly detection can be implemented in different ways depending on what data you have:
+
+- **Rules/statistics:** thresholds, z-scores, moving averages (good starting point).  
+- **Unsupervised ML:** learn patterns of normal behavior without labeled anomalies (common when anomalies are rare).  
+- **Supervised ML:** train on labeled examples of normal vs anomaly (useful when labels exist and are reliable).
+
+### Common Pitfalls and Confusion Points
+
+- “Unusual” depends on context. Seasonality, time of day, and user segments can make normal behavior look abnormal.  
+- Anomalies are rare, so too many false positives can make the system unusable.  
+- What is “normal” can change over time (data drift), so baselines must be updated.
