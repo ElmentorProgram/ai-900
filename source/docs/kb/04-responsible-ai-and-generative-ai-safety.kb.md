@@ -77,3 +77,21 @@ You also provide helpful error messages and guidance, and ensure explanations an
 - Parallelism and concurrency settings aren’t transparency controls, they affect speed and compute usage, not interpretability.  
 - Explanations are not causation, feature importance shows what influenced the model, not what truly caused the outcome.  
 - Transparency is not the same as fairness, you can explain a model clearly and still have biased outcomes across groups.  
+
+## Explainability Basics (Global vs Local, Feature Importance, Not Causation)  
+Explainability helps humans understand which inputs influenced a prediction and in what way. It supports review, debugging, and trust, and it is closely related to transparency.  
+
+### Global explanation (overall drivers)  
+A global explanation describes what tends to drive predictions across many examples. It answers: “What features generally matter most to this model?”  
+Example: In a loan risk model, a global explanation might show that credit history length, debt-to-income ratio, and recent missed payments are the strongest drivers overall.  
+
+### Local explanation (why this prediction happened)  
+A local explanation describes why the model produced a specific prediction for a single example. It answers: “Why did this one case get this result?”  
+Example: For one applicant, a local explanation might show that a high debt-to-income ratio and multiple recent missed payments pushed the prediction toward “high risk,” even if income was strong.  
+
+### Feature importance (influence, not causality)  
+Feature importance is a ranked view of which inputs tend to influence the model most. It does not mean the feature causes the outcome in the real world.  
+Example: If “ZIP code” is highly important, it may be acting as a proxy for other factors, and you should review whether using it is appropriate.  
+
+> [!WARNING]  
+> Explanations are not causation. They describe what the model used, not what truly caused the outcome.  
