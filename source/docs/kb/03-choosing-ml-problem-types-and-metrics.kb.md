@@ -234,3 +234,14 @@ This is why “positive” should be defined clearly before reading metrics.
   - If you choose threshold **0.50**, you flag more transactions (catch more fraud, but more false alarms).  
   AUC is useful because it evaluates the model’s separation quality **before** you pick the threshold.
 
+### Accuracy: When It Misleads
+Accuracy can be misleading when the dataset is **imbalanced** (most examples are from one class). A model can look “high accuracy” by mostly predicting the majority class, while doing a poor job on the rare class you actually care about.
+
+Example:
+- If 99 out of 100 transactions are legitimate, a model that always predicts “legitimate” gets **99% accuracy**, but it catches **0 fraud**.
+
+In imbalanced or high-risk scenarios, rely more on:
+- **Precision** (control false alarms)
+- **Recall** (avoid missing positives)
+- **F1** (balance both)
+- Confusion matrix (see TP/FP/TN/FN counts)
