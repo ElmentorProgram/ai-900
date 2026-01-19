@@ -204,3 +204,33 @@ Example (Fraud Detection, where “Positive” = Fraud):
 - **False Negative (FN):** model says “not fraud,” but it was fraud (missed it).
 
 This is why “positive” should be defined clearly before reading metrics.
+
+### Common Metrics
+- **Accuracy:** overall proportion correct.  
+  Example: If you have 100 predictions and 90 are correct, **accuracy = 90%**.  
+  Real-life: useful when classes are reasonably balanced and false positives vs false negatives have similar cost.
+
+- **Precision:** “When the model says positive, how often is it right?”  
+  Example: model predicts “fraud” 40 times, but only 30 are truly fraud: precision = 30/40 = **75%**.  
+  Real-life: you care about precision when false alarms are costly (for example, blocking legitimate customer payments).
+
+- **Recall / TPR (Sensitivity):** “Of the actual positives, how many did we catch?”  
+  Example: there are 50 real fraud cases, model catches 30: recall = 30/50 = **60%**.  
+  Real-life: you care about recall when missing a positive is costly (for example, catching disease in medical screening).
+
+- **F1 Score:** balances precision and recall into one number.  
+  Example: if precision is 75% and recall is 60%, F1 is a single combined score that will be between them (closer to the smaller one).  
+  Real-life: useful when you need both precision and recall and want one summary number.
+
+- **AUC (Area Under ROC Curve):** measures how well the model **ranks positives above negatives** across all possible thresholds.  
+  Numeric example (scores 0 to 1): suppose you have 5 fraud cases and 5 legitimate cases.  
+  - Fraud scores: **0.95, 0.90, 0.80, 0.70, 0.60**  
+  - Legit scores: **0.55, 0.40, 0.30, 0.20, 0.10**  
+  Here, fraud scores are mostly higher than legit scores, so the model separates the classes well → **high AUC**.  
+  If the scores overlap a lot (fraud and legit both mixed around 0.4–0.6), separation is weak → **lower AUC**.
+
+  Threshold example (why AUC helps):  
+  - If you choose threshold **0.80**, you only flag scores ≥ 0.80 as fraud (stricter, fewer false alarms).  
+  - If you choose threshold **0.50**, you flag more transactions (catch more fraud, but more false alarms).  
+  AUC is useful because it evaluates the model’s separation quality **before** you pick the threshold.
+
