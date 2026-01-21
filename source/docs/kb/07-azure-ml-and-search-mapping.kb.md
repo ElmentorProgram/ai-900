@@ -72,7 +72,7 @@ AutoML automates repeated experimentation to find a strong model for your data. 
 - To call a deployed inference service, you need the **REST endpoint** (service URL) and an **authentication key**.  
 
 > [!IMPORTANT]  
-> Training builds the model, inference uses the model to score new data. When a question asks how to call a deployed model, you are in the inference endpoint world (REST endpoint + key).  
+> Training builds the model, inference uses the model to score new data. When a question asks how to call a deployed model, you are in the inference endpoint world (REST endpoint & key).  
 
 ## Knowledge Mining (Search, Indexing, Enrichment)  
 Knowledge mining is used when the primary goal is to make large volumes of content searchable. The core idea is: build an index you can query, and enrich content so it becomes easier to search and filter.  
