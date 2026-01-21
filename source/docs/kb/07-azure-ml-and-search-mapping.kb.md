@@ -86,3 +86,18 @@ In Azure, this commonly maps to:
 
 > [!NOTE]  
 > Computer vision can extract text/tags from a single image, but knowledge mining is about building a searchable index across lots of content (documents, images, metadata) so you can query it at scale.  
+
+## Language Workloads (Text Analytics, CLU, Question Answering)  
+This section maps common language concepts to Azure AI Language capabilities.  
+
+Concept → Service Family (Specific Capability Name)  
+- **Text Analytics (Sentiment, Key Phrases, Entities, Language Detection)** → Azure AI Language (Text Analytics)  
+- **Language Understanding (Intent & Entities)** → Azure AI Language (CLU: Conversational Language Understanding)  
+- **Question Answering (Answer From Your Content)** → Azure AI Language (Question Answering)  
+
+Naming notes (AKA, older names you may still see):  
+- **LUIS (Language Understanding Intelligent Service)** is the older name you may still see for intent and entities, Microsoft guidance points to **Azure AI Language, CLU** as the current service.  
+- **QnA Maker** is the older name you may still see for this capability, the current service is **Azure AI Language, Question Answering** (you may also see “Custom Question Answering” in some materials).  
+
+> [!IMPORTANT]  
+> Text Analytics is a set of NLP capabilities for extracting signals from text. Like all NLP, it requires text input, so use OCR or document processing first for scanned documents.  
