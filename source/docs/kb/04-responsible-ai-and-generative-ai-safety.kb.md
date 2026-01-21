@@ -16,8 +16,8 @@ Responsible AI is about building and using AI systems in ways that reduce harm a
 
 The following are the Responsible AI principles:
 - Fairness  
-- Reliability & safety  
-- Privacy & security  
+- Reliability & Safety  
+- Privacy & Security  
 - Inclusiveness  
 - Transparency  
 - Accountability  
@@ -29,12 +29,12 @@ Fairness means the system should avoid unfair outcomes or bias across groups.
 
 **Example:** A bank uses an ML model to recommend approve or deny loan applications. If approval rates are lower for women or for a specific racial group than for equally qualified applicants (even when income, credit history, and other relevant factors are similar), the model is producing biased outcomes across groups, which is a fairness issue.  
 
-### Reliability & safety  
+### Reliability & Safety  
 Reliability & safety means the system behaves consistently and avoids causing harm, especially in physical or high-risk contexts.  
 
 **Example:** A driverless agriculture vehicle uses sensors and an ML model to navigate a farm. If the model fails in fog or low light and the vehicle does not reliably detect a nearby worker, that is a reliability & safety issue because the system’s behavior becomes unsafe in real conditions.  
 
-### Privacy & security  
+### Privacy & Security  
 Privacy & security means protecting sensitive data and securing the system against misuse or attacks. It covers what data you collect, how you store it, who can access it, and how the system can be exploited.  
 
 **Example:** An app uses face images to verify a user. If the system stores face images in plain form without strong access controls, or if attackers can steal the face data and reuse it elsewhere, that is a privacy & security issue because biometric data is highly sensitive and the system is not adequately protected.  
