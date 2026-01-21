@@ -11,3 +11,17 @@ This document explains how vision and document workloads differ, and how to choo
 - Common Confusions (Choose This, Not That)  
 - Azure Mapping (Concept → Azure Service Family)  
 - Summary  
+
+## Computer Vision (What It Is, Common Outputs)  
+Computer vision is the area of AI that deals with analyzing visual input like photos, video, and camera feeds. The goal is to return structured results that your system can use, for example labels, locations, text, or descriptions.  
+
+Common outputs you will see from vision systems include:  
+- **Tags:** descriptive keywords about what is in the image (objects, setting, attributes).  
+- **Caption/description:** a short sentence-like description of what is happening in the image.  
+- **Image classification:** a label for the whole image (or a main label).  
+- **Object detection:** labels plus bounding boxes, so you get what was found and where it is.  
+- **OCR:** extracted printed or handwritten text found inside the image.  
+- **Semantic segmentation:** a class label for each pixel (a mask), used when precise boundaries matter.  
+
+> [!NOTE]  
+> These outputs answer different questions. Choose the capability by the output you need, not by the input alone. For example, “find bottles” is object detection, while “read the sign” is OCR.  
