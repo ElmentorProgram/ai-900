@@ -129,6 +129,12 @@ Speech capabilities apply when the input or output involves spoken audio.
 Speech recognition converts audio into text.  
 Common uses include captions, transcripts, and turning spoken requests into text that can be processed by downstream language workflows.  
 
+### Speech-to-Text: Universal Language Model (when to use it)
+Use the Universal Language Model for general-purpose speech recognition scenarios, such as:
+- **Conversation transcription**
+- **Dictation**
+- Mixed speakers and natural speech patterns
+
 ### Speech Synthesis (Text-to-Speech)  
 Speech synthesis converts text into spoken audio.  
 Common uses include reading messages aloud, automated announcements, and voice responses in assistants.  
