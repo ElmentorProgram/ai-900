@@ -107,3 +107,17 @@ If the goal is to identify specific competitor products from retail shelf images
 
 > [!WARNING]  
 > Custom models learn what you show them. If your training images do not match real conditions (lighting, distance, clutter), accuracy will drop in production.  
+
+## Common Confusions (Choose This, Not That)  
+- Computer vision vs document processing: computer vision is for understanding what is in images (classification, detection, tags, captions), document processing is for extracting structured information from documents (OCR, key/value pairs, tables).  
+- OCR vs document processing: OCR reads text from an image or scanned page, document processing adds layout understanding to extract fields and tables.  
+- Image classification vs object detection: classification labels the whole image, detection returns labels plus bounding boxes (what and where).  
+- Object detection vs semantic segmentation: detection gives bounding boxes, segmentation gives pixel-level masks when boundaries matter.  
+- Face detection vs face verification: detection finds faces (and sometimes attributes), verification compares two faces to decide if they are the same person.  
+- General tags/captions vs custom vision: tags and captions are broad, custom vision is used when you need your own labels (specific products, competitor SKUs, defect categories).  
+
+> [!WARNING]  
+> If your rule is about faces and a face-worn item (like sunglasses), use face detection with attributes. Face verification is for identity matching, not accessories filtering.  
+
+> [!IMPORTANT]  
+> Choose by the output you need: “what” (classification), “what and where (box)” (detection), “what and where (pixels)” (segmentation), “text on the page” (OCR), “fields and tables” (document processing).  
