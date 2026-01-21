@@ -158,3 +158,14 @@ Now let’s map the language concepts in this document to Azure services like **
 - **Speech (Speech-to-Text, Text-to-Speech, Speech Translation)** → Azure AI Speech (Speech Services)  
 - **Bots and Channels (Bot Runtime/Connector)** → Azure AI Bot Service (Bot Service)  
 
+## Summary  
+You should now be able to:  
+- Explain what NLP means and recognize when the input is text and the goal is to analyze language.  
+- Use Text Analytics capabilities like sentiment analysis, key phrase extraction, entity recognition, and language detection, and know what each one returns.  
+- Explain language understanding as intent and entities, and how it supports command-style experiences.  
+- Explain Question Answering as returning answers from known content and list the supported knowledge base sources.  
+- Use orchestration rules to route “do something” messages to intent and entities, and “tell me something” messages to question answering.  
+- Choose Translator vs Speech by the input type (text vs audio) and apply the translation and speech decision rules.  
+- Recognize common confusions like language detection vs translation and transcription vs summarization.  
+- Map the document concepts to Azure service families and specific capabilities (Text Analytics, CLU, Question Answering, Translator, Speech, Bot Service).  
+
