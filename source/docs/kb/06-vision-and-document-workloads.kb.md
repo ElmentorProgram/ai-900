@@ -130,3 +130,14 @@ Now let’s map the vision and document concepts in this document to Azure servi
 - **Face Detection and Face Operations** → Azure AI Face (Face)  
 - **Custom Vision Models (Classification, Object Detection)** → Azure AI Custom Vision (Custom Vision)  
 - **Document Processing (OCR, Key/Value, Tables)** → Azure AI Document Intelligence (Document Intelligence)  
+
+
+## Summary  
+You should now be able to:  
+- Explain what computer vision is and recognize common outputs like tags, captions, classification, detection, OCR, and segmentation.  
+- Choose between image classification, object detection, and semantic segmentation based on whether you need “what,” “what and where (box),” or “what and where (pixels).”  
+- Use OCR when you need to read text, and use document processing when you need structured extraction like key/value pairs and tables.  
+- Distinguish face detection (find faces and attributes) from face verification (match identity).  
+- Recognize when generic tags and captions are not enough and a custom vision model is needed for your own labels.  
+- Avoid common confusion points by choosing the capability based on the output you need.  
+- Map the vision and document concepts in this document to Azure service families (Vision, Face, Custom Vision, Document Intelligence).  
