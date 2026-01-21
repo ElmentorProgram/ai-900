@@ -59,3 +59,17 @@ Use it on reviews, survey feedback, and support messages when you care about how
 Language detection identifies the language of the input text so you can route it to the right workflow (for example, translation or region-specific handling).  
 It commonly returns the language name, an ISO 639-1 code, and a confidence score.  
 **Study note:** Language detection outputs language name, ISO code, and score.  
+
+## Language Understanding (Intent & Entities)  
+When you need to interpret what a user means in a message like “Call me back later,” you are doing language understanding (often modeled as intent and entities).  
+
+Typical outputs:  
+- Intent: what the user wants to do  
+- Entities: important details inside the text  
+
+Example:  
+User says: “Play Blinding Lights by The Weeknd on the living room speaker.”  
+- Intent: PlayMusic  
+- Entities: SongName = “Blinding Lights”, Artist = “The Weeknd”, DeviceName = “living room speaker”  
+
+A key point is that the language understanding model does not perform the action. It produces structured understanding so your app or bot can call the right APIs.  
