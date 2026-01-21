@@ -31,3 +31,19 @@ Naming notes (AKA, older names you may still see):
 
 > [!NOTE]  
 > This is a reference guide. It maps common concept names to common Azure names (including older names you may still see), it does not cover every configuration choice.  
+
+## Machine Learning (Training, Evaluation, Deployment)  
+This section is only a bridge from Vendor-Neutral lifecycle concepts to the Azure places you will see them. It does not re-explain the lifecycle.  
+
+You will commonly map these ML lifecycle concepts to Azure terms like:  
+- **Training** → training runs and experiments (Azure ML training jobs)  
+- **Evaluation** → metrics produced during validation/testing (model evaluation outputs)  
+- **Inference (scoring)** → running a trained model on new inputs (scoring)  
+- **Deployment** → publishing the model behind a hosted interface (endpoint)  
+
+> [!IMPORTANT]
+> Training happens on historical labeled data (when supervised), inference happens later on new inputs. Evaluation measures how well the model generalizes to unseen examples.
+
+> [!NOTE]  
+> The next sections list the Azure service families and the concrete capability names you will see for these concepts (Designer, AutoML, Jobs, Endpoints).  
+
