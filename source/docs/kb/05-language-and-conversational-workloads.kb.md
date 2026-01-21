@@ -10,7 +10,8 @@ This document explains how language-based AI workloads differ, including text an
 - Orchestration (Routing Between Intents and Question Answering)  
 - Translation (Text vs Speech Translation)  
 - Speech (Speech-to-Text, Text-to-Speech)  
-- Common Confusions (Choose This, Not That)  
+- Common Confusions (Choose This, Not That)
+- Azure Mapping (Concept → Azure Service Family)
 - Summary  
 
 ## Natural Language Processing (What It Is, Common Tasks)  
