@@ -15,6 +15,11 @@ This document explains how vision and document workloads differ, and how to choo
 ## Computer Vision (What It Is, Common Outputs)  
 Computer vision is the area of AI that deals with analyzing visual input like photos, video, and camera feeds. The goal is to return structured results that your system can use, for example labels, locations, text, or descriptions.  
 
+> [!WARNING]
+> **DALL-E = Image Generation (text → new image).**
+> It does **not** analyze an existing image (no captioning, no OCR, no object detection).
+> If the task is **“what’s in this image?”** or **“read text from this image”**, use **Computer Vision** (and **OCR/Document Intelligence** for documents).
+
 Common outputs you will see from vision systems include:  
 - **Tags:** descriptive keywords about what is in the image (objects, setting, attributes).  
 - **Caption/description:** a short sentence-like description of what is happening in the image.  
@@ -25,6 +30,7 @@ Common outputs you will see from vision systems include:
 
 > [!NOTE]  
 > These outputs answer different questions. Choose the capability by the output you need, not by the input alone. For example, “find bottles” is object detection, while “read the sign” is OCR.  
+
 
 ## Image Classification vs Object Detection vs Semantic Segmentation  
 These three vision tasks produce different outputs, so you choose based on what your system must return.  
