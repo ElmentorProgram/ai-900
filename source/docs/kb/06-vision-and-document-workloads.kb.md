@@ -62,3 +62,32 @@ Example (expense receipt scanning):
 
 > [!IMPORTANT]  
 > OCR answers “what text is on the page.” Document processing answers “what text is on the page, and what it means structurally (fields and tables).”  
+
+## Face Detection vs Face Verification (Identity vs Attributes)  
+Face scenarios often sound similar, but they are different tasks depending on whether you need to detect faces, read attributes, or match identity.  
+
+### Face Detection (Find Faces and Their Attributes)  
+Face detection answers questions like:  
+- “Is there a face in this image?”  
+- “How many faces are there, and where are they located?”  
+
+In many solutions, face detection can also return face-related attributes, depending on the capability used. For example, accessories like glasses or sunglasses.  
+
+Example (faces and sunglasses rule):  
+If you want to automatically keep only photos that:  
+- include one or more faces, and  
+- include at least one person wearing sunglasses,  
+then you are doing face detection and reading face-related attributes, so you can apply a rule like:  
+“Face count ≥ 1” AND “At least one detected face indicates sunglasses.”  
+
+### Face Verification (Match Two Faces, Same Person or Not)  
+Face verification answers a different question:  
+- “Are these two faces the same person?”  
+
+Verification is used for identity matching (one face compared to another), not for counting faces or checking accessories like sunglasses.  
+
+> [!IMPORTANT]  
+> Face detection is for finding faces (and sometimes attributes). Face verification is for matching identity.  
+
+> [!WARNING]  
+> If your goal is “detect faces and check sunglasses,” verification is the wrong task type. It will not reliably answer “who is wearing sunglasses” or “how many faces are present.”  
