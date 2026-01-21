@@ -158,6 +158,13 @@ This section highlights common mistakes that make evaluation unreliable, and how
 ### Data Leakage
 Data leakage happens when evaluation information accidentally influences training. A common example is using the **target** as an input feature, which makes performance look unrealistically strong.
 
+> [!WARNING]
+> **Data leakage = using information you would not have at prediction time.**
+> If a field is only known **after** the real-world outcome happens, it must not be used as a feature.
+
+Example: You are predicting **will a patient be readmitted within 30 days?**  
+If your dataset includes **readmission_date** or **readmitted_flag**, those fields only exist **after** the readmission happens. Including them makes evaluation look great, but the model cannot rely on them in production.
+
 ### Peeking at the Test Set
 The **test set** is a final “unbiased” check. If you repeatedly check the test set during tuning, you turn it into part of your development loop and reduce trust in the final score.
 
