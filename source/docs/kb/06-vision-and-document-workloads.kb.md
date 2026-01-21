@@ -121,3 +121,12 @@ If the goal is to identify specific competitor products from retail shelf images
 
 > [!IMPORTANT]  
 > Choose by the output you need: “what” (classification), “what and where (box)” (detection), “what and where (pixels)” (segmentation), “text on the page” (OCR), “fields and tables” (document processing).  
+
+
+## Azure Mapping (Concept → Azure Service Family)  
+This document is Vendor-Neutral. This section maps the concepts in this document to common Azure services so you can connect the ideas to real implementations.  
+Now let’s map the vision and document concepts in this document to Azure services like **Concept → Service Family (Specific Capability Name)**:  
+- **General Vision (Tags, Captions, OCR)** → Azure AI Vision (Image Analysis)  
+- **Face Detection and Face Operations** → Azure AI Face (Face)  
+- **Custom Vision Models (Classification, Object Detection)** → Azure AI Custom Vision (Custom Vision)  
+- **Document Processing (OCR, Key/Value, Tables)** → Azure AI Document Intelligence (Document Intelligence)  
