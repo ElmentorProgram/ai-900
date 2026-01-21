@@ -46,3 +46,19 @@ Example: highlight the exact defective region on a surface, or separate a produc
 
 > [!IMPORTANT]  
 > Classification answers “what is in this image”, detection answers “what and where (box)”, segmentation answers “what and where (pixels)”.  
+
+## OCR vs Document Processing (Text, Key/Value, Tables)  
+OCR (Optical Character Recognition) is used when you need to read printed or handwritten text that appears inside an image or scanned document. It turns “text in pixels” into machine-readable text, so you can store it, search it, or pass it to NLP later.  
+
+Document processing goes beyond OCR. It uses layout understanding to extract structured data from documents, such as key/value pairs and tables, not just raw text.  
+
+How to choose:  
+- Use OCR when you mainly need the text content (for example, make scanned pages searchable).  
+- Use document processing when you need structured fields (Invoice Number, Date, Total) and tables (line items).  
+
+Example (expense receipt scanning):  
+- If you only need the receipt text for search, OCR is enough.  
+- If you need merchant, date, total, and line items as structured fields, use document processing (OCR + layout understanding).  
+
+> [!IMPORTANT]  
+> OCR answers “what text is on the page.” Document processing answers “what text is on the page, and what it means structurally (fields and tables).”  
