@@ -91,3 +91,19 @@ Verification is used for identity matching (one face compared to another), not f
 
 > [!WARNING]  
 > If your goal is “detect faces and check sunglasses,” verification is the wrong task type. It will not reliably answer “who is wearing sunglasses” or “how many faces are present.”  
+
+## Custom Vision (When You Need Your Own Labels)  
+Sometimes “general vision” outputs like tags or captions are not specific enough. If you need the system to recognize your own categories (your product types, competitor SKUs, defect categories), you typically need a custom vision model trained on your labeled examples.  
+
+There are two common custom vision outputs:  
+- **Image classification:** assign one main label to the whole image (or multiple labels, depending on how you design it).  
+- **Object detection:** find and label items with bounding boxes, used when multiple items can appear or location matters.  
+
+Example (retail competitor products):  
+If the goal is to identify specific competitor products from retail shelf images, generic tags like “bottle” or “snack” are not enough. You collect and label images of the products under real store conditions (lighting, angles, occlusion), then train a model to classify the image or detect multiple products on a shelf.  
+
+> [!IMPORTANT]  
+> If you need your own labels and consistent identification of specific products, use a custom vision model. General captions and tags are usually too broad for SKU-level identification.  
+
+> [!WARNING]  
+> Custom models learn what you show them. If your training images do not match real conditions (lighting, distance, clutter), accuracy will drop in production.  
