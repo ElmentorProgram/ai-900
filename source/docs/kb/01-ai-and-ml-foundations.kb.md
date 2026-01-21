@@ -187,6 +187,12 @@ Now let's map the AI and ML concepts in this document to Azure services like **A
 - **Training and Operationalizing ML Models** → Azure Machine Learning (Azure ML)  
 - **Bots and Channels (Bot Runtime/Connector)** → Azure AI Bot Service (Bot Service)
 
+### Azure OpenAI model types (fast routing)
+- **GPT models**: generate or transform text (chat, summarization, extraction).
+- **Embeddings models**: convert text to vectors for semantic search and similarity.
+- **DALL-E**: generate images from text prompts.
+- **Whisper**: speech-to-text transcription.
+
 ## Summary
 
 You should now be able to:
