@@ -58,6 +58,14 @@ OCR (Optical Character Recognition) is used when you need to read printed or han
 
 Document processing goes beyond OCR. It uses layout understanding to extract structured data from documents, such as key/value pairs and tables, not just raw text.  
 
+> [!IMPORTANT]
+> **Low-resolution or poor scans can break extraction.**
+> Even if the service returns a value, it can be wrong (blur, skew, shadows, handwriting, cut-off pages).
+> **After extraction and before using the value in your app or in another model, validate critical fields** (totals, IDs, dates) using rules and/or human review.
+>
+> **Practical pipeline (high-signal):**
+> OCR extracts text → Validate the extracted text → Document processing/Document Intelligence
+
 How to choose:  
 - Use OCR when you mainly need the text content (for example, make scanned pages searchable).  
 - Use document processing when you need structured fields (Invoice Number, Date, Total) and tables (line items).  
