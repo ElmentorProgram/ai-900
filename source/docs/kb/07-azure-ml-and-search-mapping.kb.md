@@ -157,4 +157,15 @@ Naming notes (AKA, older names you may still see):
 - **Form Recognizer** is the older name you may still see for this service family, the current name is **Azure AI Document Intelligence**.  
 
 > [!IMPORTANT]  
-> OCR is “get the text out.” Document processing is “get the text plus structure and fields out” (tables, key/value pairs, and document-specific fields).  
+> OCR is “get the text out.” Document processing is “get the text plus structure and fields out” (tables, key/value pairs, and document-specific fields).
+
+## Summary  
+You should now be able to:  
+- Read mappings in the format **Concept → Service Family (Specific Capability Name)** and recognize older Azure names you may still see.  
+- Map core ML build concepts to Azure ML terms like **jobs**, **Designer pipelines**, **AutoML experiments**, and **endpoints**.  
+- Recognize that knowledge mining maps to **Azure AI Search**, using indexing plus enrichment (skills) to make content searchable at scale.  
+- Map language concepts to Azure AI Language capabilities like **Text Analytics**, **CLU**, and **Question Answering**.  
+- Map translation and speech concepts to **Azure AI Translator** and **Azure AI Speech**, and understand why speech-to-speech is typically a pipeline (speech-to-text, translation, text-to-speech).  
+- Map vision concepts to **Azure AI Vision**, **Azure AI Face**, and **Azure AI Custom Vision**.  
+- Map document extraction concepts to **Azure AI Document Intelligence**, and distinguish OCR (Read) from structure and field extraction (Layout, prebuilt, custom).  
+
