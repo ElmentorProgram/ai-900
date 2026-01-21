@@ -79,6 +79,11 @@ Face detection answers questions like:
 
 In many solutions, face detection can also return face-related attributes, depending on the capability used. For example, accessories like glasses or sunglasses.  
 
+> [!WARNING]
+> **Face verification answers only: are these two faces the same person?**
+> It is **not** used for counting people, detecting accessories, estimating age/emotion, or recognizing celebrities.
+> If the task is detecting objects/attributes in an image, use **Computer Vision** (or other vision capabilities), not Face verification.
+
 Example (faces and sunglasses rule):  
 If you want to automatically keep only photos that:  
 - include one or more faces, and  
