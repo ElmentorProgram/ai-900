@@ -129,3 +129,14 @@ What this means (capability and ML type):
 - **Text-to-speech** is a **Speech AI capability**. ML type: supervised learning on text and voice/audio pairs (the model learns text-to-audio generation).  
 
 So “speech-to-speech” is usually **multiple capabilities chained together**, each one solving a different task (audio → text, text → text, text → audio).  
+
+## Vision, Face, and Custom Vision  
+This section maps vision concepts to the Azure service families you will commonly see.  
+
+Concept → Service Family (Specific Capability Name)  
+- **General Vision (Tags, Captions, OCR)** → Azure AI Vision (Image Analysis)  
+- **Face Detection and Face Operations** → Azure AI Face (Face)  
+- **Custom Vision Models (Classification, Object Detection)** → Azure AI Custom Vision (Custom Vision)  
+
+> [!IMPORTANT]  
+> Use **Azure AI Vision** for broad understanding (tags, captions, general analysis). Use **Azure AI Face** for face-focused scenarios (faces, face attributes, identity operations). Use **Custom Vision** when you need your own labels (specific products, competitor SKUs, defect categories).  
