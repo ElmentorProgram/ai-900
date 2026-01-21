@@ -136,3 +136,12 @@ Common uses include reading messages aloud, automated announcements, and voice r
 > [!NOTE]  
 > Speech recognition is audio → text, and text-to-speech is text → audio.  
 
+## Common Confusions (Choose This, Not That)  
+- Translator vs Speech: Translator is text → text translation, Speech is used when audio is involved (speech-to-text, text-to-speech, speech translation).  
+- Speech recognition vs text-to-speech: speech recognition is audio → text (captions/transcripts), text-to-speech is text → audio (read aloud/announcements).  
+- Question Answering vs language understanding: question answering returns information from known content, intent and entities interpret commands so your app can take action.  
+- Entity Recognition (NER) vs CLU entities: NER extracts named things from text for analysis, CLU entities extract details from a user command to complete an action.  
+- Text Analytics vs Question Answering: Text Analytics extracts signals (sentiment, entities, key phrases), Question Answering returns an answer from your curated content.  
+- Language detection vs translation: language detection identifies the language, it does not translate.  
+- Key phrase extraction vs entity recognition: key phrases are main topics/talking points, entities are named things (people, orgs, places, dates).  
+- Transcription vs summarization: speech-to-text creates a transcript, summarization is an NLP step you do after you have text.  
