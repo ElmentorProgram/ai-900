@@ -256,6 +256,11 @@ This is why “positive” should be defined clearly before reading metrics.
   - If you choose threshold **0.50**, you flag more transactions (catch more fraud, but more false alarms).  
   AUC is useful because it evaluates the model’s separation quality **before** you pick the threshold.
 
+> [!IMPORTANT]
+> **ROC vs PR:**
+> When positives are rare, **Precision-Recall** curves often show performance more clearly than ROC.
+> ROC can look “good” even when precision is low, because true negatives dominate.
+
 ### Accuracy: When It Misleads
 Accuracy can be misleading when the dataset is **imbalanced** (most examples are from one class). A model can look “high accuracy” by mostly predicting the majority class, while doing a poor job on the rare class you actually care about.
 
