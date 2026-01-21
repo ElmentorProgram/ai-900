@@ -73,3 +73,20 @@ User says: “Play Blinding Lights by The Weeknd on the living room speaker.”
 - Entities: SongName = “Blinding Lights”, Artist = “The Weeknd”, DeviceName = “living room speaker”  
 
 A key point is that the language understanding model does not perform the action. It produces structured understanding so your app or bot can call the right APIs.  
+
+
+## Question Answering (Answer From Your Content)  
+Question Answering is used when the user is asking for information and the answer should come from known content. It creates a conversational layer over your data to return the best-matching answer.  
+
+### What You Feed It (Inputs / Sources)  
+A Question Answering knowledge base can be created from three main source types:  
+- Web pages (URLs)  
+- Documents or FAQ files (content that contains question and answer pairs)  
+- Manual Q&A entry (type question and answer pairs directly)  
+
+### What It Outputs  
+- Best-matching answer  
+- Optional score or confidence (depends on settings and implementation)  
+
+### Important Limitation  
+You cannot directly import an image or an audio file as a knowledge base source. You would first need to extract text or transcripts into a supported text-based source.  
