@@ -12,3 +12,19 @@ This document explains how language-based AI workloads differ, including text an
 - Speech (Speech-to-Text, Text-to-Speech)  
 - Common Confusions (Choose This, Not That)  
 - Summary  
+
+## Natural Language Processing (What It Is, Common Tasks)  
+Natural Language Processing (NLP) applies when the input is text and the goal is to analyze or work with language.  
+
+Common NLP tasks include:  
+- Sentiment analysis (positive/negative/neutral tone)  
+- Key phrase extraction (main talking points)  
+- Entity recognition (people, organizations, locations, dates, quantities)  
+- Language detection (identify the language of the text)  
+- Summarization (when available)  
+
+NLP shows up in scenarios like analyzing customer reviews, extracting key topics from reports, tagging content with mentioned organizations or locations, and preparing text for search and indexing.  
+
+> [!NOTE]  
+> NLP works on text. If your input is a scanned image or PDF, you usually need OCR or document processing first to extract text, then you can run NLP on the extracted text.  
+
