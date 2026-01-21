@@ -140,3 +140,21 @@ Concept → Service Family (Specific Capability Name)
 
 > [!IMPORTANT]  
 > Use **Azure AI Vision** for broad understanding (tags, captions, general analysis). Use **Azure AI Face** for face-focused scenarios (faces, face attributes, identity operations). Use **Custom Vision** when you need your own labels (specific products, competitor SKUs, defect categories).  
+
+## Document Processing (OCR, Key/Value, Tables)  
+This section maps document extraction concepts (read text, extract fields, extract tables) to Azure AI Document Intelligence capabilities.  
+
+Concept → Service Family (Specific Capability Name)  
+- **Document Processing (OCR, Key/Value, Tables)** → Azure AI Document Intelligence (Document Intelligence)  
+
+Common capability names you will see:  
+- **Read (OCR)**: extract printed and handwritten text as machine-readable text.  
+- **Layout**: extract structure such as tables, paragraphs, headers/footers, and (when enabled) key/value pairs.  
+- **Prebuilt models**: extract known fields for known document types (for example, Invoice, Receipt, ID documents).  
+- **Custom extraction models**: extract business-specific fields from your own document templates.  
+
+Naming notes (AKA, older names you may still see):  
+- **Form Recognizer** is the older name you may still see for this service family, the current name is **Azure AI Document Intelligence**.  
+
+> [!IMPORTANT]  
+> OCR is “get the text out.” Document processing is “get the text plus structure and fields out” (tables, key/value pairs, and document-specific fields).  
