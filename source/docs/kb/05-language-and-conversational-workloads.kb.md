@@ -146,6 +146,12 @@ Common uses include reading messages aloud, automated announcements, and voice r
 - Key phrase extraction vs entity recognition: key phrases are main topics/talking points, entities are named things (people, orgs, places, dates).  
 - Transcription vs summarization: speech-to-text creates a transcript, summarization is an NLP step you do after you have text.
 
+> [!IMPORTANT]
+> **Entity means two different things here.**
+> **NER entities** are named things in text (people, orgs, places, dates).
+> **CLU entities** are slots in a user intent (the details your app needs to act, like destination, date, product).
+
+
 ## Azure Mapping (Concept → Azure Service Family)  
 This document is Vendor-Neutral. This section maps the concepts in this document to common Azure services so you can connect the ideas to real implementations.  
 
