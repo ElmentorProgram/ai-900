@@ -90,3 +90,19 @@ A Question Answering knowledge base can be created from three main source types:
 
 ### Important Limitation  
 You cannot directly import an image or an audio file as a knowledge base source. You would first need to extract text or transcripts into a supported text-based source.  
+
+## Orchestration (Routing Between Intents and Question Answering)  
+In real bots, users mix commands and questions. A common pattern is to route each message to either language understanding (intent and entities) or question answering (answer from content).  
+
+A simple way to think about it:  
+- If the message is “Do something” → route to language understanding (intent and entities)  
+- If the message is “Tell me something” → route to question answering  
+- If it is unclear or ambiguous → ask one short clarifying question, then route  
+
+Example:  
+- “Reset my password” is a request to do something, so it routes to intent and entities.  
+- “What is your return policy?” is asking for information, so it routes to question answering.  
+
+> [!NOTE]  
+> Orchestration is about choosing the right path for each user message, it is not a single capability that replaces intent models or question answering.  
+
