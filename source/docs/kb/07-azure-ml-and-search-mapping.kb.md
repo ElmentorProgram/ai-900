@@ -101,3 +101,31 @@ Naming notes (AKA, older names you may still see):
 
 > [!IMPORTANT]  
 > Text Analytics is a set of NLP capabilities for extracting signals from text. Like all NLP, it requires text input, so use OCR or document processing first for scanned documents.  
+
+## Speech and Translation  
+This section maps speech and translation concepts to Azure service families.  
+
+Concept → Service Family (Specific Capability Name)  
+- **Translation (Text → Text)** → Azure AI Translator (Text Translation)  
+- **Speech-to-Text (Audio → Text)** → Azure AI Speech (Speech to text)  
+- **Text-to-Speech (Text → Audio)** → Azure AI Speech (Text to speech)  
+- **Speech Translation (Audio → Translated text/voice)** → Azure AI Speech (Speech translation)  
+
+> [!IMPORTANT]  
+> Choose by input and output. Translator is text-to-text. Speech is used when audio is involved (speech-to-text, text-to-speech, speech translation).  
+
+Example (speech-to-speech translation):  
+A user speaks Spanish, and you want the system to reply in English audio. That typically means:  
+1) **Speech-to-text**: convert the Spanish audio into Spanish text.  
+2) **Translation**: translate Spanish text into English text.  
+3) **Text-to-speech**: convert the English text into English audio.  
+
+> [!NOTE]  
+> Even when a service offers “speech translation,” you can still think of it as these steps under the hood: speech recognition, translation, then speech synthesis.  
+
+What this means (capability and ML type):  
+- **Speech-to-text** is a **Speech AI capability**. ML type: supervised learning on labeled audio transcripts (the model learns audio-to-text patterns).  
+- **Translation (text-to-text)** is an **NLP capability**. ML type: supervised learning on bilingual text pairs (the model learns language-to-language mappings).  
+- **Text-to-speech** is a **Speech AI capability**. ML type: supervised learning on text and voice/audio pairs (the model learns text-to-audio generation).  
+
+So “speech-to-speech” is usually **multiple capabilities chained together**, each one solving a different task (audio → text, text → text, text → audio).  
