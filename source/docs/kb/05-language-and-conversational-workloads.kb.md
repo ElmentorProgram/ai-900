@@ -120,4 +120,19 @@ A simple decision rule:
 - Audio → Translated text or voice: Speech translation  
 
 > [!NOTE]  
-> Language detection can help you route text to the right translation workflow, but it is not the translation engine.  
+> Language detection can help you route text to the right translation workflow, but it is not the translation engine.
+
+## Speech (Speech-to-Text, Text-to-Speech)  
+Speech capabilities apply when the input or output involves spoken audio.  
+
+### Speech Recognition (Speech-to-Text)  
+Speech recognition converts audio into text.  
+Common uses include captions, transcripts, and turning spoken requests into text that can be processed by downstream language workflows.  
+
+### Speech Synthesis (Text-to-Speech)  
+Speech synthesis converts text into spoken audio.  
+Common uses include reading messages aloud, automated announcements, and voice responses in assistants.  
+
+> [!NOTE]  
+> Speech recognition is audio → text, and text-to-speech is text → audio.  
+
