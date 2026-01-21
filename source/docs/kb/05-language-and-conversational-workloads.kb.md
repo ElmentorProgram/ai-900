@@ -106,3 +106,18 @@ Example:
 > [!NOTE]  
 > Orchestration is about choosing the right path for each user message, it is not a single capability that replaces intent models or question answering.  
 
+
+## Translation (Text vs Speech Translation)  
+To support multilingual translation scenarios, choose the capability based on what format you start from.  
+
+- Translator is used for text-to-text translation (convert written text between languages).  
+- Speech is used for speech-related scenarios, including speech-to-text (transcription) and speech translation workflows.  
+
+A simple decision rule:  
+- Text → Text translation: Translator  
+- Audio → Text transcription: Speech to text  
+- Text → Audio voice: Text to speech  
+- Audio → Translated text or voice: Speech translation  
+
+> [!NOTE]  
+> Language detection can help you route text to the right translation workflow, but it is not the translation engine.  
