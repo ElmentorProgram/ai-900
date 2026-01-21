@@ -144,4 +144,17 @@ Common uses include reading messages aloud, automated announcements, and voice r
 - Text Analytics vs Question Answering: Text Analytics extracts signals (sentiment, entities, key phrases), Question Answering returns an answer from your curated content.  
 - Language detection vs translation: language detection identifies the language, it does not translate.  
 - Key phrase extraction vs entity recognition: key phrases are main topics/talking points, entities are named things (people, orgs, places, dates).  
-- Transcription vs summarization: speech-to-text creates a transcript, summarization is an NLP step you do after you have text.  
+- Transcription vs summarization: speech-to-text creates a transcript, summarization is an NLP step you do after you have text.
+
+## Azure Mapping (Concept → Azure Service Family)  
+This document is Vendor-Neutral. This section maps the concepts in this document to common Azure services so you can connect the ideas to real implementations.  
+
+Now let’s map the language concepts in this document to Azure services like **Concept → Service Family (Specific Capability Name)**:  
+- **Natural Language Processing (NLP)** → Azure AI Language (Language Services)  
+- **Text Analysis (Sentiment, Entities, Key Phrases, Language Detection)** → Azure AI Language (Text Analytics)  
+- **Language Understanding (Intent & Entities)** → Azure AI Language (CLU: Conversational Language Understanding)  
+- **Question Answering** → Azure AI Language (Question Answering)  
+- **Translation (Text → Text)** → Azure AI Translator (Text Translation)  
+- **Speech (Speech-to-Text, Text-to-Speech, Speech Translation)** → Azure AI Speech (Speech Services)  
+- **Bots and Channels (Bot Runtime/Connector)** → Azure AI Bot Service (Bot Service)  
+
