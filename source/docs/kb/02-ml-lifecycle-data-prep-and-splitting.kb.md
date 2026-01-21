@@ -131,23 +131,22 @@ Randomly splitting rows is a common default when each row is an independent exam
 
 However, random splitting is not always the best choice.
 
-> [!WARNING]
-> **Time-based split rule:** when data has time order, do not shuffle.
-> Train on **past** data and evaluate on **future** data, or your metric can look unrealistically good.
-
-> [!WARNING]
-> **Group split rule:** keep related records together.
-> If multiple rows come from the same user/patient/device/store, they must appear in **only one** of train/validation/test, or you leak identity patterns.
-
-
 ### Time-Based Split
 If data is **time-ordered**, you usually want to train on the past and evaluate on the future. This better matches real deployment, especially for “next month” style predictions.
 
 > [!IMPORTANT]
 > Random split is fine only when rows are independent, use time-based split for time-ordered data, use group-based split when multiple rows belong to the same user, patient, or device.
 
+> [!WARNING]
+> **Time-based split rule:** when data has time order, do not shuffle.
+> Train on **past** data and evaluate on **future** data, or your metric can look unrealistically good.
+
 ### Group-Based Split
 If rows are **grouped/related** (for example, multiple rows from the same user/patient/device), you usually want each group to stay in only one subset. This avoids the model seeing the same group in training and evaluation.
+
+> [!WARNING]
+> **Group split rule:** keep related records together.
+> If multiple rows come from the same user/patient/device/store, they must appear in **only one** of train/validation/test, or you leak identity patterns.
 
 ## Common Pitfalls (Leakage, Peeking, Ordering Bias, and Overfitting)
 
