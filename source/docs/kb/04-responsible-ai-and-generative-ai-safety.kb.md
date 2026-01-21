@@ -115,6 +115,11 @@ The practical outcome is that certain prompts and/or responses can be suppressed
 > [!NOTE]  
 > If the question is “at which layer do content filters suppress prompts and responses?” the answer is Safety system.  
 
+> [!WARNING]
+> **System messages and safety filters are not the same thing.**
+> A **system message** steers the assistant’s behavior (style, format, rules).
+> **Safety filters** block or restrict unsafe content, even if the system message asks for it.
+
 ### System Messages (How You Set Constraints & Style)  
 System messages define the model’s role, rules, tone, and constraints (the “how to respond” instructions).  
 You use them to set expectations like format, safety boundaries, refusal behavior, and response style.  
