@@ -275,7 +275,7 @@ Use **Clustering** when you want to group examples into **clusters** based on si
 A clustering model does not learn “the right answer” per row. Instead, it looks at patterns in the **features (X)** and discovers groups that tend to look alike.
 
 > [!NOTE]
-> Clusters are discovered first, then humans often interpret them. For example, “Cluster 1” might later be described as “high spenders”, but that name is an interpretation, not a label the model trained on.
+> Clustering is unsupervised that discovered first grouping pattern from X, then humans often interpret them or validate whether the clusters make sense using summaries and business sanity checks. For example, “Cluster 1” might later be described as “high spenders”, but that name is an interpretation, not a label the model trained on.
 
 ### What Data Clustering Needs
 
