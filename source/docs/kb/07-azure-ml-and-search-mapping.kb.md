@@ -87,6 +87,13 @@ In Azure, this commonly maps to:
 > [!NOTE]  
 > Computer vision can extract text/tags from a single image, but knowledge mining is about building a searchable index across lots of content (documents, images, metadata) so you can query it at scale.  
 
+**Knowledge Mining Pipeline (Search Enrichment Flow)**  
+- **Data source** (PDFs, Office files, images, blobs)  
+- **Indexer** pulls content into the pipeline  
+- **Skillset** enriches content (OCR, key phrases, entities, language detection)  
+- **Search index** stores searchable fields  
+- **Query** returns relevant results (often with filters & scoring)
+
 ## Language Workloads (Text Analytics, CLU, Question Answering)  
 This section maps common language concepts to Azure AI Language capabilities.  
 
