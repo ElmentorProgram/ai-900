@@ -176,6 +176,10 @@ If a field is only known **after** the real-world outcome happens, it must not b
 Example: You are predicting **will a patient be readmitted within 30 days?**  
 If your dataset includes **readmission_date** or **readmitted_flag**, those fields only exist **after** the readmission happens. Including them makes evaluation look great, but the model cannot rely on them in production.
 
+**Leakage Example**  
+You are predicting whether a loan will be repaid on time.  
+If you include a feature like **default_status** (Yes = not repaid on time, No = repaid on time) or **collections_started**, you are using information that is only known after the outcome happens.
+
 ### Peeking at the Test Set
 The **test set** is a final “unbiased” check. If you repeatedly check the test set during tuning, you turn it into part of your development loop and reduce trust in the final score.
 
