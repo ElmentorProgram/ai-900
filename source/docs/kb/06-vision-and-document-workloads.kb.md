@@ -58,6 +58,24 @@ OCR (Optical Character Recognition) is used when you need to read printed or han
 
 Document processing goes beyond OCR. It uses layout understanding to extract structured data from documents, such as key/value pairs and tables, not just raw text.  
 
+**Document Intelligence Model Ladder (Quick Choice)**  
+- **Read**: basic OCR text extraction.  
+- **Layout**: OCR & structure (lines, paragraphs, tables).  
+- **Prebuilt**: common document types (invoice, receipt, ID) with labeled fields.  
+- **Custom**: train for your own document type and your own fields.  
+
+**What Each Option Means**  
+- **Read**: just give me the text.  
+- **Layout**: give me the text & where it is on the page.  
+- **Prebuilt**: common doc type, extract the important labeled fields.  
+- **Custom**: unique doc, learn my fields.  
+
+**How The Ladder Relates To Models**  
+Each step in the ladder is a choice you make in Document Intelligence. Depending on the step, you are either using a general extraction model or operation, or selecting a specific document model.  
+- **Read & Layout**: general extraction model or operation (text only vs text & structure).  
+- **Prebuilt**: choose a ready-made model for a known document type (invoice, receipt, ID, etc.).  
+- **Custom**: create a model by training it for your document type & fields.
+
 > [!IMPORTANT]
 > **Low-resolution or poor scans can break extraction.**
 > Even if the service returns a value, it can be wrong (blur, skew, shadows, handwriting, cut-off pages).
