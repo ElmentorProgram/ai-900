@@ -348,6 +348,13 @@ A typical anomaly detection workflow looks like this:
 - Produce an **anomaly score** or a “normal vs abnormal” flag.  
 - Tune thresholds to balance false alarms vs missed issues.
 
+**Threshold Example (Same Model Scores, Different Decisions)**  
+Example: You are predicting whether a patient needs urgent follow-up. The model outputs a **risk score** (0 to 1) for each patient.  
+For 4 patients, the model outputs: **0.90, 0.70, 0.40, 0.20** (these are the model’s outputs).  
+- If you set threshold **0.50**, you flag **0.90** and **0.70** as urgent.  
+- If you set threshold **0.30**, you flag **0.90**, **0.70**, and **0.40** as urgent.  
+Same model, same scores. Only the **threshold** changed, so the final yes/no decisions changed.
+
 ### Common Approaches (High Level)
 
 Anomaly detection can be implemented in different ways depending on what data you have:
