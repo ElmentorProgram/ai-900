@@ -2,16 +2,17 @@
 
 This document is a Vendor-Neutral reference that maps the core concepts from the repo to common Azure service families and their key capabilities. Use it as a fast “which Azure service fits this concept” guide, not as a full product manual.  
 
-**This Document Covers**  
-- How To Read This Mapping (Concept → Service Family, Capability)  
-- Machine Learning (Training, Evaluation, Deployment)  
-- Azure Machine Learning (Designer, AutoML, Jobs, Endpoints)  
-- Knowledge Mining (Search, Indexing, Enrichment)  
-- Language Workloads (Text Analytics, CLU, Question Answering)  
-- Speech and Translation  
-- Vision, Face, and Custom Vision  
-- Document Processing (OCR, Key/Value, Tables)  
-- Summary  
+**This Document Covers**
+- How To Read This Mapping (Concept → Service Family, Capability)
+- Machine Learning (Training, Evaluation, Deployment)
+- Azure Machine Learning (Designer, AutoML, Jobs, Endpoints)
+- Azure AI Foundry (Apps/Agents workspace, Model Catalog, Evaluation, Deployments/Endpoints)
+- Knowledge Mining (Search, Indexing, Enrichment)
+- Language Workloads (Text Analytics, CLU, Question Answering)
+- Speech and Translation
+- Vision, Face, and Custom Vision
+- Document Processing (OCR, Key/Value, Tables)
+- Summary
 
 ## How To Read This Mapping (Concept → Service Family, Capability)  
 In Azure, you will often see AI services presented in two layers:  
@@ -73,6 +74,30 @@ AutoML automates repeated experimentation to find a strong model for your data. 
 
 > [!IMPORTANT]  
 > Training builds the model, inference uses the model to score new data. When a question asks how to call a deployed model, you are in the inference endpoint world (REST endpoint & key).  
+
+## Azure AI Foundry (Apps, Agents, Models, Evaluation)
+Azure AI Foundry is the Azure workspace for building AI apps and agents end-to-end.
+
+It helps you:
+- **Choose models & build experiences (apps, copilots, agents)** → Azure AI Foundry (Projects, Playgrounds, agent experiences)
+- **Discover and compare models** → Azure AI Foundry (Model catalog / model cards)
+- **Deploy models for inference** → Foundry Models (Deployments, endpoints)
+- **Evaluate quality and safety before shipping** → Azure AI Foundry (Evaluations: quality + risk/safety evaluators)
+
+### Azure AI Foundry Model Catalog (High-Level)
+The model catalog is where you discover, compare, and deploy models available in Foundry (Microsoft + third-party), organized by capability (chat/text, embeddings, image, speech).
+
+Concept → Service Family (Specific Capability Name)
+- **Chat/text generation** → Foundry Model Catalog (Chat models)
+- **Embeddings for semantic search / RAG** → Foundry Model Catalog (Embedding models)
+- **Deploy selected model** → Foundry Models (Deployment → inference endpoint)
+
+> [!IMPORTANT]
+> **Deploy** means creating an inference-ready deployment so apps can call an endpoint (URL + authentication).
+
+> [!NOTE]
+> Common build flow: **select model → deploy → test in Playground → integrate app → run evaluations**.
+
 
 ## Knowledge Mining (Search, Indexing, Enrichment)  
 Knowledge mining is used when the primary goal is to make large volumes of content searchable. The core idea is: build an index you can query, and enrich content so it becomes easier to search and filter.  
@@ -170,13 +195,13 @@ Naming notes (AKA, older names you may still see):
 > [!IMPORTANT]  
 > OCR is “get the text out.” Document processing is “get the text plus structure and fields out” (tables, key/value pairs, and document-specific fields).
 
-## Summary  
-You should now be able to:  
-- Read mappings in the format **Concept → Service Family (Specific Capability Name)** and recognize older Azure names you may still see.  
-- Map core ML build concepts to Azure ML terms like **jobs**, **Designer pipelines**, **AutoML experiments**, and **endpoints**.  
-- Recognize that knowledge mining maps to **Azure AI Search**, using indexing plus enrichment (skills) to make content searchable at scale.  
-- Map language concepts to Azure AI Language capabilities like **Text Analytics**, **CLU**, and **Question Answering**.  
-- Map translation and speech concepts to **Azure AI Translator** and **Azure AI Speech**, and understand why speech-to-speech is typically a pipeline (speech-to-text, translation, text-to-speech).  
-- Map vision concepts to **Azure AI Vision**, **Azure AI Face**, and **Azure AI Custom Vision**.  
-- Map document extraction concepts to **Azure AI Document Intelligence**, and distinguish OCR (Read) from structure and field extraction (Layout, prebuilt, custom).  
-
+## Summary
+You should now be able to:
+- Read mappings in the format **Concept → Service Family (Specific Capability Name)** and recognize older Azure names you may still see.
+- Map core ML build concepts to Azure ML terms like **jobs**, **Designer pipelines**, **AutoML experiments**, and **endpoints**.
+- Map GenAI build-and-ship concepts to **Azure AI Foundry**: use the **model catalog** to discover models, run **evaluations** (including quality and safety checks), and **deploy** models to endpoints for inference.
+- Recognize that knowledge mining maps to **Azure AI Search**, using indexing plus enrichment (skills) to make content searchable at scale.
+- Map language concepts to Azure AI Language capabilities like **Text Analytics**, **CLU**, and **Question Answering**.
+- Map translation and speech concepts to **Azure AI Translator** and **Azure AI Speech**, and understand why speech-to-speech is typically a pipeline (speech-to-text, translation, text-to-speech).
+- Map vision concepts to **Azure AI Vision**, **Azure AI Face**, and **Azure AI Custom Vision**.
+- Map document extraction concepts to **Azure AI Document Intelligence**, and distinguish OCR (Read) from structure and field extraction (Layout, prebuilt, custom).
