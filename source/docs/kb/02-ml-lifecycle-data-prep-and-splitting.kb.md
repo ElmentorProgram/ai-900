@@ -59,13 +59,14 @@ A dataset is typically organized as:
 - **Rows = examples/records** (each row is one case)
 - **Columns = fields/features** (inputs) plus the **label/target** (what you predict)
 
-Each row typically includes:
-- **Features (X):** the input fields the model uses
-- **Label (y):** the outcome/target you want to predict
-
 When you build a model, each row should contain:
 - **Features (inputs):** information available at prediction time (what you know before the outcome happens)
 - **Label (target):** the value you want the model to predict
+
+A good feature:
+- Has a meaningful relationship to the target  
+- Is available at the time you will make the prediction  
+- Helps the model generalize to new data  
 
 Things to avoid:
 - **Using the target as an input**
@@ -130,6 +131,8 @@ It does not answer the evaluation question: “Will this model generalize to new
 ### Random Split  
 Randomly splitting rows is a common default when each row is an **independent** example. It helps create training and evaluation subsets that are similar in distribution, so evaluation reflects the same kind of data the model will see in real life.  
 
+Random splitting is a common default because it usually keeps train and evaluation sets similar in distribution and provides a fair estimate of performance on unseen examples.
+
 However, random splitting is not always the best choice.
 
 > [!IMPORTANT]
@@ -139,6 +142,11 @@ However, random splitting is not always the best choice.
 - **Random Split**: shuffle and split when rows are independent.  
 - **Time-Based Split**: train on past data, test on future data.  
 - **Group-Based Split**: keep the same user/patient/device in only one split.
+
+Typical starting splits:
+- **80/20** (train/test) for quick experiments  
+- **70/15/15** (train/validation/test) for disciplined tuning  
+- **60/20/20** when data is large and you want a stronger evaluation signal  
 
 ### Time-Based Split
 If data is **time-ordered**, you usually want to train on the past and evaluate on the future. This better matches real deployment, especially for “next month” style predictions.
@@ -159,7 +167,6 @@ If multiple rows come from the same user/patient/device/store, they must appear 
 **Group Split Example**  
 A patient has 6 visits in your dataset. All 6 visits must go into **only one** split (train or validation or test).  
 If the same patient appears in both train and test, the model can memorize that patient’s patterns.
-
 
 ## Common Pitfalls (Leakage, Peeking, Ordering Bias, and Overfitting)
 
