@@ -92,12 +92,14 @@ In many solutions, face detection can also return face-related attributes, depen
 > It is **not** used for counting people, detecting accessories, estimating age/emotion, or recognizing celebrities.
 > If the task is detecting objects/attributes in an image, use **Computer Vision** (or other vision capabilities), not Face verification.
 
-Example (faces and sunglasses rule):  
-If you want to automatically keep only photos that:  
-- include one or more faces, and  
-- include at least one person wearing sunglasses,  
-then you are doing face detection and reading face-related attributes, so you can apply a rule like:  
-“Face count ≥ 1” AND “At least one detected face indicates sunglasses.”  
+- **Example (Faces and Sunglasses Rule)**  
+  If you want to automatically keep only photos that meet **both** of these conditions:  
+  - The photo includes **one or more faces**.  
+  - **At least one** detected person is **wearing sunglasses**.  
+
+  Then you’re doing **face detection** and reading **face-related attributes**, so you can apply a rule like:  
+ **Face count ≥ 1** AND **At least one detected face indicates sunglasses**
+ 
 
 ### Face Verification (Match Two Faces, Same Person or Not)  
 Face verification answers a different question:  
@@ -111,7 +113,7 @@ Verification is used for identity matching (one face compared to another), not f
 > [!WARNING]  
 > If your goal is “detect faces and check sunglasses,” verification is the wrong task type. It will not reliably answer “who is wearing sunglasses” or “how many faces are present.”  
 
-### Face tasks (quick map)
+### Face Tasks (Quick Map)
 - **Detection**: find faces and their locations in an image.
 - **Verification**: compare two faces and decide if they are the same person.
 - **Identification**: match a face against a known set of people.
