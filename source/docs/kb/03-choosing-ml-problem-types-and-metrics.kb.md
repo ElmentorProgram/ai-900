@@ -266,6 +266,13 @@ This is why “positive” should be defined clearly before reading metrics.
 > When positives are rare, **Precision-Recall** curves often show performance more clearly than ROC.
 > ROC can look “good” even when precision is low, because true negatives dominate.
 
+**Threshold Example (Same Model Scores, Different Decisions)**  
+Example: You are predicting whether a patient needs urgent follow-up. The model outputs a **risk score** (0 to 1) for each patient.  
+For 4 patients, the model outputs: **0.90, 0.70, 0.40, 0.20** (these are the model’s outputs).  
+- If you set threshold **0.50**, you flag **0.90** and **0.70** as urgent.  
+- If you set threshold **0.30**, you flag **0.90**, **0.70**, and **0.40** as urgent.  
+Same model, same scores. Only the **threshold** changed, so the final yes/no decisions changed.
+
 ### Accuracy: When It Misleads
 Accuracy can be misleading when the dataset is **imbalanced** (most examples are from one class). A model can look “high accuracy” by mostly predicting the majority class, while doing a poor job on the rare class you actually care about.
 
@@ -347,13 +354,6 @@ A typical anomaly detection workflow looks like this:
 - Choose what you will detect anomalies in (transactions, sensors, logs, images).  
 - Produce an **anomaly score** or a “normal vs abnormal” flag.  
 - Tune thresholds to balance false alarms vs missed issues.
-
-**Threshold Example (Same Model Scores, Different Decisions)**  
-Example: You are predicting whether a patient needs urgent follow-up. The model outputs a **risk score** (0 to 1) for each patient.  
-For 4 patients, the model outputs: **0.90, 0.70, 0.40, 0.20** (these are the model’s outputs).  
-- If you set threshold **0.50**, you flag **0.90** and **0.70** as urgent.  
-- If you set threshold **0.30**, you flag **0.90**, **0.70**, and **0.40** as urgent.  
-Same model, same scores. Only the **threshold** changed, so the final yes/no decisions changed.
 
 ### Common Approaches (High Level)
 
