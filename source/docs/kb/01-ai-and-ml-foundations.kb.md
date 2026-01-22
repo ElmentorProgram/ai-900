@@ -9,6 +9,8 @@ This document introduces the core AI concepts and the most common AI workloads. 
 - Common Confusions (Choose This, Not That)  
 - Azure Mapping (Concept → Azure Service Family)  
 - Summary
+
+
 ## Core Definitions
 
 - **Artificial Intelligence (AI):** systems that perform tasks that usually require human intelligence (perception, language, reasoning, decision support).  
@@ -18,6 +20,11 @@ This document introduces the core AI concepts and the most common AI workloads. 
 - **Prompts:** users interact with generative AI language models through prompts - natural language statements of questions.  
 - **Language Models:** models encapsulate semantic relationships between language elements (that’s what enables them to generate a meaningful sequence of text).  
 - **LLMs vs SLMs:** LLMs are powerful and generalize well but can be more costly; SLMs tend to work well in more focused scenarios or when you need small models for local applications and agents on devices.
+- **Vectorization (Embeddings):** vectorization maps words (or sentences/documents) into numerical vectors so that items with similar meaning become close to each other (e.g., “plant” and “flower” are closer than “airplane”). This is the core idea behind embeddings: represent language as vectors so you can compare similarity.  
+- **Frequency analysis / N-grams vs Embeddings:** frequency analysis and N-grams count occurrences and patterns, and lemmatization normalizes word forms; these techniques support text processing but do not create semantic vector spaces the way embeddings do.  
+
+**Embeddings Example (Similarity Intuition)**  
+A search for **plant** will often return text about **flower** before text about **airplane**, because embeddings place related meanings closer together in vector space.
 
 > [!IMPORTANT]
 > AI is the umbrella, ML is one way to build AI by learning patterns from data, Deep Learning is a neural-network approach inside ML, Generative AI generates new content from prompts.
