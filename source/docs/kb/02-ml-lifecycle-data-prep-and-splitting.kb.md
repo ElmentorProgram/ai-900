@@ -131,11 +131,18 @@ Randomly splitting rows is a common default when each row is an independent exam
 
 However, random splitting is not always the best choice.
 
-### Time-Based Split
-If data is **time-ordered**, you usually want to train on the past and evaluate on the future. This better matches real deployment, especially for “next month” style predictions.
-
 > [!IMPORTANT]
 > Random split is fine only when rows are independent, use time-based split for time-ordered data, use group-based split when multiple rows belong to the same user, patient, or device.
+
+**Knowledge Mining Pipeline (Search Enrichment Flow)**  
+- **Data source** (PDFs, Office files, images, blobs)  
+- **Indexer** pulls content into the pipeline  
+- **Skillset** enriches content (OCR, key phrases, entities, language detection)  
+- **Search index** stores searchable fields  
+- **Query** returns relevant results (often with filters & scoring)
+
+### Time-Based Split
+If data is **time-ordered**, you usually want to train on the past and evaluate on the future. This better matches real deployment, especially for “next month” style predictions.
 
 > [!WARNING]
 > **Time-based split rule:** when data has time order, do not shuffle.
