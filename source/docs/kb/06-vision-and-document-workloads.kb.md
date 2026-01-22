@@ -111,6 +111,14 @@ Verification is used for identity matching (one face compared to another), not f
 > [!WARNING]  
 > If your goal is “detect faces and check sunglasses,” verification is the wrong task type. It will not reliably answer “who is wearing sunglasses” or “how many faces are present.”  
 
+### Face tasks (quick map)
+- **Detection**: find faces and their locations in an image.
+- **Verification**: compare two faces and decide if they are the same person.
+- **Identification**: match a face against a known set of people.
+- **Find similar**: find faces that look similar to a given face.
+- **Grouping**: cluster faces that likely belong to the same person.
+
+
 ## Custom Vision (When You Need Your Own Labels)  
 Sometimes “general vision” outputs like tags or captions are not specific enough. If you need the system to recognize your own categories (your product types, competitor SKUs, defect categories), you typically need a custom vision model trained on your labeled examples.  
 
