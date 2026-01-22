@@ -436,18 +436,15 @@ Examples:
 - Using the target as an input feature (sale price used to predict sale price).  
 - Using information that is only known after the outcome happens.
 
-### Feature Engineering vs Feature Selection (Common Confusion)
+### Feature Engineering vs Feature Selection (Common Confusion)  
 
-These two sound similar, but they mean different actions.
-
-**Feature engineering** means you **create new features** or transform raw data into more useful signals.
-
-**Feature selection** means you **choose which features to keep** and drop the rest.
+These two sound similar, but they mean different actions.   
+**Feature engineering** means you **create new features** or transform raw data into more useful signals.   
+**Feature selection** means you **choose which features to keep** and drop the rest.  
 
 #### Example (Real Data Feel): Predicting House Sale Price (Regression)
 
-Imagine a dataset where each row is one house sale, and your label is:
-
+Imagine a dataset where each row is one house sale, and your label is:   
 - `SalePrice` = the actual price (a number)
 
 Raw fields might include:
