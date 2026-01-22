@@ -127,7 +127,8 @@ It does not answer the evaluation question: “Will this model generalize to new
 
 ## Split Patterns and When Random Split Fails (Time-Based and Group-Based)
 
-Randomly splitting rows is a common default when each row is an independent example. It helps create training and evaluation subsets that are similar in distribution, so evaluation reflects the same kind of data the model will see in real life.
+### Random Split  
+Randomly splitting rows is a common default when each row is an **independent** example. It helps create training and evaluation subsets that are similar in distribution, so evaluation reflects the same kind of data the model will see in real life.  
 
 However, random splitting is not always the best choice.
 
@@ -135,6 +136,7 @@ However, random splitting is not always the best choice.
 > Random split is fine only when rows are independent, use time-based split for time-ordered data, use group-based split when multiple rows belong to the same user, patient, or device.
 
 **Special Splitting Cases (When Random Split Fails)**  
+- **Random Split**: shuffle and split when rows are independent.  
 - **Time-Based Split**: train on past data, test on future data.  
 - **Group-Based Split**: keep the same user/patient/device in only one split.
 
@@ -145,26 +147,26 @@ If data is **time-ordered**, you usually want to train on the past and evaluate 
 > **Time-based split rule:** when data has time order, do not shuffle.
 > Train on **past** data and evaluate on **future** data, or your metric can look unrealistically good.
 
+**Time-Based Split Example**  
+Train on data from **Jan–Sep**, validate on **Oct**, and test on **Nov–Dec**.  
+This simulates the real world: you predict the future using only the past.
+
 ### Group-Based Split
 If rows are **grouped/related** (for example, multiple rows from the same user/patient/device), you usually want each group to stay in only one subset. This avoids the model seeing the same group in training and evaluation.
 
-> [!WARNING]
-> **Group split rule:** keep related records together.
-> If multiple rows come from the same user/patient/device/store, they must appear in **only one** of train/validation/test, or you leak identity patterns.
+If multiple rows come from the same user/patient/device/store, they must appear in **only one** of train/validation/test, or you leak identity patterns.
 
 ## Common Pitfalls (Leakage, Peeking, Ordering Bias, and Overfitting)
 
 This section highlights common mistakes that make evaluation unreliable, and how those mistakes can hide problems like overfitting or underfitting.
 
-> [!WARNING]
-> Leakage and peeking make metrics look better than real life, you must keep anything that reveals the answer out of training, and keep the test set untouched until the end.
+Leakage and peeking make metrics look better than real life, you must keep anything that reveals the answer out of training, and keep the test set untouched until the end.
 
 ### Data Leakage
 Data leakage happens when evaluation information accidentally influences training. A common example is using the **target** as an input feature, which makes performance look unrealistically strong.
 
-> [!WARNING]
-> **Data leakage = using information you would not have at prediction time.**
-> If a field is only known **after** the real-world outcome happens, it must not be used as a feature.
+**Data leakage = using information you would not have at prediction time.**  
+If a field is only known **after** the real-world outcome happens, it must not be used as a feature.
 
 Example: You are predicting **will a patient be readmitted within 30 days?**  
 If your dataset includes **readmission_date** or **readmitted_flag**, those fields only exist **after** the readmission happens. Including them makes evaluation look great, but the model cannot rely on them in production.
@@ -172,14 +174,18 @@ If your dataset includes **readmission_date** or **readmitted_flag**, those fiel
 ### Peeking at the Test Set
 The **test set** is a final “unbiased” check. If you repeatedly check the test set during tuning, you turn it into part of your development loop and reduce trust in the final score.
 
+Rule: check the test set only at the end, after finalizing your model decisions.
+
 ### Ordering Bias (Non-Random Splits on Ordered Data)
 If data is time-ordered and you do a non-random split without thinking, early rows can differ from later rows (seasonality, collection changes), which can bias evaluation.
+
+Rule: when time order matters, use a time-based split so evaluation reflects real-world prediction.
 
 ### Overfitting and Underfitting (What Splits Help You See)
 Splitting data helps you detect whether the model is learning general patterns or not:
 
 - **Overfitting:** performance looks strong on the **training set** but drops on **validation/test** (the model memorized training examples instead of generalizing).  
-- **Underfitting:** performance is weak on both the **training set** and **validation/test** (the model did not learn useful patterns).
+- **Underfitting:** performance is weak on both the **training set** and **validation/test** (the model did not learn useful patterns).  
 
 ## Summary
 
