@@ -156,6 +156,11 @@ If rows are **grouped/related** (for example, multiple rows from the same user/p
 
 If multiple rows come from the same user/patient/device/store, they must appear in **only one** of train/validation/test, or you leak identity patterns.
 
+**Group Split Example**  
+A patient has 6 visits in your dataset. All 6 visits must go into **only one** split (train or validation or test).  
+If the same patient appears in both train and test, the model can memorize that patient’s patterns.
+
+
 ## Common Pitfalls (Leakage, Peeking, Ordering Bias, and Overfitting)
 
 This section highlights common mistakes that make evaluation unreliable, and how those mistakes can hide problems like overfitting or underfitting.
