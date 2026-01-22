@@ -245,9 +245,14 @@ This is why “positive” should be defined clearly before reading metrics.
   Example: there are 50 real fraud cases, model catches 30: recall = 30/50 = **60%**.  
   Real-life: you care about recall when missing a positive is costly (for example, catching disease in medical screening).
 
-- **F1 Score:** balances precision and recall into one number.  
-  Example: if precision is 75% and recall is 60%, F1 is a single combined score that will be between them (closer to the smaller one).  
-  Real-life: useful when you need both precision and recall and want one summary number.
+- **Precision vs Recall (Fraud Alerts):** shows the tradeoff between “when we alert, how often we are right” vs “how many real fraud cases we catch.”  
+  Numeric example: you have **1000** transactions, and **10** are actually fraud.  
+  - The model flags **20** transactions as fraud.  
+  - **8** flagged are truly fraud (**TP = 8**).  
+  - **12** flagged are not fraud (**FP = 12**).  
+  So:  
+  - **Precision** = 8 / 20 = **0.40** (when we alert, how often we are right).  
+  - **Recall** = 8 / 10 = **0.80** (how many of the real fraud cases we caught).
 
 - **AUC (Area Under ROC Curve):** measures how well the model **ranks positives above negatives** across all possible thresholds.  
   Numeric example (scores 0 to 1): suppose you have 5 fraud cases and 5 legitimate cases.  
@@ -260,6 +265,10 @@ This is why “positive” should be defined clearly before reading metrics.
   - If you choose threshold **0.80**, you only flag scores ≥ 0.80 as fraud (stricter, fewer false alarms).  
   - If you choose threshold **0.50**, you flag more transactions (catch more fraud, but more false alarms).  
   AUC is useful because it evaluates the model’s separation quality **before** you pick the threshold.
+
+- **F1 Score:** balances precision and recall into one number.  
+  Example: if precision is 75% and recall is 60%, F1 is a single combined score that will be between them (closer to the smaller one).  
+  Real-life: useful when you need both precision and recall and want one summary number.
 
 > [!IMPORTANT]
 > **ROC vs PR:**
