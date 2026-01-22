@@ -107,7 +107,8 @@ In Azure, this commonly maps to:
 - **Indexers** → automated ingestion from data sources into a search index  
 - **AI enrichment (skills)** → extract and enrich content during indexing, for example:  
   - OCR text extraction from documents and images  
-  - Entity recognition and key phrase extraction for better search filters and retrieval  
+  - Entity recognition and key phrase extraction for better search filters and retrieval
+- **Querying & relevance** → Azure AI Search query features (filters/facets, semantic ranking, vector search)
 
 > [!NOTE]  
 > Computer vision can extract text/tags from a single image, but knowledge mining is about building a searchable index across lots of content (documents, images, metadata) so you can query it at scale.  
