@@ -30,6 +30,11 @@ These are common in real projects, but they go beyond the foundational scope of 
 - **Forecasting:** predicting future values over time (often treated as regression, but requires time-aware evaluation).
 - **Recommendation and Ranking:** selecting or ordering items (often built using classification/regression ideas, but used for “top N” decisions).
 
+**Metric Family Chooser (Do Not Mix Families)**  
+- **Classification**: Accuracy, Precision, Recall, F1, ROC AUC, PR AUC.  
+- **Regression**: MAE, MSE/RMSE, R².  
+- **Clustering**: Silhouette (when labels are not available).  
+- **Anomaly Detection**: depends on whether you have labels (often precision/recall style evaluation).
 
 ## How to Choose the Problem Type (Decision Rules)
 
