@@ -29,6 +29,12 @@ NLP shows up in scenarios like analyzing customer reviews, extracting key topics
 > [!NOTE]  
 > NLP works on text. If your input is a scanned image or PDF, you usually need OCR or document processing first to extract text, then you can run NLP on the extracted text.  
 
+**Language Workload Router (Pick The Right Capability)**  
+- If you need **key phrases, sentiment, language detection, entity recognition** → **Text Analytics**  
+- If you need **intents & slots from user messages** → **CLU**  
+- If you need **answers from a knowledge base** → **Question Answering**  
+- If you need **translate text or speech** → **Translation**
+
 ## Text Analytics Capabilities (Sentiment, Key Phrases, Entities, Language Detection)  
 Text analytics capabilities help you extract useful signals from text so it can be searched, categorized, routed, or summarized for humans.
 
