@@ -254,6 +254,16 @@ This is why “positive” should be defined clearly before reading metrics.
   - **Precision** = 8 / 20 = **0.40** (when we alert, how often we are right).  
   - **Recall** = 8 / 10 = **0.80** (how many of the real fraud cases we caught).
 
+- **ROC vs PR (Rare Positives):** shows why PR is often more informative than ROC when positives are rare (ROC can look fine because true negatives are so common).  
+  Numeric example: you have **10,000** transactions, and only **100** are actually fraud (**1%**).  
+  - The model flags **500** transactions as fraud.  
+  - **50** flagged are truly fraud (**TP = 50**).  
+  - **450** flagged are not fraud (**FP = 450**).  
+  So:  
+  - **Precision** = 50 / 500 = **0.10** (when we alert, how often we are right).  
+  - **Recall** = 50 / 100 = **0.50** (how many of the real fraud cases we caught).  
+  With rare positives, PR makes this pain obvious (low precision), even if ROC looks acceptable.
+
 - **AUC (Area Under ROC Curve):** measures how well the model **ranks positives above negatives** across all possible thresholds.  
   Numeric example (scores 0 to 1): suppose you have 5 fraud cases and 5 legitimate cases.  
   - Fraud scores: **0.95, 0.90, 0.80, 0.70, 0.60**  
