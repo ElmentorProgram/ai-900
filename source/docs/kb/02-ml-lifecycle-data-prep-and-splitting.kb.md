@@ -82,6 +82,8 @@ When you build an AI model, you want it to make good predictions on **new data y
 
 If you test the model on the same examples it learned from, the score isn’t trustworthy.
 
+**Example:** Training is like studying from practice questions; evaluation is like taking a mock exam with different questions. If you reuse the same questions, the score isn’t trustworthy.
+
 > [!IMPORTANT]
 > Splitting is how you simulate real life, train on one set of rows, evaluate on different unseen rows, if you evaluate on training rows, the score is not trustworthy.
 
