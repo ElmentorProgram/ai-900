@@ -38,6 +38,8 @@ A search for **plant** will often return text about **flower** before text about
 
 Start with two questions:
 
+A workload is the type of AI task you are trying to solve (vision, language, document extraction, ML prediction, etc.). You choose it by matching the data you have to the output you need.
+
 1) What is the **input**?
 - Images/video → usually **Computer Vision**
 - Text/documents → usually **Natural Language Processing (NLP)** or **Document Processing**
@@ -50,10 +52,15 @@ Start with two questions:
 - Groups/segments → **Clustering** (ML)
 - Unusual/rare events → **Anomaly Detection**
 - Extracted text/fields/tables → **Document Processing**
+- Searchable results from lots of content → **Knowledge Mining**
+- Generated text/content → **Generative AI**
 - Answer a user in chat → **Conversational AI**
 
-> [!IMPORTANT]
+The same input can support different workloads depending on the output you need.
+
+> [!IMPORTANT]  
 > Start from the workload, input type and output need, then map to the service, don’t start from the Azure service name and work backwards.
+
 
 ## Workloads and What They Do
 
