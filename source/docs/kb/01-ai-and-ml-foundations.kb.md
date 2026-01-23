@@ -68,6 +68,7 @@ The same input can support different workloads depending on the output you need.
 - **Classification:** predicts a **label/category** (for example: yes/no, fraud/not fraud, class A/B/C).  
 - **Regression:** predicts a **numeric value** (a number).  
 - **Clustering:** groups data into **clusters** without predefined labels (you do not have labels and want the algorithm to discover structure).
+- Classification & regression are usually **supervised** (you have labels). Clustering is usually **unsupervised** (no labels).  
 
 > [!NOTE]
 > Machine Learning is for predicting labels or numbers from features, Computer Vision is for visual input, NLP is for meaning in text, Document Processing is for extracting text, fields, and tables from documents, Knowledge Mining is for making large content searchable.
@@ -87,6 +88,22 @@ Common capabilities include:
 - **Summarization**
 
 Text analysis scenarios include analyzing documents or transcripts to determine key subjects and mentions of people/places/organizations/products, analyzing social media or reviews to evaluate sentiment and opinion, and implementing chatbots that can answer frequently asked questions or orchestrate predictable conversational dialogs that don’t require the complexity of generative AI.
+
+If the input is a **scanned PDF/image**, you usually need **OCR/document processing first** to extract text, then you can run NLP on the extracted text.
+
+### Knowledge Mining
+Knowledge mining is an AI workload whose primary purpose is to make large volumes of content searchable.
+
+What it usually looks like:
+- Use a search service to build an index you can query
+- Use indexers and AI enrichment to extract and enrich content so it becomes searchable, including extracting text from documents and images (OCR) and extracting entities and key phrases
+
+A simple pipeline view:
+- **Data source** (documents, images, blobs)  
+- **Indexing** pulls content into an index  
+- **Enrichment** extracts signals (OCR, key phrases, entities)  
+- **Search index** stores searchable fields  
+- **Query** returns relevant results  
 
 ### Generative AI Scenarios
 Common uses of generative AI include implementing AI agents that assist human users by providing information or automating tasks, creating new documents or other content, automated translation of text between languages, and summarizing or explaining complex documents.
@@ -163,12 +180,6 @@ Typical workflow:
 - It returns extracted text, detected fields as key/value pairs, and extracted tables
 - Your app validates and maps results into your database or business process
 
-### Knowledge Mining
-Knowledge mining is an AI workload whose primary purpose is to make large volumes of content searchable.
-
-What it usually looks like:
-- Use a search service to build an index you can query
-- Use indexers and AI enrichment to extract and enrich content so it becomes searchable, including extracting text from documents and images (OCR) and extracting entities and key phrases
 ## Common Confusions (Choose This, Not That)
 
 - **OCR / Document Processing vs NLP:** OCR and document processing extract text and structure from images/PDFs; NLP analyzes meaning after you have text.  
