@@ -125,8 +125,8 @@ Examples:
 
 When you build an AI model, you want it to make good predictions on **new data you haven’t seen yet** (real life). So you separate **the data** (by splitting it) to support two activities:
 
-- **Learning (Training):** give the model many examples so it can learn patterns that connect the inputs to the outcome you care about.
-- **Checking (Evaluation/Testing):** test whether it learned a general rule, or if it just memorized the training examples, by evaluating it on different examples it did not learn from.
+- **Learning (Training):** give the model many examples so it can learn patterns that connect the inputs to the outcome you care about  
+- **Checking (Evaluation/Testing):** test whether it learned a general rule, or if it just memorized the training examples, by evaluating it on different examples it did not learn from  
 
 If you test the model on the same examples it learned from, the score isn’t trustworthy.
 
@@ -138,19 +138,20 @@ If you test the model on the same examples it learned from, the score isn’t tr
 A proper split holds out **examples (rows)** so evaluation reflects performance on **new cases**, while keeping the same set of input fields available in both training and evaluation.
 
 ### Why There Are Multiple Sets
-Even though there are two activities (learning and checking), the “checking” activity is commonly split into two sets:
+Even though there are two activities (learning and checking), the **checking** activity is commonly split into two sets:
 
-- **Validation set:** used during development to compare model versions and tune settings.
-- **Test set:** a final “unbiased” check on unseen examples after decisions are made.
+- **Validation set:** used during development to compare model versions and tune settings  
+- **Test set:** a final **unbiased** check on unseen examples after decisions are made  
 
 Key sets:
-- **Training set:** examples used to learn patterns.
-- **Validation set:** examples used during development to compare model versions and tune settings.
-- **Test set:** a final “unbiased” check on unseen examples after decisions are made.
+- **Training set:** examples used to learn patterns  
+- **Validation set:** examples used during development to compare model versions and tune settings  
+- **Test set:** a final **unbiased** check on unseen examples after decisions are made  
 
 > [!WARNING]
-> Do not use the test set during tuning, if you keep “checking” the test set and making decisions, it stops being an unbiased final check.
+> Do not use the test set during tuning, if you keep checking the test set and making decisions, it stops being an unbiased final check.
 
+A simple mental mapping: **Train = learn**, **Validation = tune**, **Test = final check**.
 
 ## How Splitting Works (Rows vs Columns)
 
