@@ -263,15 +263,18 @@ Splitting data helps you detect whether the model is learning general patterns o
 - **Overfitting:** performance looks strong on the **training set** but drops on **validation/test** (the model memorized training examples instead of generalizing)  
 - **Underfitting:** performance is weak on both the **training set** and **validation/test** (the model did not learn useful patterns)  
 
-
 ## Summary
 
 You should now be able to:
-- Understand the end-to-end ML lifecycle and where **data** fits.
-- Explain how data flows from **ingestion** and **preparation** through **splitting**, **training**, and **deployment**.
-- Explain where **Data ingestion** and **Data preparation** fit in the ML lifecycle.
-- Describe **features**, **labels**, and why **IDs** and **targets** are not safe inputs.
-- Explain why we split data into **training**, **validation**, and **test** sets.
-- Split correctly by **rows** (not columns) to simulate performance on unseen examples.
-- Choose **time-based** and **group-based** splits when random splitting is not appropriate.
-- Recognize pitfalls like **leakage**, **peeking**, **ordering bias**, and how splits reveal **overfitting** and **underfitting**.
+- Understand the end-to-end ML lifecycle and where **data** fits  
+- Explain how data flows from **Data Ingestion** & **Data Preparation** through **splitting**, **training**, & **deployment**  
+- Explain where **Data Ingestion** and **Data Preparation** fit in the ML lifecycle  
+- Describe **features**, **labels**, and why **IDs** and **targets** are not safe inputs  
+- Explain why we split data into **training**, **validation**, and **test** sets  
+- Split correctly by **rows** (not columns) to simulate performance on unseen examples  
+- Choose **time-based** and **group-based** splits when random splitting is not appropriate  
+- Use a **stratified** split for imbalanced classification so each subset keeps a similar class ratio  
+- Recognize pitfalls like **leakage**, **peeking**, **ordering bias**, and how splits reveal **overfitting** and **underfitting**  
+- Distinguish **Data Ingestion** from **Inference (Scoring)** and understand why they belong to different lifecycle stages  
+- Explain why larger models typically require more **training compute** and more **inference compute**  
+
