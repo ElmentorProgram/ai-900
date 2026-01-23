@@ -89,11 +89,11 @@ Some actions happen after preparation:
 Before you can train a model, you need a dataset that represents the problem you are trying to solve. In supervised learning, each example contains inputs the model can use and an outcome you want the model to predict. The goal is to choose inputs that will still be available when you use the model in real life.
 
 Example (mapping the terms):
-- Imagine you want to predict **house sale price**.
-- One **row (example/record)** could represent **one house sale**.
-- The **columns** are the fields in that row.
-- The **features (inputs, X)** could include living area, number of bedrooms/bathrooms, neighborhood, and property age.
-- The **label (target, y)** is the sale price.
+- Imagine you want to predict **house sale price**
+- One **row (example/record)** could represent **one house sale**
+- The **columns** are the fields in that row
+- The **features (inputs, X)** could include living area, number of bedrooms/bathrooms, neighborhood, and property age
+- The **label (target, y)** is the sale price
 
 A dataset is typically organized as:
 - **Rows = examples/records** (each row is one case)
@@ -108,10 +108,15 @@ A good feature:
 - Is available at the time you will make the prediction  
 - Helps the model generalize to new data  
 
+- If a field is only known **after** the outcome happens, it is not a safe feature for training or evaluation
+
 Things to avoid:
 - **Using the target as an input**
 - **Using IDs as features**
 - **Using dataset-level totals** when predicting a per-row outcome
+
+- **IDs as features:** `CustomerID`, `OrderID`, `DeviceID`, `TicketID` can let the model memorize identity patterns instead of learning general rules  
+- **Dataset-level totals:** using “total monthly revenue” to predict “this row’s sale price” mixes global information into each row and can inflate evaluation  
 
 > [!NOTE]
 > **Features go in; label comes out.** Example (Loan Approval): **Features** (credit_score=720, income=£55k, debt_to_income=0.28, missed_payments_12m=0) → **Label** (“Approve” | “Reject” | “Review”)
