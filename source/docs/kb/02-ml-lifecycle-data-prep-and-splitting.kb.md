@@ -28,7 +28,7 @@ A typical end-to-end lifecycle looks like:
 - **Deploy & Monitor:** deploy as an **endpoint/service**, then monitor **errors**, **data drift**, and **performance drift**
 
 > [!NOTE]
-> **Data Ingestion** means collecting/loading data into your pipeline. **Inference (Scoring)** means using a trained model to make predictions.
+> **Data Ingestion** means collecting/loading data into your pipeline. It doesn't prove the model is good, evaluation happens after training using held-out data. **Inference (Scoring)** means using a trained model to make predictions.
 
 ### Training vs Inference Compute (Why It Matters)
 
