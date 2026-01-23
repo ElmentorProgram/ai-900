@@ -104,10 +104,9 @@ When you build a model, each row should contain:
 - **Label (target):** the value you want the model to predict
 
 A good feature:
-- Has a meaningful relationship to the target  
-- Is available at the time you will make the prediction  
-- Helps the model generalize to new data  
-
+- Has a meaningful relationship to the target
+- Is available at the time you will make the prediction
+- Helps the model generalize to new data
 - If a field is only known **after** the outcome happens, it is not a safe feature for training or evaluation
 
 Things to avoid:
@@ -115,8 +114,9 @@ Things to avoid:
 - **Using IDs as features**
 - **Using dataset-level totals** when predicting a per-row outcome
 
+Examples:
 - **IDs as features:** `CustomerID`, `OrderID`, `DeviceID`, `TicketID` can let the model memorize identity patterns instead of learning general rules  
-- **Dataset-level totals:** using “total monthly revenue” to predict “this row’s sale price” mixes global information into each row and can inflate evaluation  
+- **Dataset-level totals:** using **total monthly revenue** to predict **this row’s sale price** mixes global information into each row and can inflate evaluation  
 
 > [!NOTE]
 > **Features go in; label comes out.** Example (Loan Approval): **Features** (credit_score=720, income=£55k, debt_to_income=0.28, missed_payments_12m=0) → **Label** (“Approve” | “Reject” | “Review”)
