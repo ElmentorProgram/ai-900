@@ -225,12 +225,18 @@ Now let’s map the AI and ML concepts in this document to Azure services like *
 - **DALL-E**: generate images from text prompts  
 - **Whisper**: speech-to-text transcription  
 
-
 ## Summary
 
 You should now be able to:
-- Explain what AI, ML, Deep Learning, and Generative AI are.
-- Choose an AI workload by matching your **input type** and **output need**.
-- Recognize common workload categories: Machine Learning, Anomaly Detection, Natural Language Processing, Conversational AI, Speech, Computer Vision, Document Processing, Information Extraction, and Knowledge Mining.
-- Connect vendor-neutral concepts to Azure service families using the mapping section.
+- Explain what AI, ML, Deep Learning, and Generative AI are  
+- Choose an AI workload by matching your **input type** and **output need**  
+- Identify **Prediction** categories (Machine Learning, Anomaly Detection)  
+- Identify **Language** categories (Natural Language Processing, Conversational AI, Speech)  
+- Identify **Vision** categories (Computer Vision)  
+- Identify **Document** categories (Document Processing, Information Extraction, Knowledge Mining)  
+- Connect vendor-neutral concepts to Azure service families using the mapping section  
+- Distinguish **OCR / Document Processing** from **NLP**  
+- Recognize when they are chained (OCR/Document Processing first, then NLP)  
+- Use **Concept → Service Family (Specific Capability Name)** when mapping to Azure  
+
 
