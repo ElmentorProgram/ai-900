@@ -73,6 +73,9 @@ Things to avoid:
 - **Using IDs as features**
 - **Using dataset-level totals** when predicting a per-row outcome
 
+> [!NOTE]
+> **Features go in; label comes out.** Example (Loan Approval): **Features** (credit_score=720, income=£55k, debt_to_income=0.28, missed_payments_12m=0) → **Label** (“Approve” | “Reject” | “Review”)
+
 ## Why We Split Data (Training vs Validation vs Test)
 
 When you build an AI model, you want it to make good predictions on **new data you haven’t seen yet** (real life). So you separate **the data** (by splitting it) to support two activities:
