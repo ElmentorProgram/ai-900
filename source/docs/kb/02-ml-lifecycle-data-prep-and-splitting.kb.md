@@ -222,12 +222,17 @@ If multiple rows come from the same user/patient/device/store, they must appear 
 A patient has 6 visits in your dataset. All 6 visits must go into **only one** split (train or validation or test).  
 If the same patient appears in both train and test, the model can memorize that patient’s patterns.
 
-
 ## Common Pitfalls (Leakage, Peeking, Ordering Bias, and Overfitting)
 
 This section highlights common mistakes that make evaluation unreliable, and how those mistakes can hide problems like overfitting or underfitting.
 
 Leakage and peeking make metrics look better than real life, you must keep anything that reveals the answer out of training, and keep the test set untouched until the end.
+
+**Mental Mapping (Quick Definitions)**
+- **Leakage:** the model gets information it would not have at prediction time  
+- **Peeking:** you use the test set during tuning, so it stops being an unbiased final check  
+- **Ordering bias:** your split is influenced by time/order effects, so evaluation is biased  
+- **Overfitting vs underfitting:** splits reveal whether the model memorized or failed to learn patterns  
 
 ### Data Leakage
 Data leakage happens when evaluation information accidentally influences training. A common example is using the **target** as an input feature, which makes performance look unrealistically strong.
@@ -255,8 +260,9 @@ Rule: when time order matters, use a time-based split so evaluation reflects rea
 ### Overfitting and Underfitting (What Splits Help You See)
 Splitting data helps you detect whether the model is learning general patterns or not:
 
-- **Overfitting:** performance looks strong on the **training set** but drops on **validation/test** (the model memorized training examples instead of generalizing).  
-- **Underfitting:** performance is weak on both the **training set** and **validation/test** (the model did not learn useful patterns).  
+- **Overfitting:** performance looks strong on the **training set** but drops on **validation/test** (the model memorized training examples instead of generalizing)  
+- **Underfitting:** performance is weak on both the **training set** and **validation/test** (the model did not learn useful patterns)  
+
 
 ## Summary
 
