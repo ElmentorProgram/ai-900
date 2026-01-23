@@ -14,19 +14,30 @@ This document explains where data ingestion and data preparation fit in the ML l
 
 ## ML Lifecycle Overview
 
-When you build an ML model, you want it to make good predictions on **new data you haven’t seen yet** (real life). To get there, you move through a lifecycle that starts with building a reliable dataset and ends with running the model in production.
+When you build an ML model to support a real decision (for example, estimate risk, classify requests, forecast demand, or detect anomalies), start by defining what you’re building and how it will be used in real life. That means clearly stating: the target output, the inputs available at prediction time, and what “good” looks like (the success metric). The goal is to perform well on new, unseen data, not just the data you trained on.
+
+After that, you move through the ML lifecycle: build a reliable dataset, prepare and train the model, evaluate it, and finally deploy it to production.
 
 A typical end-to-end lifecycle looks like:
-
-- **Prepare Data** (**Data ingestion** & **Data preparation**)
-- **Split Data:** **Training / Validation / Test**
-- **Train:** fit the model on the **training set**
-- **Evaluate & Tune:** compare versions and tune choices using the **validation set**
-- **Final Test:** run one last check on the **test set** (unseen “final check”)
-- **Package:** confirm the **input/output schema** and how the model will be called
+- **Prepare Data** (**Data Ingestion** & **Data Preparation**)  
+- **Split Data:** **Training / Validation / Test**  
+- **Train:** fit the model on the **training set**  
+- **Evaluate & Tune:** compare versions and tune choices using the **validation set**  
+- **Final Test:** run one last check on the **test set** (unseen “final check”)  
+- **Package:** confirm the **input/output schema** and how the model will be called  
 - **Deploy & Monitor:** deploy as an **endpoint/service**, then monitor **errors**, **data drift**, and **performance drift**
 
-This document focuses on the early parts of that lifecycle: **Data ingestion**, **Data preparation**, and **splitting**.
+> [!NOTE]
+> **Data Ingestion** means collecting/loading data into your pipeline. **Inference (Scoring)** means using a trained model to make predictions.
+
+### Training vs Inference Compute (Why It Matters)
+
+Model size is not just “quality”, it affects the resources you need to build and run the model.
+
+- **Training compute (building the model):** more parameters means more weights to update during learning → more GPU hours, memory, data, and time  
+- **Inference compute (using the model):** more parameters means more work per prediction → higher latency, lower throughput, and higher cost per request (or per token for language models)  
+
+**Rule of thumb:** larger models usually cost more to train and to use. Inference cost also depends on context length, output length, and the serving setup (hardware and optimization like quantization).
 
 ## ML Lifecycle Context (Where Data Prep Fits)
 
