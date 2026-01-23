@@ -183,13 +183,14 @@ Typical workflow:
 ## Common Confusions (Choose This, Not That)
 
 - **OCR / Document Processing vs NLP:** OCR and document processing extract text and structure from images/PDFs; NLP analyzes meaning after you have text.  
+- **Document Processing vs Knowledge Mining:** document processing extracts text/fields/tables from documents; knowledge mining builds a searchable index over lots of content (often using OCR/NLP as enrichment).  
 - **Speech Recognition vs Text-to-Speech:** speech recognition is **audio → text** (captions/transcripts); text-to-speech is **text → audio** (read aloud/announcements).  
 - **Translator vs Speech:** Translator is **text → text** translation; Speech is used when audio is involved (speech-to-text, text-to-speech, speech translation).  
 - **Computer Vision vs Anomaly Detection:** if the input is images and the goal is recognizing objects by appearance/shape, treat it as computer vision; anomaly detection is about unusual behavior compared to a normal baseline.
+- **Generative AI vs Question Answering:** generative AI produces new text; question answering retrieves an answer from known content (FAQs/docs) and returns the best match.  
 
 > [!WARNING]
 > OCR, Document Processing, NLP are often chained, OCR and Document Processing extract text and structure from images or PDFs, NLP analyzes meaning after you already have text, mixing them leads to the wrong design and wrong service choice.
-
 
 ## Azure Mapping (Concept → Azure Service Family)
 
