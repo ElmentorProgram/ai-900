@@ -197,13 +197,13 @@ Typical workflow:
 This document is Vendor-Neutral. This section maps the concepts to common Azure services so you can connect the ideas to real implementations.
 
 In Azure, you will often see AI services presented in two layers:
-- **Service Family:** the main product area that groups related AI features.
-- **Specific Capability:** a named feature inside that family that solves a specific problem.
+- **Service Family:** the main product area that groups related AI features
+- **Specific Capability:** a named feature inside that family that solves a specific problem
 
 > [!IMPORTANT]
-> Service Family is the product area, Specific Capability is the feature you actually use, keep that separation so you map concepts to the right Azure tool.
+> Service Family is the product area, Specific Capability is the feature you actually use, keep that separation so you map concepts to the right Azure tool
 
-Now let's map the AI and ML concepts in this document to Azure services like **AI and ML concept → Service Family (Specific Capability Name)**:
+Now let’s map the AI and ML concepts in this document to Azure services like **AI and ML concept → Service Family (Specific Capability Name)**:
 
 - **Language Understanding (Intent & Entities)** → Azure AI Language (CLU: Conversational Language Understanding)  
 - **Question Answering** → Azure AI Language (Question Answering)  
@@ -216,13 +216,15 @@ Now let's map the AI and ML concepts in this document to Azure services like **A
 - **Document Processing (OCR, Key/Value, Tables)** → Azure AI Document Intelligence (Document Intelligence)  
 - **Knowledge Mining (Indexing, Search, Enrichment)** → Azure AI Search (Search Indexing)  
 - **Training and Operationalizing ML Models** → Azure Machine Learning (Azure ML)  
-- **Bots and Channels (Bot Runtime/Connector)** → Azure AI Bot Service (Bot Service)
+- **Bots and Channels (Bot Runtime/Connector)** → Azure AI Bot Service (Bot Service)  
+- **Generative AI models (GPT, embeddings, DALL-E, Whisper)** → Azure OpenAI Service (Azure OpenAI)  
 
-### Azure OpenAI model types (fast routing)
-- **GPT models**: generate or transform text (chat, summarization, extraction).
-- **Embeddings models**: convert text to vectors for semantic search and similarity.
-- **DALL-E**: generate images from text prompts.
-- **Whisper**: speech-to-text transcription.
+### Azure OpenAI Model Types (Fast Routing)
+- **GPT models**: generate or transform text (chat, summarization, extraction)  
+- **Embeddings models**: convert text to vectors for semantic search and similarity  
+- **DALL-E**: generate images from text prompts  
+- **Whisper**: speech-to-text transcription  
+
 
 ## Summary
 
