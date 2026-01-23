@@ -190,14 +190,17 @@ However, random splitting is not always the best choice.
 > Random split is fine only when rows are independent, use time-based split for time-ordered data, use group-based split when multiple rows belong to the same user, patient, or device.
 
 **Special Splitting Cases (When Random Split Fails)**  
-- **Random Split**: shuffle and split when rows are independent.  
-- **Time-Based Split**: train on past data, test on future data.  
-- **Group-Based Split**: keep the same user/patient/device in only one split.
+- **Random Split**: shuffle and split when rows are independent  
+- **Time-Based Split**: train on past data, test on future data  
+- **Group-Based Split**: keep the same user/patient/device in only one split  
 
 Typical starting splits:
 - **80/20** (train/test) for quick experiments  
 - **70/15/15** (train/validation/test) for disciplined tuning  
 - **60/20/20** when data is large and you want a stronger evaluation signal  
+
+**Stratified Split (When Classes Are Imbalanced)**  
+For classification with imbalanced classes, use a **stratified** split so each subset keeps a similar class ratio.
 
 ### Time-Based Split
 If data is **time-ordered**, you usually want to train on the past and evaluate on the future. This better matches real deployment, especially for “next month” style predictions.
@@ -218,6 +221,7 @@ If multiple rows come from the same user/patient/device/store, they must appear 
 **Group Split Example**  
 A patient has 6 visits in your dataset. All 6 visits must go into **only one** split (train or validation or test).  
 If the same patient appears in both train and test, the model can memorize that patient’s patterns.
+
 
 ## Common Pitfalls (Leakage, Peeking, Ordering Bias, and Overfitting)
 
