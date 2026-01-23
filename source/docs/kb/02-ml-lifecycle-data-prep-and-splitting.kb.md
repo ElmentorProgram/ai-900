@@ -155,27 +155,27 @@ A simple mental mapping: **Train = learn**, **Validation = tune**, **Test = fina
 
 ## How Splitting Works (Rows vs Columns)
 
-Splitting is how you simulate “real life” before deployment. You want the model to learn from one set of examples, then prove it can handle **new examples** it has never seen before.
+Splitting is how you simulate **real life** before deployment. You want the model to learn from one set of examples, then prove it can handle **new examples** it has never seen before.
 
 ### Split by Rows (What You Usually Want)
-To simulate “new data,” you hold out entire **examples (rows)** that the model never sees during training.
+To simulate new data, you hold out entire **examples (rows)** that the model never sees during training.
 
-- If you split by **rows**, evaluation reflects performance on **new cases**.
-- You keep the **same columns** (same feature inputs) so training and evaluation are solving the same task.
+- If you split by **rows**, evaluation reflects performance on **new cases**  
+- You keep the **same columns** (same feature inputs) so training and evaluation are solving the same task  
 
 ### Split by Columns (Why It Is Usually Wrong for Evaluation)
 If you split by **columns**, you are not holding out new examples. Instead, you are removing some input fields.
 
-That changes the problem into: “Can the model work with less information?”  
-It does not answer the evaluation question: “Will this model generalize to new cases?”
+That changes the problem into: **Can the model work with less information?**  
+It does not answer the evaluation question: **Will this model generalize to new cases?**
 
 > [!WARNING]
-> Split by rows for evaluation, splitting by columns changes the problem into “less information”, it does not measure generalization to new examples.
-
+> Split by rows for evaluation, splitting by columns changes the problem into **less information**, it does not measure generalization to new examples.
 
 ### Key Rule
-- Split by **rows** so evaluation uses unseen examples.
-- Keep the **same feature columns** in both training and evaluation so the task stays consistent.
+- Split by **rows** so evaluation uses unseen examples  
+- Keep the **same feature columns** in both training and evaluation so the task stays consistent  
+
 
 ## Split Patterns and When Random Split Fails (Time-Based and Group-Based)
 
