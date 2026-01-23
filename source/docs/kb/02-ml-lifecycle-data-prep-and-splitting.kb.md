@@ -43,16 +43,45 @@ Model size is not just “quality”, it affects the resources you need to build
 
 When you build an ML model, you need data before training.
 
-- **Data ingestion:** getting raw data from where it lives (files, databases, logs) into your ML workspace as a dataset you can work with.  
-- **Data preparation:** cleaning and transforming that dataset so it’s usable for training (fix types, handle missing values, remove duplicates, encode categories).
+- **Data Ingestion:** getting raw data from where it lives (files, databases, logs) into your ML workspace as a dataset you can work with  
+- **Data Preparation:** cleaning and transforming that dataset so it’s usable for training (fix types, handle missing values, remove duplicates, encode categories)
 
 These are part of building the model.  
 Using the model happens later (deployment & sending new input data for predictions).
 
 > [!NOTE]
-> Data ingestion and preparation build a trainable dataset, they don’t prove the model is good, evaluation happens after training using held-out data.
+> Data Ingestion and Data Preparation build a trainable dataset, they don’t prove the model is good, evaluation happens after training using held-out data
 
-These stages focus on building a reliable dataset for learning, not on measuring model performance. Training, scoring, and evaluation happen later in the lifecycle.
+These stages focus on building a reliable dataset for learning, not on measuring model performance. Training, inference (scoring), and evaluation happen later in the lifecycle.
+
+### What This Stage Is Trying To Achieve
+- Make data usable, consistent, and accurate enough for training  
+- Ensure the dataset represents the problem well and reduces noise that would confuse the model  
+- Prevent downstream failures (training errors, incorrect evaluation, unstable predictions)
+
+### Common Actions In Data Ingestion And Preparation
+Typical tasks include:
+- Combining multiple datasets (merge/join/append) to gather all needed information in one dataset  
+- Handling missing values, for example:
+  - Remove records with missing critical fields, or impute missing values (fill with a reasonable value) depending on the scenario  
+- Removing duplicates, fixing data types, standardizing formats, and dealing with outliers  
+- Selecting relevant columns and encoding categorical values when needed
+
+### What Does Not Belong To This Stage
+Some actions happen after preparation:
+- **Training:** fitting the model on training data  
+- **Inference (Scoring):** using the model to predict on new/test data  
+- **Evaluation:** calculating metrics such as accuracy, precision/recall, RMSE, etc
+
+### Common Pitfalls And Confusion Points
+- Mixing evaluation tasks (like calculating accuracy) into data prep can lead to unclear workflows  
+- Cleaning the full dataset before splitting can cause leakage (prep should be fit on training data, then applied to validation/test)  
+- Removing too many records due to missing values can bias the dataset; sometimes imputation is better
+
+### Practical Defaults And Rules Of Thumb
+- Start by profiling data (missingness, duplicates, outliers) before deciding cleaning actions  
+- Treat missing target labels differently from missing feature values (missing labels usually can’t be used for supervised training)  
+- Keep a repeatable pipeline so the same preparation is applied in production
 
 
 ## Features, Labels, and IDs (Choosing Inputs Safely)
