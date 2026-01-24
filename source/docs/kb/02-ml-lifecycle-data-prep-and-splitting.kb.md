@@ -67,6 +67,56 @@ Typical tasks include:
 - Removing duplicates, fixing data types, standardizing formats, and dealing with outliers  
 - Selecting relevant columns and encoding categorical values when needed
 
+### Feature Engineering vs Feature Selection
+
+- **Feature engineering:** creating or transforming input fields to make patterns easier for a model to learn  
+- **Feature selection:** choosing which input fields to keep and dropping the rest  
+
+**Feature Engineering Reasons**
+- Make patterns easier to learn  
+- Improve generalization by turning raw data into useful signals  
+
+**Feature Engineering Examples**
+- Convert a date into `day_of_week`, `month`, `holiday_flag`  
+- Convert transactions into aggregates like `orders_last_30_days`, `avg_basket_size`, `spend_trend`  
+- Convert text into numeric signals (TF-IDF, embeddings, sentiment score)
+
+#### Example (Real Data Feel): Predicting House Sale Price (Regression)
+
+Imagine a dataset where each row is one house sale.
+
+**Label (Target)**
+- Use `SalePrice` as the label, the actual sale price (a number)
+
+**Raw Fields (Possible Features)**
+- Use `LivingAreaSqFt`, `Bedrooms`, `Bathrooms`, `Neighborhood` as starting features  
+- Use `YearBuilt`, `SaleDate`, `RenovationDate` as additional raw fields (renovation can be missing)
+
+**Feature Engineering Examples (You Create New Inputs)**
+- Create `HouseAge` from `SaleYear - YearBuilt`  
+- Create `YearsSinceRenovation` from `SaleYear - RenovationYear` (when renovation exists)  
+- Convert `SaleDate` into `SaleMonth` or `Season` (to capture seasonality)  
+- Encode `Neighborhood` into a machine-friendly form (for example, indicator columns)  
+- Create `PricePerSqFt` is **not** a feature here, because it uses the label (`SalePrice`) and would leak the answer  
+
+**Feature Selection Reasons**
+- Remove irrelevant/noisy features  
+- Reduce overfitting risk  
+- Simplify the model (interpretability)  
+- Reduce cost (fewer inputs to collect/compute)
+
+**Feature Selection Examples (High Level)**
+- Filter methods: correlation, mutual information, statistical tests  
+- Wrapper methods: evaluate model performance with different subsets  
+- Embedded methods: feature selection happens during training (for example, regularization)
+
+**Common Pitfalls**
+- Engineering features using information that is not available at prediction time (leakage)  
+- Dropping a feature that looks weak globally but is crucial for a subset of cases  
+
+> [!IMPORTANT]
+> A common pitfall is engineering a feature using information you would not know at prediction time. That creates leakage, even if the feature looks “helpful”.
+
 ### What Does Not Belong To This Stage
 Some actions happen after preparation:
 - **Training:** fitting the model on training data  
