@@ -16,10 +16,10 @@ This document explains how to choose the right ML problem type based on what you
 
 You can choose the ML problem type by looking at the **output** you want:
 
-- **Regression:** predict a **number** (for example, next month’s sales).
-- **Classification:** predict a **label/category** from a fixed set (for example, triage an email into Billing or Technical Issue).
-- **Clustering:** group examples into **clusters** without predefined labels (for example, customer segments by purchasing habits).
-- **Anomaly Detection:** flag **unusual behavior** compared to a normal baseline (for example, suspicious transactions).
+- **Regression:** predict a **number** (for example, next month’s sales)  
+- **Classification:** predict a **label/category** from a fixed set (for example, triage an email into Billing or Technical Issue)  
+- **Clustering:** group examples into **clusters** without predefined labels (for example, customer segments by purchasing habits)  
+- **Anomaly Detection:** flag **unusual behavior** compared to a normal baseline (for example, suspicious transactions)  
 
 > [!NOTE]
 > Choose the problem type from the **output** you want the model to produce. The same input data can support different problem types depending on the output you choose.
@@ -27,14 +27,14 @@ You can choose the ML problem type by looking at the **output** you want:
 ### Related Problem Types You Will Also See
 These are common in real projects, but they go beyond the foundational scope of this document. They are included here to give the wider picture:
 
-- **Forecasting:** predicting future values over time (often treated as regression, but requires time-aware evaluation).
-- **Recommendation and Ranking:** selecting or ordering items (often built using classification/regression ideas, but used for “top N” decisions).
+- **Forecasting:** predicting future values over time (often treated as regression, but requires time-aware evaluation)  
+- **Recommendation and Ranking:** selecting or ordering items (often built using classification/regression ideas, but used for “top N” decisions)  
 
 **Metric Family Chooser (Do Not Mix Families)**  
-- **Classification**: Accuracy, Precision, Recall, F1, ROC AUC, PR AUC.  
-- **Regression**: MAE, MSE/RMSE, R².  
-- **Clustering**: Silhouette (when labels are not available).  
-- **Anomaly Detection**: depends on whether you have labels (often precision/recall style evaluation).
+- **Classification**: Accuracy, Precision, Recall, F1, ROC AUC, PR AUC  
+- **Regression**: MAE, MSE/RMSE, R²  
+- **Clustering**: Silhouette (when labels are not available)  
+- **Anomaly Detection**: depends on whether you have labels (often precision/recall style evaluation)  
 
 ## How to Choose the Problem Type (Decision Rules)
 
