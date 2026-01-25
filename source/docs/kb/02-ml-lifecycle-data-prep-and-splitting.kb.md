@@ -30,9 +30,14 @@ A typical end-to-end lifecycle looks like:
 > [!NOTE]
 > **Data Ingestion** means collecting/loading data into your pipeline. **Inference (Scoring)** means using a trained model to make predictions.
 
+### Metrics Targets and Iteration (How It Works)
+
+Defining a success metric is not just picking a metric name. In practice, you also set a **target value** (what is **good enough**), evaluate the model on **held-out data**, and iterate until you meet the target. Iteration can mean improving data and features, changing the model, adjusting thresholds, or tuning settings. The **test set** is the final unbiased check after you stop making changes.
+
+
 ### Training vs Inference Compute (Why It Matters)
 
-Model size is not just “quality”, it affects the resources you need to build and run the model.
+Model size is not just **qualit**, it affects the resources you need to build and run the model.
 
 - **Training compute (building the model):** more parameters means more weights to update during learning → more GPU hours, memory, data, and time  
 - **Inference compute (using the model):** more parameters means more work per prediction → higher latency, lower throughput, and higher cost per request (or per token for language models)  
