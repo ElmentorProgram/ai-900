@@ -208,6 +208,24 @@ Key sets:
 
 A simple mental mapping: **Train = learn**, **Validation = tune**, **Test = final check**.
 
+Example (Fraud Detection: Metric Targets → Evaluate → Iterate):  
+- Goal: detect fraud transactions.  
+- Metric targets: **recall ≥ 0.80** (catch most fraud) and **precision ≥ 0.20** (limit false alarms).  
+Step 1: Train a model on the **training set**.  
+Step 2: Evaluate on the **validation set**. Suppose the model flags 500 transactions as fraud, but only 50 are truly fraud, and there are 100 real fraud cases total.  
+- Precision = 50 / 500 = **0.10**  
+- Recall = 50 / 100 = **0.50**  
+Step 3: You missed both targets, so you iterate using the **validation** set: adjust the threshold, engineer better features, try a different model, or tune hyperparameters.  
+Step 4: After iteration, suppose validation results improve and you reach **precision = 0.22** and **recall = 0.82** (targets met).  
+Step 5: Run one final check on the **test set** to confirm the model meets targets on unseen data.
+
+**Tuning vs Fine-Tuning (Wording)**  
+This improvement loop is usually called **iteration** or **tuning**. It means any change you make to improve metrics during development, for example changing the decision threshold, adding or transforming features, fixing leakage, handling class imbalance (rebalancing), trying a different algorithm, or tuning hyperparameters.  
+
+**Do not mix this with fine-tuning.** **Fine-tuning** is more specific: you take a **pre-trained model** (often an LLM or another pre-trained neural network) and train it further on your task data to adapt it. In classic ML (logistic regression, random forests, gradient boosting/XGBoost), you typically say **train/tune** rather than “fine-tune.”  
+
+So in the fraud example: if you miss a target (like precision), you **iterate/tune** using the validation set. You would call it **fine-tuning** only if you are adapting a **pre-trained model** by additional training on your fraud dataset.
+
 ## How Splitting Works (Rows vs Columns)
 
 Splitting is how you simulate **real life** before deployment. You want the model to learn from one set of examples, then prove it can handle **new examples** it has never seen before.
