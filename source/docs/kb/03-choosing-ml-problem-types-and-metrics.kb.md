@@ -41,20 +41,25 @@ These are common in real projects, but they go beyond the foundational scope of 
 Before choosing a problem type, it helps to know whether you have **labels** in your data.
 
 There are two common learning types:
-- **Supervised learning:** you have labeled examples, meaning each row includes the input features and the correct output you want to predict.
-- **Unsupervised learning:** you do not have labels, so the model looks for structure or patterns in the input features.
+- **Supervised learning:** you have labeled examples, meaning each row includes the input features and the correct output you want to predict  
+- **Unsupervised learning:** you do not have labels, so the model looks for structure or patterns in the input features  
 
 > [!IMPORTANT]
 > Decide in this order, do you have labels, what output do you want, then pick Regression, Classification, Clustering, or Anomaly Detection, don’t pick based on input alone.
 
-Now start with one question:
+**Decision question:** What is the **output** you want the model to produce?
 
-What is the **output** you want the model to produce?
+> [!NOTE]
+> The same input type can support different problem types, choose from the **output** you need.
 
-- If the output is a **number**, treat it as **Regression** (supervised).
-- If the output is one of **fixed categories (labels)**, treat it as **Classification** (supervised).
-- If you do not have labels and want to discover groups, use **Clustering** (unsupervised).
-- If you want to flag rare or unusual cases compared to normal, use **Anomaly Detection** (often unsupervised, but can be supervised when labels exist).
+- If the output is a **number**, treat it as **Regression** (supervised)  
+- If the output is one of **fixed categories (labels)**, treat it as **Classification** (supervised)  
+- If you do not have labels and want to discover groups, use **Clustering** (unsupervised)  
+- If you want to flag rare or unusual cases compared to normal, use **Anomaly Detection** (often unsupervised, but can be supervised when labels exist)  
+
+**Quick Distinction (When You Do Not Have Labels)**
+- **Clustering:** the output is **groups/segments** (discover structure)  
+- **Anomaly Detection:** the output is an **unusual/normal signal** (flag rare cases)  
 
 ## Regression (Predicting Numbers) and Common Metrics
 
