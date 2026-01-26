@@ -388,9 +388,9 @@ If you choose threshold **0.50**, you flag more transactions (catch more fraud, 
 AUC is useful because it evaluates the model’s separation quality **before** you pick the threshold.
 
 ### F1 Score
-F1, also called the **Harmonic Mean of Precision and Recall**, balances precision and recall into one number and tends to be closer to the smaller one.
+F1, also called the **Harmonic Mean of Precision and Recall**, balances precision and recall into one number and tends to be closer to the smaller one.  
 **Where does F1 come from?**  
-F1 is calculated from precision and recall using this formula:
+F1 is calculated from precision and recall using this formula:  
 F1 = 2 × (Precision × Recall) / (Precision + Recall)
 
 This formula makes F1 behave like a “both-must-be-good” score:
