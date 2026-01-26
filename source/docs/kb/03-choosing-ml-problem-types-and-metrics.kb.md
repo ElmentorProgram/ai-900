@@ -34,7 +34,7 @@ These are common in real projects, but they go beyond the foundational scope of 
 - **Classification**: Accuracy, Precision, Recall, F1, ROC AUC, PR AUC  
 - **Regression**: MAE, MSE/RMSE, R²  
 - **Clustering**: Silhouette (when labels are not available)  
-- **Anomaly Detection**: depends on whether you have labels (often precision/recall style evaluation)  
+- **Anomaly Detection**: depends on whether you have labels (often Precision/Recall style evaluation)  
 
 ## How to Choose the Problem Type (Decision Rules)
 
@@ -290,7 +290,7 @@ In this scenario:
 - The **output** is one label from the predefined list, so it’s **Classification**
 
 > [!IMPORTANT]
-> Define the positive class first, then read precision and recall, otherwise you can optimize the wrong outcome.
+> Define the positive class first, then read Precision and Recall, otherwise you can optimize the wrong outcome.
 
 ### How Classification Metrics Work
 
@@ -300,7 +300,7 @@ Classification metrics are built from **confusion matrix counts**:
 
 Before reading metrics, make two things explicit:
 - **Positive class:** what “positive” means in your scenario (for example, **Fraud**)  
-- **Threshold (when using scores):** the cutoff that turns a score into a final yes/no label (changing it shifts precision vs recall)
+- **Threshold (when using scores):** the cutoff that turns a score into a final yes/no label (changing it shifts Precision vs recall)
 
 After that, each metric is just a different way to summarize the same TP/FP/TN/FN counts.
 
@@ -336,13 +336,13 @@ Real-life: useful when classes are reasonably balanced and false positives vs fa
 
 ### Precision
 Precision is: **When the model says positive, how often is it right?**  
-Example: model predicts “fraud” 40 times, but only 30 are truly fraud: precision = 30/40 = **75%**.  
-Real-life: you care about precision when false alarms are costly (for example, blocking legitimate customer payments).
+Example: model predicts “fraud” 40 times, but only 30 are truly fraud: Precision = 30/40 = **75%**.  
+Real-life: you care about Precision when false alarms are costly (for example, blocking legitimate customer payments).
 
 ### Recall / TPR (True Positive Rate) (Sensitivity)
 Recall, also called **TPR (True Positive Rate)** or **Sensitivity**, is: **Of the actual positives, how many did we catch?**  
-Example: there are 50 real fraud cases, model catches 30: recall = 30/50 = **60%**.  
-Real-life: you care about recall when missing a positive is costly (for example, catching disease in medical screening).
+Example: there are 50 real fraud cases, model catches 30: Recall = 30/50 = **60%**.  
+Real-life: you care about Recall when missing a positive is costly (for example, catching disease in medical screening).
 
 ### Precision vs Recall (Fraud Alerts)
 Numeric example:  
@@ -352,7 +352,7 @@ You have **1000** transactions, and **10** are actually fraud. The model flags *
 
 ### ROC vs PR (Rare Positives)
 - **ROC (Receiver Operating Characteristic):** a curve view based on TPR vs FPR across thresholds  
-- **PR (Precision-Recall):** a curve view based on precision vs recall across thresholds  
+- **PR (Precision-Recall):** a curve view based on precision vs Recall across thresholds  
 
 With rare positives, PR often shows performance more clearly than ROC.
 
@@ -364,14 +364,14 @@ With rare positives, PR makes this pain obvious (low precision), even if ROC loo
 
 ### AUC (Area Under ROC Curve)
 AUC, also called **Area Under the ROC Curve**, measures how well the model **ranks positives above negatives** across all possible thresholds.
-AUC measures how well the model **ranks positives above negatives** across all possible thresholds.
 
 **Where do these scores come from?**  
 A classification model often outputs a **score** for each case. You can think of it as a **fraud risk score**:
 - Higher score → the model thinks the case is **more likely fraud**.
 - Lower score → the model thinks the case is **more likely legitimate**.
 
-In many models, this score is a **predicted probability** (0 to 1), but it can also be any numeric score as long as **higher = more fraud-like**. AUC uses these scores to evaluate ranking quality.
+In many models, this score is a **predicted probability** (0 to 1), but it can also be any numeric score as long as **higher = more fraud-like**.   
+AUC uses these scores to evaluate ranking quality.
 
 **Numeric example (scores 0 to 1)**  
 Suppose you have 5 fraud cases and 5 legitimate cases. The model outputs a score for each transaction:
@@ -379,8 +379,8 @@ Suppose you have 5 fraud cases and 5 legitimate cases. The model outputs a score
 Fraud scores: **0.95, 0.90, 0.80, 0.70, 0.60**  
 Legit scores: **0.55, 0.40, 0.30, 0.20, 0.10**
 
-Here, fraud scores are mostly higher than legit scores, so the model separates the classes well → **high AUC**.  
-If the scores overlap a lot (fraud and legit both mixed around 0.4–0.6), separation is weak → **lower AUC**.
+Here, fraud scores are mostly higher than legit scores, so the model separates the classes well → **High AUC**.  
+If the scores overlap a lot (fraud and legit both mixed around 0.4–0.6), separation is weak → **Lower AUC**.
 
 **Threshold example (why AUC helps)**  
 If you choose threshold **0.80**, you only flag scores ≥ 0.80 as fraud (stricter, fewer false alarms).  
@@ -388,18 +388,18 @@ If you choose threshold **0.50**, you flag more transactions (catch more fraud, 
 AUC is useful because it evaluates the model’s separation quality **before** you pick the threshold.
 
 ### F1 Score
-F1, also called the **Harmonic Mean of Precision and Recall**, balances precision and recall into one number and tends to be closer to the smaller one.  
+F1, also called the **Harmonic Mean of Precision and Recall**, balances precision and Recall into one number and tends to be closer to the smaller one.  
 **Where does F1 come from?**  
-F1 is calculated from precision and recall using this formula:  
+F1 is calculated from precision and Recall using this formula:  
 F1 = 2 × (Precision × Recall) / (Precision + Recall)
 
 This formula makes F1 behave like a “both-must-be-good” score:
-- If **precision** is low, F1 drops.
-- If **recall** is low, F1 drops.
+- If **Precision** is low, F1 drops.
+- If **Recall** is low, F1 drops.
 - F1 is high only when **both** are high.
 
 **Worked example**  
-If precision is 75% and recall is 60%, F1 is a single combined score that will be between them (closer to the smaller one).  
+If Precision is 75% and Recall is 60%, F1 is a single combined score that will be between them (closer to the smaller one).  
 Precision = **0.75**  
 Recall = **0.60**
 
@@ -408,7 +408,7 @@ F1 = 2 × 0.45 / 1.35
 F1 = 0.90 / 1.35 = **0.67**
 
 So here, F1 is **0.67 (67%)**, which is between 0.60 and 0.75 and closer to the smaller one.  
-Real-life: useful when you need both precision and recall and want one summary number.
+Real-life: useful when you need both precision and Recall and want one summary number.
 
 > [!IMPORTANT]
 > **ROC vs PR:**
@@ -434,7 +434,6 @@ In imbalanced or high-risk scenarios, rely more on:
 - **Recall** (avoid missing positives)
 - **F1** (balance both)
 - Confusion matrix (see TP/FP/TN/FN counts)  
-
 
 ## Clustering (Grouping Similar Examples Without Labels)
 
@@ -546,14 +545,14 @@ In imbalanced or high-risk scenarios, rely more on:
 - Confusion matrix (TP/FP/TN/FN counts)  
 - **Precision** (control false alarms)  
 - **Recall** (avoid missing positives)  
-- **F1** (balance precision and recall)
+- **F1** (balance Precision and Recall)
 
 ### Using Regression Metrics for Classification (and Vice Versa)
 
 Regression metrics like **MAE, RMSE, and R²** measure numeric prediction error.  
 They do not describe label prediction behavior.
 
-Classification metrics like **accuracy, precision, recall, F1, and AUC** measure label performance.  
+Classification metrics like **Accuracy, Precision, Recall, F1, and AUC** measure label performance.  
 They do not measure numeric error.
 
 > [!WARNING]
@@ -562,7 +561,7 @@ They do not measure numeric error.
 ### Forgetting the “Positive Class” Definition
 
 Many classification metrics depend on what you define as “positive.”  
-Precision and recall are always about the positive class.
+Precision and Recall are always about the positive class.
 
 If you do not define the positive class clearly, you can misinterpret the metrics.
 
@@ -577,7 +576,7 @@ You should now be able to:
 - Explain why metrics matter and how they help you compare model versions on unseen data.
 - Use **MAE, RMSE, and R²** to evaluate regression models and understand what each one emphasizes.
 - Use the confusion matrix (**TP, FP, TN, FN**) to reason about classification errors.
-- Use **accuracy, precision, recall/TPR, F1, and AUC** to evaluate classification models and match metrics to error costs.
+- Use **Accuracy, Precision, Recall/TPR, F1, and AUC** to evaluate classification models and match metrics to error costs.
 - Recognize clustering scenarios and explain that clustering uses **features (X)** without labels.
 - Recognize anomaly detection scenarios and explain that it flags unusual behavior compared to a **normal baseline**.
 - Avoid common mistakes like choosing the wrong problem type, relying on accuracy for imbalanced data, mixing metric families, forgetting the positive class, and introducing leakage through unsafe features.
