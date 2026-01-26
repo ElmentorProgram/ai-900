@@ -389,9 +389,6 @@ AUC is useful because it evaluates the model’s separation quality **before** y
 
 ### F1 Score
 F1, also called the **Harmonic Mean of Precision and Recall**, balances precision and recall into one number and tends to be closer to the smaller one.
-
-F1 balances **precision** and **recall** into one number.
-
 **Where does F1 come from?**  
 F1 is calculated from precision and recall using this formula:
 F1 = 2 × (Precision × Recall) / (Precision + Recall)
