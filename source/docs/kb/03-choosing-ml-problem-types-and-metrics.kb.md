@@ -308,7 +308,7 @@ Each common metric reads the confusion matrix differently:
 - **Accuracy:** uses **(TP + TN)** vs all predictions  
 - **Precision:** focuses on **FP** (false alarms)  
 - **Recall:** focuses on **FN** (missed positives)  
-- **F1:** balances **precision and recall**  
+- **F1:** balances **Precision and Recall**  
 - **AUC / ROC / PR:** evaluate ranking across thresholds  
 
 Let’s see them in detail in the next sections.
@@ -354,8 +354,7 @@ You have **1000** transactions, and **10** are actually fraud. The model flags *
 - **ROC (Receiver Operating Characteristic):** a curve view based on TPR vs FPR across thresholds  
 - **PR (Precision-Recall):** a curve view based on precision vs Recall across thresholds  
 
-With rare positives, PR often shows performance more clearly than ROC.
-
+With rare positives, PR often shows performance more clearly than ROC.  
 Numeric example:   
 You have **10,000** transactions, and only **100** are actually fraud (**1%**). The model flags **500** as fraud. **TP = 50**, **FP = 450**, So:   
 **Precision** = 50 / 500 = **0.10**.    
@@ -398,7 +397,7 @@ This formula makes F1 behave like a “both-must-be-good” score:
 - If **Recall** is low, F1 drops.
 - F1 is high only when **both** are high.
 
-**Worked example**  
+Worked example:  
 If Precision is 75% and Recall is 60%, F1 is a single combined score that will be between them (closer to the smaller one).  
 Precision = **0.75**  
 Recall = **0.60**
