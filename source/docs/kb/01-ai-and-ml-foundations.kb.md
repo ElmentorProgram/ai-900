@@ -38,7 +38,7 @@ A search for **plant** will often return text about **flower** before text about
 
 Start with two questions:
 
-A workload is the type of AI task you are trying to solve (vision, language, document extraction, ML prediction, etc.). You choose it by matching the data you have to the output you need.
+A workload is the type of AI task or problem you are trying to solve (vision, language, document extraction, ML prediction, etc.). You choose it by matching the data you have to the output you need.
 
 1) What is the **input**?
 - Images/video → usually **Computer Vision**
