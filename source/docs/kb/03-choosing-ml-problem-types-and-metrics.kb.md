@@ -514,7 +514,24 @@ In some cases you may see internal metrics like **Silhouette score**, but you st
 
 ## Anomaly Detection (Flagging Unusual Behavior)
 
-Use **Anomaly Detection** when you want to find data points or events that are **unusual compared to normal behavior**. The goal is to surface “outliers” that may represent risk, failure, fraud, or important rare conditions.
+Use **Anomaly Detection** when you want to find data points or events that are **unusual compared to normal behavior**. The goal is to surface **outliers** that may represent risk, failure, fraud, or important rare conditions.
+
+### Key Terms (Quick Definitions)
+- **Anomaly / outlier:** a data point that differs significantly from the expected pattern  
+- **Normal baseline:** what typical behavior looks like for the system/data  
+- **False positive:** flagged as anomalous but actually normal  
+- **False negative:** not flagged but truly anomalous  
+
+### Example (Real Data Feel): Fraud Monitoring (Anomaly Detection)
+
+Imagine a bank monitors card transactions to flag suspicious activity.
+
+In this scenario:
+- The **rows** are transactions (one row per transaction)
+- The **features (X)** might include amount, location, time-of-day, merchant category, and frequency patterns
+- The **output** is an **anomaly score** or a **normal vs abnormal** flag (not a business label like **fraud type**)
+
+Because anomalies are rare, you tune thresholds to balance **false alarms** (false positives) vs **missed fraud** (false negatives).
 
 ### What It Is Trying to Achieve
 
@@ -531,24 +548,24 @@ Anomaly detection is used to detect rare or abnormal cases that are important to
 ### How It Works (High Level)
 
 A typical anomaly detection workflow looks like this:
-- Define what “normal” looks like (baseline period, typical ranges, seasonality).  
-- Choose what you will detect anomalies in (transactions, sensors, logs, images).  
-- Produce an **anomaly score** or a “normal vs abnormal” flag.  
-- Tune thresholds to balance false alarms vs missed issues.
+- Define what **normal** looks like (baseline period, typical ranges, seasonality)  
+- Choose what you will detect anomalies in (transactions, sensors, logs, images)  
+- Produce an **anomaly score** or a **normal vs abnormal** flag  
+- Tune thresholds to balance false alarms vs missed issues  
 
 ### Common Approaches (High Level)
 
 Anomaly detection can be implemented in different ways depending on what data you have:
 
-- **Rules/statistics:** thresholds, z-scores, moving averages (good starting point).  
-- **Unsupervised ML:** learn patterns of normal behavior without labeled anomalies (common when anomalies are rare).  
-- **Supervised ML:** train on labeled examples of normal vs anomaly (useful when labels exist and are reliable).
+- **Rules/statistics:** thresholds, z-scores, moving averages (good starting point)  
+- **Unsupervised ML:** learn patterns of normal behavior without labeled anomalies (common when anomalies are rare)  
+- **Supervised ML:** train on labeled examples of normal vs anomaly (useful when labels exist and are reliable)  
 
 ### Common Pitfalls and Confusion Points
 
-- “Unusual” depends on context. Seasonality, time of day, and user segments can make normal behavior look abnormal.  
-- Anomalies are rare, so too many false positives can make the system unusable.  
-- What is “normal” can change over time (data drift), so baselines must be updated.
+- Unusual depends on context. Seasonality, time of day, and user segments can make normal behavior look abnormal  
+- Anomalies are rare, so too many false positives can make the system unusable  
+- What is normal can change over time (data drift), so baselines must be updated  
 
 ## Common Pitfalls (Problem Type and Metric Mistakes)
 
