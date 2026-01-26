@@ -75,21 +75,21 @@ A **metric** is a number that tells you **how well your model is performing**.
 In regression, that means: **how far your predicted numbers are from the real numbers**.
 
 Metrics matter because they let you:
-- Measure **how close** predictions are to actual values,
-- Compare **model A vs model B** fairly,
-- Check whether a change you made **helped or hurt**.
+- Measure **how close** predictions are to actual values
+- Compare **model A vs model B** fairly
+- Check whether a change you made **helped or hurt**
 
 Also: metrics depend on the **ML problem type**.  
-- **Regression** predicts a **number** → metrics like **MAE, RMSE, R²** (this section).  
-- **Classification** predicts a **label/category** → uses different metrics (not these).
+- **Regression** predicts a **number** → metrics like **MAE, RMSE, R²** (this section)
+- **Classification** predicts a **label/category** → uses different metrics (not these)
 
 In practice you improve a regression model using this loop:
-- Measure metrics on the **current model** (baseline).
-- Change something (add/remove a feature, change algorithm, tune hyperparameters, clean data).
-- Measure metrics again (same data split / same test set).
+- Measure metrics on the **current model** (baseline)
+- Change something (add/remove a feature, change algorithm, tune hyperparameters, clean data)
+- Measure metrics again (same data split / same test set)
 - Compare:
-  - If **MAE/RMSE go down** (or **R² goes up**), the change likely **improved** the model.
-  - If they move the opposite way, the change likely **made it worse**.
+  - If **MAE/RMSE go down** (or **R² goes up**), the change likely **improved** the model
+  - If they move the opposite way, the change likely **made it worse**
 
 So it’s literally: **before change vs after change**.
 
@@ -97,7 +97,7 @@ So it’s literally: **before change vs after change**.
 **MAE** is the average **absolute** difference between prediction and actual.
 
 What “absolute” means:
-- You only care about **how big** the mistake is, not the direction (**too low** or **too high**).
+- You only care about **how big** the mistake is, not the direction (**too low** or **too high**)
 
 Example:
 - Actual: 100, Predicted: 92 → **absolute error = 8** (8 too low)  
@@ -113,15 +113,15 @@ How to calculate and read it:
 - If MAE drops from **6.5** to **3**, your typical mistake got smaller.
 
 Why it’s useful:
-- MAE is easy to explain because it stays in the **same units as the target** (minutes, dollars, units sold).
-- It gives a clear “typical mistake size” you can compare across model versions.
+- MAE is easy to explain because it stays in the **same units as the target** (minutes, dollars, units sold)
+- It gives a clear “typical mistake size” you can compare across model versions
 
 ### RMSE (Root Mean Squared Error)
 **RMSE** measures error like MAE, but it **penalizes large mistakes more**.
 
 Why it penalizes large mistakes more:
-- RMSE **squares** each error before averaging.
-- Squaring makes big errors grow a lot (for example, 20² is much larger than 2²).
+- RMSE **squares** each error before averaging
+- Squaring makes big errors grow a lot (for example, 20² is much larger than 2²)
 
 A small worked example:
 - Actual values: 100, 100, 100  
@@ -157,7 +157,7 @@ Use **RMSE** when large mistakes are especially harmful and you want the metric 
 When RMSE is not preferred:
 - If your data has occasional extreme outliers you don’t want to dominate the metric, RMSE can over-focus on them. In those cases, MAE can be a better “typical error” view.
 
-### R² (R-squared)
+### R² (R-squared) 
 **R²** is a “fit” summary: it tells you how much of the **variation** in the **target (actual) values** your model explains compared to a simple **baseline**.
 
 What “target” means:
@@ -166,32 +166,103 @@ What “target” means:
 What the baseline is:
 - A simple reference model that always predicts the **average** target value (it does not learn patterns).
 
-A concrete intuition:
-- If **R² is higher**, the model explains more of the ups and downs in the real values.
-- If **R² is low**, the model is not capturing much signal (it may behave close to a baseline).
-- Think of R² as: “How much better is the model than a simple baseline at explaining why values vary?”
+## R² Formula (How to Calculate It)
+R² = 1 − (SS Res / SS Total)
 
-Tiny example:
-- Target/actual values: **10, 20, 30**
-- Average target = **20**
-- Baseline predictions: **20, 20, 20** (flat line)
+Sum of Squares (SS) means we add up squared differences.
 
-What R² is telling you (intuition):
-- If your model follows the ups and downs better than the baseline, **R² is higher**.
-  - Example model predictions: **12, 19, 29** → follows the trend → **R² is high**
-- If your model is about the same as the baseline, **R² ≈ 0**
-  - Example model predictions: **20, 20, 20**
-- If your model is worse than the baseline, **R² can be negative**
-  - Example model predictions: **30, 20, 10** (reversed trend)
+- **Sum of Squares Residual (SS Res):**  
+  Measures how much error your model makes overall.  
+  SS Res = Σ(Actual − Predicted)²
 
-Example (simple numbers, not a rule):
+- **Sum of Squares Total (SS Total):**  
+  Measures how much the actual values vary around the average (baseline variation).  
+  SS Total = Σ(Actual − Average(All Actual))²
+
+### Worked Example (Sales Forecasting: Compute R² Step by Step)
+
+**Scenario:** Predict daily sales (units sold).  
+We have 3 days of data:
+
+**Actual sales:** 100 (**Actual₁**), 50 (**Actual₂**), 150 (**Actual₃**)  
+**Model predicted sales:** 110, 60, 140  
+
+**Average (also called Mean) of all actual values:**  
+Average(All Actual) = (sum of all actual values) / (number of values)  
+Average(All Actual) = (100 + 50 + 150) / 3 = 300 / 3 = **100**
+
+**Baseline = Average(All Actual)** (predict this same value for every row).  
+Baseline prediction (always predict the average): **100, 100, 100**
+
+**SS Total (baseline variation):** measures how much the actual values vary around the average (baseline).  
+SS Total = (Actual₁ − Average(All Actual))² + (Actual₂ − Average(All Actual))² + (Actual₃ − Average(All Actual))²  
+SS Total = (100 − 100)² + (50 − 100)² + (150 − 100)²  
+SS Total = 0² + (−50)² + 50² = 0 + 2500 + 2500 = **5000**
+
+**Advanced notation:**  
+SS Total = Σ(Actual − Mean(Actual))²
+
+**SS Res (model error):** measures how much error the model makes overall.  
+SS Res = (Actual₁ − Predicted₁)² + (Actual₂ − Predicted₂)² + (Actual₃ − Predicted₃)²  
+SS Res = (100 − 110)² + (50 − 60)² + (150 − 140)²  
+SS Res = (−10)² + (−10)² + 10² = 100 + 100 + 100 = **300**
+
+**Advanced notation:**  
+SS Res = Σ(Actual − Predicted)²
+
+### Compute R² (Final Step)
+
+R² = 1 − (SS Res / SS Total)  
+R² = 1 − (300 / 5000) = 1 − 0.06 = **0.94**
+
+**Interpretation (easy version):**  
+R² = **0.94** means the model removed about **94%** of the “predict-the-average” baseline error (only about **6%** remains).
+
+### Two Quick Extra Cases (Same Data, Different Model Behavior)
+
+We keep the same actual sales values, so **SS Total stays the same**:  
+SS Total = **5000**
+
+#### Case 1: Model behaves like the baseline → R² = 0
+If the model predicts the average every time (same as baseline):  
+Predicted values: **100, 100, 100**
+
+SS Res = (100 − 100)² + (50 − 100)² + (150 − 100)²  
+SS Res = 0² + (−50)² + 50² = 0 + 2500 + 2500 = **5000**
+
+R² = 1 − (SS Res / SS Total)  
+R² = 1 − (5000 / 5000) = 1 − 1 = **0**
+
+**Meaning:** the model is no better than predicting the average.
+
+#### Case 2: Model is worse than the baseline → R² can be negative
+If the model predicts poorly, the squared errors can be bigger than the baseline errors.  
+Example predicted values: **200, 200, 200**
+
+SS Res = (100 − 200)² + (50 − 200)² + (150 − 200)²  
+SS Res = (−100)² + (−150)² + (−50)² = 10000 + 22500 + 2500 = **35000**
+
+R² = 1 − (SS Res / SS Total)  
+R² = 1 − (35000 / 5000) = 1 − 7 = **−6**
+
+**Meaning:** worse than predicting the average (the baseline is a safer model than this one).
+
+### A Concrete Intuition
+- If **R² is higher**, the model explains more of the variation in the real values (it reduces more of the baseline error).  
+- If **R² is low** (near 0), the model is not capturing much signal (it behaves close to the baseline).  
+- If **R² is negative**, the model is worse than the baseline (predicting the average would be better).
+
+Example (simple numbers, not a rule):  
 - Model version 1: **R² = 0.50**  
-  Meaning: it explains about 50% of why the target values vary in your dataset.
+  Meaning: it explains about 50% of why the target values vary in your dataset.  
 - After adding a useful feature (like location for house prices), model version 2: **R² = 0.70**  
   Meaning: it now explains about 70% of the variation, so it’s capturing more real signal.
 
-Another cue:
-- If R² drops from **0.70** to **0.40**, the model is explaining less variation, often because you removed useful signal or the model got worse.
+Another cue:  
+- If **R² drops from 0.70 to 0.40**, the model is explaining less variation, often because you removed useful signal or the model got worse.
+
+This is why if **R² goes up**, the change (**any update you try during model development**) likely improved the model: it means the model is reducing more of the “predict-the-average” baseline error than before.  
+Example: if **R² increases from 0.40 to 0.65**, the model explains more of the variation in the target values (less baseline-level error remains).
 
 Important note:
 - R² does **not** tell you typical “mistake size”, so you still use **MAE/RMSE** alongside it.
@@ -202,7 +273,6 @@ Important note:
   - Want to penalize large mistakes more → **RMSE**
   - Want a quick “fit” summary alongside error → **R²**
 - Improve the model by comparing metric values across versions and reducing error on unseen data.
-
 
 ## Classification (Predicting Labels) and Common Metrics
 
