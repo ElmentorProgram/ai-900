@@ -345,8 +345,10 @@ Example: there are 50 real fraud cases, model catches 30: recall = 30/50 = **60%
 Real-life: you care about recall when missing a positive is costly (for example, catching disease in medical screening).
 
 ### Precision vs Recall (Fraud Alerts)
-Numeric example: you have **1000** transactions, and **10** are actually fraud. The model flags **20** transactions as fraud. **TP = 8** (truly fraud) and **FP = 12** (not fraud).  
-So: **Precision** = 8 / 20 = **0.40** (when we alert, how often we are right), and **Recall** = 8 / 10 = **0.80** (how many of the real fraud cases we caught).
+Numeric example:  
+You have **1000** transactions, and **10** are actually fraud. The model flags **20** transactions as fraud. **TP = 8** (truly fraud) and **FP = 12** (not fraud), So:  
+**Precision** = 8 / 20 = **0.40** (when we alert, how often we are right).   
+**Recall** = 8 / 10 = **0.80** (how many of the real fraud cases we caught).
 
 ### ROC vs PR (Rare Positives)
 - **ROC (Receiver Operating Characteristic):** a curve view based on TPR vs FPR across thresholds  
@@ -364,14 +366,14 @@ With rare positives, PR makes this pain obvious (low precision), even if ROC loo
 AUC, also called **Area Under the ROC Curve**, measures how well the model **ranks positives above negatives** across all possible thresholds.
 AUC measures how well the model **ranks positives above negatives** across all possible thresholds.
 
-#### Where do these scores come from?
+**Where do these scores come from?**  
 A classification model often outputs a **score** for each case. You can think of it as a **fraud risk score**:
 - Higher score → the model thinks the case is **more likely fraud**.
 - Lower score → the model thinks the case is **more likely legitimate**.
 
 In many models, this score is a **predicted probability** (0 to 1), but it can also be any numeric score as long as **higher = more fraud-like**. AUC uses these scores to evaluate ranking quality.
 
-#### Numeric example (scores 0 to 1)
+**Numeric example (scores 0 to 1)**  
 Suppose you have 5 fraud cases and 5 legitimate cases. The model outputs a score for each transaction:
 
 Fraud scores: **0.95, 0.90, 0.80, 0.70, 0.60**  
@@ -380,7 +382,7 @@ Legit scores: **0.55, 0.40, 0.30, 0.20, 0.10**
 Here, fraud scores are mostly higher than legit scores, so the model separates the classes well → **high AUC**.  
 If the scores overlap a lot (fraud and legit both mixed around 0.4–0.6), separation is weak → **lower AUC**.
 
-#### Threshold example (why AUC helps)
+**Threshold example (why AUC helps)**  
 If you choose threshold **0.80**, you only flag scores ≥ 0.80 as fraud (stricter, fewer false alarms).  
 If you choose threshold **0.50**, you flag more transactions (catch more fraud, but more false alarms).  
 AUC is useful because it evaluates the model’s separation quality **before** you pick the threshold.
@@ -390,7 +392,7 @@ F1, also called the **Harmonic Mean of Precision and Recall**, balances precisio
 
 F1 balances **precision** and **recall** into one number.
 
-#### Where does F1 come from?
+**Where does F1 come from?**  
 F1 is calculated from precision and recall using this formula:
 F1 = 2 × (Precision × Recall) / (Precision + Recall)
 
@@ -399,7 +401,7 @@ This formula makes F1 behave like a “both-must-be-good” score:
 - If **recall** is low, F1 drops.
 - F1 is high only when **both** are high.
 
-#### Worked example
+**Worked example**  
 If precision is 75% and recall is 60%, F1 is a single combined score that will be between them (closer to the smaller one).  
 Precision = **0.75**  
 Recall = **0.60**
