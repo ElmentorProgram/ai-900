@@ -278,7 +278,7 @@ Important note:
 
 Use **Classification** when the output you want is a **label/category** from a fixed set.
 
-Example (email triage):
+Example (email triage):  
 A support team receives many customer emails every day. They want a model that reads a new email and assigns it to one predefined ticket type so it can be routed to the right team, for example:
 - **Billing**
 - **Technical Issue**
@@ -286,81 +286,137 @@ A support team receives many customer emails every day. They want a model that r
 - **Feature Request**
 
 In this scenario:
-- The **input** is the email text (and possibly metadata like subject line).
-- The **output** is one label from the predefined list, so it’s **classification**.
+- The **input** is the email text (and possibly metadata like subject line)  
+- The **output** is one label from the predefined list, so it’s **Classification**
 
 > [!IMPORTANT]
 > Define the positive class first, then read precision and recall, otherwise you can optimize the wrong outcome.
 
-### Confusion Matrix (TP, FP, TN, FN)
-A confusion matrix counts:
-- **True Positive (TP):** predicted positive and actually positive
-- **False Positive (FP):** predicted positive but actually negative
-- **True Negative (TN):** predicted negative and actually negative
-- **False Negative (FN):** predicted negative but actually positive
+### How Classification Metrics Work
 
-Example (Fraud Detection, where “Positive” = Fraud):
-- **True Positive (TP):** model flags a transaction as fraud, and it really is fraud (caught it).
-- **False Positive (FP):** model flags a transaction as fraud, but it was legitimate (false alarm).
-- **True Negative (TN):** model says “not fraud,” and it really is legitimate (correctly allowed).
-- **False Negative (FN):** model says “not fraud,” but it was fraud (missed it).
+Classification metrics are built from **confusion matrix counts**:
+
+- **TP, FP, TN, FN** (what the model predicted vs what was actually true)
+
+Before reading metrics, make two things explicit:
+- **Positive class:** what “positive” means in your scenario (for example, **Fraud**)  
+- **Threshold (when using scores):** the cutoff that turns a score into a final yes/no label (changing it shifts precision vs recall)
+
+After that, each metric is just a different way to summarize the same TP/FP/TN/FN counts.
+
+Each common metric reads the confusion matrix differently:
+- **Accuracy:** uses **(TP + TN)** vs all predictions  
+- **Precision:** focuses on **FP** (false alarms)  
+- **Recall:** focuses on **FN** (missed positives)  
+- **F1:** balances **precision and recall**  
+- **AUC / ROC / PR:** evaluate ranking across thresholds  
+
+Let’s see them in detail in the next sections.
+
+### Confusion Matrix (TP, FP, TN, FN)
+
+A confusion matrix counts:
+- **True Positive (TP):** predicted positive and actually positive  
+- **False Positive (FP):** predicted positive but actually negative  
+- **True Negative (TN):** predicted negative and actually negative  
+- **False Negative (FN):** predicted negative but actually positive  
+
+Example (Fraud Detection, where **Positive = Fraud**):
+- **True Positive (TP):** model flags a transaction as fraud, and it really is fraud (caught it)  
+- **False Positive (FP):** model flags a transaction as fraud, but it was legitimate (false alarm)  
+- **True Negative (TN):** model says **not fraud**, and it really is legitimate (correctly allowed)  
+- **False Negative (FN):** model says **not fraud**, but it was fraud (missed it)  
 
 This is why “positive” should be defined clearly before reading metrics.
 
-### Common Metrics
-- **Accuracy:** overall proportion correct.  
-  Example: If you have 100 predictions and 90 are correct, **accuracy = 90%**.  
-  Real-life: useful when classes are reasonably balanced and false positives vs false negatives have similar cost.
+### Accuracy
+Accuracy is the overall proportion correct.  
+Example: If you have 100 predictions and 90 are correct, **accuracy = 90%**.  
+Real-life: useful when classes are reasonably balanced and false positives vs false negatives have similar cost.
 
-- **Precision:** “When the model says positive, how often is it right?”  
-  Example: model predicts “fraud” 40 times, but only 30 are truly fraud: precision = 30/40 = **75%**.  
-  Real-life: you care about precision when false alarms are costly (for example, blocking legitimate customer payments).
+### Precision
+Precision is: **When the model says positive, how often is it right?**  
+Example: model predicts “fraud” 40 times, but only 30 are truly fraud: precision = 30/40 = **75%**.  
+Real-life: you care about precision when false alarms are costly (for example, blocking legitimate customer payments).
 
-- **Recall / TPR (Sensitivity):** “Of the actual positives, how many did we catch?”  
-  Example: there are 50 real fraud cases, model catches 30: recall = 30/50 = **60%**.  
-  Real-life: you care about recall when missing a positive is costly (for example, catching disease in medical screening).
+### Recall / TPR (True Positive Rate) (Sensitivity)
+Recall, also called **TPR (True Positive Rate)** or **Sensitivity**, is: **Of the actual positives, how many did we catch?**  
+Example: there are 50 real fraud cases, model catches 30: recall = 30/50 = **60%**.  
+Real-life: you care about recall when missing a positive is costly (for example, catching disease in medical screening).
 
-- **Precision vs Recall (Fraud Alerts):** shows the tradeoff between “when we alert, how often we are right” vs “how many real fraud cases we catch.”  
-  Numeric example: you have **1000** transactions, and **10** are actually fraud.  
-  - The model flags **20** transactions as fraud.  
-  - **8** flagged are truly fraud (**TP = 8**).  
-  - **12** flagged are not fraud (**FP = 12**).  
-  So:  
-  - **Precision** = 8 / 20 = **0.40** (when we alert, how often we are right).  
-  - **Recall** = 8 / 10 = **0.80** (how many of the real fraud cases we caught).
+### Precision vs Recall (Fraud Alerts)
+Numeric example: you have **1000** transactions, and **10** are actually fraud. The model flags **20** transactions as fraud. **TP = 8** (truly fraud) and **FP = 12** (not fraud).  
+So: **Precision** = 8 / 20 = **0.40** (when we alert, how often we are right), and **Recall** = 8 / 10 = **0.80** (how many of the real fraud cases we caught).
 
-- **ROC vs PR (Rare Positives):** shows why PR is often more informative than ROC when positives are rare (ROC can look fine because true negatives are so common).  
-  Numeric example: you have **10,000** transactions, and only **100** are actually fraud (**1%**).  
-  - The model flags **500** transactions as fraud.  
-  - **50** flagged are truly fraud (**TP = 50**).  
-  - **450** flagged are not fraud (**FP = 450**).  
-  So:  
-  - **Precision** = 50 / 500 = **0.10** (when we alert, how often we are right).  
-  - **Recall** = 50 / 100 = **0.50** (how many of the real fraud cases we caught).  
-  With rare positives, PR makes this pain obvious (low precision), even if ROC looks acceptable.
+### ROC vs PR (Rare Positives)
+- **ROC (Receiver Operating Characteristic):** a curve view based on TPR vs FPR across thresholds  
+- **PR (Precision-Recall):** a curve view based on precision vs recall across thresholds  
 
-- **AUC (Area Under ROC Curve):** measures how well the model **ranks positives above negatives** across all possible thresholds.  
-  Numeric example (scores 0 to 1): suppose you have 5 fraud cases and 5 legitimate cases.  
-  - Fraud scores: **0.95, 0.90, 0.80, 0.70, 0.60**  
-  - Legit scores: **0.55, 0.40, 0.30, 0.20, 0.10**  
-  Here, fraud scores are mostly higher than legit scores, so the model separates the classes well → **high AUC**.  
-  If the scores overlap a lot (fraud and legit both mixed around 0.4–0.6), separation is weak → **lower AUC**.
+With rare positives, PR often shows performance more clearly than ROC.
 
-  Threshold example (why AUC helps):  
-  - If you choose threshold **0.80**, you only flag scores ≥ 0.80 as fraud (stricter, fewer false alarms).  
-  - If you choose threshold **0.50**, you flag more transactions (catch more fraud, but more false alarms).  
-  AUC is useful because it evaluates the model’s separation quality **before** you pick the threshold.
+Numeric example:   
+You have **10,000** transactions, and only **100** are actually fraud (**1%**). The model flags **500** as fraud. **TP = 50**, **FP = 450**, So:   
+**Precision** = 50 / 500 = **0.10**.    
+**Recall** = 50 / 100 = **0.50**.    
+With rare positives, PR makes this pain obvious (low precision), even if ROC looks acceptable.
 
-- **F1 Score:** balances precision and recall into one number.  
-  Example: if precision is 75% and recall is 60%, F1 is a single combined score that will be between them (closer to the smaller one).  
-  Real-life: useful when you need both precision and recall and want one summary number.
+### AUC (Area Under ROC Curve)
+AUC, also called **Area Under the ROC Curve**, measures how well the model **ranks positives above negatives** across all possible thresholds.
+AUC measures how well the model **ranks positives above negatives** across all possible thresholds.
+
+#### Where do these scores come from?
+A classification model often outputs a **score** for each case. You can think of it as a **fraud risk score**:
+- Higher score → the model thinks the case is **more likely fraud**.
+- Lower score → the model thinks the case is **more likely legitimate**.
+
+In many models, this score is a **predicted probability** (0 to 1), but it can also be any numeric score as long as **higher = more fraud-like**. AUC uses these scores to evaluate ranking quality.
+
+#### Numeric example (scores 0 to 1)
+Suppose you have 5 fraud cases and 5 legitimate cases. The model outputs a score for each transaction:
+
+Fraud scores: **0.95, 0.90, 0.80, 0.70, 0.60**  
+Legit scores: **0.55, 0.40, 0.30, 0.20, 0.10**
+
+Here, fraud scores are mostly higher than legit scores, so the model separates the classes well → **high AUC**.  
+If the scores overlap a lot (fraud and legit both mixed around 0.4–0.6), separation is weak → **lower AUC**.
+
+#### Threshold example (why AUC helps)
+If you choose threshold **0.80**, you only flag scores ≥ 0.80 as fraud (stricter, fewer false alarms).  
+If you choose threshold **0.50**, you flag more transactions (catch more fraud, but more false alarms).  
+AUC is useful because it evaluates the model’s separation quality **before** you pick the threshold.
+
+### F1 Score
+F1, also called the **Harmonic Mean of Precision and Recall**, balances precision and recall into one number and tends to be closer to the smaller one.
+
+F1 balances **precision** and **recall** into one number.
+
+#### Where does F1 come from?
+F1 is calculated from precision and recall using this formula:
+F1 = 2 × (Precision × Recall) / (Precision + Recall)
+
+This formula makes F1 behave like a “both-must-be-good” score:
+- If **precision** is low, F1 drops.
+- If **recall** is low, F1 drops.
+- F1 is high only when **both** are high.
+
+#### Worked example
+If precision is 75% and recall is 60%, F1 is a single combined score that will be between them (closer to the smaller one).  
+Precision = **0.75**  
+Recall = **0.60**
+
+F1 = 2 × (0.75 × 0.60) / (0.75 + 0.60)  
+F1 = 2 × 0.45 / 1.35  
+F1 = 0.90 / 1.35 = **0.67**
+
+So here, F1 is **0.67 (67%)**, which is between 0.60 and 0.75 and closer to the smaller one.  
+Real-life: useful when you need both precision and recall and want one summary number.
 
 > [!IMPORTANT]
 > **ROC vs PR:**
 > When positives are rare, **Precision-Recall** curves often show performance more clearly than ROC.
 > ROC can look “good” even when precision is low, because true negatives dominate.
 
-**Threshold Example (Same Model Scores, Different Decisions)**  
+### Threshold Example (Same Model Scores, Different Decisions)
 Example: You are predicting whether a patient needs urgent follow-up. The model outputs a **risk score** (0 to 1) for each patient.  
 For 4 patients, the model outputs: **0.90, 0.70, 0.40, 0.20** (these are the model’s outputs).  
 - If you set threshold **0.50**, you flag **0.90** and **0.70** as urgent.  
@@ -368,16 +424,18 @@ For 4 patients, the model outputs: **0.90, 0.70, 0.40, 0.20** (these are the mod
 Same model, same scores. Only the **threshold** changed, so the final yes/no decisions changed.
 
 ### Accuracy: When It Misleads
-Accuracy can be misleading when the dataset is **imbalanced** (most examples are from one class). A model can look “high accuracy” by mostly predicting the majority class, while doing a poor job on the rare class you actually care about.
+
+Accuracy can be misleading when the dataset is **imbalanced** (most examples are from one class). A model can look high accuracy by mostly predicting the majority class, while doing a poor job on the rare class you actually care about.
 
 Example:
-- If 99 out of 100 transactions are legitimate, a model that always predicts “legitimate” gets **99% accuracy**, but it catches **0 fraud**.
+- If 99 out of 100 transactions are legitimate, a model that always predicts legitimate gets **99% accuracy**, but it catches **0 fraud**.
 
 In imbalanced or high-risk scenarios, rely more on:
 - **Precision** (control false alarms)
 - **Recall** (avoid missing positives)
 - **F1** (balance both)
-- Confusion matrix (see TP/FP/TN/FN counts)
+- Confusion matrix (see TP/FP/TN/FN counts)  
+
 
 ## Clustering (Grouping Similar Examples Without Labels)
 
