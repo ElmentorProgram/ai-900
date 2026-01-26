@@ -351,15 +351,29 @@ You have **1000** transactions, and **10** are actually fraud. The model flags *
 **Recall** = 8 / 10 = **0.80** (how many of the real fraud cases we caught).
 
 ### ROC vs PR (Rare Positives)
-- **ROC (Receiver Operating Characteristic):** a curve view based on TPR vs FPR across thresholds  
-- **PR (Precision-Recall):** a curve view based on precision vs Recall across thresholds  
+
+- **ROC (Receiver Operating Characteristic):** a curve view based on **TPR vs FPR** across thresholds.  
+- **PR (Precision-Recall):** a curve view based on **Precision vs Recall** across thresholds.  
+- **TPR (True Positive Rate):** the same as **Recall** = TP / (TP + FN).  
+- **FPR (False Positive Rate):** the proportion of actual negatives incorrectly flagged = FP / (FP + TN).  
 
 With rare positives, PR often shows performance more clearly than ROC.  
-Numeric example:   
-You have **10,000** transactions, and only **100** are actually fraud (**1%**). The model flags **500** as fraud. **TP = 50**, **FP = 450**, So:   
-**Precision** = 50 / 500 = **0.10**.    
-**Recall** = 50 / 100 = **0.50**.    
-With rare positives, PR makes this pain obvious (low precision), even if ROC looks acceptable.
+Numeric example:  
+You have **10,000** transactions, and only **100** are actually fraud (**1%**). The model flags **500** as fraud. **TP = 50**, **FP = 450**, so:  
+- Total actual legitimate = 10,000 − 100 = **9,900**  
+- **FN = 100 − 50 = 50**  
+- **TN = 9,900 − 450 = 9,450**
+
+So:  
+- **Precision** = TP / (TP + FP) = 50 / 500 = **0.10**.  
+- **Recall / TPR** = TP / (TP + FN) = 50 / 100 = **0.50**.  
+- **FPR** = FP / (FP + TN) = 450 / 9,900 ≈ **0.045**.
+
+**ROC point (at this threshold):** (**FPR ≈ 0.045**, **TPR = 0.50**)  
+**PR point (at this threshold):** (**Recall = 0.50**, **Precision = 0.10**)
+
+With rare positives, PR makes this pain obvious (low precision), even if ROC looks acceptable because FPR can look small when true negatives are so common.
+
 
 ### AUC (Area Under ROC Curve)
 AUC, also called **Area Under the ROC Curve**, measures how well the model **ranks positives above negatives** across all possible thresholds.
