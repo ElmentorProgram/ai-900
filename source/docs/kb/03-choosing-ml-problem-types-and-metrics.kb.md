@@ -446,7 +446,7 @@ In imbalanced or high-risk scenarios, rely more on:
 - **Precision** (control false alarms)
 - **Recall** (avoid missing positives)
 - **F1** (balance both)
-- Confusion matrix (see TP/FP/TN/FN counts)  
+- **Confusion Matrix** (see TP/FP/TN/FN counts)  
 
 ## Clustering (Grouping Similar Examples Without Labels)
 
