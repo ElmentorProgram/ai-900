@@ -60,6 +60,23 @@ If the **text** is inside a scanned PDF/image, you usually need **OCR/Document P
 > [!IMPORTANT]  
 > Start from the workload, input type and output need, then map to the service, don’t start from the Azure service name and work backwards.
 
+### Workload Landscape (Quick Map)
+
+This is a wide-map view of the major AI workloads. The goal is to build a strong mental model first, then go deeper later. You can think of the landscape in five clusters: **Prediction** workloads (Regression, Classification, Clustering, Anomaly Detection), **Language/Search** workloads (NLP/Text Analysis, Knowledge Mining, Generative AI, Conversational AI), **Voice** workloads (Speech), **Vision** workloads (Computer Vision), and **Docs** workloads (Information Extraction, Document Processing). The detailed sections that follow use this same order so your mental map stays stable.
+
+- **Regression**
+- **Classification**
+- **Clustering**
+- **Anomaly Detection**
+- **Natural Language Processing and Text Analysis**
+- **Knowledge Mining**
+- **Generative AI**
+- **Conversational AI**
+- **Speech**
+- **Computer Vision**
+- **Information Extraction**
+- **Document Processing**
+
 
 ## Workloads and What They Do
 
