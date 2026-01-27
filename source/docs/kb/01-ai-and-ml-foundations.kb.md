@@ -80,6 +80,8 @@ This is a wide-map view of the major AI workloads. The goal is to build a strong
 
 ## Workloads and What They Do
 
+This section is a quick tour of the major AI workloads. The goal is to give each workload a consistent, high-signal description so you can recognize it and avoid common confusion. Later documents go deeper into each workload, but the order and mental map stay the same.
+
 ### Regression
 
 Regression predicts a **numeric value** (a number) from input features.  
