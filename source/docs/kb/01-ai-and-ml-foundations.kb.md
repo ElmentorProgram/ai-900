@@ -275,11 +275,11 @@ These are the confusion points that cause most wrong workload choices. Use this 
 
 ## Azure Mapping (Concept → Azure Service Family)
 
-This document is Vendor-Neutral. This section maps the concepts to common Azure services so you can connect the ideas to real implementations.
+This document is Vendor-Neutral. This section is a compact map from the workloads and concepts above to common Azure service families, so you can connect the ideas to real implementations without starting from product names.
 
 In Azure, you will often see AI services presented in two layers:
-- **Service Family:** the main product area that groups related AI features
-- **Specific Capability:** a named feature inside that family that solves a specific problem
+- **Service Family:** The main product area that groups related AI features  
+- **Specific Capability:** A named feature inside that family that solves a specific problem  
 
 > [!IMPORTANT]
 > Service Family is the product area, Specific Capability is the feature you actually use, keep that separation so you map concepts to the right Azure tool
@@ -301,10 +301,10 @@ Now let’s map the AI and ML concepts in this document to Azure services like *
 - **Generative AI models (GPT, embeddings, DALL-E, Whisper)** → Azure OpenAI Service (Azure OpenAI)  
 
 ### Azure OpenAI Model Types (Fast Routing)
-- **GPT models**: generate or transform text (chat, summarization, extraction)  
-- **Embeddings models**: convert text to vectors for semantic search and similarity  
-- **DALL-E**: generate images from text prompts  
-- **Whisper**: speech-to-text transcription  
+- **GPT models:** Generate or transform text (chat, summarization, extraction)  
+- **Embeddings models:** Convert text to vectors for semantic search and similarity  
+- **DALL-E:** Generate images from text prompts  
+- **Whisper:** Speech-to-text transcription  
 
 ## Summary
 
