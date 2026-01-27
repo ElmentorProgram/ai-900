@@ -171,7 +171,18 @@ Enrichment can include extracting text from documents/images (OCR) and extractin
 - Output is searchable fields and ranked results  
 
 ### Generative AI Scenarios
-Common uses of generative AI include implementing AI agents that assist human users by providing information or automating tasks, creating new documents or other content, automated translation of text between languages, and summarizing or explaining complex documents.
+
+Common uses of generative AI include implementing AI agents that assist human users by providing information or automating tasks.  
+It is also used for creating new documents or other content, automated translation of text between languages, and summarizing or explaining complex documents.
+
+Generative AI focuses on producing new content from prompts (most commonly text, but also other formats).  
+Use it when you want the model to generate or transform content rather than only classify, extract, or search.
+
+**Highlights**
+- Common uses include content generation, summarization, explanation, and translation  
+- Often used in assistants/agents to help users complete tasks  
+- Output is generated content (not just retrieved text from a source)  
+- Prompts guide what the model generates and how it responds  
 
 ### Conversational AI  
 Use when the system must interact with users through chat or voice.
