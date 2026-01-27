@@ -261,12 +261,14 @@ It returns extracted text, detected fields (key/value pairs), and extracted tabl
 
 ## Common Confusions (Choose This, Not That)
 
+These are the confusion points that cause most wrong workload choices. Use this list as a fast check: if two options feel similar, match them by **input type** and **output need**, and remember that some workloads are commonly chained (for example: **OCR/Document Processing** first, then **NLP**).
+
 - **OCR / Document Processing vs NLP:** OCR and document processing extract text and structure from images/PDFs; NLP analyzes meaning after you have text.  
-- **Document Processing vs Knowledge Mining:** document processing extracts text/fields/tables from documents; knowledge mining builds a searchable index over lots of content (often using OCR/NLP as enrichment).  
-- **Speech Recognition vs Text-to-Speech:** speech recognition is **audio → text** (captions/transcripts); text-to-speech is **text → audio** (read aloud/announcements).  
+- **Document Processing vs Knowledge Mining:** Document Processing extracts text/fields/tables from documents; Knowledge Mining builds a searchable index over lots of content (often using OCR/NLP as enrichment).  
+- **Speech Recognition vs Text-to-Speech:** Speech Recognition is **audio → text** (captions/transcripts); Text-to-Speech is **text → audio** (read aloud/announcements).  
 - **Translator vs Speech:** Translator is **text → text** translation; Speech is used when audio is involved (speech-to-text, text-to-speech, speech translation).  
-- **Computer Vision vs Anomaly Detection:** if the input is images and the goal is recognizing objects by appearance/shape, treat it as computer vision; anomaly detection is about unusual behavior compared to a normal baseline.
-- **Generative AI vs Question Answering:** generative AI produces new text; question answering retrieves an answer from known content (FAQs/docs) and returns the best match.  
+- **Computer Vision vs Anomaly Detection:** If the input is images and the goal is recognizing objects by appearance/shape, treat it as Computer Vision; Anomaly Detection is about unusual behavior compared to a normal baseline.  
+- **Generative AI vs Question Answering:** Generative AI produces new content; Question Answering retrieves an answer from known content (FAQs/docs) and returns the best match.  
 
 > [!WARNING]
 > OCR, Document Processing, NLP are often chained, OCR and Document Processing extract text and structure from images or PDFs, NLP analyzes meaning after you already have text, mixing them leads to the wrong design and wrong service choice.
