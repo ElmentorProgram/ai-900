@@ -184,31 +184,20 @@ Use it when you want the model to generate or transform content rather than only
 - Output is generated content (not just retrieved text from a source)  
 - Prompts guide what the model generates and how it responds  
 
-### Conversational AI  
-Use when the system must interact with users through chat or voice.
+### Conversational AI
 
-#### Two Common Patterns
-- **Language Understanding (Intent & Entities):** interpret what the user wants to do and extract the details needed to do it.
-- **Question Answering:** find the best answer to a user’s question from known content (for example: FAQs, documents, or web pages).
+Use when the system must interact with users through chat or voice.  
+The goal is to interpret user messages and respond appropriately using common conversational patterns.
 
-#### Language Understanding (Intent & Entities)
-When you need to interpret what a user means in a message like “Call me back later,” you are doing language understanding (often modeled as **Intent & Entities**).
+A conversational system often either understands what the user wants to do or answers questions from known content.  
+If it is unclear what the user wants, the system can ask one short clarifying question, then choose the right pattern.
 
-Typical outputs:
-- **Intent:** what the user wants to do  
-- **Entities:** important details inside the text  
+**Highlights**
+- Two common patterns are **Language Understanding (Intent & Entities)** and **Question Answering**  
+- Use Language Understanding when the message is **do something** (intent + entities)  
+- Use Question Answering when the message is **tell me something** (answer from known content)  
+- When unclear, ask one clarifying question, then route to the right pattern  
 
-#### Question Answering
-Use when the user is asking for information and the answer should come from known content.
-
-Typical outputs:
-- **Best-matching answer:** the most relevant response found in the content  
-- **Optional score/confidence:** a signal of how well the content matched the question (when available)
-
-#### How to Choose
-- If the message is “Do something” → **Language Understanding (Intent & Entities)**
-- If the message is “Tell me something” → **Question Answering**
-- If it is unclear → ask one short clarifying question, then choose one of the two patterns
 
 ### Speech
 Speech capabilities in AI applications and agents enable users to interact with them through spoken language.
