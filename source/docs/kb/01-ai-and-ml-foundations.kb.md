@@ -139,20 +139,22 @@ You typically learn or estimate a baseline, then detect deviations from that bas
 - Typical scenarios include fraud/suspicious transactions, equipment faults, intrusion detection, and metric spikes/drops  
 - The key idea is comparing behavior to **normal** rather than predicting a fixed label  
 
-
 ### Natural Language Processing and Text Analysis
-Use when the input is **text** and you want to analyze language.
 
-Common capabilities include:
-- **Text classification** (including sentiment analysis)
-- **Key phrase extraction**
-- **Entity recognition**
-- **Language detection**
-- **Summarization**
+Use when the input is **text** and you want to analyze language.  
+This workload focuses on extracting meaning and signals from text so your app can classify, extract, summarize, or route content.
 
-Text analysis scenarios include analyzing documents or transcripts to determine key subjects and mentions of people/places/organizations/products, analyzing social media or reviews to evaluate sentiment and opinion, and implementing chatbots that can answer frequently asked questions or orchestrate predictable conversational dialogs that don’t require the complexity of generative AI.
+Common capabilities include text classification (including sentiment analysis), key phrase extraction, entity recognition, language detection, and summarization.  
+If the **text** is inside a scanned PDF/image, you usually need **OCR/Document Processing** first to extract text, then you can run NLP on the extracted text.
 
-If the input is a **scanned PDF/image**, you usually need **OCR/document processing first** to extract text, then you can run NLP on the extracted text.
+**Highlights**
+- Use when the input is text and you want meaning-level analysis (not just OCR)  
+- Typical tasks include sentiment analysis, key phrase extraction, and summarization  
+- Also includes entity recognition (people, places, organizations, products) and language detection  
+- Common scenarios include finding key subjects/topics in documents or transcripts  
+- Also includes evaluating sentiment and opinion in reviews or social media  
+- Also supports FAQ-style chatbots and predictable conversational dialogs (without needing Generative AI)  
+- If the text comes from scans/images, OCR/Document Processing comes first, then NLP  
 
 ### Knowledge Mining
 Knowledge mining is an AI workload whose primary purpose is to make large volumes of content searchable.
