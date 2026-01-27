@@ -286,25 +286,30 @@ In Azure, you will often see AI services presented in two layers:
 
 Now let’s map the AI and ML concepts in this document to Azure services like **AI and ML concept → Service Family (Specific Capability Name)**:
 
+- **Regression** → Azure Machine Learning (Azure ML)  
+- **Classification** → Azure Machine Learning (Azure ML)  
+- **Clustering** → Azure Machine Learning (Azure ML)  
+- **Anomaly Detection** → Azure Machine Learning (Azure ML)  
+- **Natural Language Processing and Text Analysis** → Azure AI Language (Text Analytics)  
+- **Knowledge Mining** → Azure AI Search (Search Indexing)  
+- **Generative AI models (GPT, Embeddings, DALL-E, Whisper)** → Azure OpenAI Service (Azure OpenAI)  
 - **Language Understanding (Intent & Entities)** → Azure AI Language (CLU: Conversational Language Understanding)  
 - **Question Answering** → Azure AI Language (Question Answering)  
-- **Text Analysis (Sentiment, Entities, Key Phrases, Language Detection)** → Azure AI Language (Text Analytics)  
 - **Translation (Text → Text)** → Azure AI Translator (Text Translation)  
 - **Speech (Speech-to-Text, Text-to-Speech, Speech Translation)** → Azure AI Speech (Speech Services)  
 - **General Vision (Tags, Captions, OCR)** → Azure AI Vision (Image Analysis)  
 - **Face Detection and Face Operations** → Azure AI Face (Face)  
 - **Custom Vision Models (Classification, Object Detection)** → Azure AI Custom Vision (Custom Vision)  
+- **Information Extraction** → Azure AI Document Intelligence (Document Intelligence)  
 - **Document Processing (OCR, Key/Value, Tables)** → Azure AI Document Intelligence (Document Intelligence)  
-- **Knowledge Mining (Indexing, Search, Enrichment)** → Azure AI Search (Search Indexing)  
-- **Training and Operationalizing ML Models** → Azure Machine Learning (Azure ML)  
 - **Bots and Channels (Bot Runtime/Connector)** → Azure AI Bot Service (Bot Service)  
-- **Generative AI models (GPT, Embeddings, DALL-E, Whisper)** → Azure OpenAI Service (Azure OpenAI)  
 
 ### Azure OpenAI Model Types (Fast Routing)
-- **GPT models:** Generate or transform text (chat, summarization, extraction)  
-- **Embeddings models:** Convert text to vectors for semantic search and similarity  
+- **GPT Models:** Generate or transform text (chat, summarization, extraction)  
+- **Embeddings Models:** Convert text to vectors for semantic search and similarity  
 - **DALL-E:** Generate images from text prompts  
 - **Whisper:** Speech-to-text transcription  
+
 
 ## Summary
 
