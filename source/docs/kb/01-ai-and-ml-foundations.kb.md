@@ -12,6 +12,8 @@ This document introduces the core AI concepts and the most common AI workloads. 
 
 ## Core Definitions
 
+Core definitions are here to lock the mental model early. Treat each line as a **label → meaning** anchor you will reuse across the rest of the docs, so the same terms keep the same meaning everywhere.
+
 - **Artificial Intelligence (AI):** Systems that perform tasks that usually require human intelligence (perception, language, reasoning, decision support).  
 - **Machine Learning (ML):** AI where models learn patterns from data to make predictions or decisions.  
 - **Features & Labels:** Features are the input signals you train on; Labels are the target outputs you want the model to learn (Labels are what make a dataset “supervised”).  
