@@ -10,29 +10,28 @@ This document introduces the core AI concepts and the most common AI workloads. 
 - Azure Mapping (Concept → Azure Service Family)  
 - Summary
 
-
 ## Core Definitions
 
-- **Artificial Intelligence (AI):** systems that perform tasks that usually require human intelligence (perception, language, reasoning, decision support).  
+- **Artificial Intelligence (AI):** Systems that perform tasks that usually require human intelligence (perception, language, reasoning, decision support).  
 - **Machine Learning (ML):** AI where models learn patterns from data to make predictions or decisions.  
-- **Features & Labels:** features are the input signals you train on; labels are the target outputs you want the model to learn (labels are what make a dataset “supervised”).  
-- **Training vs Inference:** training is when the model learns from data; inference is when the trained model makes predictions on new inputs.  
-- **Deep Learning:** the foundation for modern image classification solutions, typically based on neural networks that learn visual patterns from many labeled images.  
-- **Generative AI:** a branch of AI that enables software applications to generate new content; often natural language dialogs, but also images, video, code, and other formats.  
-- **Language Models:** models encapsulate semantic relationships between language elements (that’s what enables them to generate a meaningful sequence of text).  
+- **Features & Labels:** Features are the input signals you train on; Labels are the target outputs you want the model to learn (Labels are what make a dataset “supervised”).  
+- **Training vs Inference:** Training is when the model learns from data; Inference is when the trained model makes predictions on new inputs.  
+- **Supervised vs Unsupervised:** Supervised learning uses labeled data; Unsupervised learning has no Labels and finds structure (for example: Clustering).  
+- **Deep Learning:** A neural-network approach in ML that learns complex patterns from lots of data (commonly used in Vision, Speech, and Language).  
+- **Generative AI:** A branch of AI that enables software applications to generate new content; often natural language dialogs, but also images, video, code, and other formats.  
+- **Language Models:** Models encapsulate semantic relationships between language elements (that’s what enables them to generate a meaningful sequence of text).  
 - **LLMs vs SLMs:** LLMs are powerful and generalize well but can be more costly; SLMs tend to work well in more focused scenarios or when you need small models for local applications and agents on devices.  
-- **Parameters:** the learned internal weights of a model. More parameters usually means more capacity, but it typically requires more compute both to train the model and to run inference (make predictions).  
-- **Prompts:** users interact with generative AI language models through prompts - natural language statements of questions.  
-- **Tokens:** language models process text as tokens (chunks of text), not characters or words; token limits shape how much input and output the model can handle at once.  
-- **Vectorization (Embeddings):** vectorization maps words (or sentences/documents) into numerical vectors so that items with similar meaning become close to each other (e.g., “plant” and “flower” are closer than “airplane”). This is the core idea behind embeddings: represent language as vectors so you can compare similarity.  
-- **Frequency analysis / N-grams vs Embeddings:** frequency analysis and N-grams count occurrences and patterns, and lemmatization normalizes word forms; these techniques support text processing but do not create semantic vector spaces the way embeddings do.  
+- **Parameters:** The learned internal weights of a model. More parameters usually means more capacity, but it typically requires more compute both to train the model and to run inference (make predictions).  
+- **Prompts:** Users interact with generative AI language models through prompts, natural language statements or questions.  
+- **Tokens:** Language models process text as tokens (chunks of text), not characters or words; token limits shape how much input and output the model can handle at once.  
+- **Vectorization (Embeddings):** Vectorization maps words (or sentences/documents) into numerical vectors so that items with similar meaning become close to each other (e.g., “plant” and “flower” are closer than “airplane”). This is the core idea behind Embeddings: represent language as vectors so you can compare similarity.  
+- **Frequency analysis / N-grams vs Embeddings:** Frequency analysis and N-grams count occurrences and patterns, and lemmatization normalizes word forms; these techniques support text processing but do not create semantic vector spaces the way Embeddings do.  
 
 **Embeddings Example (Similarity Intuition)**  
-A search for **plant** will often return text about **flower** before text about **airplane**, because embeddings place related meanings closer together in vector space.
+A search for **plant** will often return text about **flower** before text about **airplane**, because Embeddings place related meanings closer together in vector space.
 
 > [!IMPORTANT]
 > AI is the umbrella, ML is one way to build AI by learning patterns from data, Deep Learning is a neural-network approach inside ML, Generative AI generates new content from prompts.
-
 
 ## Common AI Workloads (How to Choose)
 
