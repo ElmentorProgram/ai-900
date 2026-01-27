@@ -35,27 +35,27 @@ A search for **plant** will often return text about **flower** before text about
 
 ## Common AI Workloads (How to Choose)
 
-Start with two questions:
-
-A workload is the type of AI task or problem you are trying to solve (vision, language, document extraction, ML prediction, etc.). You choose it by matching the data you have to the output you need.
+Start with two questions. A workload is the type of AI task or problem you are trying to solve (vision, language, document extraction, ML prediction, etc.). You choose it by matching the data you have to the output you need.
 
 1) What is the **input**?
-- Images/video → usually **Computer Vision**
-- Text/documents → usually **Natural Language Processing (NLP)** or **Document Processing**
-- Conversations (chat/voice) → usually **Conversational AI**
-- Time-series/telemetry/transactions → often **Anomaly Detection** or **Machine Learning**
+   - Images/video → **Computer Vision**
+   - Text/documents → **Natural Language Processing (NLP)** or **Document Processing**
+   - Conversations (chat/voice) → **Conversational AI**
+   - Time-series/telemetry/transactions → **Anomaly Detection** or **Machine Learning**
 
 2) What is the **output**?
-- A label/category → **Classification** (ML)
-- A number → **Regression** (ML)
-- Groups/segments → **Clustering** (ML)
-- Unusual/rare events → **Anomaly Detection**
-- Extracted text/fields/tables → **Document Processing**
-- Searchable results from lots of content → **Knowledge Mining**
-- Generated text/content → **Generative AI**
-- Answer a user in chat → **Conversational AI**
+   - A label/category → **Classification**
+   - A number → **Regression**
+   - Groups/segments → **Clustering**
+   - Unusual/rare events → **Anomaly Detection**
+   - Extracted text/fields/tables → **Document Processing**
+   - Searchable results from lots of content → **Knowledge Mining**
+   - Generated text/content → **Generative AI**
+   - Answer a user in chat → **Conversational AI**
 
 The same input can support different workloads depending on the output you need.
+
+If the **text** is inside a scanned PDF/image, you usually need **OCR/Document Processing** before **NLP**.
 
 > [!IMPORTANT]  
 > Start from the workload, input type and output need, then map to the service, don’t start from the Azure service name and work backwards.
