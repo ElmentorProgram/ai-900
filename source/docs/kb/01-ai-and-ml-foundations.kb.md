@@ -241,15 +241,18 @@ OCR is often combined with a model that interprets values in the content so you 
 - Scenarios include business form processing, digitization, indexing for search, and extracting follow-up actions from transcripts  
 
 ### Document Processing
-Use when the input is a document (PDF/image/scan) and you need structured extraction.
 
-When you have scanned documents (PDFs or images) and you want to automatically extract full text (OCR), key/value pairs, and tables, you need a document understanding service designed for forms and structured documents.
+Use when the input is a document (PDF/image/scan) and you need structured extraction.  
+This workload focuses on extracting full text (OCR), key/value pairs, and tables from documents so the results can be used in business processes.
 
-Typical workflow:
-- Provide a scanned document (image/PDF) to the service
-- The service detects layout and runs OCR
-- It returns extracted text, detected fields as key/value pairs, and extracted tables
-- Your app validates and maps results into your database or business process
+A typical workflow is to provide a scanned document, then the service detects layout and runs OCR to extract text and structure.  
+It returns extracted text, detected fields (key/value pairs), and extracted tables that your app validates and maps into downstream systems.
+
+**Highlights**
+- Use when you need structured extraction from documents (text, fields, tables)  
+- OCR & layout understanding are key building blocks for document results  
+- Output is structured results you can validate and store (not just raw text)  
+- Common scenarios include forms processing and automating document-heavy workflows  
 
 ## Common Confusions (Choose This, Not That)
 
