@@ -80,18 +80,65 @@ This is a wide-map view of the major AI workloads. The goal is to build a strong
 
 ## Workloads and What They Do
 
-### Machine Learning
-- **Classification:** predicts a **label/category** (for example: yes/no, fraud/not fraud, class A/B/C).  
-- **Regression:** predicts a **numeric value** (a number).  
-- **Clustering:** groups data into **clusters** without predefined labels (you do not have labels and want the algorithm to discover structure).
-- Classification & regression are usually **supervised** (you have labels). Clustering is usually **unsupervised** (no labels).  
+### Regression
+
+Regression predicts a **numeric value** (a number) from input features.  
+Use it when the target you want to predict is a continuous number rather than a category.
+
+Regression is common when you want to estimate **how much** or **how many** from past examples.  
+You train on rows where the numeric target is known, then predict that value for new data.
+
+**Highlights**
+- Output is a numeric value  
+- Use when the target is continuous (for example: price, demand, duration)  
+- Typical scenarios include house price prediction, sales/demand forecasting, and time-to-failure estimation  
+- Training is usually supervised because you train on known numeric targets  
+
+### Classification
+
+Classification predicts a **label/category** from input features (for example: yes/no, fraud/not fraud, class A/B/C).  
+Use it when the target you want to predict is a category rather than a continuous number.
+
+Classification is common when you want to decide **which group** something belongs to based on past labeled examples.  
+You train on rows where the correct label is known, then predict the label for new data.
+
+**Highlights**
+- Output is a label/category  
+- Use when the target is a category (binary or multi-class)  
+- Typical scenarios include fraud detection, spam filtering, and defect detection (pass/fail)  
+- Training is usually supervised because you train on known labels  
+
+### Clustering
+
+Clustering groups data into **clusters** without predefined labels (you do not have labels and want the algorithm to discover structure).  
+Use it when you want to segment data into groups based on similarity and you don’t already have the correct group labels.
+
+Clustering is common when you want to discover natural groupings in data rather than predict a known outcome.  
+You run the algorithm on unlabeled data, then interpret and name the clusters based on what they represent.
+
+**Highlights**
+- Output is a cluster assignment (a group/segment for each item)  
+- Use when you do not have labels and want the model to discover structure  
+- Typical scenarios include customer segmentation, grouping similar documents, and organizing products into segments  
+- Training is usually unsupervised because there are no target labels  
 
 > [!NOTE]
 > Machine Learning is for predicting labels or numbers from features, Computer Vision is for visual input, NLP is for meaning in text, Document Processing is for extracting text, fields, and tables from documents, Knowledge Mining is for making large content searchable.
 
 ### Anomaly Detection
-Anomaly detection is about finding data points or events that are **unusual compared to normal behavior**.  
-Common uses include fraud or suspicious transactions, equipment faults, network intrusions, defective products, and unusual spikes/drops in metrics.
+
+Anomaly detection finds data points or events that are **unusual compared to normal behavior**.  
+Use it when you have a notion of **normal** and you want to flag rare, suspicious, or abnormal patterns.
+
+Anomaly detection is common when the important cases are rare and you can’t rely on a simple category label alone.  
+You typically learn or estimate a baseline, then detect deviations from that baseline as potential anomalies.
+
+**Highlights**
+- Output is an anomaly flag and/or anomaly score (how unusual)  
+- Use when you want to detect rare events or unusual behavior vs a baseline  
+- Typical scenarios include fraud/suspicious transactions, equipment faults, intrusion detection, and metric spikes/drops  
+- The key idea is comparing behavior to **normal** rather than predicting a fixed label  
+
 
 ### Natural Language Processing and Text Analysis
 Use when the input is **text** and you want to analyze language.
