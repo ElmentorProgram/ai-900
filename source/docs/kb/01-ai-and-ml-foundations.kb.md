@@ -213,16 +213,18 @@ Speech synthesis converts text into spoken audio (text-to-speech).
 - Common scenarios include spoken agents, transcription, and real-time voice experiences  
 
 ### Computer Vision
-Computer vision is the area of artificial intelligence that deals with the analysis of visual input; such as photographs, videos, and live camera feeds. Computer vision is accomplished by using large numbers of images to train a model.
 
-There are multiple types of computer vision model.
+Computer vision analyzes visual input such as photographs, videos, and live camera feeds.  
+Use it when the input is visual and you want labels, locations, or pixel-level understanding.
 
-- **Image Classification:** a model is trained with images that are labeled with the main subject of the image so it can analyze unlabeled images and predict the most appropriate label.  
-- **Object Detection:** the model is trained to identify the location of specific objects in an image.  
-- **Semantic Segmentation:** an advanced form of object detection where the model identifies the individual pixels in the image that belong to a particular object.  
-- **Multi-modal Models:** combine visual features and associated text descriptions, enabling them to generate comprehensive descriptions of images.
+Computer vision models are trained on large numbers of images to learn visual patterns.  
+Different model types are used depending on whether you need classification, detection, or segmentation.
 
-Computer vision scenarios include AI agents that can interpret visual input, auto-captioning or tag-generation for photographs, visual search, monitoring stock levels or identifying items for checkout in retail scenarios, security video monitoring, authentication through facial recognition, and robotics and self-driving vehicles.
+**Highlights**
+- **Image Classification:** predict the most appropriate label for an image  
+- **Object Detection:** identify the location of specific objects in an image  
+- **Semantic Segmentation:** identify the pixels that belong to a particular object  
+- **Multi-modal Models:** combine visual features with text to generate richer descriptions  
 
 ### Information Extraction
 AI is commonly used to automate information extraction solutions that find information and unlock insights in unstructured data sources, such as scanned documents and forms, images, and audio or video recordings.
