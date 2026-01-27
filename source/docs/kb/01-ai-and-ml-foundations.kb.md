@@ -198,22 +198,19 @@ If it is unclear what the user wants, the system can ask one short clarifying qu
 - Use Question Answering when the message is **tell me something** (answer from known content)  
 - When unclear, ask one clarifying question, then route to the right pattern  
 
-
 ### Speech
-Speech capabilities in AI applications and agents enable users to interact with them through spoken language.
 
-#### Speech Recognition
-Speech recognition is the ability of AI to “hear” and interpret speech. Usually this capability takes the form of **speech-to-text**, where the audio signal for the speech is transcribed into text.
+Speech capabilities enable users to interact with AI applications and agents through spoken language.  
+Use it when audio is involved and you need to convert between speech and text or generate spoken output.
 
-#### Speech Synthesis
-Speech synthesis is the ability of AI to vocalize words as spoken language. Usually this capability takes the form of **text-to-speech**, in which information in text format is converted into an audible signal.
+Speech recognition converts spoken audio into text (speech-to-text).  
+Speech synthesis converts text into spoken audio (text-to-speech).
 
-#### Speech Scenarios
-Common uses of AI speech technologies include:
-- AI agents that understand spoken input, perform tasks, and respond with spoken results
-- Automated transcription of calls or meetings
-- Automating audio descriptions of video or text
-- Automated speech translation between languages
+**Highlights**
+- **Speech-to-Text:** transcribe calls/meetings, captions, voice input for agents  
+- **Text-to-Speech:** read content aloud, voice responses from assistants  
+- **Speech Translation:** translate spoken language between languages  
+- Common scenarios include spoken agents, transcription, and real-time voice experiences  
 
 ### Computer Vision
 Computer vision is the area of artificial intelligence that deals with the analysis of visual input; such as photographs, videos, and live camera feeds. Computer vision is accomplished by using large numbers of images to train a model.
