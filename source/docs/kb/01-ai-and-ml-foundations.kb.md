@@ -227,11 +227,18 @@ Different model types are used depending on whether you need classification, det
 - **Multi-modal Models:** combine visual features with text to generate richer descriptions  
 
 ### Information Extraction
-AI is commonly used to automate information extraction solutions that find information and unlock insights in unstructured data sources, such as scanned documents and forms, images, and audio or video recordings.
 
-The basis for most document analysis solutions is a computer vision technology called optical character recognition (OCR), which can identify the location of text in an image. OCR is often combined with an analytical model that can interpret individual values in the document, and so extract specific fields.
+Information extraction automates finding information and unlocking insights in unstructured sources such as scanned documents and forms, images, and audio or video recordings.  
+Use it when you want to pull useful fields, facts, or action items out of content that is not already structured.
 
-Data and insight extraction scenarios include automated processing of forms and other documents in a business process, large-scale digitization of data from paper forms, indexing documents for search, and identifying key points and follow-up actions from meeting transcripts or recordings.
+The basis for many document analysis solutions is optical character recognition (OCR), which identifies the location of text in an image.  
+OCR is often combined with a model that interprets values in the content so you can extract specific fields.
+
+**Highlights**
+- Common inputs include scanned forms/documents, images, and audio/video recordings  
+- OCR is a common foundation when text is inside images or scans  
+- The goal is extracting usable fields or insights for downstream systems  
+- Scenarios include business form processing, digitization, indexing for search, and extracting follow-up actions from transcripts  
 
 ### Document Processing
 Use when the input is a document (PDF/image/scan) and you need structured extraction.
