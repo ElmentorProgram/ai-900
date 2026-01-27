@@ -157,18 +157,18 @@ If the **text** is inside a scanned PDF/image, you usually need **OCR/Document P
 - If the text comes from scans/images, OCR/Document Processing comes first, then NLP  
 
 ### Knowledge Mining
-Knowledge mining is an AI workload whose primary purpose is to make large volumes of content searchable.
 
-What it usually looks like:
-- Use a search service to build an index you can query
-- Use indexers and AI enrichment to extract and enrich content so it becomes searchable, including extracting text from documents and images (OCR) and extracting entities and key phrases
+Knowledge mining is an AI workload whose primary purpose is to make large volumes of content searchable.  
+Use it when you have lots of unstructured content and you want to query it like a search engine.
 
-A simple pipeline view:
-- **Data source** (documents, images, blobs)  
-- **Indexing** pulls content into an index  
-- **Enrichment** extracts signals (OCR, key phrases, entities)  
-- **Search index** stores searchable fields  
-- **Query** returns relevant results  
+It commonly uses indexing plus AI enrichment to extract and enrich content so it becomes searchable.  
+Enrichment can include extracting text from documents/images (OCR) and extracting entities and key phrases from text.
+
+**Highlights**
+- The goal is a searchable index you can query (not generated content)  
+- Typical flow: data source → indexing → enrichment → search index → query  
+- Enrichment often uses OCR (for documents/images) and NLP signals (entities, key phrases)  
+- Output is searchable fields and ranked results  
 
 ### Generative AI Scenarios
 Common uses of generative AI include implementing AI agents that assist human users by providing information or automating tasks, creating new documents or other content, automated translation of text between languages, and summarizing or explaining complex documents.
