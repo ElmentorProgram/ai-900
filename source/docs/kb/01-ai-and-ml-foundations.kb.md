@@ -171,7 +171,7 @@ Enrichment can include extracting text from documents/images (OCR) and extractin
 
 **Highlights**
 - The goal is a searchable index you can query (not generated content)  
-- Typical flow: data source → indexing → enrichment → search index → query  
+- Typical flow: Data source → indexing → enrichment → search index → query  
 - Enrichment often uses OCR (for documents/images) and NLP signals (entities, key phrases)  
 - Output is searchable fields and ranked results  
 
@@ -212,9 +212,9 @@ Speech recognition converts spoken audio into text (speech-to-text).
 Speech synthesis converts text into spoken audio (text-to-speech).
 
 **Highlights**
-- **Speech-to-Text:** transcribe calls/meetings, captions, voice input for agents  
-- **Text-to-Speech:** read content aloud, voice responses from assistants  
-- **Speech Translation:** translate spoken language between languages  
+- **Speech-to-Text:** Transcribe calls/meetings, captions, voice input for agents  
+- **Text-to-Speech:** Read content aloud, voice responses from assistants  
+- **Speech Translation:** Translate spoken language between languages  
 - Common scenarios include spoken agents, transcription, and real-time voice experiences  
 
 ### Computer Vision
@@ -226,10 +226,10 @@ Computer vision models are trained on large numbers of images to learn visual pa
 Different model types are used depending on whether you need classification, detection, or segmentation.
 
 **Highlights**
-- **Image Classification:** predict the most appropriate label for an image  
-- **Object Detection:** identify the location of specific objects in an image  
-- **Semantic Segmentation:** identify the pixels that belong to a particular object  
-- **Multi-modal Models:** combine visual features with text to generate richer descriptions  
+- **Image Classification:** Predict the most appropriate label for an image  
+- **Object Detection:** Identify the location of specific objects in an image  
+- **Semantic Segmentation:** Identify the pixels that belong to a particular object  
+- **Multi-modal Models:** Combine visual features with text to generate richer descriptions  
 
 ### Information Extraction
 
@@ -298,7 +298,7 @@ Now let’s map the AI and ML concepts in this document to Azure services like *
 - **Knowledge Mining (Indexing, Search, Enrichment)** → Azure AI Search (Search Indexing)  
 - **Training and Operationalizing ML Models** → Azure Machine Learning (Azure ML)  
 - **Bots and Channels (Bot Runtime/Connector)** → Azure AI Bot Service (Bot Service)  
-- **Generative AI models (GPT, embeddings, DALL-E, Whisper)** → Azure OpenAI Service (Azure OpenAI)  
+- **Generative AI models (GPT, Embeddings, DALL-E, Whisper)** → Azure OpenAI Service (Azure OpenAI)  
 
 ### Azure OpenAI Model Types (Fast Routing)
 - **GPT models:** Generate or transform text (chat, summarization, extraction)  
