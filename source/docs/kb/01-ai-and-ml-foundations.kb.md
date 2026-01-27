@@ -41,20 +41,20 @@ A search for **plant** will often return text about **flower** before text about
 Start with two questions. A workload is the type of AI task or problem you are trying to solve (vision, language, document extraction, ML prediction, etc.). You choose it by matching the data you have to the output you need.
 
 1) What is the **input**?
-   - Images/video → **Computer Vision**
-   - Text/documents → **Natural Language Processing (NLP)** or **Document Processing**
-   - Conversations (chat/voice) → **Conversational AI**
-   - Time-series/telemetry/transactions → **Anomaly Detection** or **Machine Learning**
+   - Images/Video → **Computer Vision**
+   - Text/Documents → **Natural Language Processing (NLP)** or **Document Processing**
+   - Conversations (Chat/Voice) → **Conversational AI**
+   - Time-Series/Telemetry/Transactions → **Anomaly Detection** or **Machine Learning**
 
 2) What is the **output**?
-   - A label/category → **Classification**
-   - A number → **Regression**
-   - Groups/segments → **Clustering**
-   - Unusual/rare events → **Anomaly Detection**
-   - Extracted text/fields/tables → **Document Processing**
-   - Searchable results from lots of content → **Knowledge Mining**
-   - Generated text/content → **Generative AI**
-   - Answer a user in chat → **Conversational AI**
+   - A Number → **Regression**
+   - A Label/Category → **Classification**
+   - Groups/Segments → **Clustering**
+   - Unusual/Rare Events → **Anomaly Detection**
+   - Extracted Text/Fields/Tables → **Document Processing**
+   - Searchable Results From Lots of Content → **Knowledge Mining**
+   - Generated Text/Content → **Generative AI**
+   - Answer a User in Chat → **Conversational AI**
 
 The same input can support different workloads depending on the output you need.
 
