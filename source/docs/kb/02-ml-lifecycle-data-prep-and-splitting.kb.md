@@ -278,10 +278,9 @@ It does not answer the evaluation question: **Will this model generalize to new 
 
 ## Split Patterns and When Random Split Fails (Time-Based and Group-Based)
 
-### Random Split  
-Randomly splitting rows is a common default when each row is an **independent** example. It helps create training and evaluation subsets that are similar in distribution, so evaluation reflects the same kind of data the model will see in real life.  
+### Random Split
 
-Random splitting is a common default because it usually keeps train and evaluation sets similar in distribution and provides a fair estimate of performance on unseen examples.
+Randomly splitting rows is a common default when each row is an **independent** example. It usually keeps training and evaluation sets similar in distribution, so evaluation reflects the same kind of data the model will see in real life.
 
 However, random splitting is not always the best choice.
 
@@ -289,9 +288,9 @@ However, random splitting is not always the best choice.
 > Random split is fine only when rows are independent, use time-based split for time-ordered data, use group-based split when multiple rows belong to the same user, patient, or device.
 
 **Special Splitting Cases (When Random Split Fails)**  
-- **Random Split**: shuffle and split when rows are independent  
-- **Time-Based Split**: train on past data, test on future data  
-- **Group-Based Split**: keep the same user/patient/device in only one split  
+- **Random Split:** Shuffle and split when rows are independent  
+- **Time-Based Split:** Train on past data, test on future data  
+- **Group-Based Split:** Keep the same user/patient/device in only one split  
 
 Typical starting splits:
 - **80/20** (train/test) for quick experiments  
@@ -302,7 +301,8 @@ Typical starting splits:
 For classification with imbalanced classes, use a **stratified** split so each subset keeps a similar class ratio.
 
 ### Time-Based Split
-If data is **time-ordered**, you usually want to train on the past and evaluate on the future. This better matches real deployment, especially for “next month” style predictions.
+
+If data is **time-ordered**, you usually want to train on the past and evaluate on the future. This better matches real deployment, especially for **next month** style predictions.
 
 > [!WARNING]
 > **Time-based split rule:** when data has time order, do not shuffle.
@@ -313,6 +313,7 @@ Train on data from **Jan–Sep**, validate on **Oct**, and test on **Nov–Dec**
 This simulates the real world: you predict the future using only the past.
 
 ### Group-Based Split
+
 If rows are **grouped/related** (for example, multiple rows from the same user/patient/device), you usually want each group to stay in only one subset. This avoids the model seeing the same group in training and evaluation.
 
 If multiple rows come from the same user/patient/device/store, they must appear in **only one** of train/validation/test, or you leak identity patterns.
@@ -320,6 +321,7 @@ If multiple rows come from the same user/patient/device/store, they must appear 
 **Group Split Example**  
 A patient has 6 visits in your dataset. All 6 visits must go into **only one** split (train or validation or test).  
 If the same patient appears in both train and test, the model can memorize that patient’s patterns.
+
 
 ## Common Pitfalls (Leakage, Peeking, Ordering Bias, and Overfitting)
 
