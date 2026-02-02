@@ -250,18 +250,19 @@ Do not mix this with **fine-tuning**. **Fine-tuning** is more specific: you take
 
 So in the fraud example: if you miss a target (like precision), you **iterate/tune** using the validation set. You would call it **fine-tuning** only if you are adapting a **pre-trained model** by additional training on your fraud dataset.
 
-
 ## How Splitting Works (Rows vs Columns)
 
-Splitting is how you simulate **real life** before deployment. You want the model to learn from one set of examples, then prove it can handle **new examples** it has never seen before.
+Splitting is how you simulate **real life** before deployment. The core idea is to train on some examples, then prove the model can handle **new examples** it has never seen before.
 
-### Split by Rows (What You Usually Want)
+### Split By Rows (What You Usually Want)
+
 To simulate new data, you hold out entire **examples (rows)** that the model never sees during training.
 
 - If you split by **rows**, evaluation reflects performance on **new cases**  
 - You keep the **same columns** (same feature inputs) so training and evaluation are solving the same task  
 
-### Split by Columns (Why It Is Usually Wrong for Evaluation)
+### Split By Columns (Why It Is Usually Wrong For Evaluation)
+
 If you split by **columns**, you are not holding out new examples. Instead, you are removing some input fields.
 
 That changes the problem into: **Can the model work with less information?**  
@@ -272,7 +273,7 @@ It does not answer the evaluation question: **Will this model generalize to new 
 
 ### Key Rule
 - Split by **rows** so evaluation uses unseen examples  
-- Keep the **same feature columns** in both training and evaluation so the task stays consistent  
+- Keep the **same feature columns** in both training and evaluation so the task stays consistent
 
 
 ## Split Patterns and When Random Split Fails (Time-Based and Group-Based)
