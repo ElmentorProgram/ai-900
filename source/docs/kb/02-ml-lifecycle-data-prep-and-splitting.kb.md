@@ -14,35 +14,37 @@ This document explains where data ingestion and data preparation fit in the ML l
 
 ## ML Lifecycle Overview
 
-When you build an ML model to support a real decision (for example, estimate risk, classify requests, forecast demand, or detect anomalies), start by defining what you’re building and how it will be used in real life. That means clearly stating: the target output, the inputs available at prediction time, and what “good” looks like (the success metric). The goal is to perform well on new, unseen data, not just the data you trained on.
+When you build an ML model to support a real decision (for example: estimate risk, classify requests, forecast demand, detect anomalies), start by defining what you’re building and how it will be used in real life. That means clearly stating: the **target output**, the **inputs available at prediction time**, and what **good** looks like (the success metric & its target).
 
-After that, you move through the ML lifecycle: build a reliable dataset, prepare and train the model, evaluate it, and finally deploy it to production.
+The goal is to perform well on **new, unseen data**, not just the data you trained on. After that, you move through the ML lifecycle: build a reliable dataset, prepare and train the model, evaluate it, and finally deploy it to production.
 
 A typical end-to-end lifecycle looks like:
 - **Prepare Data** (**Data Ingestion** & **Data Preparation**)  
 - **Split Data:** **Training / Validation / Test**  
-- **Train:** fit the model on the **training set**  
-- **Evaluate & Tune:** compare versions and tune choices using the **validation set**  
-- **Final Test:** run one last check on the **test set** (unseen “final check”)  
-- **Package:** confirm the **input/output schema** and how the model will be called  
-- **Deploy & Monitor:** deploy as an **endpoint/service**, then monitor **errors**, **data drift**, and **performance drift**
+- **Train:** Fit the model on the **training set**  
+- **Evaluate & Tune:** Compare versions and tune choices using the **validation set**  
+- **Final Test:** Run one last check on the **test set** (unseen **final check**)  
+- **Package:** Confirm the **input/output schema** and how the model will be called  
+- **Deploy & Monitor:** Deploy as an **endpoint/service**, then monitor **errors**, **data drift**, and **performance drift**
 
 > [!NOTE]
 > **Data Ingestion** means collecting/loading data into your pipeline. **Inference (Scoring)** means using a trained model to make predictions.
 
 ### Metrics Targets and Iteration (How It Works)
 
-Defining a success metric is not just picking a metric name. In practice, you also set a **target value** (what is **good enough**), evaluate the model on **held-out data**, and iterate until you meet the target. Iteration can mean improving data and features, changing the model, adjusting thresholds, or tuning settings. The **test set** is the final unbiased check after you stop making changes.
+Defining a success metric is not just picking a metric name. In practice, you also set a **target value** (what is **good enough**), evaluate the model on **held-out data**, and iterate until you meet the target. Iteration can mean improving data and features, changing the model, adjusting thresholds, or tuning settings.
 
+The **test set** is the final unbiased check after you stop making changes.
 
 ### Training vs Inference Compute (Why It Matters)
 
-Model size is not just **qualit**, it affects the resources you need to build and run the model.
+Model size is not just **qualitative**, it affects the resources you need to build and run the model.
 
-- **Training compute (building the model):** more parameters means more weights to update during learning → more GPU hours, memory, data, and time  
-- **Inference compute (using the model):** more parameters means more work per prediction → higher latency, lower throughput, and higher cost per request (or per token for language models)  
+- **Training Compute (Building The Model):** More parameters means more weights to update during learning → more GPU hours, memory, data, and time  
+- **Inference Compute (Using The Model):** More parameters means more work per prediction → higher latency, lower throughput, and higher cost per request (or per token for language models)  
 
-**Rule of thumb:** larger models usually cost more to train and to use. Inference cost also depends on context length, output length, and the serving setup (hardware and optimization like quantization).
+**Rule of thumb:** Larger models usually cost more to train and to use. Inference cost also depends on context length, output length, and the serving setup (hardware and optimization like quantization).
+
 
 ## ML Lifecycle Context (Where Data Prep Fits)
 
