@@ -322,7 +322,6 @@ If multiple rows come from the same user/patient/device/store, they must appear 
 A patient has 6 visits in your dataset. All 6 visits must go into **only one** split (train or validation or test).  
 If the same patient appears in both train and test, the model can memorize that patient’s patterns.
 
-
 ## Common Pitfalls (Leakage, Peeking, Ordering Bias, and Overfitting)
 
 This section highlights common mistakes that make evaluation unreliable, and how those mistakes can hide problems like overfitting or underfitting.
@@ -330,10 +329,11 @@ This section highlights common mistakes that make evaluation unreliable, and how
 Leakage and peeking make metrics look better than real life, you must keep anything that reveals the answer out of training, and keep the test set untouched until the end.
 
 **Mental Mapping (Quick Definitions)**
-- **Leakage:** the model gets information it would not have at prediction time  
-- **Peeking:** you use the test set during tuning, so it stops being an unbiased final check  
-- **Ordering bias:** your split is influenced by time/order effects, so evaluation is biased  
-- **Overfitting vs underfitting:** splits reveal whether the model memorized or failed to learn patterns  
+- **Leakage:** The model gets information it would not have at prediction time  
+- **Peeking:** You use the test set during tuning, so it stops being an unbiased final check  
+- **Ordering Bias:** Your split is influenced by time/order effects, so evaluation is biased  
+- **Overfitting vs Underfitting:** Splits reveal whether the model memorized or failed to learn patterns  
+- **Non-Repeatable Preparation:** You clean/transform data differently in training vs production, so real predictions become unstable  
 
 ### Data Leakage
 Data leakage happens when evaluation information accidentally influences training. A common example is using the **target** as an input feature, which makes performance look unrealistically strong.
@@ -349,7 +349,7 @@ You are predicting whether a loan will be repaid on time.
 If you include a feature like **default_status** (Yes = not repaid on time, No = repaid on time) or **collections_started**, you are using information that is only known after the outcome happens.
 
 ### Peeking at the Test Set
-The **test set** is a final “unbiased” check. If you repeatedly check the test set during tuning, you turn it into part of your development loop and reduce trust in the final score.
+The **test set** is a final **unbiased** check. If you repeatedly check the test set during tuning, you turn it into part of your development loop and reduce trust in the final score.
 
 Rule: check the test set only at the end, after finalizing your model decisions.
 
@@ -363,6 +363,7 @@ Splitting data helps you detect whether the model is learning general patterns o
 
 - **Overfitting:** performance looks strong on the **training set** but drops on **validation/test** (the model memorized training examples instead of generalizing)  
 - **Underfitting:** performance is weak on both the **training set** and **validation/test** (the model did not learn useful patterns)  
+
 
 ## Summary
 
