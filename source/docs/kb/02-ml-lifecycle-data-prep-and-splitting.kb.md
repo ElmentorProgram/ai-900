@@ -144,12 +144,13 @@ Some actions happen after preparation:
 - Treat missing target labels differently from missing feature values (missing labels usually can’t be used for supervised training)  
 - Keep a repeatable pipeline so the same preparation is applied in production
 
-
 ## Features, Labels, and IDs (Choosing Inputs Safely)
 
 Before you can train a model, you need a dataset that represents the problem you are trying to solve. In supervised learning, each example contains inputs the model can use and an outcome you want the model to predict. The goal is to choose inputs that will still be available when you use the model in real life.
 
-Example (mapping the terms):
+A simple rule: **If you won’t know it at prediction time, it is not a safe feature** (even if it makes metrics look better).
+
+### Example (Mapping The Terms)
 - Imagine you want to predict **house sale price**
 - One **row (example/record)** could represent **one house sale**
 - The **columns** are the fields in that row
@@ -157,30 +158,43 @@ Example (mapping the terms):
 - The **label (target, y)** is the sale price
 
 A dataset is typically organized as:
-- **Rows = examples/records** (each row is one case)
-- **Columns = fields/features** (inputs) plus the **label/target** (what you predict)
+- **Rows:** Examples/records (each row is one case)  
+- **Columns:** Fields/features (inputs) plus the **label/target** (what you predict)  
 
 When you build a model, each row should contain:
-- **Features (inputs):** information available at prediction time (what you know before the outcome happens)
-- **Label (target):** the value you want the model to predict
+- **Features (Inputs):** Information available at prediction time (what you know before the outcome happens)  
+- **Label (Target):** The value you want the model to predict  
 
 A good feature:
-- Has a meaningful relationship to the target
-- Is available at the time you will make the prediction
-- Helps the model generalize to new data
-- If a field is only known **after** the outcome happens, it is not a safe feature for training or evaluation
+- Has a meaningful relationship to the target  
+- Is available at the time you will make the prediction  
+- Helps the model generalize to new data  
+- If a field is only known **after** the outcome happens, it is not a safe feature for training or evaluation  
 
-Things to avoid:
-- **Using the target as an input**
-- **Using IDs as features**
-- **Using dataset-level totals** when predicting a per-row outcome
+### Supervised vs Unsupervised (Why This Matters)
+- **Supervised Learning:** You have a label column (y) and you learn to predict it from features (X)  
+- **Unsupervised Learning (Clustering):** You do **not** have labels, clustering still needs **rows & feature columns**, but there is no target label to learn  
+
+**Key idea:** Clustering needs **features**, not target labels. Clusters are discovered, then humans interpret and name them later.
+
+### Feature vs Label Decision Rule (Population Example)
+A field like **population of an area** is not automatically **a feature** or **a label**. It depends on what you are trying to predict.
+
+- If population is something you **know at prediction time** (for example, to predict store demand), treat it as a **feature**  
+- If population is what you **want to predict**, it becomes the **label** and the task is often **regression** (predict a number)  
+
+### Things To Avoid
+- **Using the target as an input**  
+- **Using IDs as features**  
+- **Using dataset-level totals** when predicting a per-row outcome  
 
 Examples:
 - **IDs as features:** `CustomerID`, `OrderID`, `DeviceID`, `TicketID` can let the model memorize identity patterns instead of learning general rules  
 - **Dataset-level totals:** using **total monthly revenue** to predict **this row’s sale price** mixes global information into each row and can inflate evaluation  
 
 > [!NOTE]
-> **Features go in; label comes out.** Example (Loan Approval): **Features** (credit_score=720, income=£55k, debt_to_income=0.28, missed_payments_12m=0) → **Label** (“Approve” | “Reject” | “Review”)
+> **Features go in; label comes out.** Example (Loan Approval): **Features** (credit_score=720, income=£55k, debt_to_income=0.28, missed_payments_12m=0) → **Label** (**Approve** | **Reject** | **Review**)
+
 
 ## Why We Split Data (Training vs Validation vs Test)
 
