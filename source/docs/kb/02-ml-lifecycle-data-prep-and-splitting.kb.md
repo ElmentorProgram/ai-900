@@ -1,6 +1,8 @@
 # ML Lifecycle: Data Preparation and Splitting
 
-This document explains where data ingestion and data preparation fit in the ML lifecycle. In machine learning, you need data because the model learns patterns from examples (data) so it can make predictions on new data you haven’t seen yet. It then explains why training, validation, and testing require careful splitting. It focuses on how to split data correctly to estimate real-world performance and avoid common mistakes like leakage and “peeking.”
+This document focuses on the ML lifecycle steps that happen **before and around training**: getting data into your pipeline (**Data Ingestion**), making it usable (**Data Preparation**), and splitting it into **training/validation/test** so you can measure performance on **unseen examples**.
+
+These steps determine whether your evaluation is trustworthy. If you prepare or split data incorrectly, you can get metrics that look great but fail in production (common causes are **leakage** and **peeking**). The sections that follow explain where data prep fits in the lifecycle, how to choose safe inputs (Features vs Labels vs IDs), and how to split correctly for reliable evaluation.
 
 **This Document Covers**
 - ML Lifecycle Overview  
@@ -10,7 +12,8 @@ This document explains where data ingestion and data preparation fit in the ML l
 - How Splitting Works (Rows vs Columns)  
 - Split Patterns and When Random Split Fails (Time-Based and Group-Based)  
 - Common Pitfalls (Leakage, Peeking, Ordering Bias, and Overfitting)  
-- Summary  
+- Summary
+
 
 ## ML Lifecycle Overview
 
