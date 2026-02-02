@@ -45,13 +45,13 @@ Model size is not just **qualitative**, it affects the resources you need to bui
 
 **Rule of thumb:** Larger models usually cost more to train and to use. Inference cost also depends on context length, output length, and the serving setup (hardware and optimization like quantization).
 
-
 ## ML Lifecycle Context (Where Data Prep Fits)
 
-When you build an ML model, you need data before training.
+When you build an ML model, you need data before training. This stage is about building a clean, usable dataset so training and evaluation are meaningful. It is not where you prove the model is good.
 
-- **Data Ingestion:** getting raw data from where it lives (files, databases, logs) into your ML workspace as a dataset you can work with  
-- **Data Preparation:** cleaning and transforming that dataset so it’s usable for training (fix types, handle missing values, remove duplicates, encode categories)
+- **Data Ingestion:** Getting raw data from where it lives (files, databases, logs) into your ML workspace as a dataset you can work with  
+- **Data Preparation:** Cleaning and transforming that dataset so it’s usable for training (fix types, handle Missing Values, remove duplicates, encode categories)  
+- **Missing Values:** Fields that are blank/unknown (nulls) that can break training or reduce model quality  
 
 These are part of building the model.  
 Using the model happens later (deployment & sending new input data for predictions).
@@ -64,20 +64,24 @@ These stages focus on building a reliable dataset for learning, not on measuring
 ### What This Stage Is Trying To Achieve
 - Make data usable, consistent, and accurate enough for training  
 - Ensure the dataset represents the problem well and reduces noise that would confuse the model  
-- Prevent downstream failures (training errors, incorrect evaluation, unstable predictions)
+- Prevent downstream failures (training errors, incorrect evaluation, unstable predictions)  
 
 ### Common Actions In Data Ingestion And Preparation
 Typical tasks include:
-- Combining multiple datasets (merge/join/append) to gather all needed information in one dataset  
-- Handling missing values, for example:
-  - Remove records with missing critical fields, or impute missing values (fill with a reasonable value) depending on the scenario  
-- Removing duplicates, fixing data types, standardizing formats, and dealing with outliers  
-- Selecting relevant columns and encoding categorical values when needed
+- Combine multiple datasets (merge/join/append) so all needed fields are in one dataset  
+- Handle Missing Values using a scenario-appropriate choice  
+  - Remove records with missing critical fields  
+  - Impute Missing Values (fill with a reasonable value) when removal would bias the dataset  
+- Remove duplicates, fix data types, standardize formats, and deal with outliers  
+- Select relevant columns and encode categorical values when needed  
+
+> [!IMPORTANT]
+> Avoid leakage in preparation: fit cleaning/transform steps on the training set, then apply the same steps to validation/test.
 
 ### Feature Engineering vs Feature Selection
 
-- **Feature engineering:** creating or transforming input fields to make patterns easier for a model to learn  
-- **Feature selection:** choosing which input fields to keep and dropping the rest  
+- **Feature Engineering:** Creating or transforming input fields to make patterns easier for a model to learn  
+- **Feature Selection:** Choosing which input fields to keep and dropping the rest  
 
 **Feature Engineering Reasons**
 - Make patterns easier to learn  
@@ -122,7 +126,7 @@ Imagine a dataset where each row is one house sale.
 - Dropping a feature that looks weak globally but is crucial for a subset of cases  
 
 > [!IMPORTANT]
-> A common pitfall is engineering a feature using information you would not know at prediction time. That creates leakage, even if the feature looks “helpful”.
+> A common pitfall is engineering a feature using information you would not know at prediction time. That creates leakage, even if the feature looks **helpful**.
 
 ### What Does Not Belong To This Stage
 Some actions happen after preparation:
