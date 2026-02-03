@@ -2,7 +2,7 @@
 
 This document gives you a stable mental map of the most common AI workloads and the core terms you’ll reuse across the repo. It helps you choose the right workload by matching what you have (**input**) to what you need (**output**), then connects those workload choices to Azure services in a compact mapping section.
 
-It’s designed to stay **consistent and reusable**: the workload order and labels here are the same ones used in later docs, so your understanding builds layer by layer.
+It’s designed to stay **consistent and reusable**: The workload order and labels here are the same ones used in later docs, so your understanding builds layer by layer.
 
 **This Document Covers**
 - Core Definitions  
