@@ -1,6 +1,8 @@
 # Choosing ML Problem Types and Metrics
 
-This document explains how to choose the right ML problem type based on what you want to predict (a number, a label, or groups). It uses a simple example for each problem type to make the differences concrete. It then introduces the most common evaluation metrics for regression and classification, and covers clustering and anomaly detection at a high level so you can recognize when they apply.
+This document helps you choose the right ML problem type by starting from the **output** you want the model to produce: a **Number**, a **Label**, **Groups**, or an **Unusual/Normal** signal. It uses one simple example per problem type so the differences feel concrete.
+
+It then introduces the most common evaluation metrics for **Regression** and **Classification**. It also covers **Clustering** and **Anomaly Detection** at a high level so you can recognize when they apply and avoid mixing metric families.
 
 **This Document Covers**
 - Core ML Problem Types  
@@ -10,7 +12,8 @@ This document explains how to choose the right ML problem type based on what you
 - Clustering (Grouping Similar Examples Without Labels)  
 - Anomaly Detection (Flagging Unusual Behavior)  
 - Common Pitfalls (Problem Type and Metric Mistakes)  
-- Summary
+- Summary  
+
 
 ## Core ML Problem Types
 
