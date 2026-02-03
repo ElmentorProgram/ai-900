@@ -39,6 +39,12 @@ Defining a success metric is not just picking a metric name. In practice, you al
 
 The **test set** is the final unbiased check after you stop making changes.
 
+**What Iteration Is Really For**  
+Iteration is not only improving a metric score. It is also to:
+- Ensure the model **generalizes** to real-world inputs (not memorization)  
+- Choose a configuration that is **stable** (small shifts don’t break performance)  
+- Reduce production surprises (bad data handling, inconsistent outputs, unclear limitations)  
+
 ### Training vs Inference Compute (Why It Matters)
 
 Model size is not just **qualitative**, it affects the resources you need to build and run the model.
