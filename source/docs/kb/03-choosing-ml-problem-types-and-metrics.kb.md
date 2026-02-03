@@ -41,28 +41,28 @@ These are common in real projects, but they go beyond the foundational scope of 
 
 ## How to Choose the Problem Type (Decision Rules)
 
-Before choosing a problem type, it helps to know whether you have **labels** in your data.
+Before choosing a problem type, first decide whether you have **labels** in your data. That determines whether you are doing **supervised** learning (predict a known target) or **unsupervised** learning (discover structure from features).
+
+A simple rule: choose from the **output** you need the model to produce. The same input can support multiple problem types depending on what you want the model to output.
 
 There are two common learning types:
-- **Supervised learning:** you have labeled examples, meaning each row includes the input features and the correct output you want to predict  
-- **Unsupervised learning:** you do not have labels, so the model looks for structure or patterns in the input features  
+- **Supervised Learning:** You have labeled examples, meaning each row includes the input features and the correct output you want to predict  
+- **Unsupervised Learning:** You do not have labels, so the model looks for structure or patterns in the input features  
 
 > [!IMPORTANT]
-> Decide in this order, do you have labels, what output do you want, then pick Regression, Classification, Clustering, or Anomaly Detection, don’t pick based on input alone.
+> Decide in this order: Do you have labels, what output do you want, then pick Regression, Classification, Clustering, or Anomaly Detection, don’t pick based on input alone.
 
-**Decision question:** What is the **output** you want the model to produce?
+**Decision Question:** What is the **output** you want the model to produce?
 
-> [!NOTE]
-> The same input type can support different problem types, choose from the **output** you need.
-
-- If the output is a **number**, treat it as **Regression** (supervised)  
-- If the output is one of **fixed categories (labels)**, treat it as **Classification** (supervised)  
-- If you do not have labels and want to discover groups, use **Clustering** (unsupervised)  
-- If you want to flag rare or unusual cases compared to normal, use **Anomaly Detection** (often unsupervised, but can be supervised when labels exist)  
+- If the output is a **Number**, treat it as **Regression** (Supervised)  
+- If the output is one of **Fixed Categories**, treat it as **Classification** (Supervised)  
+- If you do not have labels and want to discover groups, use **Clustering** (Unsupervised)  
+- If you want to flag rare or unusual cases compared to normal, use **Anomaly Detection** (Often Unsupervised, but can be Supervised when labels exist)  
 
 **Quick Distinction (When You Do Not Have Labels)**
-- **Clustering:** the output is **groups/segments** (discover structure)  
-- **Anomaly Detection:** the output is an **unusual/normal signal** (flag rare cases)  
+- **Clustering:** Output is **groups/segments** (discover structure)  
+- **Anomaly Detection:** Output is an **unusual/normal signal** (flag rare cases)
+
 
 ## Regression (Predicting Numbers) and Common Metrics
 
