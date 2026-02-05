@@ -63,12 +63,11 @@ There are two common learning types:
 - **Clustering:** Output is **groups/segments** (discover structure)  
 - **Anomaly Detection:** Output is an **unusual/normal signal** (flag rare cases)
 
-
 ## Regression (Predicting Numbers) and Common Metrics
 
 Use **Regression** when the output you want is a **number** (a numeric value), such as:
-- “How many items will be sold next month?”
-- “What will the house price be?”
+- How many items will be sold next month?
+- What will the house price be?
 
 > [!IMPORTANT]
 > Compare model versions on the same split using unseen data, MAE or RMSE should go down, R² should go up, otherwise the change likely didn’t help.
@@ -97,185 +96,187 @@ In practice you improve a regression model using this loop:
 So it’s literally: **before change vs after change**.
 
 ### MAE (Mean Absolute Error)
-**MAE** is the average **absolute** difference between prediction and actual.
 
-What “absolute” means:
-- You only care about **how big** the mistake is, not the direction (**too low** or **too high**)
+**What It Measures:**  
+MAE is the average **absolute** difference between prediction and actual. Absolute means you only care about how big the mistake is, not the direction (**too low** or **too high**)
 
-Example:
-- Actual: 100, Predicted: 92 → **absolute error = 8** (8 too low)  
-- Actual: 100, Predicted: 108 → **absolute error = 8** (8 too high)  
+**Formula:**  
+MAE = Average(|Actual − Predicted|)
+
+**How To Calculate:**  
+Calculate the absolute error for each row, then average the errors
+
+**Example:**  
+Same actual, different direction (shows absolute value):  
+- Actual: 100, Predicted: 92 → Absolute error = 8 (**8 too low**)  
+- Actual: 100, Predicted: 108 → Absolute error = 8 (**8 too high**)  
+MAE = (8 + 8) / 2 = **8**  
 Both count as **8** because MAE ignores whether you were over or under.
 
-How to calculate and read it:
-- Using the sales example:
-  - Actual sales: 100, Predicted sales: 92 → absolute error = 8  
-  - Actual sales: 50, Predicted sales: 55 → absolute error = 5  
-- MAE averages these absolute errors: (8 + 5) / 2 = **6.5**
-- If **MAE = 6.5**, your predictions are off by about **6.5 units** on average.
-- If MAE drops from **6.5** to **3**, your typical mistake got smaller.
+Compute MAE from multiple rows:  
+- Actual sales: 100, Predicted sales: 92 → Absolute error = 8  
+- Actual sales: 50, Predicted sales: 55 → Absolute error = 5  
+MAE = (8 + 5) / 2 = **6.5**
 
-Why it’s useful:
-- MAE is easy to explain because it stays in the **same units as the target** (minutes, dollars, units sold)
-- It gives a clear “typical mistake size” you can compare across model versions
+**How To Read It:**  
+If **MAE = 6.5**, your predictions are off by about **6.5 units** on average. MAE stays in the same units as the target (minutes, dollars, units sold). If MAE drops from **6.5** to **3**, your typical mistake got smaller.
+
+**When To Use It:**  
+Use MAE when you want an easy-to-explain typical mistake size that is less dominated by rare spikes. It gives a clear typical error you can compare across model versions.
+
+**Common Pitfall:**  
+MAE treats all errors linearly, so a few very large mistakes may not stand out as strongly as they would under RMSE.
 
 ### RMSE (Root Mean Squared Error)
-**RMSE** measures error like MAE, but it **penalizes large mistakes more**.
 
-Why it penalizes large mistakes more:
-- RMSE **squares** each error before averaging
-- Squaring makes big errors grow a lot (for example, 20² is much larger than 2²)
+**What It Measures:**  
+RMSE measures prediction error like MAE, but it **penalizes large mistakes more** because errors are squared before averaging. Squaring **amplifies large errors**, so a single big miss can influence RMSE much more than it influences MAE.
 
-A small worked example:
+**Formula:**  
+RMSE = √(Average((Actual − Predicted)²))
+
+**How To Calculate:**  
+1) Compute the error for each row (Actual − Predicted)  
+2) Square each error (this is the step that makes the big miss matter more)  
+3) Average the squared errors  
+4) Take the square root to return to the original units
+
+**Example:**  
+A case with one large miss (shows why squaring matters):  
 - Actual values: 100, 100, 100  
-- Model predictions: 100, 98, 80  
+- Predicted values: 100, 98, 80  
 - Errors: 0, 2, 20  
 
-How MAE vs RMSE react:
-- **MAE** averages the absolute errors: (0 + 2 + 20) / 3 = **7.33**  
-  This says: “On average, we’re off by about 7.33 units.”
-- **RMSE** squares errors before averaging, so the big miss matters more:  
-  sqrt((0² + 2² + 20²) / 3) = sqrt((0 + 4 + 400) / 3) = sqrt(134.67) ≈ **11.61**
+MAE vs RMSE on the same errors:  
+- MAE = (0 + 2 + 20) / 3 = **7.33**  
+  This says: On average, we’re off by about **7.33 units**  
+- RMSE = √((0² + 2² + 20²) / 3) = √((0 + 4 + 400) / 3) = √(134.67) ≈ **11.61**  
+  This says: The 20-unit miss matters more, so the typical error looks closer to **11.61 units**
 
-Interpretation:
-- Both metrics notice the 20-unit miss, but RMSE reacts more strongly because squaring amplifies large errors.
+**How To Read It:**  
+RMSE is in the same units as the target (like MAE), but it increases more when there are a few big misses. A large gap between RMSE and MAE is a signal that **some errors are much larger than the rest**.
 
-When RMSE is useful:
-RMSE penalizes big mistakes more, which matters when a rare large error is dangerous.
+**When To Use It:**  
+Use RMSE when a rare large error is dangerous or costly, and you want the metric to punish large mistakes more than MAE does.
 
 High-stakes examples where large errors are especially harmful:
-- Healthcare risk scoring: missing a high-risk patient (a large error) can delay urgent care.
-- Critical infrastructure / nuclear operations: large prediction errors in sensor-based monitoring can trigger unsafe decisions or missed alarms.
-- Fraud detection loss forecasting: a few large misses can cause major financial impact.
+- Healthcare risk scoring: missing a high-risk patient (a large error) can delay urgent care  
+- Critical infrastructure / nuclear operations: large prediction errors in sensor-based monitoring can trigger unsafe decisions or missed alarms  
+- Fraud detection loss forecasting: a few large misses can cause major financial impact  
 
-### When to Prefer MAE vs RMSE (Real-Life)
-Use **MAE** when you want a stable, easy-to-explain “typical mistake size”:
-- Example: predicting delivery time in minutes where being off by 5 vs 10 minutes is not dramatically different.
-- MAE is often preferred when you want a metric that is less dominated by a few rare spikes.
+**Common Pitfall:**  
+RMSE can be dominated by outliers. If your data has occasional extreme spikes you don’t want to dominate the metric, RMSE can look worse even when typical performance is fine, in those cases MAE can be a better typical error view.
 
-Use **RMSE** when large mistakes are especially harmful and you want the metric to punish them:
-- Example: predicting next month inventory demand where a big under-forecast causes stockouts and lost sales.
-- Example: predicting energy load where big misses can cause operational risk or high cost.
+### When To Prefer MAE vs RMSE (Real-Life)
 
-When RMSE is not preferred:
-- If your data has occasional extreme outliers you don’t want to dominate the metric, RMSE can over-focus on them. In those cases, MAE can be a better “typical error” view.
+Use **MAE** when you want a stable, easy-to-explain typical mistake size. MAE is often preferred when you want a metric that is less dominated by a few rare spikes.
 
-### R² (R-squared) 
-**R²** is a “fit” summary: it tells you how much of the **variation** in the **target (actual) values** your model explains compared to a simple **baseline**.
+**Example:**  
+Predicting delivery time in minutes where being off by 5 vs 10 minutes is not dramatically different  
 
-What “target” means:
-- The **target** is the real number you want to predict (so **target = actual**).
+Use **RMSE** when large mistakes are especially harmful and you want the metric to punish them more strongly than MAE.
 
-What the baseline is:
-- A simple reference model that always predicts the **average** target value (it does not learn patterns).
+**Example:**  
+Predicting next month inventory demand where a big under-forecast causes stockouts and lost sales  
 
-## R² Formula (How to Calculate It)
+**Example:**  
+Predicting energy load where big misses can cause operational risk or high cost  
+
+When RMSE is not preferred: If your data has occasional extreme outliers you don’t want to dominate the metric, RMSE can over-focus on them. In those cases, MAE can be a better typical error view.
+
+### R² (R-Squared)
+
+**What It Measures:**  
+R² is a fit summary that tells you how much of the variation in the **target (actual) values** your model explains compared to a simple baseline.
+
+**Formula:**  
 R² = 1 − (SS Res / SS Total)
 
-Sum of Squares (SS) means we add up squared differences.
+**How To Calculate:**  
+First compute two sums of squares, then plug them into the formula.
 
-- **Sum of Squares Residual (SS Res):**  
-  Measures how much error your model makes overall.  
-  SS Res = Σ(Actual − Predicted)²
+- **SS Res (Sum Of Squares Residual):** Σ(Actual − Predicted)²  
+  Measures how much error your model makes overall  
+- **SS Total (Sum Of Squares Total):** Σ(Actual − Mean(Actual))²  
+  Measures how much the actual values vary around the mean (baseline variation)
 
-- **Sum of Squares Total (SS Total):**  
-  Measures how much the actual values vary around the average (baseline variation).  
-  SS Total = Σ(Actual − Average(All Actual))²
+**Example:**  
+Worked Example (Sales Forecasting: Compute R² Step By Step)
 
-### Worked Example (Sales Forecasting: Compute R² Step by Step)
+**Scenario:** Predict daily sales (units sold). We have 3 days of data.  
+- Actual sales: 100, 50, 150  
+- Model predicted sales: 110, 60, 140  
 
-**Scenario:** Predict daily sales (units sold).  
-We have 3 days of data:
+Compute the mean of actual values (baseline prediction value):  
+Mean(Actual) = (100 + 50 + 150) / 3 = 300 / 3 = **100** (Baseline Prediction Value)
 
-**Actual sales:** 100 (**Actual₁**), 50 (**Actual₂**), 150 (**Actual₃**)  
-**Model predicted sales:** 110, 60, 140  
-
-**Average (also called Mean) of all actual values:**  
-Average(All Actual) = (sum of all actual values) / (number of values)  
-Average(All Actual) = (100 + 50 + 150) / 3 = 300 / 3 = **100**
-
-**Baseline = Average(All Actual)** (predict this same value for every row).  
-Baseline prediction (always predict the average): **100, 100, 100**
-
-**SS Total (baseline variation):** measures how much the actual values vary around the average (baseline).  
-SS Total = (Actual₁ − Average(All Actual))² + (Actual₂ − Average(All Actual))² + (Actual₃ − Average(All Actual))²  
-SS Total = (100 − 100)² + (50 − 100)² + (150 − 100)²  
-SS Total = 0² + (−50)² + 50² = 0 + 2500 + 2500 = **5000**
-
-**Advanced notation:**  
-SS Total = Σ(Actual − Mean(Actual))²
-
-**SS Res (model error):** measures how much error the model makes overall.  
-SS Res = (Actual₁ − Predicted₁)² + (Actual₂ − Predicted₂)² + (Actual₃ − Predicted₃)²  
+Compute SS Res (model error):  
 SS Res = (100 − 110)² + (50 − 60)² + (150 − 140)²  
 SS Res = (−10)² + (−10)² + 10² = 100 + 100 + 100 = **300**
 
-**Advanced notation:**  
-SS Res = Σ(Actual − Predicted)²
+Compute SS Total (baseline variation):  
+SS Total = (100 − 100)² + (50 − 100)² + (150 − 100)²  
+SS Total = 0² + (−50)² + 50² = 0 + 2500 + 2500 = **5000**
 
-### Compute R² (Final Step)
-
-R² = 1 − (SS Res / SS Total)  
+Compute R²:  
 R² = 1 − (300 / 5000) = 1 − 0.06 = **0.94**
 
-**Interpretation (easy version):**  
-R² = **0.94** means the model removed about **94%** of the “predict-the-average” baseline error (only about **6%** remains).
+**Extra Cases (Same Data, Different Model Behavior):**  
+Baseline prediction value = **100** (same as the worked example)  
+SS Total = **5000** (same as the worked example)
 
-### Two Quick Extra Cases (Same Data, Different Model Behavior)
+Case 1: Perfect model (no error)  
+Predicted values: 100, 50, 150  
+SS Res = (100 − 100)² + (50 − 50)² + (150 − 150)² = 0² + 0² + 0² = **0**  
+R² = 1 − (SS Res / SS Total)  
+R² = 1 − (0 / 5000) = **1**  
+Meaning: Perfect fit (no error)
 
-We keep the same actual sales values, so **SS Total stays the same**:  
-SS Total = **5000**
-
-#### Case 1: Model behaves like the baseline → R² = 0
-If the model predicts the average every time (same as baseline):  
-Predicted values: **100, 100, 100**
-
+Case 2: Model behaves like the baseline  
+Predicted values: 100, 100, 100  
 SS Res = (100 − 100)² + (50 − 100)² + (150 − 100)²  
-SS Res = 0² + (−50)² + 50² = 0 + 2500 + 2500 = **5000**
-
+SS Res = 0² + (−50)² + 50² = 0 + 2500 + 2500 = **5000**  
 R² = 1 − (SS Res / SS Total)  
-R² = 1 − (5000 / 5000) = 1 − 1 = **0**
+R² = 1 − (5000 / 5000) = **0**  
+Meaning: No better than predicting the mean (baseline)
 
-**Meaning:** the model is no better than predicting the average.
-
-#### Case 2: Model is worse than the baseline → R² can be negative
-If the model predicts poorly, the squared errors can be bigger than the baseline errors.  
-Example predicted values: **200, 200, 200**
-
+Case 3: Model is worse than the baseline  
+Predicted values: 200, 200, 200  
 SS Res = (100 − 200)² + (50 − 200)² + (150 − 200)²  
-SS Res = (−100)² + (−150)² + (−50)² = 10000 + 22500 + 2500 = **35000**
-
+SS Res = (−100)² + (−150)² + (−50)² = 10000 + 22500 + 2500 = **35000**  
 R² = 1 − (SS Res / SS Total)  
-R² = 1 − (35000 / 5000) = 1 − 7 = **−6**
-
-**Meaning:** worse than predicting the average (the baseline is a safer model than this one).
-
-### A Concrete Intuition
-- If **R² is higher**, the model explains more of the variation in the real values (it reduces more of the baseline error).  
-- If **R² is low** (near 0), the model is not capturing much signal (it behaves close to the baseline).  
-- If **R² is negative**, the model is worse than the baseline (predicting the average would be better).
+R² = 1 − (35000 / 5000) = 1 − 7 = **−6**  
+Meaning: Worse than predicting the mean (baseline would be better)
 
 Example (simple numbers, not a rule):  
-- Model version 1: **R² = 0.50**  
-  Meaning: it explains about 50% of why the target values vary in your dataset.  
-- After adding a useful feature (like location for house prices), model version 2: **R² = 0.70**  
-  Meaning: it now explains about 70% of the variation, so it’s capturing more real signal.
+Model version 1: R² = **0.50**  
+After adding a useful feature (like location for house prices), model version 2: R² = **0.70**
 
 Another cue:  
-- If **R² drops from 0.70 to 0.40**, the model is explaining less variation, often because you removed useful signal or the model got worse.
+If R² drops from **0.70** to **0.40**, the model is explaining less variation, often because you removed useful signal or the model got worse  
+If R² increases from **0.40** to **0.65**, the model explains more variation (less baseline-level error remains)
 
-This is why if **R² goes up**, the change (**any update you try during model development**) likely improved the model: it means the model is reducing more of the “predict-the-average” baseline error than before.  
-Example: if **R² increases from 0.40 to 0.65**, the model explains more of the variation in the target values (less baseline-level error remains).
+**How To Read It:**  
+- R² = **1** → Perfect fit: the model explains all variation in the target values (no error)  
+- R² = **0** → Same as baseline: the model is no better than predicting the mean (baseline prediction value)  
+- R² < **0** → Worse than baseline: predicting the mean would perform better than this model  
+- R² is between **0 and 1** → Better than baseline: higher R² means the model explains more variation (closer to 1 is better)  
 
-Important note:
-- R² does **not** tell you typical “mistake size”, so you still use **MAE/RMSE** alongside it.
+**When To Use It:**  
+Use R² as a quick fit summary alongside MAE/RMSE when you want to know whether the model is explaining real signal beyond the predict-the-mean baseline.
 
-### What You Are Trying to Achieve
-- Choose a metric that matches your risk:
-  - Want a clear “average error” number → **MAE**
-  - Want to penalize large mistakes more → **RMSE**
-  - Want a quick “fit” summary alongside error → **R²**
-- Improve the model by comparing metric values across versions and reducing error on unseen data.
+**Common Pitfall:**  
+R² does not tell you typical mistake size. A model can have a reasonable R² but still have errors that are too large for the business. Use MAE/RMSE alongside it.
+
+### What You Are Trying To Achieve
+
+Choose a metric that matches your risk and what you want to control.
+
+- Want a clear **average error** number in the same units as the target → **MAE**  
+- Want to penalize large mistakes more → **RMSE**  
+- Want a quick **fit** summary alongside error → **R²**  
+
+Improve the model by comparing metric values across versions and reducing error on unseen data.
 
 ## Classification (Predicting Labels) and Common Metrics
 
