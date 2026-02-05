@@ -95,6 +95,15 @@ In practice you improve a regression model using this loop:
 
 So it’s literally: **before change vs after change**.
 
+### How Regression Metrics Work
+
+Regression metrics summarize how far predicted numbers are from actual numbers. They answer different questions, so you pick based on what you need to control (typical error size, big misses, or fit vs baseline).
+
+Each common regression metric answers a different question:
+- **MAE:** Typical mistake size (treats all errors evenly)  
+- **RMSE:** Typical mistake size, but penalizes large misses more  
+- **R²:** How much variation the model explains vs the mean baseline  
+
 ### MAE (Mean Absolute Error)
 
 **What It Measures:**  
