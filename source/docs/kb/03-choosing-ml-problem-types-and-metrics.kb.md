@@ -72,6 +72,16 @@ Use **Regression** when the output you want is a **number** (a numeric value), s
 > [!IMPORTANT]
 > Compare model versions on the same split using unseen data, MAE or RMSE should go down, R² should go up, otherwise the change likely didn’t help.
 
+**Highlights**
+- Output is a **number** (a numeric value)  
+- Training data needs **features (X)** and a numeric **label (y)**  
+- Common evaluation metrics are **MAE**, **RMSE**, and **R²**  
+
+### Why Regression Is Useful
+
+Regression is useful when you need a numeric estimate to support planning, pricing, forecasting, or risk scoring.  
+It turns historical examples into a model that can predict a number for new cases, so you can make decisions before the real outcome happens.
+
 ### Why Metrics Matter
 A **metric** is a number that tells you **how well your model is performing**.  
 In regression, that means: **how far your predicted numbers are from the real numbers**.
@@ -286,6 +296,21 @@ Choose a metric that matches your risk and what you want to control.
 - Want a quick **fit** summary alongside error → **R²**  
 
 Improve the model by comparing metric values across versions and reducing error on unseen data.
+
+**Regression Problem Type (Quick Check)**
+- Use **Regression** when the output is a **number**  
+- Training data needs **features (X)** and a numeric **label (y)**  
+- The model learns patterns that map inputs to a continuous target  
+
+**Common Regression Scenarios**
+- Forecasting demand or sales (predict a future number)  
+- Estimating price, duration, or risk as a numeric score  
+- Predicting time-to-failure or remaining useful life  
+
+**Common Pitfalls**
+- Predicting a number but evaluating like classification (wrong metric family)  
+- Including a feature that is only known after the outcome (leakage)  
+- Ignoring outliers or skew and letting RMSE be dominated by spikes  
 
 ## Classification (Predicting Labels) and Common Metrics
 
