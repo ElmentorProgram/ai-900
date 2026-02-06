@@ -716,61 +716,94 @@ In some cases you may see internal metrics like **Silhouette Score**, but you st
 - Check stability by re-running clustering on a later time window and comparing whether clusters remain similar  
 - Treat cluster names as human labels added after the fact, not outputs the model learned  
 
-
 ## Anomaly Detection (Flagging Unusual Behavior)
 
-Use **Anomaly Detection** when you want to find data points or events that are **unusual compared to normal behavior**. The goal is to surface **outliers** that may represent risk, failure, fraud, or important rare conditions.
+Use **Anomaly Detection** when you want to find data points or events that are **unusual compared to normal behavior**.  
+You choose it when the goal is to surface rare cases that may represent risk, failure, fraud, or important abnormal conditions.
+
+Anomaly detection often outputs an **anomaly score** (how unusual) and/or an **anomaly flag** (normal vs abnormal).  
+It is commonly unsupervised (learn normal, flag deviations), but it can also be supervised when you have reliable labels.
+
+**Highlights**
+- Output is an anomaly **score** and/or anomaly **flag**  
+- Core idea is comparing behavior to a **normal baseline**  
+- Thresholds control the tradeoff between false alarms and missed anomalies  
+- Validation focuses on usefulness, stability, and false positive rate in practice  
+
+### Why Anomaly Detection Is Useful
+
+Anomaly detection is useful when the important cases are rare and you cannot rely on having enough labeled examples.  
+Instead of predicting a fixed category, you detect deviations from what is typical.
+
+Common outcomes include:
+- Flagging suspicious transactions or account activity  
+- Detecting equipment faults and early warning signals  
+- Detecting unusual login patterns or network intrusions  
+- Detecting metric spikes or drops in telemetry  
+
+> [!IMPORTANT]
+> An anomaly flag is not a diagnosis. It is a signal to investigate.
 
 ### Key Terms (Quick Definitions)
-- **Anomaly / outlier:** a data point that differs significantly from the expected pattern  
-- **Normal baseline:** what typical behavior looks like for the system/data  
-- **False positive:** flagged as anomalous but actually normal  
-- **False negative:** not flagged but truly anomalous  
+
+- **Anomaly:** A data point that differs significantly from the expected pattern  
+- **Normal Baseline:** What typical behavior looks like for the system or population  
+- **Threshold:** The cutoff that turns an anomaly score into a final flag  
+- **False Positive:** Flagged as anomalous but actually normal  
+- **False Negative:** Not flagged but truly anomalous  
+
+### What Data Anomaly Detection Needs
+
+What you need depends on whether you have labels.
+
+If you do not have labels (common case):
+- You need **features (X)** that represent behavior  
+- You need enough history to learn what **normal** looks like  
+- You often need time context if patterns are seasonal or time-dependent  
+
+If you do have labels (less common, but possible):
+- You can evaluate like classification by defining what counts as **positive** (anomaly)  
+- You still need features that reflect behavior, not identity  
 
 ### Example (Real Data Feel): Fraud Monitoring (Anomaly Detection)
 
 Imagine a bank monitors card transactions to flag suspicious activity.
 
 In this scenario:
-- The **rows** are transactions (one row per transaction)
-- The **features (X)** might include amount, location, time-of-day, merchant category, and frequency patterns
-- The **output** is an **anomaly score** or a **normal vs abnormal** flag (not a business label like **fraud type**)
+- The **rows** are transactions (one row per transaction)  
+- The **features (X)** might include amount, location, time-of-day, merchant category, and frequency patterns  
+- The **output** is an anomaly **score** or a **normal vs abnormal** flag, not a business label like **fraud type**  
 
-Because anomalies are rare, you tune thresholds to balance **false alarms** (false positives) vs **missed fraud** (false negatives).
+Because anomalies are rare, you tune thresholds to balance false alarms (false positives) vs missed fraud (false negatives).
 
-### What It Is Trying to Achieve
+### How Anomaly Detection Works (High Level)
 
-Anomaly detection is used to detect rare or abnormal cases that are important to act on, such as:
-- Fraud or suspicious transactions  
-- Equipment faults and predictive maintenance alerts  
-- Network intrusions or unusual login behavior  
-- Defective products on a production line  
-- Unusual spikes or drops in metrics (usage, revenue, sensor readings)
-
-> [!IMPORTANT]
-> An anomaly flag is not a diagnosis. It is a signal to investigate.
-
-### How It Works (High Level)
-
-A typical anomaly detection workflow looks like this:
+A typical workflow looks like this:
 - Define what **normal** looks like (baseline period, typical ranges, seasonality)  
 - Choose what you will detect anomalies in (transactions, sensors, logs, images)  
-- Produce an **anomaly score** or a **normal vs abnormal** flag  
+- Produce an anomaly **score** or anomaly **flag**  
 - Tune thresholds to balance false alarms vs missed issues  
 
 ### Common Approaches (High Level)
 
-Anomaly detection can be implemented in different ways depending on what data you have:
+- **Rules or statistics:** Thresholds, z-scores, moving averages (good starting point)  
+- **Unsupervised ML:** Learn normal patterns without labeled anomalies (common when anomalies are rare)  
+- **Supervised ML:** Train on labeled normal vs anomaly when labels exist and are reliable  
 
-- **Rules/statistics:** thresholds, z-scores, moving averages (good starting point)  
-- **Unsupervised ML:** learn patterns of normal behavior without labeled anomalies (common when anomalies are rare)  
-- **Supervised ML:** train on labeled examples of normal vs anomaly (useful when labels exist and are reliable)  
+### Common Pitfalls
 
-### Common Pitfalls and Confusion Points
+- **Context changes what is normal:** Seasonality, time of day, and user segments can shift baseline behavior  
+- **Too many false positives:** The system becomes unusable if everything is flagged  
+- **Baseline drift:** Normal behavior changes over time, so baselines must be updated  
+- **Confusing anomalies with categories:** An anomaly flag means unusual, not the reason why it is unusual  
 
-- Unusual depends on context. Seasonality, time of day, and user segments can make normal behavior look abnormal  
-- Anomalies are rare, so too many false positives can make the system unusable  
-- What is normal can change over time (data drift), so baselines must be updated  
+### Practical Defaults And Rules Of Thumb
+
+- Start by defining normal in a clear time window and re-check it regularly  
+- Keep features focused on behavior signals, not identifiers  
+- Treat thresholding as a design choice and tune it to operational capacity  
+- Validate using review samples and stability checks, not just a single metric number  
+
 
 ## Common Pitfalls (Problem Type and Metric Mistakes)
 
