@@ -330,6 +330,18 @@ In this scenario:
 > [!IMPORTANT]
 > Define the positive class first, then read Precision and Recall, otherwise you can optimize the wrong outcome.
 
+**Highlights**
+- Output is a **label/category** from a fixed set  
+- Training data needs **features (X)** and a labeled **target (y)**  
+- Most metrics come from the confusion matrix (**TP**, **FP**, **TN**, **FN**)  
+- Thresholds control the tradeoff between **Precision** and **Recall** (when using scores)  
+
+### Why Classification Is Useful
+
+Classification is useful when the decision is choosing **which category** something belongs to, so you can route, approve/deny, prioritize, or trigger actions.  
+It turns past labeled examples into a model that assigns one label to new cases consistently and at scale.
+
+
 ### How Classification Metrics Work
 
 Classification metrics are built from **confusion matrix counts**:
