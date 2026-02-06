@@ -804,56 +804,77 @@ A typical workflow looks like this:
 - Treat thresholding as a design choice and tune it to operational capacity  
 - Validate using review samples and stability checks, not just a single metric number  
 
-
 ## Common Pitfalls (Problem Type and Metric Mistakes)
 
-This section highlights common mistakes that make model results look better than they are, or make you choose the wrong problem type or metric.
+This section is a fast checklist of mistakes that make results look better than they are, or cause you to choose the wrong problem type or metric family.
 
-### Mixing Up the Problem Type
+### Mixing Up The Problem Type
 
 A fast way to choose the problem type is to focus on the output:
-- If the output is a **number**, it is **Regression**.  
-- If the output is one of **fixed categories**, it is **Classification**.  
-- If you have **no labels** and want to discover groups, it is **Clustering**.  
-- If you want to flag **rare or unusual cases**, it is **Anomaly Detection**.
+- If the output is a **number**, it is **Regression**  
+- If the output is one of **fixed categories**, it is **Classification**  
+- If you have **no labels** and want to discover groups, it is **Clustering**  
+- If you want to flag **rare or unusual cases**, it is **Anomaly Detection**  
 
 A common mistake is to choose based on the input only.  
-For example, “sales data” could lead to regression (predict a number), classification (predict high/low category), clustering (segment customers), or anomaly detection (flag unusual activity), depending on the output you want.
+For example, sales data could lead to Regression (predict a number), Classification (predict high/low category), Clustering (segment customers), or Anomaly Detection (flag unusual activity), depending on the output you want.
 
-### Treating Accuracy as “Good Enough” for Classification
+### Using The Wrong Metric Family
+
+Metrics only make sense inside the problem type they belong to.
+
+- **Regression:** MAE, RMSE, R²  
+- **Classification:** Accuracy, Precision, Recall, F1, ROC AUC, PR AUC  
+- **Clustering:** internal checks like Silhouette (when you do not have labels) plus stability & usefulness checks  
+- **Anomaly Detection:** depends on whether you have labels, often behaves like Precision/Recall evaluation when labels exist  
+
+> [!WARNING]
+> If you pick the wrong metric family for the problem type, you can believe a model is good while measuring the wrong thing.
+
+### Treating Accuracy As Good Enough For Classification
 
 Accuracy is useful when classes are reasonably balanced and error costs are similar, but it can hide poor performance on the rare class you care about.
 
 Example:
-- If 99 out of 100 transactions are legitimate, a model that always predicts “legitimate” gets **99% accuracy**, but it catches **0 fraud**.
+- If 99 out of 100 transactions are legitimate, a model that always predicts legitimate gets **99% Accuracy**, but it catches **0 fraud**
 
 In imbalanced or high-risk scenarios, rely more on:
 - Confusion matrix (TP/FP/TN/FN counts)  
 - **Precision** (control false alarms)  
 - **Recall** (avoid missing positives)  
-- **F1** (balance Precision and Recall)
+- **F1** (balance Precision and Recall)  
 
-### Using Regression Metrics for Classification (and Vice Versa)
+### Using Regression Metrics For Classification (And Vice Versa)
 
-Regression metrics like **MAE, RMSE, and R²** measure numeric prediction error.  
+Regression metrics like **MAE**, **RMSE**, and **R²** measure numeric prediction error.  
 They do not describe label prediction behavior.
 
-Classification metrics like **Accuracy, Precision, Recall, F1, and AUC** measure label performance.  
+Classification metrics like **Accuracy**, **Precision**, **Recall**, **F1**, and **AUC** measure label performance.  
 They do not measure numeric error.
 
-> [!WARNING]
-> If you pick the wrong metric family for the problem type, you can believe a model is “good” while measuring the wrong thing.
+**Rule:** Do not compare or judge a model using a metric family that does not match the problem type.
 
-### Forgetting the “Positive Class” Definition
+### Forgetting The Positive Class Definition
 
-Many classification metrics depend on what you define as “positive.”  
+Many classification metrics depend on what you define as positive.  
 Precision and Recall are always about the positive class.
 
-If you do not define the positive class clearly, you can misinterpret the metrics.
+If you do not define the positive class clearly, you can misinterpret metrics.
 
 Example:
-- In fraud detection, “positive” is usually **fraud** (the rare, high-risk class).
-- In medical screening, “positive” is usually **disease present**.
+- In fraud detection, positive is usually **fraud** (the rare, high-risk class)  
+- In medical screening, positive is usually **disease present**  
+
+### Ignoring Threshold Effects
+
+Many classifiers output a score that must be turned into a final yes/no decision using a threshold.  
+Changing the threshold changes Precision and Recall, so you cannot talk about those metrics without being clear about the decision rule.
+
+### Confusing Anomalies With Labels
+
+An anomaly flag means unusual compared to baseline, not the reason why it happened.  
+A common mistake is to treat an anomaly score as a category label, you still need investigation or a separate classifier if you want reasons.
+
 
 ## Summary
 
