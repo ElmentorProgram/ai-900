@@ -649,6 +649,21 @@ PR makes the pain obvious (low precision), even if ROC looks acceptable because 
 > [!IMPORTANT]
 > When positives are rare, **Precision-Recall** curves often show performance more clearly than ROC. ROC can look good even when precision is low, because true negatives dominate.
 
+**Classification Problem Type (Quick Check)**
+- Use **Classification** when the output is a **label/category** from a fixed set  
+- Training data needs **features (X)** and a labeled **target (y)**  
+- Many models output a **score**, then a **threshold** converts it into a final label  
+
+**Common Classification Scenarios**
+- Email or ticket routing (Billing vs Technical Issue)  
+- Fraud vs not fraud, spam vs not spam  
+- Pass/fail quality checks, approve/reject decisions  
+
+**Common Pitfalls**
+- Relying on **Accuracy** with imbalanced classes (it can hide failure on the rare class)  
+- Forgetting to define the **positive class** before reading Precision and Recall  
+- Treating the threshold as fixed, thresholds are a design choice that shifts Precision vs Recall  
+
 ## Clustering (Grouping Similar Examples Without Labels)
 
 Use **Clustering** when you want to group examples into **clusters** based on similarity and you do not have labels (no correct category column).  
