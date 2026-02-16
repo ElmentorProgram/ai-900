@@ -308,6 +308,62 @@ You typically provide clear documentation so developers and users understand wha
 - Explanations are **not** causation. Feature importance shows what influenced the model, not what truly caused the outcome.  
 - Transparency is **not** the same as fairness. You can explain a model clearly and still have biased outcomes across groups.  
 
+## Accountability (What It Is, What It Enables, Common Pitfalls)
+
+Accountability in Responsible AI means people remain responsible for the system and its outcomes. It requires clear ownership, governance, oversight, and processes to audit decisions and address issues.
+
+Accountability means you can:
+- **Assign** an owner for outcomes (who is responsible when things go wrong)  
+- **Define** governance and review processes (approval gates, audits, compliance checks)  
+- **Provide** escalation and appeal paths (human review for high-impact decisions)  
+- **Track** decisions and changes over time (logging, versioning, incident response)  
+
+### Key Terms (Quick Definitions)
+- **Accountability:** Clear responsibility for outcomes, decisions, and controls across the lifecycle.  
+- **Governance:** Policies, roles, and processes that guide development, deployment, and monitoring.  
+- **Oversight:** Human review and monitoring to ensure the system behaves as intended.  
+- **Auditability:** The ability to review what happened and why (inputs, outputs, versions, decisions).  
+- **Appeal path:** A process that allows affected users to challenge or escalate decisions.  
+
+### What Accountability Enables
+- Ensure AI systems operate with responsible ownership and clear decision-making authority.  
+- Support compliance by making controls and decisions reviewable.  
+- Improve trust by giving users recourse and ensuring issues are handled consistently.  
+
+### How It Works in Practice in Model Development
+You establish accountability through governance, documentation, and approval gates.
+
+You use what you learn to:
+- **Define** roles and responsibilities (model owner, approver, reviewer)  
+- **Document** intended use, limitations, and known risks  
+- **Record** model versions, datasets, and evaluation results  
+- **Plan** monitoring and incident response before deployment  
+
+### How It Works in Practice in a Deployed Service
+You keep accountability by tracking outcomes and responding to issues.
+
+- **Monitor** outcomes and risks (quality, fairness, safety signals)  
+- **Review** incidents and near-misses, then update controls  
+- **Audit** decisions and changes (who changed what, when, and why)  
+- **Provide** appeal and escalation for high-impact decisions  
+
+### Practical Defaults and Good Habits
+- Assign a named owner for the model and the service.  
+- Keep clear documentation: purpose, users, limitations, and risks.  
+- Log key decisions and maintain version history (data, model, configuration).  
+- Run periodic reviews (risk checks, compliance checks, drift reviews).  
+- Maintain incident response playbooks and escalation contacts.  
+
+### Common Pitfalls and Confusion Points
+- No clear owner, so issues are not addressed consistently.  
+- Deploying without documentation of intended use and limitations.  
+- No audit trail for data, model versions, or configuration changes.  
+- No appeal path for users affected by automated decisions.  
+- Treating accountability as a one-time sign-off instead of ongoing oversight.  
+
+**Example**  
+A company deploys an AI system that rejects insurance claims automatically. If there is no owner responsible for outcomes, no process to audit decisions, and no way for customers to appeal or escalate to a human, accountability is missing because the system is operating without clear responsibility and oversight.  
+
 
 ## Explainability Basics (Global vs Local, Feature Importance, Not Causation)  
 Explainability helps humans understand which inputs influenced a prediction and in what way. It supports review, debugging, and trust, and it is closely related to transparency.  
