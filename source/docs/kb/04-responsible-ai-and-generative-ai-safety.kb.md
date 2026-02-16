@@ -37,33 +37,55 @@ The following principles are a common way to organize Responsible AI concerns. E
 
 Transparency in Responsible AI means people can understand what an AI system is doing, why it makes predictions, and what its limits are before and after deployment.
 
-### Key Terms (Quick Definitions)
-- Transparency: making the system’s behavior, purpose, and limits understandable to humans (users, reviewers, auditors).  
-- Explainability/Interpretability: methods that help humans understand which inputs influenced a prediction and in what way.  
-- Global explanation: overall drivers of the model across many examples (for example, top influential features).  
-- Local explanation: why the model produced a specific prediction for a single example.  
-- Feature importance: a ranked view of which inputs tend to matter most to the model (not the same as causality).  
-- Service transparency: what a deployed solution exposes to users/developers (docs, outputs, errors, logs, and guidance).  
+Transparency means you can explain:
+- What the model is using  
+- Why it predicts what it predicts  
+- Where it might fail  
+- How the service should be used (clear, accessible documentation)
 
-### What Transparency Is Trying to Achieve  
-- Help stakeholders answer: “What does this model rely on, and does that make sense?”  
-- Make the model’s behavior reviewable for risk, compliance, and trust.  
+### Key Terms (Quick Definitions)
+- **Transparency:** Making the system’s behavior, purpose, and limits understandable to humans (users, reviewers, auditors).  
+- **Explainability/Interpretability:** Methods that help humans understand which inputs influenced a prediction and in what way.  
+- **Global explanation:** Overall drivers of the model across many examples (for example, top influential features).  
+- **Local explanation:** Why the model produced a specific prediction for a single example.  
+- **Feature importance:** A ranked view of which inputs tend to matter most to the model (**not** the same as causality).  
+- **Service transparency:** What a deployed solution exposes to users & developers (docs, outputs, errors, logs, and guidance).  
+
+### What Transparency Enables
+- Help stakeholders answer: **What does this model rely on, and does that make sense?**  
+- Make the model reviewable for risk, compliance, and trust.  
 - Reduce surprises in production by documenting assumptions, constraints, and expected failure modes.  
 
-### How It Works in Practice in AutoML  
-To support transparency in an automated ML workflow, you typically generate explanations for the selected/best-performing model and review both global drivers and local drivers.  
-You use what you learn to confirm the model uses reasonable inputs, detect suspicious signals (for example, leakage-like fields, proxy variables), and improve documentation and stakeholder readiness.  
+### How It Works in Practice in Model Development (AutoML or Custom ML)
+You typically generate and review explanations for the selected/best-performing model, then review both global and local drivers.
 
-### How It Works in Practice in a Deployed Service  
-To support transparency once the model is exposed as a service, you typically provide clear documentation so developers and users understand what the service does and does not do, expected inputs/outputs, limitations, edge cases, and how to interpret results and probabilities.  
-You also provide helpful error messages and guidance, and ensure explanations and documentation are accessible (for example, provide text alternatives for visuals).  
+You use what you learn to:
+- Confirm the model uses reasonable inputs  
+- Detect suspicious signals (for example, leakage-like fields or proxy variables)  
+- Improve documentation and stakeholder readiness  
 
-### Common Pitfalls and Confusion Points  
-- Strong metrics (for example, accuracy) are not transparency, a score tells you performance, it does not explain what the model relies on or why it made a decision.  
-- Validation settings aren’t transparency controls, they improve evaluation quality but do not explain model behavior to humans.  
-- Parallelism and concurrency settings aren’t transparency controls, they affect speed and compute usage, not interpretability.  
-- Explanations are not causation, feature importance shows what influenced the model, not what truly caused the outcome.  
-- Transparency is not the same as fairness, you can explain a model clearly and still have biased outcomes across groups.  
+### How It Works in Practice in a Deployed Service
+You typically provide clear documentation so developers and users understand what the service does and does not do:
+
+- **Define** expected inputs and outputs (include examples)  
+- **Explain** limitations and edge cases  
+- **Describe** how to interpret results and probabilities  
+- **Provide** helpful error messages and guidance  
+- **Ensure** explanations are accessible (for example, include text alternatives for visuals)  
+
+### Practical Defaults and Good Habits
+- Always produce and review model explanations before approving a model for use.  
+- Publish clear, usable service documentation (inputs, outputs, examples, limitations).  
+- Ensure user-facing explanations are understandable and accessible (include text alternatives for visuals).  
+- Validate explanations and documentation with domain experts (quick review often catches issues early).  
+
+### Common Pitfalls and Confusion Points
+- Strong metrics (for example, accuracy) are **not** transparency. A score tells you performance, it does not explain what the model relies on or why it made a decision.  
+- Validation settings are **not** transparency controls. They improve evaluation quality but do not explain model behavior to humans.  
+- Parallelism and concurrency settings are **not** transparency controls. They affect speed and compute usage, not interpretability.  
+- Explanations are **not** causation. Feature importance shows what influenced the model, not what truly caused the outcome.  
+- Transparency is **not** the same as fairness. You can explain a model clearly and still have biased outcomes across groups.  
+
 
 ## Explainability Basics (Global vs Local, Feature Importance, Not Causation)  
 Explainability helps humans understand which inputs influenced a prediction and in what way. It supports review, debugging, and trust, and it is closely related to transparency.  
