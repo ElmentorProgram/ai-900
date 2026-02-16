@@ -393,47 +393,56 @@ Feature importance is a ranked view of which inputs tend to influence the model 
 > [!WARNING]  
 > Explanations are not causation. They describe what the model used, not what truly caused the outcome.  
 
+## Responsible Generative AI Layers (Safety System, System Messages)
 
-## Responsible Generative AI Layers (Safety System, System Messages)  
-When designing a responsible generative AI solution, it helps to think in layers. One key layer is the safety system layer, where content filtering controls are applied.  
+When designing a responsible Generative AI solution, it helps to think in layers. Two common layers you will see are:
 
-### Safety System Layer (Content Filters)  
-Content filters that suppress prompts and/or model responses are applied at the safety system layer.  
-This layer represents platform-level safety controls that can detect and block potentially harmful content. Filters commonly classify content into severity levels (for example, safe/low/medium/high) across harm categories (for example, hate, sexual, violence, self-harm).  
-The practical outcome is that certain prompts and/or responses can be suppressed or modified based on policy thresholds you configure.  
+- **Safety System:** Platform-level controls that can detect and block harmful prompts or responses  
+- **System Messages:** Instructions that set the assistant’s role, rules, tone, and response constraints  
+
+### Safety System (Content Filters)
+Content filters that suppress prompts and/or model responses are applied at the Safety System layer.
+
+This layer represents platform-level safety controls that can detect and block potentially harmful content. Filters commonly classify content into severity levels (for example, safe/low/medium/high) across harm categories (for example, hate, sexual, violence, self-harm).
+
+The practical outcome: Prompts and/or responses can be blocked or modified based on policy thresholds you configure.
 
 > [!NOTE]  
-> If the question is “at which layer do content filters suppress prompts and responses?” the answer is Safety system.  
+> If the question is: At which layer do content filters suppress prompts and responses? The answer is Safety System.  
 
 > [!WARNING]
-> **System messages and safety filters are not the same thing.**
-> A **system message** steers the assistant’s behavior (style, format, rules).
-> **Safety filters** block or restrict unsafe content, even if the system message asks for it.
+> **System Messages** and **Safety System** controls are not the same thing.  
+> A **System Message** steers the assistant’s behavior (style, format, rules).  
+> The **Safety System** blocks or restricts unsafe content, even if the System Message asks for it.  
 
-### System Messages (How You Set Constraints & Style)  
-System messages define the model’s role, rules, tone, and constraints (the “how to respond” instructions).  
-You use them to set expectations like format, safety boundaries, refusal behavior, and response style.  
+### System Messages (How You Set Constraints & Style)
+System messages define the model’s role, rules, tone, and constraints (the how-to-respond instructions). You use them to set expectations like format, safety boundaries, refusal behavior, and response style.
 
 > [!NOTE]  
-> If asked “what identifies constraints and styles for responses?” the answer is System messages.  
+> If asked: What identifies constraints and styles for responses? The answer is System Messages.  
 
-## Risk Framing With NIST AI RMF (Govern, Map, Measure, Manage)  
-NIST is the National Institute of Standards and Technology, a U.S. standards body that publishes widely used guidance. AI RMF stands for the AI Risk Management Framework, a framework from NIST for organizing how you identify, measure, and manage AI risks. It groups risk management into four core functions: Govern, Map, Measure, Manage.  
 
-### Govern  
-Govern covers policies, roles, accountability, and documentation. It is cross-cutting across the lifecycle.  
+## Risk Framing With NIST AI RMF (Govern, Map, Measure, Manage)
 
-### Map  
-Map is about defining context and intended use, stakeholders, and identifying potential impacts and harms.  
+NIST is the National Institute of Standards and Technology, a U.S. standards body that publishes widely used guidance. **AI RMF** stands for the **AI Risk Management Framework**, a framework from NIST for organizing how you identify, measure, and manage AI risks.
+
+AI RMF groups risk management into four core functions: **Govern**, **Map**, **Measure**, **Manage**.
+
+### Govern
+Govern covers policies, roles, accountability, and documentation. It applies across the lifecycle.
+
+### Map
+Map is about defining context and intended use, stakeholders, and identifying potential impacts and harms.
 
 > [!IMPORTANT]  
-> The first stage to consider is to identify potential harms.  
+> The first stage to consider is to identify potential harms.
 
-### Measure  
-Measure is about evaluating and monitoring risks using tests, metrics, and assessments.  
+### Measure
+Measure is about evaluating and monitoring risks using tests, metrics, and assessments.
 
-### Manage  
+### Manage
 Manage is about prioritizing and taking actions to mitigate, accept, or transfer risks, and improving over time (including incident response).  
+
 
 ## Summary
 
