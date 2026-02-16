@@ -365,23 +365,34 @@ You keep accountability by tracking outcomes and responding to issues.
 A company deploys an AI system that rejects insurance claims automatically. If there is no owner responsible for outcomes, no process to audit decisions, and no way for customers to appeal or escalate to a human, accountability is missing because the system is operating without clear responsibility and oversight.  
 
 
-## Explainability Basics (Global vs Local, Feature Importance, Not Causation)  
-Explainability helps humans understand which inputs influenced a prediction and in what way. It supports review, debugging, and trust, and it is closely related to transparency.  
+## Explainability Basics (Global vs Local, Feature Importance, Not Causation)
 
-### Global explanation (overall drivers)  
-A global explanation describes what tends to drive predictions across many examples. It answers: “What features generally matter most to this model?”  
-Example: In a loan risk model, a global explanation might show that credit history length, debt-to-income ratio, and recent missed payments are the strongest drivers overall.  
+Explainability helps humans understand which inputs influenced a prediction and in what way. It supports review, debugging, and trust, and it is closely related to **Transparency**.
 
-### Local explanation (why this prediction happened)  
-A local explanation describes why the model produced a specific prediction for a single example. It answers: “Why did this one case get this result?”  
-Example: For one applicant, a local explanation might show that a high debt-to-income ratio and multiple recent missed payments pushed the prediction toward “high risk,” even if income was strong.  
+Explainability means you can:
+- **Explain** what tends to drive predictions overall (**global** explanation)  
+- **Explain** why a specific case got a specific result (**local** explanation)  
+- **Review** which inputs influence the model most (**feature importance**)  
+- **Avoid** causal claims (influence is not causation)  
 
-### Feature importance (influence, not causality)  
-Feature importance is a ranked view of which inputs tend to influence the model most. It does not mean the feature causes the outcome in the real world.  
-Example: If “ZIP code” is highly important, it may be acting as a proxy for other factors, and you should review whether using it is appropriate.  
+### Global Explanation (Overall Drivers)
+A global explanation describes what tends to drive predictions across many examples. It answers: Why does this model usually predict what it predicts?
+
+**Example:** In a loan risk model, a global explanation might show that credit history length, debt-to-income ratio, and recent missed payments are the strongest drivers overall.
+
+### Local Explanation (Why This Prediction Happened)
+A local explanation describes why the model produced a specific prediction for a single example. It answers: Why did this one case get this result?
+
+**Example:** For one applicant, a local explanation might show that a high debt-to-income ratio and multiple recent missed payments pushed the prediction toward **high risk**, even if income was strong.
+
+### Feature Importance (Influence, Not Causation)
+Feature importance is a ranked view of which inputs tend to influence the model most. It does not mean the feature causes the outcome in the real world.
+
+**Example:** If **ZIP code** is highly important, it may be acting as a proxy for other factors, and you should review whether using it is appropriate.
 
 > [!WARNING]  
 > Explanations are not causation. They describe what the model used, not what truly caused the outcome.  
+
 
 ## Responsible Generative AI Layers (Safety System, System Messages)  
 When designing a responsible generative AI solution, it helps to think in layers. One key layer is the safety system layer, where content filtering controls are applied.  
