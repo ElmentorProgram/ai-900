@@ -199,6 +199,61 @@ You reduce exposure by controlling inputs, outputs, logging, and access.
 **Example**  
 An app uses face images to verify a user. If the system stores face images in plain form without strong access controls, or if attackers can steal the face data and reuse it elsewhere, that is a privacy & security issue because biometric data is highly sensitive and the system is not adequately protected.  
 
+## Inclusiveness (What It Is, What It Enables, Common Pitfalls)
+
+Inclusiveness in Responsible AI means designing AI systems so people with different abilities, backgrounds, and situations can use them effectively. It focuses on avoiding design choices that exclude users.
+
+Inclusiveness means you can:
+- **Identify** who might be excluded (disability, language, culture, connectivity, device constraints)  
+- **Design** interactions that work for diverse users (multiple modalities, clear UX, accessible outputs)  
+- **Test** with representative users and realistic contexts (not just ideal conditions)  
+- **Provide** alternatives and support paths (captions, text options, human help when needed)  
+
+### Key Terms (Quick Definitions)
+- **Inclusiveness:** Designing so the solution is usable and beneficial for a wide range of users.  
+- **Accessibility:** Removing barriers for users with disabilities (vision, hearing, mobility, cognitive).  
+- **Assistive technology:** Tools that help users interact (screen readers, captions, voice input).  
+- **Modality:** The interaction format (text, voice, image, touch).  
+- **Usability barrier:** A design choice that makes the system hard or impossible to use for some users.  
+
+### What Inclusiveness Enables
+- Make systems usable for more people, not just the default user profile.  
+- Reduce exclusion caused by assumptions about language, abilities, or typical behavior.  
+- Improve adoption and trust by supporting real-world constraints and needs.  
+
+### How It Works in Practice in Model Development
+You test whether the model and experience work across diverse users and contexts.
+
+You use what you learn to:
+- **Check** whether training data represents the users and environments you expect  
+- **Evaluate** performance across different user groups and conditions  
+- **Design** outputs that remain usable (clear text, consistent structure, accessible formats)  
+- **Document** who the system is and is not designed for  
+
+### How It Works in Practice in a Deployed Service
+You support inclusiveness by making the service usable in different settings.
+
+- **Provide** accessible outputs (captions, text alternatives, readable formatting)  
+- **Support** multiple interaction modes (voice & text, image & text when appropriate)  
+- **Handle** low-bandwidth or constrained devices gracefully  
+- **Offer** human support or escalation paths for complex cases  
+
+### Practical Defaults and Good Habits
+- Include captions or text alternatives for speech and visual outputs.  
+- Test with users who use assistive technologies (screen readers, captions).  
+- Avoid assuming a single language, literacy level, or cultural context.  
+- Validate usability with representative users, not only internal teams.  
+
+### Common Pitfalls and Confusion Points
+- Designing for a default user and treating others as edge cases.  
+- Assuming accessibility is optional or only a UI concern.  
+- Training only on ideal conditions (clear audio, standard accents, high-quality images).  
+- Using interaction cues that exclude some users (for example, expecting typical eye contact).  
+- Shipping without testing with users who rely on assistive technologies.  
+
+**Example**  
+A hiring screener uses an AI score from recorded video interviews. If it expects typical eye contact and facial expressions, it can systematically score neurodivergent candidates lower even when their answers and skills are strong, which is an inclusiveness issue.  
+
 
 ## Transparency (What It Is, What It Enables, Common Pitfalls)
 
