@@ -17,6 +17,22 @@ It then covers practical topics you will see in real solutions that apply the co
 - Risk Framing With NIST AI RMF (Govern, Map, Measure, Manage)  
 - Summary  
 
+## Responsible AI Principles (What They Mean in Practice)
+
+Responsible AI is about building and using AI systems in ways that reduce harm and increase trust. In practice, it means checking not only **Does the model work?**, but also: **Is it safe, fair, secure, understandable, and governed responsibly?**
+
+### The Core Principles
+
+The following principles are a common way to organize Responsible AI concerns. Each principle below includes: What it is, what it enables, common pitfalls, and a concrete example.
+
+- **Fairness**  
+- **Reliability & Safety**  
+- **Privacy & Security**  
+- **Inclusiveness**  
+- **Transparency**  
+- **Accountability**  
+
+
 ## Transparency (What It Is, What It Enables, Common Pitfalls)
 
 Transparency in Responsible AI means people can understand what an AI system is doing, why it makes predictions, and what its limits are before and after deployment.
