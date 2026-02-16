@@ -143,6 +143,62 @@ You reduce risk by monitoring, controlling, and responding to failures.
 **Example**  
 A driverless agriculture vehicle uses sensors and an ML model to navigate a farm. If the model fails in fog or low light and the vehicle does not reliably detect a nearby worker, that is a reliability & safety issue because the system’s behavior becomes unsafe in real conditions.  
 
+## Privacy & Security (What It Is, What It Enables, Common Pitfalls)
+
+Privacy & Security in Responsible AI means protecting sensitive data and securing the system against misuse or attacks. It covers what data you collect, how you store it, who can access it, and whether the model or service can reveal private information.
+
+Privacy & Security means you can:
+- **Minimize** the sensitive data you collect and retain (only what you need)  
+- **Protect** training data and model artifacts (access control, encryption, secure storage)  
+- **Prevent** leakage of personal or organizational details through outputs or logs  
+- **Harden** the solution against misuse and attacks (prompt abuse, data exfiltration, model extraction)  
+
+### Key Terms (Quick Definitions)
+- **Privacy:** Protecting personal data and ensuring appropriate use, access, and retention.  
+- **Security:** Protecting systems and data from unauthorized access, attacks, and misuse.  
+- **PII:** Personally identifiable information (data that can identify a person).  
+- **Data minimization:** Collecting and retaining only what is needed for the purpose.  
+- **Access control:** Restricting who can view or use data and system capabilities.  
+
+### What Privacy & Security Enables
+- Reduce risk of data exposure and misuse (especially for sensitive or regulated data).  
+- Increase user trust by limiting how personal data is collected and retained.  
+- Lower compliance and incident risk by controlling access and tightening data handling.  
+
+### How It Works in Practice in Model Development
+You reduce privacy risk by controlling what enters the pipeline and how artifacts are handled.
+
+You use what you learn to:
+- **Review** what data is collected and why (purpose & necessity)  
+- **Remove** unnecessary identifiers and sensitive fields where possible  
+- **Secure** training datasets and model outputs (least privilege access)  
+- **Test** whether the model can reveal sensitive details from training data  
+
+### How It Works in Practice in a Deployed Service
+You reduce exposure by controlling inputs, outputs, logging, and access.
+
+- **Restrict** access to the service and admin surfaces  
+- **Sanitize** logs and telemetry (avoid capturing sensitive prompts or outputs)  
+- **Block** attempts to request or infer sensitive data  
+- **Rotate** secrets and monitor suspicious usage patterns  
+
+### Practical Defaults and Good Habits
+- **Encrypt** sensitive data at rest and in transit.  
+- **Apply** least-privilege access to data, models, and endpoints.  
+- **Limit** retention of sensitive inputs (including prompts, images, and logs).  
+- **Redact** sensitive data from logs and error messages.  
+- **Validate** controls with security reviews and threat modeling.  
+
+### Common Pitfalls and Confusion Points
+- Treating training data as safe by default even when it includes personal information.  
+- Logging sensitive inputs/outputs for debugging and accidentally creating a leak.  
+- Assuming removing explicit identifiers is enough (proxy fields can still reveal identity).  
+- Ignoring model behaviors that can reveal private details (memorization-style leakage).  
+- Weak access control around high-risk capabilities or datasets.  
+
+**Example**  
+An app uses face images to verify a user. If the system stores face images in plain form without strong access controls, or if attackers can steal the face data and reuse it elsewhere, that is a privacy & security issue because biometric data is highly sensitive and the system is not adequately protected.  
+
 
 ## Transparency (What It Is, What It Enables, Common Pitfalls)
 
