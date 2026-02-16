@@ -446,11 +446,16 @@ Manage is about prioritizing and taking actions to mitigate, accept, or transfer
 
 ## Summary
 
-You should now be able to:  
-- Explain the Responsible AI principles and recognize what each principle is trying to protect.  
-- Recognize fairness risks when similar applicants receive different outcomes across groups for similar financial profiles.  
-- Explain what transparency means and why sharing strong metrics alone (for example, accuracy) does not explain model behavior.  
-- Distinguish **global explanations** from **local explanations** and explain how each supports review and debugging.  
-- Use feature importance as an influence signal while remembering it is not the same as causation.  
-- Recognize that content filters apply at the **Safety system** layer and that **System messages** set response constraints and style.  
-- Explain what **NIST** is, what **AI RMF** stands for, and how **Govern, Map, Measure, Manage** structure risk work.  
+You should now be able to:
+- Explain what Responsible AI is and why it matters  
+- List the core principles: **Fairness**, **Reliability & Safety**, **Privacy & Security**, **Inclusiveness**, **Transparency**, **Accountability**  
+- Recognize fairness risk when similar people get different outcomes across groups  
+- Explain **Transparency** and what it enables (review, trust, documentation)  
+- Use **Global explanations** to identify what drives predictions overall  
+- Use **Local explanations** to explain why one specific case got its result  
+- Use feature importance as an influence signal, not causation  
+- Explain the difference between **System Messages** and the **Safety System**  
+- Recognize that content filters apply at the **Safety System** layer  
+- Explain what **NIST** is and what **AI RMF** stands for  
+- Use **Govern**, **Map**, **Measure**, **Manage** to frame AI risk work  
+
