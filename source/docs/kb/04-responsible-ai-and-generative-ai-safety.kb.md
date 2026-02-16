@@ -87,6 +87,63 @@ You monitor fairness after deployment because data, populations, and usage can c
 **Example**  
 A bank uses an ML model to recommend approve or deny loan applications. If approval rates are lower for women or for a specific racial group than for equally qualified applicants (even when income, credit history, and other relevant factors are similar), the model is producing biased outcomes across groups, which is a fairness issue.  
 
+## Reliability & Safety (What It Is, What It Enables, Common Pitfalls)
+
+Reliability & Safety in Responsible AI means the system behaves consistently in real conditions and avoids causing harm. It matters most when the system supports high-impact decisions or interacts with the physical world.
+
+Reliability & Safety means you can:
+- **Define** what safe behavior looks like (acceptable error, fallback behavior, and stop conditions)  
+- **Test** performance under realistic conditions (edge cases, noisy inputs, degraded environments)  
+- **Monitor** failures in production (drift, outages, unexpected inputs, unsafe outputs)  
+- **Mitigate** risk with guardrails (human review, confidence thresholds, rollback plans)  
+
+### Key Terms (Quick Definitions)
+- **Reliability:** Consistent performance across normal and expected conditions.  
+- **Safety:** Reducing the chance the system causes harm, especially in high-risk contexts.  
+- **Confidence:** A model score that estimates how sure the model is (often used for thresholds).  
+- **Fallback:** A safer alternative path when confidence is low or conditions are abnormal (for example, defer to a human).  
+- **Robustness:** The ability to handle noise, edge cases, and distribution changes without failing unpredictably.  
+
+### What Reliability & Safety Enables
+- Reduce harm in systems that affect people, assets, or critical operations.  
+- Improve trust by making behavior predictable under expected conditions.  
+- Support safe scaling by defining when to automate and when to escalate.  
+
+### How It Works in Practice in Model Development
+You test reliability and safety beyond average-case metrics.
+
+You use what you learn to:
+- **Test** model behavior on edge cases and stress conditions (noise, missing data, poor lighting, unusual users)  
+- **Validate** calibration and confidence thresholds (what happens when the model is unsure)  
+- **Design** fallback behavior (human review, safe defaults, refusal modes)  
+- **Document** known limitations and unsafe failure modes  
+
+### How It Works in Practice in a Deployed Service
+You reduce risk by monitoring, controlling, and responding to failures.
+
+- **Monitor** quality signals and failures (drift, latency spikes, error rates, unusual inputs)  
+- **Alert** on safety-relevant conditions (unexpected outputs, threshold breaches, repeated failures)  
+- **Rollback** or disable automation when behavior degrades  
+- **Escalate** to humans when confidence is low or conditions are uncertain  
+
+### Practical Defaults and Good Habits
+- Set and test confidence thresholds before automating high-impact actions.  
+- Use safe defaults (do nothing, defer, or request more input) when uncertainty is high.  
+- Run pre-deployment tests on edge cases and degraded environments.  
+- Build incident response playbooks (monitoring, rollback steps, owner roles).  
+- Re-test after major data, model, or dependency updates.  
+
+### Common Pitfalls and Confusion Points
+- Strong average metrics can hide unsafe failure modes in edge cases.  
+- Assuming probabilistic models are infallible instead of designing for uncertainty.  
+- Not defining safe fallback behavior when confidence is low.  
+- Treating reliability as a one-time test instead of continuous monitoring.  
+- Ignoring real-world conditions (fog, low light, missing sensors, new populations).  
+
+**Example**  
+A driverless agriculture vehicle uses sensors and an ML model to navigate a farm. If the model fails in fog or low light and the vehicle does not reliably detect a nearby worker, that is a reliability & safety issue because the system’s behavior becomes unsafe in real conditions.  
+
+
 ## Transparency (What It Is, What It Enables, Common Pitfalls)
 
 Transparency in Responsible AI means people can understand what an AI system is doing, why it makes predictions, and what its limits are before and after deployment.
