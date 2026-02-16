@@ -32,6 +32,60 @@ The following principles are a common way to organize Responsible AI concerns. E
 - **Transparency**  
 - **Accountability**  
 
+## Fairness (What It Is, What It Enables, Common Pitfalls)
+
+Fairness in Responsible AI means the system avoids unfair differences in outcomes across groups, especially when people are similarly qualified.
+
+Fairness means you can:
+- **Define** what **fair** means for the decision (who is affected and what outcome matters)  
+- **Check** outcomes and errors across groups (not just overall performance)  
+- **Detect** bias sources in data, features, and labels (including proxy variables)  
+- **Mitigate** disparities using appropriate design and evaluation choices  
+
+### Key Terms (Quick Definitions)
+- **Fairness:** Reducing unfair differences in outcomes across groups, especially for similarly qualified people.  
+- **Bias:** A systematic pattern that disadvantages some groups due to data, design choices, or evaluation gaps.  
+- **Protected Attributes:** Sensitive traits (for example, sex, race, age) that are often covered by policy or law.  
+- **Proxy Variable:** A feature that is not a protected attribute, but correlates strongly with one (for example, **ZIP code**).  
+- **Group Check:** Comparing outcomes or error rates across groups to identify disparities.  
+
+### What Fairness Enables
+- Reduce discriminatory impact in high-stakes decisions (credit, hiring, healthcare).  
+- Improve trust by making outcomes more consistent for similarly qualified people.  
+- Lower legal, compliance, and reputational risk.  
+
+### How It Works in Practice in Model Development
+You typically check fairness while reviewing data, features, and evaluation results.
+
+You use what you learn to:
+- **Review** training data for representation gaps or historical bias  
+- **Test** outcomes and error rates by group (not just overall accuracy)  
+- **Identify** proxy variables that may recreate discrimination  
+- **Adjust** features, sampling, or decision thresholds to reduce disparities  
+
+### How It Works in Practice in a Deployed Service
+You monitor fairness after deployment because data, populations, and usage can change.
+
+- **Define** fairness goals and review criteria before deployment  
+- **Monitor** outcomes and error rates across groups over time  
+- **Investigate** drift when group performance changes  
+- **Provide** appeal or escalation paths for high-impact decisions  
+
+### Practical Defaults and Good Habits
+- Report outcomes and error rates by group (for example, approval rates, false positives, false negatives).  
+- Validate fairness checks with domain experts and compliance stakeholders.  
+- Review features for proxy risk (for example, location, device, school, employer).  
+- Re-check fairness after major data or model updates.  
+
+### Common Pitfalls and Confusion Points
+- High overall accuracy can hide poor performance for a minority group.  
+- **Balanced data** does not guarantee fair outcomes.  
+- Proxy variables can recreate discrimination even when protected attributes are removed.  
+- Optimizing one fairness goal can worsen another (tradeoffs must be explicit).  
+- Fairness is not the same as transparency: You can explain a model clearly and still have biased outcomes.  
+
+**Example**  
+A bank uses an ML model to recommend approve or deny loan applications. If approval rates are lower for women or for a specific racial group than for equally qualified applicants (even when income, credit history, and other relevant factors are similar), the model is producing biased outcomes across groups, which is a fairness issue.  
 
 ## Transparency (What It Is, What It Enables, Common Pitfalls)
 
