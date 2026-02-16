@@ -1,18 +1,25 @@
 # Language and Conversational Workloads
 
-This document explains how language-based AI workloads differ, including text analysis, language understanding (intent & entities), question answering, translation, and speech. It focuses on how to choose the right capability based on your input (text or audio) and what you want the system to do (analyze text, answer from content, route a command, translate, or transcribe). It stays Vendor-Neutral, then maps key concepts to Azure where helpful.
+This document explains how language-based AI workloads differ across: text analysis, conversational understanding (**Intent & Entities**), question answering, translation, and speech.
 
-**This Document Covers**  
+It focuses on choosing the right capability using two questions:
+- **What you start with:** Text or Audio  
+- **What you need:** Extract signals, understand a command, answer from content, translate language, or transcribe speech  
+
+It stays Vendor-Neutral first, then maps concepts to Azure in a dedicated **Azure Mapping** section.
+
+**This Document Covers**
 - Natural Language Processing (What It Is, Common Tasks)  
-- Text Analytics Capabilities (Sentiment, Key Phrases, Entities, Language Detection)  
-- Language Understanding (Intent & Entities)  
+- Text Analytics Capabilities (Sentiment, Key Phrases, Named Entity Recognition, Language Detection)  
+- Language Understanding (CLU: Intent & Entities Outputs)  
+- Orchestration (Route Commands vs Questions)  
 - Question Answering (Answer From Your Content)  
-- Orchestration (Routing Between Intents and Question Answering)  
-- Translation (Text vs Speech Translation)  
-- Speech (Speech-to-Text, Text-to-Speech)  
-- Common Confusions (Choose This, Not That)
-- Azure Mapping (Concept → Azure Service Family)
+- Translation (Text Translation vs Speech Translation)  
+- Speech (Speech-to-Text, Text-to-Speech, Speech Translation)  
+- Common Confusions (Choose This, Not That)  
+- Azure Mapping (Concept → Azure Service Family)  
 - Summary  
+
 
 ## Natural Language Processing (What It Is, Common Tasks)  
 Natural Language Processing (NLP) applies when the input is text and the goal is to analyze or work with language.  
