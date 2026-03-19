@@ -53,66 +53,61 @@ Use **official docs** when you want the **full depth in details** and **original
 6. [Vision and Document Workloads](source/docs/kb/06-vision-and-document-workloads.kb.md)
 7. [Azure Mapping: ML, Search, and Services Reference](source/docs/kb/07-azure-ml-and-search-mapping.kb.md)
 
-
 ## Practice Tests
 This repo includes practice tests to validate understanding and catch common confusion points. The goal is not only to test recall, but to make sure the concepts are clear and usable in real scenarios.
 
-These practice tests are designed as a connected set with three types (Raw, Detailed, Compressed):
+These practice tests are designed as a connected set with three types:
 
 - The Raw version is the source of truth for all questions.
-- Every Raw question is mirrored one-to-one in the Detailed version. The Detailed version adds detailed explanations and extra guidance.
-- Since the Detailed version can grow large, the Compressed version covers the same points with fewer questions. This makes it easier to do a high-impact review on the night before the exam.
+- Every Raw question is mirrored one-to-one in the Detailed version. The Detailed version adds deep explanations, clarifications, and exam-focused guidance.
+- The Compressed version covers the same key points with fewer questions, making it useful for faster revision and high-impact review.
 
 Practice tests come in several formats:
-- Markdown Files (study focused, includes answers, works well as a reference)
-- Microsoft Forms (practice focused, exam-style, with explanations)
+- Markdown study files (study focused, includes answers, works well as a reference)
+- Microsoft Forms quizzes (practice focused, exam-style, with explanations where available)
 
 Practice tests come in three types:
 
 ### Raw Practice Tests (Questions And Correct Answers Only)
-This will include all questions with no explanations, just the question and the correct answer.
+This includes all questions with no explanations, just the question and the correct answer.
 
 It acts like the source material.
 
-Markdown Files
-- [Practice Test 01 (Raw)](/docs/practice/raw/01-practice-test.raw.md)
-- [Practice Test 02 (Raw)](/docs/practice/raw/02-practice-test.raw.md)
+| Practice Test | Markdown Study File | Microsoft Form Quiz |
+| ------------- | ------------------- | ------------------- |
+| Practice Test 01 | [View Study File](/docs/practice/raw/01-practice-test.raw.md) | Open Quiz |
+| Practice Test 02 | [View Study File](/docs/practice/raw/02-practice-test.raw.md) | Open Quiz |
 
 ### Detailed Practice Tests (Deep Explanations And References)
-This version includes deep explanations, breakdowns, and additional clarifications.
+This version beside the question and the correct answer, it includes deep explanations, breakdowns, and additional clarifications.
 
-It contains more questions because each concept is expanded.
+It is designed to help repair weak understanding, not just tell you whether an answer is right or wrong.
 
-Microsoft Forms
-- Practice Test 01 (Detailed) (Link TBD)
-- Practice Test 02 (Detailed) (Link TBD)
-
-Markdown Files
-- [Practice Test 01 (Detailed)](/docs/practice/detailed/01-practice-test.detailed.md)
-- [Practice Test 02 (Detailed)](/docs/practice/detailed/02-practice-test.detailed.md)
+| Practice Test | Markdown Study File | Microsoft Form Quiz |
+| ------------- | ------------------- | ------------------- |
+| Practice Test 01 | [View Study File](/docs/practice/detailed/01-practice-test.detailed.md) | Open Quiz |
+| Practice Test 02 | [View Study File](/docs/practice/detailed/02-practice-test.detailed.md) | Open Quiz |
 
 ### Compressed Practice Tests (High-Coverage And Low-Volume Review)
-This compresses many detailed questions into a smaller number of high-coverage questions.
+This version reduces question volume while preserving the most important concepts and exam signals.
 
-The goal is to reduce volume while keeping maximum understanding.
+It is designed for faster revision when you want maximum coverage with less reading.
 
-Microsoft Forms
-- Practice Test 01 (Compressed) (Link TBD)
-- Practice Test 02 (Compressed) (Link TBD)
-
-Markdown Files
-- [Practice Test 01 (Compressed)](/docs/practice/compressed/01-practice-test.compressed.md)
-- [Practice Test 02 (Compressed)](/docs/practice/compressed/02-practice-test.compressed.md)
+| Practice Test | Markdown Study File | Microsoft Form Quiz |
+| ------------- | ------------------- | ------------------- |
+| Practice Test 01 | [View Study File](/docs/practice/compressed/01-practice-test.compressed.md) | Open Quiz |
+| Practice Test 02 | [View Study File](/docs/practice/compressed/02-practice-test.compressed.md) | Open Quiz |
 
 ## Contributing
 
 If you spot an unclear explanation or want to suggest an improvement, open an issue with:
-- the document name
-- the section title
-- what felt confusing and what you expected instead
+- The document name
+- The section title
+- What felt confusing and what you expected instead
 
 If you are reporting a problem in a Microsoft Forms quiz, include:
-- the quiz name
-- the question number (or a screenshot)
-- what you think the correct answer should be and why
+- The quiz name
+- The question number (or a screenshot)
+- What you think the correct answer should be and why
+
 
