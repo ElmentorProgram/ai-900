@@ -66,6 +66,10 @@ Practice tests come in several formats:
 - Markdown study files (study focused, includes answers, works well as a reference)
 - Microsoft Forms quizzes (practice focused, exam-style, with explanations where available)
 
+> [!CAUTION]
+> **Practice test links are not working yet** they’re still under development.
+> Please **star** this repo and click **Watch → Releases** (or **All activity**) to get updates as soon as the practice tests become available.
+
 Practice tests come in three types:
 
 ### Raw Practice Tests (Questions And Correct Answers Only)
