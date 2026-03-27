@@ -102,16 +102,3 @@ It is designed for faster revision when you want maximum coverage with less read
 | Practice Test 01 | [View Study File](/docs/practice/compressed/01-practice-test.compressed.md) | Open Quiz |
 | Practice Test 02 | [View Study File](/docs/practice/compressed/02-practice-test.compressed.md) | Open Quiz |
 
-## Contributing
-
-If you spot an unclear explanation or want to suggest an improvement, open an issue with:
-- The document name
-- The section title
-- What felt confusing and what you expected instead
-
-If you are reporting a problem in a Microsoft Forms quiz, include:
-- The quiz name
-- The question number (or a screenshot)
-- What you think the correct answer should be and why
-
-
