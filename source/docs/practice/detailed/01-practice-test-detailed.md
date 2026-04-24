@@ -178,3 +178,182 @@ Wrong because they are different phases: one learns the model, the other uses th
 - [What is Azure Machine Learning?](https://learn.microsoft.com/en-us/azure/machine-learning/overview-what-is-azure-machine-learning?view=azureml-api-2)  
 - [Azure Machine Learning documentation](https://learn.microsoft.com/en-us/azure/machine-learning/?view=azureml-api-2)  
 - [How to select a machine learning algorithm](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-select-algorithms?view=azureml-api-1)  
+
+
+**Question:** [005]  
+Which scenario is the best example of **supervised learning**?
+
+**Options:**  
+A. Grouping customers into segments when no predefined categories exist  
+B. Predicting house prices from historical examples with known prices  
+C. Discovering hidden structure in product behavior without target values  
+D. Organizing articles by similarity without predefined labels  
+
+**Correct Answer(s):** B
+
+**Explanation:**  
+This is **supervised learning** because the model learns from historical examples where the correct target value is already known. In this case, the known target is the house price.
+
+**Why the Correct Answer Is Correct:**  
+- Supervised learning uses labeled data.  
+- Known house prices act as the target values the model learns to predict.  
+- Predicting a numeric value from known historical outcomes is a standard supervised ML pattern.
+
+**Why the Other Options Are Wrong:**  
+
+**A. Grouping customers into segments when no predefined categories exist**  
+Wrong because this describes **unsupervised learning**, where the system finds structure without known labels.  
+
+**C. Discovering hidden structure in product behavior without target values**  
+Wrong because this also describes **unsupervised learning**. The key phrase is **without target values**.  
+
+**D. Organizing articles by similarity without predefined labels**  
+Wrong because organizing by similarity without labels is again an **unsupervised** pattern, not supervised learning.  
+
+**Tips and Tricks:**  
+- If the scenario includes **known correct outcomes**, think **supervised learning**.  
+- If the task is **predicting a known target**, supervised is usually the right direction.  
+- Watch for distractors that describe grouping or similarity without labels.
+
+> [!IMPORTANT]  
+> The strongest clue for **supervised learning** is the presence of a known answer in the training data.
+
+**Source:**  
+- [Introduction to machine learning concepts](https://learn.microsoft.com/en-us/training/modules/fundamentals-machine-learning/)  
+- [A guide to artificial intelligence](https://learn.microsoft.com/en-us/training/modules/a-guide-to-artificial-intelligence/)  
+- [How to select a machine learning algorithm](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-select-algorithms?view=azureml-api-1)  
+- [Create machine learning models](https://learn.microsoft.com/en-us/training/paths/create-machine-learn-models/)  
+
+
+**Question:** [006]  
+Which scenario is the best example of **unsupervised learning**?
+
+**Options:**  
+A. Classifying emails as spam or not spam by using known past outcomes  
+B. Predicting equipment failure time from historical records with known results  
+C. Grouping customers into segments when no predefined categories exist  
+D. Predicting whether a loan will be approved by using historical labeled cases  
+
+**Correct Answer(s):** C
+
+**Explanation:**  
+This is **unsupervised learning** because the goal is to find structure in data when no predefined labels are available. Customer segmentation is a classic clustering-style example.
+
+**Why the Correct Answer Is Correct:**  
+- Unsupervised learning works with unlabeled data.  
+- Grouping customers into segments is a standard clustering scenario.  
+- The phrase **no predefined categories exist** is the clearest clue.
+
+**Why the Other Options Are Wrong:**  
+
+**A. Classifying emails as spam or not spam by using known past outcomes**  
+Wrong because this is **supervised learning**. The known past outcomes act as labels.  
+
+**B. Predicting equipment failure time from historical records with known results**  
+Wrong because predicting from known results is a supervised learning pattern, not unsupervised learning.  
+
+**D. Predicting whether a loan will be approved by using historical labeled cases**  
+Wrong because the phrase **historical labeled cases** points directly to supervised learning.  
+
+**Tips and Tricks:**  
+- If the stem says **no labels**, **no predefined categories**, or **discover structure**, think **unsupervised learning**.  
+- If the stem says **known outcomes** or **labeled cases**, it is not unsupervised.
+
+> [!IMPORTANT]  
+> The exam often tests **supervised vs unsupervised** by changing just one clue: **known labels** versus **no labels**.
+
+**Source:**  
+- [Introduction to machine learning concepts](https://learn.microsoft.com/en-us/training/modules/fundamentals-machine-learning/)  
+- [A guide to artificial intelligence](https://learn.microsoft.com/en-us/training/modules/a-guide-to-artificial-intelligence/)  
+- [How to select a machine learning algorithm](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-select-algorithms?view=azureml-api-1)  
+- [K-Means Clustering: Component reference](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference/k-means-clustering?view=azureml-api-2)  
+
+
+**Question:** [007]  
+A team says, “We have labeled data, so the model will learn from examples where the correct answer is already known.” Which concept are they describing?
+
+**Options:**  
+A. Inference  
+B. Supervised learning  
+C. Unsupervised learning  
+D. Prompting  
+
+**Correct Answer(s):** B
+
+**Explanation:**  
+They are describing **supervised learning** because the model learns from examples where the correct answers are already known. That is the defining idea behind supervised learning.
+
+**Why the Correct Answer Is Correct:**  
+- Supervised learning uses labeled data.  
+- The phrase **correct answer is already known** directly points to labels.  
+- The model learns from those known answers during training.
+
+**Why the Other Options Are Wrong:**  
+
+**A. Inference**  
+Wrong because inference is the use of a trained model on new data, not the learning phase with labeled examples.  
+
+**C. Unsupervised learning**  
+Wrong because unsupervised learning does not rely on known correct answers or labels.  
+
+**D. Prompting**  
+Wrong because prompting refers to giving instructions or input to generative AI systems, not to the ML concept of learning from labeled datasets.  
+
+**Tips and Tricks:**  
+- **Known correct answer** usually means **label**.  
+- **Label present during learning** usually means **supervised learning**.  
+- Do not confuse **learning from labeled data** with **using a trained model**.
+
+> [!IMPORTANT]  
+> If a question says the model learns from examples where the answer is already known, **supervised learning** is the default answer unless the stem clearly says otherwise.
+
+**Source:**  
+- [Introduction to machine learning concepts](https://learn.microsoft.com/en-us/training/modules/fundamentals-machine-learning/)  
+- [A guide to artificial intelligence](https://learn.microsoft.com/en-us/training/modules/a-guide-to-artificial-intelligence/)  
+- [Endpoints for inference - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-endpoints?view=azureml-api-2)  
+- [Introduction to generative AI and agents](https://learn.microsoft.com/en-us/training/modules/fundamentals-generative-ai/)  
+
+
+**Question:** [008]  
+Which statement about **deep learning** is correct?
+
+**Options:**  
+A. It is a neural-network approach inside machine learning that learns complex patterns from lots of data  
+B. It is the same as generative AI because both produce text from prompts  
+C. It is an unsupervised-only technique used mainly for clustering  
+D. It refers to any model with a large number of parameters, regardless of method  
+
+**Correct Answer(s):** A
+
+**Explanation:**  
+**Deep learning** is a neural-network-based approach within machine learning that can learn complex patterns, especially from large amounts of data. It is widely associated with tasks such as vision, speech, and language.
+
+**Why the Correct Answer Is Correct:**  
+- Deep learning is part of machine learning, not a separate category outside it.  
+- It uses neural networks to learn complex patterns.  
+- It is often useful when working with complex data such as images, audio, and language.
+
+**Why the Other Options Are Wrong:**  
+
+**B. It is the same as generative AI because both produce text from prompts**  
+Wrong because deep learning and generative AI are related but not identical. Generative AI focuses on producing new content, while deep learning is a broader neural-network approach within ML.  
+
+**C. It is an unsupervised-only technique used mainly for clustering**  
+Wrong because deep learning is not limited to unsupervised learning and is not mainly defined by clustering. It can be used across different kinds of ML tasks.  
+
+**D. It refers to any model with a large number of parameters, regardless of method**  
+Wrong because parameter count alone does not define deep learning. The defining idea is the neural-network approach.  
+
+**Tips and Tricks:**  
+- Anchor on **neural networks** when you see **deep learning**.  
+- Do not collapse **deep learning** into **generative AI**.  
+- A model being large does not automatically make it deep learning.
+
+> [!IMPORTANT]  
+> A strong exam shortcut is: **Deep Learning = neural-network approach inside ML**.
+
+**Source:**  
+- [A guide to artificial intelligence](https://learn.microsoft.com/en-us/training/modules/a-guide-to-artificial-intelligence/)  
+- [Create machine learning models](https://learn.microsoft.com/en-us/training/paths/create-machine-learn-models/)  
+- [Introduction to generative AI and agents](https://learn.microsoft.com/en-us/training/modules/fundamentals-generative-ai/)  
+- [Key concepts and considerations in generative AI](https://learn.microsoft.com/en-us/azure/developer/ai/gen-ai-concepts-considerations-developers)  
