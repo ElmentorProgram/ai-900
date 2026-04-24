@@ -63,7 +63,7 @@ This section maps common ML build and deployment concepts to Azure Machine Learn
 
 In Designer, you build the workflow by adding datasets and modules to the canvas and connecting them into a pipeline.
 
-The canvas is for workflow steps like data preparation, training, scoring, and evaluation.
+The canvas is for workflow steps like data preparation, training, scoring, and evaluation.  
 **Compute** is different:
 - It is the execution environment where the pipeline runs
 - It is selected as a run setting, not added as a workflow step
