@@ -54,6 +54,8 @@ So both say “this is for text”, because both are in the same family.
 > [!NOTE]  
 > Text Analytics is a set of **NLP** capabilities for extracting signals from text. Like all **NLP**, it requires text input, so use OCR or document processing first for scanned documents.
 
+**Study note:** Text Analytics extracts signals from text, but intent-style command interpretation belongs to language understanding in conversational systems.  
+
 ### Key Phrase Extraction  
 Key phrase extraction pulls out the main talking points from a document or message.  
 Use it when you want to quickly understand what a text is mostly about, or compare documents by their topics.  
