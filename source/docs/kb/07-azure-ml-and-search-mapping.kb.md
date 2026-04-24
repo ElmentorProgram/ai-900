@@ -91,6 +91,11 @@ AutoML automates repeated experimentation to find a strong model for your data. 
 - Limits/stop conditions (time, maximum iterations)  
 - Validation settings (how models are evaluated during training)  
 
+During training, AutoML tries many candidate pipelines by varying algorithms, parameter settings, and feature processing choices.
+
+Each iteration is scored using your selected metric, and the experiment stops when the configured limits or exit criteria are reached.
+
+
 ### Deployment and Endpoints (Inference)  
 - To make a trained model usable by applications, deploy it to an **endpoint**.  
 - To call a deployed inference service, you need the **REST endpoint** (service URL) and an **authentication key**.  
