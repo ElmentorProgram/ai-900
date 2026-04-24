@@ -128,6 +128,13 @@ It helps you:
 - **Deploy models for inference** → Foundry Models (Deployments, endpoints)
 - **Evaluate quality and safety before shipping** → Azure AI Foundry (Evaluations: quality + risk/safety evaluators)
 
+For classic bot scenarios, Azure AI Bot Service is the platform used to build, deploy, and connect bots to channels.
+
+Bots can connect to channels like web chat, Microsoft Teams, or Facebook.
+Some channels require extra registration with the channel provider.
+Example: the Facebook channel requires a registered Facebook application so the bot can connect by using Facebook app credentials.
+
+
 ### Azure AI Foundry Model Catalog (High-Level)
 The model catalog is where you discover, compare, and deploy models available in Foundry (Microsoft + third-party), organized by capability (chat/text, embeddings, image, speech).
 
