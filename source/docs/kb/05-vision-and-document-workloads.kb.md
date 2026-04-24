@@ -146,6 +146,8 @@ There are two common custom vision outputs:
 - **Image classification:** assign one main label to the whole image (or multiple labels, depending on how you design it).  
 - **Object detection:** find and label items with bounding boxes, used when multiple items can appear or location matters.  
 
+**Study note:** Custom Vision is commonly used for **Image Classification** and **Object Detection**. If you need exact pixel-level masks, that is typically a **Semantic Segmentation** scenario rather than the usual Custom Vision choice.
+
 Example (retail competitor products):  
 If the goal is to identify specific competitor products from retail shelf images, generic tags like “bottle” or “snack” are not enough. You collect and label images of the products under real store conditions (lighting, angles, occlusion), then train a model to classify the image or detect multiple products on a shelf.  
 
@@ -161,7 +163,8 @@ If the goal is to identify specific competitor products from retail shelf images
 - Image classification vs object detection: classification labels the whole image, detection returns labels plus bounding boxes (what and where).  
 - Object detection vs semantic segmentation: detection gives bounding boxes, segmentation gives pixel-level masks when boundaries matter.  
 - Face detection vs face verification: detection finds faces (and sometimes attributes), verification compares two faces to decide if they are the same person.  
-- General tags/captions vs custom vision: tags and captions are broad, custom vision is used when you need your own labels (specific products, competitor SKUs, defect categories).  
+- General tags/captions vs custom vision: tags and captions are broad, custom vision is used when you need your own labels (specific products, competitor SKUs, defect categories).
+- General tags/captions vs tagging friends: General tags and captions describe broad image content like **Tree**, **Car**, or **Outdoor**; they do not reliably identify which specific friend appears in the image.
 
 > [!WARNING]  
 > If your rule is about faces and a face-worn item (like sunglasses), use face detection with attributes. Face verification is for identity matching, not accessories filtering.  
