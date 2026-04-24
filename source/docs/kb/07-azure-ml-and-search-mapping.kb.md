@@ -72,6 +72,16 @@ AutoML automates repeated experimentation to find a strong model for your data. 
 - To make a trained model usable by applications, deploy it to an **endpoint**.  
 - To call a deployed inference service, you need the **REST endpoint** (service URL) and an **authentication key**.  
 
+When you publish an inference pipeline from Azure Machine Learning Designer, it becomes a web service that applications can call.
+
+To call it successfully, you need:
+- The **REST endpoint** (where to send the request)
+- The **authentication key** (permission to call the service)
+
+Common confusion:
+- Use the **inference/scoring endpoint**, not a training endpoint
+- The input must match the expected request schema
+
 > [!IMPORTANT]  
 > Training builds the model, inference uses the model to score new data. When a question asks how to call a deployed model, you are in the inference endpoint world (REST endpoint & key).  
 
