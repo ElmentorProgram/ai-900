@@ -48,9 +48,9 @@ Use **official docs** when you want the **full depth in details** and **original
 1. [AI and ML Foundations](source/docs/kb/01-ai-and-ml-foundations.kb.md)
 2. [ML Lifecycle: Data Prep and Splitting](source/docs/kb/02-ml-lifecycle-data-prep-and-splitting.kb.md)
 3. [Choosing ML Problem Types and Metrics](source/docs/kb/03-choosing-ml-problem-types-and-metrics.kb.md)
-4. [Responsible AI and Generative AI Safety](source/docs/kb/04-responsible-ai-and-genai-safety.kb.md)
-5. [Language and Conversational Workloads](source/docs/kb/05-language-and-conversational-workloads.kb.md)
-6. [Vision and Document Workloads](source/docs/kb/06-vision-and-document-workloads.kb.md)
+4. [Language and Conversational Workloads](source/docs/kb/04-language-and-conversational-workloads.kb.md)
+5. [Vision and Document Workloads](source/docs/kb/06-vision-and-document-workloads.kb.md)
+6. [Responsible AI and Generative AI Safety](source/docs/kb/06-responsible-ai-and-generative-ai-safety.kb.md)
 7. [Azure Mapping: ML, Search, and Services Reference](source/docs/kb/07-azure-ml-and-search-mapping.kb.md)
 
 ## Practice Tests
