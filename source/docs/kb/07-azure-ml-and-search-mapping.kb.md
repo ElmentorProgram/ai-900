@@ -79,6 +79,10 @@ Custom code in Designer is typically written in:
 - Python
 - R
 
+As you build and edit the workflow on the canvas, Designer saves the in-progress work as a **pipeline draft**.
+
+This helps preserve the current pipeline structure while you continue making changes.
+
 
 ### Automated ML (AutoML)  
 AutoML automates repeated experimentation to find a strong model for your data. In an AutoML experiment, you typically configure:  
