@@ -64,6 +64,7 @@ Entity recognition finds named things in text, like people, organizations, locat
 Use it when you want to tag content (for example, “mentions Microsoft” or “mentions London”) or enable filters in search.  
 **Study note:** “Extract people and locations from articles” is NER.  
 
+
 ### Sentiment Analysis  
 Sentiment analysis estimates the tone of text, usually positive, negative, or neutral.  
 Use it on reviews, survey feedback, and support messages when you care about how people feel.  
@@ -87,6 +88,16 @@ User says: “Play Blinding Lights by The Weeknd on the living room speaker.”
 
 A key point is that the language understanding model does not perform the action. It produces structured understanding so your app or bot can call the right APIs.  
 
+**When CLU is the right choice**  
+Use CLU when the user message is a **command or request** and your system must decide **what action to take**.
+
+Examples:
+- **Book a meeting tomorrow at 3**
+- **Open ticket for billing**
+- **Play jazz music**
+- **Track my package**
+
+**Study note:** CLU is for **understanding a user command**, not for answering from knowledge content and not for performing the action itself.
 
 ## Question Answering (Answer From Your Content)  
 Question Answering is used when the user is asking for information and the answer should come from known content. It creates a conversational layer over your data to return the best-matching answer.  
