@@ -112,6 +112,13 @@ Keep the pipeline types separate:
 
 If an external app needs predictions, it should call the **inference/scoring service**, not a training endpoint.
 
+A typical call flow looks like this:
+- Send the request to the **REST endpoint**
+- Include the **authentication key**
+- Provide input in the expected format, commonly **JSON**
+- Receive the model prediction in the response
+
+
 Common confusion:
 - Use the **inference/scoring endpoint**, not a training endpoint
 - The input must match the expected request schema
