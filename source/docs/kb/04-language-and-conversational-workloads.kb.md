@@ -64,6 +64,15 @@ Entity recognition finds named things in text, like people, organizations, locat
 Use it when you want to tag content (for example, “mentions Microsoft” or “mentions London”) or enable filters in search.  
 **Study note:** “Extract people and locations from articles” is NER.  
 
+Use NER when you need to extract entities from written content like articles, reports, or messages so you can classify, tag, filter, or search that content later.
+
+Examples:
+- Extract people and locations from news articles
+- Tag documents that mention Microsoft or London
+- Build filters like **articles mentioning a company or city**
+
+**Study note:** If the task is “extract people, organizations, or locations from articles,” that is **NER**, not CLU.
+
 
 ### Sentiment Analysis  
 Sentiment analysis estimates the tone of text, usually positive, negative, or neutral.  
