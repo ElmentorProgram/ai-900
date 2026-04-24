@@ -141,6 +141,7 @@ Verification is used for identity matching (one face compared to another), not f
 - **Grouping**: cluster faces that likely belong to the same person.
 
 **Study note:** Verification is **1:1** face matching, while identification is **1:N** matching against a known set of people.  
+**Study note:** **Find similar** returns closest-looking faces to a given face, while **grouping** clusters a set of faces by likely person without assigning names.  
 
 ## Custom Vision (When You Need Your Own Labels)  
 Sometimes “general vision” outputs like tags or captions are not specific enough. If you need the system to recognize your own categories (your product types, competitor SKUs, defect categories), you typically need a custom vision model trained on your labeled examples.  
