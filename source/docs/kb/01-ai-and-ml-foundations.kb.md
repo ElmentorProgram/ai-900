@@ -270,7 +270,8 @@ These are the confusion points that cause most wrong workload choices. Use this 
 - **Speech Recognition vs Text-to-Speech:** Speech Recognition is **audio → text** (captions/transcripts); Text-to-Speech is **text → audio** (read aloud/announcements).  
 - **Translator vs Speech:** Translator is **text → text** translation; Speech is used when audio is involved (speech-to-text, text-to-speech, speech translation).  
 - **Computer Vision vs Anomaly Detection:** If the input is images and the goal is recognizing objects by appearance/shape, treat it as Computer Vision; Anomaly Detection is about unusual behavior compared to a normal baseline.  
-- **Generative AI vs Question Answering:** Generative AI produces new content; Question Answering retrieves an answer from known content (FAQs/docs) and returns the best match.  
+- **Generative AI vs Question Answering:** Generative AI produces new content; Question Answering retrieves an answer from known content (FAQs/docs) and returns the best match.
+- **Text Translation vs Speech Translation**: Use **Translator** when the input is text and the output is translated text. Use **Speech** when audio is involved, such as transcription, text-to-speech, or spoken translation.
 
 > [!WARNING]
 > OCR, Document Processing, NLP are often chained, OCR and Document Processing extract text and structure from images or PDFs, NLP analyzes meaning after you already have text, mixing them leads to the wrong design and wrong service choice.
