@@ -225,6 +225,7 @@ Concept → Service Family (Specific Capability Name)
 - **Liveness Detection** → Azure AI Face (detect spoof attempts: photo/recording vs real person)
 - **Face Detection Attributes: Headwear** → Azure AI Face (attribute example)  
 - **Face Detection Attributes: Age** → Azure AI Face (may be limited depending on policy/eligibility)
+- **Bots and Channels (Conversational Bot Platform)** → Azure AI Bot Service (Bot Service)
 
 > [!IMPORTANT]  
 > Use **Azure AI Vision** for broad understanding (tags, captions, general analysis). Use **Azure AI Face** for face-focused scenarios (faces, face attributes, identity operations). Use **Custom Vision** when you need your own labels (specific products, competitor SKUs, defect categories).  
