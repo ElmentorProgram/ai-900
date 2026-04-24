@@ -85,6 +85,7 @@ Use it on reviews, survey feedback, and support messages when you care about how
 ### Language Detection  
 Language detection identifies the language of the input text so you can route it to the right workflow (for example, translation or region-specific handling).  
 It commonly returns the language name, an ISO 639-1 code, and a confidence score.  
+Use it to route text to downstream workflows like translation or region-specific handling, not to determine user intent.  
 **Study note:** Language detection outputs language name, ISO code, and score.  
 
 ## Language Understanding (Intent & Entities)  
