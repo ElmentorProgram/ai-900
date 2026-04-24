@@ -140,6 +140,7 @@ Verification is used for identity matching (one face compared to another), not f
 - **Find similar**: find faces that look similar to a given face.
 - **Grouping**: cluster faces that likely belong to the same person.
 
+**Study note:** Verification is **1:1** face matching, while identification is **1:N** matching against a known set of people.  
 
 ## Custom Vision (When You Need Your Own Labels)  
 Sometimes “general vision” outputs like tags or captions are not specific enough. If you need the system to recognize your own categories (your product types, competitor SKUs, defect categories), you typically need a custom vision model trained on your labeled examples.  
@@ -151,6 +152,7 @@ There are two common custom vision outputs:
 - **Object detection:** find and label items with bounding boxes, used when multiple items can appear or location matters.  
 
 **Study note:** Custom Vision is commonly used for **Image Classification** and **Object Detection**. If you need exact pixel-level masks, that is typically a **Semantic Segmentation** scenario rather than the usual Custom Vision choice.
+**Study note:** If you need exact pixel-level masks, that is typically not the usual Custom Vision path. Use other computer vision training approaches for semantic segmentation.  
 
 Example (retail competitor products):  
 If the goal is to identify specific competitor products from retail shelf images, generic tags like “bottle” or “snack” are not enough. You collect and label images of the products under real store conditions (lighting, angles, occlusion), then train a model to classify the image or detect multiple products on a shelf.  
