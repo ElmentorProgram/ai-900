@@ -61,6 +61,13 @@ This section maps common ML build and deployment concepts to Azure Machine Learn
 - You start by creating a **pipeline**, then add **datasets** and **modules** to build the workflow.  
 - To create training and validation subsets from a dataset, use **Split Data** (splits rows into two outputs).  
 
+In Designer, you build the workflow by adding datasets and modules to the canvas and connecting them into a pipeline.
+
+The canvas is for workflow steps like data preparation, training, scoring, and evaluation.
+**Compute** is different:
+- It is the execution environment where the pipeline runs
+- It is selected as a run setting, not added as a workflow step
+
 ### Automated ML (AutoML)  
 AutoML automates repeated experimentation to find a strong model for your data. In an AutoML experiment, you typically configure:  
 - The **label/target column**  
