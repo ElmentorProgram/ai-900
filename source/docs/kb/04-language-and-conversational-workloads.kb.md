@@ -152,7 +152,7 @@ Example:
 ## Translation (Text vs Speech Translation)  
 To support multilingual translation scenarios, choose the capability based on what format you start from.  
 
-- Translator is used for text-to-text translation (convert written text between languages).  
+- Translator is used for text-to-text translation (convert written text between languages, for example English to German).    
 - Speech is used for speech-related scenarios, including speech-to-text (transcription) and speech translation workflows.
 - Use Translator when the input is text, the output should be translated text, and you want multilingual experiences in apps, websites, or workflows.  
 
