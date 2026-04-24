@@ -184,6 +184,9 @@ Common uses include reading messages aloud, automated announcements, and voice r
 - Language detection vs translation: language detection identifies the language, it does not translate.  
 - Key phrase extraction vs entity recognition: key phrases are main topics/talking points, entities are named things (people, orgs, places, dates).  
 - Transcription vs summarization: speech-to-text creates a transcript, summarization is an NLP step you do after you have text.
+- CLU vs NER: CLU is for understanding **what the user wants to do** and extracting action details from a command; NER is for extracting named things from text for analysis or tagging.
+- Question Answering vs CLU: Question Answering is for returning an answer from known content; CLU is for routing command-style messages to the correct action.
+- Translator vs language detection: language detection tells you **what language the text is in**; Translator changes the text into another language.
 
 > [!IMPORTANT]
 > **Entity means two different things here.**
