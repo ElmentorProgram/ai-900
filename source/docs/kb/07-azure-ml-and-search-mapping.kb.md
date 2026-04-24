@@ -68,6 +68,18 @@ The canvas is for workflow steps like data preparation, training, scoring, and e
 - It is the execution environment where the pipeline runs
 - It is selected as a run setting, not added as a workflow step
 
+Designer can also include custom logic by using script-based modules.
+
+This is useful when built-in modules are not enough, for example:
+- Custom data cleaning or transformations
+- Feature engineering
+- Custom evaluation or formatting steps
+
+Custom code in Designer is typically written in:
+- Python
+- R
+
+
 ### Automated ML (AutoML)  
 AutoML automates repeated experimentation to find a strong model for your data. In an AutoML experiment, you typically configure:  
 - The **label/target column**  
