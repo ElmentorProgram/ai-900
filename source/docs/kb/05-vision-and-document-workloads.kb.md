@@ -103,6 +103,8 @@ Face detection answers questions like:
 - “Is there a face in this image?”  
 - “How many faces are there, and where are they located?”  
 
+Use it for scenarios like counting faces, cropping face regions, blurring faces for privacy, or triggering workflows when people are present.  
+
 In many solutions, face detection can also return face-related attributes, depending on the capability used. For example, accessories like glasses or sunglasses.  
 
 > [!WARNING]
