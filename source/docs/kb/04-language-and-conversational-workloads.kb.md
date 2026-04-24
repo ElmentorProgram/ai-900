@@ -65,6 +65,8 @@ Use it when you want to tag content (for example, “mentions Microsoft” or �
 **Study note:** “Extract people and locations from articles” is NER.  
 
 Use NER when you need to extract entities from written content like articles, reports, or messages so you can classify, tag, filter, or search that content later.
+Use it when you want to classify content, build recommendations, or enable search and filtering based on mentioned people, organizations, or places.  
+
 
 Examples:
 - Extract people and locations from news articles
@@ -85,6 +87,11 @@ It commonly returns the language name, an ISO 639-1 code, and a confidence score
 
 ## Language Understanding (Intent & Entities)  
 When you need to interpret what a user means in a message like “Call me back later,” you are doing language understanding (often modeled as intent and entities).  
+
+**Common entity extraction approaches:**  
+- Learned entities: extracted from labeled examples and context  
+- List entities: matched from known values  
+- Prebuilt entities: recognized entity types provided by the service
 
 Typical outputs:  
 - Intent: what the user wants to do  
@@ -144,7 +151,8 @@ Example:
 To support multilingual translation scenarios, choose the capability based on what format you start from.  
 
 - Translator is used for text-to-text translation (convert written text between languages).  
-- Speech is used for speech-related scenarios, including speech-to-text (transcription) and speech translation workflows.  
+- Speech is used for speech-related scenarios, including speech-to-text (transcription) and speech translation workflows.
+- Use Translator when the input is text, the output should be translated text, and you want multilingual experiences in apps, websites, or workflows.  
 
 A simple decision rule:  
 - Text → Text translation: Translator  
@@ -157,6 +165,12 @@ A simple decision rule:
 
 ## Speech (Speech-to-Text, Text-to-Speech)  
 Speech capabilities apply when the input or output involves spoken audio.  
+
+Common Speech capabilities include:  
+- Speech to text (transcription)  
+- Text to speech (speech synthesis)  
+- Speech translation (real-time multilingual translation of audio streams)
+
 
 ### Speech Recognition (Speech-to-Text)  
 Speech recognition converts audio into text.  
@@ -186,7 +200,10 @@ Common uses include reading messages aloud, automated announcements, and voice r
 - Transcription vs summarization: speech-to-text creates a transcript, summarization is an NLP step you do after you have text.
 - CLU vs NER: CLU is for understanding **what the user wants to do** and extracting action details from a command; NER is for extracting named things from text for analysis or tagging.
 - Question Answering vs CLU: Question Answering is for returning an answer from known content; CLU is for routing command-style messages to the correct action.
+- NER is not a replacement for CLU: NER can extract named things from text, but it does not decide the user’s intended action.  
 - Translator vs language detection: language detection tells you **what language the text is in**; Translator changes the text into another language.
+- Translator vs CLU: Translator changes language, it does not identify intent.  
+- Speech vs CLU: Speech converts spoken audio to or from text, it does not determine user intent.  
 
 > [!IMPORTANT]
 > **Entity means two different things here.**
