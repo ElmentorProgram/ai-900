@@ -106,6 +106,12 @@ To call it successfully, you need:
 - The **REST endpoint** (where to send the request)
 - The **authentication key** (permission to call the service)
 
+Keep the pipeline types separate:
+- A **training pipeline** builds the model
+- An **inference pipeline** uses the trained model to score new input data
+
+If an external app needs predictions, it should call the **inference/scoring service**, not a training endpoint.
+
 Common confusion:
 - Use the **inference/scoring endpoint**, not a training endpoint
 - The input must match the expected request schema
