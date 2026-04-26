@@ -537,3 +537,183 @@ Wrong because those are **tokens**, not parameters.
 - [Prompts overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/prompts-overview)  
 - [Understanding tokens](https://learn.microsoft.com/en-us/dotnet/ai/conceptual/understanding-tokens)  
 - [Introduction to generative AI and agents](https://learn.microsoft.com/en-us/training/modules/fundamentals-generative-ai/)  
+
+
+**Question:** [013]  
+Which statement about **prompts** is correct?
+
+**Options:**  
+A. Prompts are the internal weights learned by a model during training  
+B. Prompts are natural language statements or questions used to interact with generative AI models  
+C. Prompts are the same as labels because both guide the model toward an output  
+D. Prompts are the semantic vectors produced by embeddings models
+
+**Correct Answer(s):** B
+
+**Explanation:**  
+A **prompt** is the input you give a generative AI model, usually as a natural language instruction, question, or request. It guides the model on what kind of output to generate.
+
+**Why the Correct Answer Is Correct:**  
+- Prompts are used to instruct a generative AI model what to do.  
+- They are typically written in natural language.  
+- They shape the structure and content of the model’s response.
+
+**Why the Other Options Are Wrong:**  
+
+**A. Prompts are the internal weights learned by a model during training**  
+Wrong because internal learned weights are **parameters**, not prompts. Prompts are user or system inputs given at interaction time.
+
+**C. Prompts are the same as labels because both guide the model toward an output**  
+Wrong because **labels** are target outputs used in supervised learning datasets, while **prompts** are interaction inputs used with generative AI models.
+
+**D. Prompts are the semantic vectors produced by embeddings models**  
+Wrong because semantic vectors are **embeddings**, not prompts.
+
+**Tips and Tricks:**  
+- Think **prompt = instruction/request to the model**.  
+- Do not confuse prompts with **parameters**, **labels**, or **embeddings**.  
+- If the stem is about interacting with a generative model, **prompt** is usually in play.
+
+> [!IMPORTANT]  
+> A strong shortcut is: **prompt = what you ask the model; parameter = what the model learned**.
+
+**Source:**  
+- [Prompts overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/prompts-overview)  
+- [Prompt engineering techniques](https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/prompt-engineering)  
+- [Write effective prompts for Azure Copilot](https://learn.microsoft.com/en-us/azure/copilot/write-effective-prompts)  
+- [Create effective prompts for generative AI training tools](https://learn.microsoft.com/en-us/training/modules/create-prompts-for-generative-ai-training-tools/)  
+
+
+**Question:** [014]  
+Which statement about **tokens** is correct?
+
+**Options:**  
+A. Tokens are always full words, never parts of words or punctuation  
+B. Tokens are chunks of text processed by language models, and token limits affect how much input and output can be handled at once  
+C. Tokens are the same as prompts, because both are entered by the user  
+D. Tokens are the output labels predicted by a classifier
+
+**Correct Answer(s):** B
+
+**Explanation:**  
+**Tokens** are the chunks of text a language model processes. They are not always full words; they can also be parts of words or punctuation, and token limits affect how much text the model can take in and produce at one time.
+
+**Why the Correct Answer Is Correct:**  
+- Language models process text as tokens rather than raw characters or whole words only.  
+- Tokens can be smaller than full words.  
+- Input and output token counts affect model usage and limits.
+
+**Why the Other Options Are Wrong:**  
+
+**A. Tokens are always full words, never parts of words or punctuation**  
+Wrong because tokens are not limited to whole words. They can represent subword pieces and punctuation too.
+
+**C. Tokens are the same as prompts, because both are entered by the user**  
+Wrong because a **prompt** is the instruction or input request, while **tokens** are the units the model uses internally to process that text.
+
+**D. Tokens are the output labels predicted by a classifier**  
+Wrong because labels belong to supervised learning targets, not tokenization.
+
+**Tips and Tricks:**  
+- Think **token = unit of text processing**.  
+- Do not assume **1 token = 1 word**.  
+- If a question mentions model input/output size limits, tokens are usually the key concept.
+
+> [!IMPORTANT]  
+> A reliable shortcut is: **prompt is what you send; tokens are how the model breaks that text down for processing**.
+
+**Source:**  
+- [Understanding tokens](https://learn.microsoft.com/en-us/dotnet/ai/conceptual/understanding-tokens)  
+- [Prompt tokens](https://learn.microsoft.com/en-us/ai-builder/licensing-prompt-tokens)  
+- [Key concepts and considerations in generative AI](https://learn.microsoft.com/en-us/azure/developer/ai/gen-ai-concepts-considerations-developers)  
+- [LLM Fundamentals](https://learn.microsoft.com/en-us/agent-framework/journey/llm-fundamentals)  
+
+
+**Question:** [015]  
+Which statement about **embeddings** is correct?
+
+**Options:**  
+A. They convert text into numerical vectors so items with similar meaning are closer together  
+B. They count how often words appear but do not represent semantic meaning  
+C. They are the same as parameters because both are numbers inside a model  
+D. They are labels represented in numeric form for supervised learning
+
+**Correct Answer(s):** A
+
+**Explanation:**  
+**Embeddings** represent text as numerical vectors in a semantic space. Texts with similar meaning end up closer together, which is why embeddings are useful for similarity search and semantic matching.
+
+**Why the Correct Answer Is Correct:**  
+- Embeddings convert text into vectors.  
+- These vectors are useful for comparing similarity between texts.  
+- That makes embeddings central to semantic search and related retrieval scenarios.
+
+**Why the Other Options Are Wrong:**  
+
+**B. They count how often words appear but do not represent semantic meaning**  
+Wrong because that is closer to frequency-based methods, not embeddings. Embeddings are specifically used to capture semantic similarity.
+
+**C. They are the same as parameters because both are numbers inside a model**  
+Wrong because embeddings are vector representations of text, while parameters are learned internal weights of the model.
+
+**D. They are labels represented in numeric form for supervised learning**  
+Wrong because labels are target outputs in supervised learning, not semantic vector representations.
+
+**Tips and Tricks:**  
+- Think **embedding = semantic vector**.  
+- If the stem mentions **similarity**, **semantic search**, or **vector space**, embeddings are a strong candidate.  
+- Do not confuse embeddings with **labels**, **parameters**, or simple word-count methods.
+
+> [!IMPORTANT]  
+> A fast shortcut is: **embeddings turn meaning into vectors**.
+
+**Source:**  
+- [How to generate embeddings with Azure OpenAI](https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/embeddings)  
+- [Azure OpenAI embeddings tutorial](https://learn.microsoft.com/en-us/azure/foundry/openai/tutorials/embeddings)  
+- [How Embeddings Extend Your AI Model's Reach](https://learn.microsoft.com/en-us/dotnet/ai/conceptual/embeddings)  
+- [Azure OpenAI embeddings (classic) - understand embeddings](https://learn.microsoft.com/en-us/azure/foundry-classic/openai/concepts/understand-embeddings)  
+
+
+**Question:** [016]  
+A search for **plant** returns results about **flower** before results about **airplane**. Which concept best explains this behavior?
+
+**Options:**  
+A. Frequency analysis  
+B. N-grams  
+C. Embeddings  
+D. Labels
+
+**Correct Answer(s):** C
+
+**Explanation:**  
+This behavior is best explained by **embeddings** because embeddings place semantically related meanings closer together in vector space. Since **plant** and **flower** are more related in meaning than **plant** and **airplane**, the search can rank **flower**-related results higher.
+
+**Why the Correct Answer Is Correct:**  
+- Embeddings are designed to capture semantic similarity.  
+- Vector similarity can be used to rank related results.  
+- That makes embeddings the best explanation for meaning-based closeness like **plant** and **flower**.
+
+**Why the Other Options Are Wrong:**  
+
+**A. Frequency analysis**  
+Wrong because frequency analysis focuses on counts and occurrences, not semantic closeness of meaning.
+
+**B. N-grams**  
+Wrong because N-grams focus on local text patterns and co-occurrence structure, not the broader semantic similarity represented by embeddings.
+
+**D. Labels**  
+Wrong because labels are target outputs in supervised learning, not the mechanism behind semantic ranking in search.
+
+**Tips and Tricks:**  
+- If the question is about **meaning-based closeness**, think **embeddings**.  
+- If it is about **counting patterns**, think frequency methods or N-grams instead.  
+- Semantic search questions often point to vector representations.
+
+> [!IMPORTANT]  
+> The key clue is not just that the words are different. The key clue is that they are **closer in meaning**, which is exactly what embeddings are designed to represent.
+
+**Source:**  
+- [Azure OpenAI embeddings (classic) - understand embeddings](https://learn.microsoft.com/en-us/azure/foundry-classic/openai/concepts/understand-embeddings)  
+- [How Embeddings Extend Your AI Model's Reach](https://learn.microsoft.com/en-us/dotnet/ai/conceptual/embeddings)  
+- [Azure OpenAI embeddings tutorial](https://learn.microsoft.com/en-us/azure/foundry/openai/tutorials/embeddings)  
+- [Generate Vector Embeddings with Azure OpenAI](https://learn.microsoft.com/en-us/azure/postgresql/azure-ai/generative-ai-azure-openai)  
