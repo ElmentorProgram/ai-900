@@ -25,7 +25,7 @@ This is **Machine Learning** because the system learns patterns from historical 
 Wrong because AI is the broader umbrella term. The question asks for the more specific term that describes learning patterns from data to make predictions.
 
 **C. Deep Learning**  
-Wrong because deep learning is a more specific neural-network approach inside machine learning. The scenario does not mention neural networks or the kind of complexity that would justify choosing deep learning over ML.
+Wrong because deep learning specifically uses **multi-layer neural networks** and is more commonly associated with tasks like image, speech, or language processing. Here, the case is simply learning from past sales data to predict future results, which fits **Machine Learning** more precisely.
 
 **D. Generative AI**  
 Wrong because generative AI focuses on generating new content such as text, images, or code. This scenario is about prediction from historical data, not content generation.
