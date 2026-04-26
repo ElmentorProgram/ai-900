@@ -717,3 +717,93 @@ Wrong because labels are target outputs in supervised learning, not the mechanis
 - [How Embeddings Extend Your AI Model's Reach](https://learn.microsoft.com/en-us/dotnet/ai/conceptual/embeddings)  
 - [Azure OpenAI embeddings tutorial](https://learn.microsoft.com/en-us/azure/foundry/openai/tutorials/embeddings)  
 - [Generate Vector Embeddings with Azure OpenAI](https://learn.microsoft.com/en-us/azure/postgresql/azure-ai/generative-ai-azure-openai)  
+
+**Question:** [017]  
+Which statement best distinguishes **frequency analysis / N-grams** from **embeddings**?
+
+**Options:**  
+A. Frequency analysis and N-grams create semantic vector spaces, while embeddings only count occurrences  
+B. Frequency analysis and N-grams focus on occurrence patterns, while embeddings represent semantic similarity in vector space  
+C. Embeddings are used only in supervised learning, while N-grams are used only in unsupervised learning  
+D. Embeddings and N-grams are two names for the same semantic representation method  
+
+**Correct Answer(s):** B
+
+**Explanation:**  
+**Frequency analysis** and **N-grams** focus on counting terms or local word patterns, while **embeddings** represent text as vectors that capture semantic similarity. The key difference is **pattern counting** versus **meaning-based vector representation**.
+
+**Why the Correct Answer Is Correct:**  
+- Frequency analysis and N-grams are based on occurrences and local text patterns.  
+- Embeddings map text into vector space.  
+- Those vectors make it possible to compare similarity based on meaning, not just count patterns.
+
+**Why the Other Options Are Wrong:**  
+
+**A. Frequency analysis and N-grams create semantic vector spaces, while embeddings only count occurrences**  
+Wrong because this reverses the concepts. Embeddings are the vector-based semantic representation method, not frequency analysis or N-grams.
+
+**C. Embeddings are used only in supervised learning, while N-grams are used only in unsupervised learning**  
+Wrong because this is not the real distinction. The difference is about representation method, not a strict supervised-versus-unsupervised split.
+
+**D. Embeddings and N-grams are two names for the same semantic representation method**  
+Wrong because they are different approaches. N-grams focus on token patterns, while embeddings focus on semantic closeness in vector space.
+
+**Tips and Tricks:**  
+- Think **N-grams = pattern/count based**.  
+- Think **embeddings = meaning/vector based**.  
+- If the question mentions **semantic similarity**, embeddings are usually the better answer.
+
+> [!IMPORTANT]  
+> The cleanest shortcut is: **N-grams count patterns; embeddings represent meaning**.
+
+**Source:**  
+- [Azure OpenAI embeddings (classic) - understand embeddings](https://learn.microsoft.com/en-us/azure/foundry-classic/openai/concepts/understand-embeddings)  
+- [How to generate embeddings with Azure OpenAI](https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/embeddings)  
+- [Azure OpenAI embeddings tutorial](https://learn.microsoft.com/en-us/azure/foundry/openai/tutorials/embeddings)  
+- [LLM Fundamentals](https://learn.microsoft.com/en-us/agent-framework/journey/llm-fundamentals)  
+
+
+**Question:** [018]  
+Which statement is the most accurate relationship among **AI**, **ML**, **Deep Learning**, and **Generative AI**?
+
+**Options:**  
+A. AI is inside ML, ML is inside Deep Learning, and Generative AI is outside all of them  
+B. ML is one way to build AI, Deep Learning is a neural-network approach inside ML, and Generative AI focuses on generating new content  
+C. Deep Learning and Generative AI are the same thing, and both replace machine learning  
+D. AI and ML are identical terms, while Deep Learning refers only to language models  
+
+**Correct Answer(s):** B
+
+**Explanation:**  
+This is the most accurate relationship because **AI** is the broad umbrella, **ML** is one way to build AI by learning from data, **Deep Learning** is a neural-network approach inside ML, and **Generative AI** focuses on generating new content such as text, images, code, and more.
+
+**Why the Correct Answer Is Correct:**  
+- AI is the broadest concept.  
+- Machine Learning is a subset-style approach within AI.  
+- Deep Learning is a neural-network approach within ML.  
+- Generative AI is defined by generating new content rather than just predicting labels or values.
+
+**Why the Other Options Are Wrong:**  
+
+**A. AI is inside ML, ML is inside Deep Learning, and Generative AI is outside all of them**  
+Wrong because the hierarchy is reversed. AI is the broad umbrella, not the smaller inner category.
+
+**C. Deep Learning and Generative AI are the same thing, and both replace machine learning**  
+Wrong because deep learning and generative AI are related but not identical, and neither replaces machine learning as a whole.
+
+**D. AI and ML are identical terms, while Deep Learning refers only to language models**  
+Wrong because AI and ML are not identical, and deep learning is used beyond language, including areas such as vision and speech.
+
+**Tips and Tricks:**  
+- Anchor on the hierarchy: **AI → ML → Deep Learning**.  
+- Treat **Generative AI** as defined by **content generation**.  
+- Be careful with choices that use absolute wording like **identical** or **replace**.
+
+> [!IMPORTANT]  
+> A strong exam-safe memory line is: **AI is the umbrella, ML learns from data, Deep Learning is neural-network-based ML, and Generative AI creates new content**.
+
+**Source:**  
+- [A guide to artificial intelligence](https://learn.microsoft.com/en-us/training/modules/a-guide-to-artificial-intelligence/)  
+- [Introduction to machine learning concepts](https://learn.microsoft.com/en-us/training/modules/fundamentals-machine-learning/)  
+- [Deep Learning vs. Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-deep-learning-vs-machine-learning?view=azureml-api-2)  
+- [Introduction to generative AI and agents](https://learn.microsoft.com/en-us/training/modules/fundamentals-generative-ai/)  
