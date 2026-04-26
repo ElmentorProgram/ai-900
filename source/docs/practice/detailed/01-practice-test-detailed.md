@@ -70,10 +70,10 @@ The target column represents the **label** because it is the known output the mo
 Wrong because features are the input signals used by the model, not the output it is trying to predict.
 
 **C. Parameters**  
-Wrong because parameters are the learned internal weights of the model, not dataset columns such as **Fraud = Yes/No**.
+Wrong because parameters are values inside the model itself, such as weights adjusted during training. A weight is a numeric value that shows how strongly one input affects the prediction. For example, the model may learn to give one feature more importance than another. **Fraud = Yes/No** is a dataset column that provides the expected outcome, so it is a label, not a parameter.
 
 **D. Tokens**  
-Wrong because tokens are chunks of text processed by language models. They are unrelated to a target column in a supervised learning dataset.
+Wrong because tokens are **units of text**, such as whole words or parts of words. **Fraud = Yes/No** is not a text unit being broken down for processing; it is the target column that the model is trying to predict.
 
 **Tips and Tricks:**  
 - If the question points to the **known result** or **target column**, think **label**.  
