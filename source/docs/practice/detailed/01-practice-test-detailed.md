@@ -357,3 +357,183 @@ Wrong because parameter count alone does not define deep learning. The defining 
 - [Create machine learning models](https://learn.microsoft.com/en-us/training/paths/create-machine-learn-models/)  
 - [Introduction to generative AI and agents](https://learn.microsoft.com/en-us/training/modules/fundamentals-generative-ai/)  
 - [Key concepts and considerations in generative AI](https://learn.microsoft.com/en-us/azure/developer/ai/gen-ai-concepts-considerations-developers)  
+
+
+**Question:** [009]  
+Which statement best distinguishes **Generative AI** from traditional prediction-focused machine learning tasks?
+
+**Options:**  
+A. Generative AI learns from data, while machine learning does not  
+B. Generative AI generates new content, while traditional ML often predicts labels or values  
+C. Generative AI uses features and labels, while machine learning uses only prompts  
+D. Generative AI is limited to language, while machine learning is limited to numbers  
+
+**Correct Answer(s):** B
+
+**Explanation:**  
+**Generative AI** is designed to create new content such as text, images, code, or other outputs. Traditional prediction-focused machine learning is usually centered on predicting a label or a numeric value from data, rather than generating new content.
+
+**Why the Correct Answer Is Correct:**  
+- Generative AI focuses on producing new content.  
+- Traditional ML often focuses on prediction tasks such as classification or regression.  
+- The key distinction is **generate** versus **predict**.
+
+**Why the Other Options Are Wrong:**  
+
+**A. Generative AI learns from data, while machine learning does not**  
+Wrong because machine learning also learns from data. Learning from data is not unique to generative AI.
+
+**C. Generative AI uses features and labels, while machine learning uses only prompts**  
+Wrong because this reverses the normal pattern. Features and labels are standard ML concepts, while prompts are associated with interacting with generative AI systems.
+
+**D. Generative AI is limited to language, while machine learning is limited to numbers**  
+Wrong because generative AI can work across multiple content types, and machine learning is not limited to numeric-only use cases.
+
+**Tips and Tricks:**  
+- If the stem says **create**, **generate**, or **produce new content**, think **Generative AI**.  
+- If the stem says **predict a class or value**, think traditional ML.  
+- Do not confuse **content generation** with **classification/regression**.
+
+> [!IMPORTANT]  
+> A clean exam shortcut is: **Generative AI creates; traditional ML predicts**.
+
+**Source:**  
+- [Key concepts and considerations in generative AI](https://learn.microsoft.com/en-us/azure/developer/ai/gen-ai-concepts-considerations-developers)  
+- [Introduction to generative AI and agents](https://learn.microsoft.com/en-us/training/modules/fundamentals-generative-ai/)  
+- [A guide to artificial intelligence](https://learn.microsoft.com/en-us/training/modules/a-guide-to-artificial-intelligence/)  
+- [Introduction to machine learning concepts](https://learn.microsoft.com/en-us/training/modules/fundamentals-machine-learning/)  
+
+
+**Question:** [010]  
+Which statement about **language models** is correct?
+
+**Options:**  
+A. They store documents exactly as written so they can be retrieved later word for word  
+B. They encapsulate semantic relationships between language elements, enabling meaningful text generation  
+C. They are mainly used to convert scanned pages into editable text  
+D. They work by assigning fixed labels to each sentence in a dataset  
+
+**Correct Answer(s):** B
+
+**Explanation:**  
+Language models learn relationships in language and use those relationships to generate meaningful text. They are not simply storing documents word for word, and they are not OCR tools or fixed-label classifiers by definition.
+
+**Why the Correct Answer Is Correct:**  
+- Language models learn semantic and contextual relationships in language.  
+- Those learned relationships are what make meaningful text generation possible.  
+- This matches the idea that a model can generate coherent sequences rather than just retrieve memorized text.
+
+**Why the Other Options Are Wrong:**  
+
+**A. They store documents exactly as written so they can be retrieved later word for word**  
+Wrong because language models are not defined as exact document storage systems. They generate outputs based on learned patterns in language.
+
+**C. They are mainly used to convert scanned pages into editable text**  
+Wrong because converting scanned pages into text is closer to OCR or document processing, not the core role of language models.
+
+**D. They work by assigning fixed labels to each sentence in a dataset**  
+Wrong because fixed-label assignment is a classification idea, not the core definition of a language model.
+
+**Tips and Tricks:**  
+- Anchor on **language understanding and generation** when you see **language model**.  
+- Do not confuse language models with **OCR** or basic **classification**.  
+- If the option sounds like document storage or scanning, it is probably a trap.
+
+> [!IMPORTANT]  
+> Language models work because they learn relationships between language elements, not because they simply store exact text for replay.
+
+**Source:**  
+- [LLM Fundamentals](https://learn.microsoft.com/en-us/agent-framework/journey/llm-fundamentals)  
+- [Introduction to generative AI and agents](https://learn.microsoft.com/en-us/training/modules/fundamentals-generative-ai/)  
+- [Key concepts and considerations in generative AI](https://learn.microsoft.com/en-us/azure/developer/ai/gen-ai-concepts-considerations-developers)  
+- [A guide to artificial intelligence](https://learn.microsoft.com/en-us/training/modules/a-guide-to-artificial-intelligence/)  
+
+
+**Question:** [011]  
+Which statement best compares **LLMs** and **SLMs**?
+
+**Options:**  
+A. LLMs are always the best choice because they are smaller and cheaper to run  
+B. SLMs are more suitable for focused or local scenarios, while LLMs are often more powerful and general  
+C. SLMs cannot be used in agents or on-device scenarios because they are too limited  
+D. LLMs and SLMs differ only in training data size, not in practical usage tradeoffs  
+
+**Correct Answer(s):** B
+
+**Explanation:**  
+LLMs are generally more powerful and broad, while SLMs are often a better fit for narrower, focused, or local/on-device scenarios. Microsoft documentation also shows SLM usage in local and self-contained deployments.
+
+**Why the Correct Answer Is Correct:**  
+- LLMs are generally stronger for broad generalization.  
+- SLMs can be a good fit when the scenario is focused or local.  
+- Microsoft documents local SLM deployment scenarios, which supports the idea that SLMs can suit constrained or on-device style use cases.
+
+**Why the Other Options Are Wrong:**  
+
+**A. LLMs are always the best choice because they are smaller and cheaper to run**  
+Wrong because LLMs are not smaller by definition, and “always the best” ignores practical tradeoffs.
+
+**C. SLMs cannot be used in agents or on-device scenarios because they are too limited**  
+Wrong because Microsoft documentation explicitly covers local SLM scenarios. That makes this option directly opposite to the documented usage pattern.
+
+**D. LLMs and SLMs differ only in training data size, not in practical usage tradeoffs**  
+Wrong because the practical tradeoffs matter, especially around focus, locality, and deployment style.
+
+**Tips and Tricks:**  
+- Think **LLM = broader/general**, **SLM = smaller/focused/local**.  
+- Avoid absolute choices like **always** unless the stem strongly supports them.  
+- If the option ignores deployment tradeoffs, it is usually weak.
+
+> [!IMPORTANT]  
+> A strong exam-safe framing is: **LLMs usually offer broader capability, while SLMs often fit focused or local scenarios better**.
+
+**Source:**  
+- [Use local small language models (SLMs) in Azure App Service](https://learn.microsoft.com/en-us/azure/app-service/scenario-ai-local-small-language-model)  
+- [Foundry Local architecture overview](https://learn.microsoft.com/en-us/azure/foundry-local/concepts/foundry-local-architecture)  
+- [LLM Fundamentals](https://learn.microsoft.com/en-us/agent-framework/journey/llm-fundamentals)  
+- [Introduction to generative AI and agents](https://learn.microsoft.com/en-us/training/modules/fundamentals-generative-ai/)  
+
+
+**Question:** [012]  
+In the context of AI models, what are **parameters**?
+
+**Options:**  
+A. The user instructions entered to guide the model  
+B. The target outputs used during supervised learning  
+C. The learned internal weights of the model  
+D. The chunks of text a model processes at runtime  
+
+**Correct Answer(s):** C
+
+**Explanation:**  
+Parameters are the learned internal weights of a model. Microsoft’s LLM fundamentals material describes model weights as numerical parameters learned during training.
+
+**Why the Correct Answer Is Correct:**  
+- Parameters are internal values learned during training.  
+- They are not user input and not dataset labels.  
+- In model discussions, “weights” and “parameters” are closely related ideas.
+
+**Why the Other Options Are Wrong:**  
+
+**A. The user instructions entered to guide the model**  
+Wrong because those are **prompts**, not parameters.
+
+**B. The target outputs used during supervised learning**  
+Wrong because those are **labels**, not parameters.
+
+**D. The chunks of text a model processes at runtime**  
+Wrong because those are **tokens**, not parameters.
+
+**Tips and Tricks:**  
+- Think **parameters = inside the model**.  
+- Think **prompts/tokens = outside interaction/input concepts**.  
+- Think **labels = dataset target concept**.
+
+> [!IMPORTANT]  
+> The fastest distinction is: **parameters are learned weights inside the model; prompts, tokens, and labels are different concepts outside that role**.
+
+**Source:**  
+- [LLM Fundamentals](https://learn.microsoft.com/en-us/agent-framework/journey/llm-fundamentals)  
+- [Prompts overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/prompts-overview)  
+- [Understanding tokens](https://learn.microsoft.com/en-us/dotnet/ai/conceptual/understanding-tokens)  
+- [Introduction to generative AI and agents](https://learn.microsoft.com/en-us/training/modules/fundamentals-generative-ai/)  
