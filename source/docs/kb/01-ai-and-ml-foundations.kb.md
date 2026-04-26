@@ -40,47 +40,54 @@ A search for **plant** will often return text about **flower** before text about
 
 ## Common AI Workloads (How to Choose)
 
-Start with two questions. A workload is the type of AI task or problem you are trying to solve (vision, language, document extraction, ML prediction, etc.). You choose it by matching the data you have to the output you need.
+Start with two questions. A workload is the type of AI task or problem you are trying to solve, such as vision, language, document extraction, speech, or ML prediction. You choose it by matching the data you have to the output you need.
 
-1) What is the **input**?
-   - Images/Video → **Computer Vision**
-   - Text/Documents → **Natural Language Processing (NLP)** or **Document Processing**
-   - Conversations (Chat/Voice) → **Conversational AI**
-   - Time-Series/Telemetry/Transactions → **Anomaly Detection** or **Machine Learning**
+What is the **input**?
 
-2) What is the **output**?
-   - A Number → **Regression**
-   - A Label/Category → **Classification**
-   - Groups/Segments → **Clustering**
-   - Unusual/Rare Events → **Anomaly Detection**
-   - Extracted Text/Fields/Tables → **Document Processing**
-   - Searchable Results From Lots of Content → **Knowledge Mining**
-   - Generated Text/Content → **Generative AI**
-   - Answer a User in Chat → **Conversational AI**
+- Images → **Computer Vision**, **Document Processing** (OCR), or **Information Extraction**
+- Video → **Computer Vision**, **Speech**, or **Information Extraction**
+- Scanned Documents → **Document Processing** (OCR, Fields, Tables) or **Information Extraction**
+- Text/Documents → **Natural Language Processing (NLP)**, **Knowledge Mining**, or **Generative AI**
+- Audio/Speech → **Speech**, **Conversational AI**, or **Information Extraction**
+- Conversations (Chat) → **Conversational AI** or **Generative AI**
+- Time-Series/Telemetry/Transactions → **Regression**, **Classification**, **Clustering**, or **Anomaly Detection**
+
+What is the **output**?
+
+- A Number → **Regression**
+- A Label/Category → **Classification**
+- Groups/Segments → **Clustering**
+- Unusual/Rare Events → **Anomaly Detection**
+- Extracted Text/Fields/Tables → **Document Processing**
+- Extracted Facts/Actions/Insights → **Information Extraction**
+- Searchable Results From Lots of Content → **Knowledge Mining**
+- Generated Text/Content → **Generative AI**
+- Answer a User in Chat → **Conversational AI**
+- Transcribed or Spoken Language → **Speech**
 
 The same input can support different workloads depending on the output you need.
 
-If the **text** is inside a scanned PDF/image, you usually need **OCR/Document Processing** before **NLP**.
+If the **text** is inside an image or scanned document, you usually need **Document Processing** before **NLP**.
 
 > [!IMPORTANT]  
-> Start from the workload, input type and output need, then map to the service, don’t start from the Azure service name and work backwards.
+> Start from the workload, input type, and output need, then map to the service. Do not start from the Azure service name and work backwards.
 
 ## Workload Landscape (Quick Map)
 
-This is a wide-map view of the major AI workloads. The goal is to build a strong mental model first, then go deeper later. You can think of the landscape in five clusters: **Prediction** workloads (Regression, Classification, Clustering, Anomaly Detection), **Language/Search** workloads (NLP/Text Analysis, Knowledge Mining, Generative AI, Conversational AI), **Voice** workloads (Speech), **Vision** workloads (Computer Vision), and **Docs** workloads (Information Extraction, Document Processing). The detailed sections that follow use this same order so your mental map stays stable.
+This is a wide-map view of the major AI workloads. The goal is to build a strong mental model first, then go deeper later. The simplest way to read the landscape is to treat each workload as part of a broader problem family.
 
-- **Regression**
-- **Classification**
-- **Clustering**
-- **Anomaly Detection**
-- **Natural Language Processing and Text Analysis**
-- **Knowledge Mining**
-- **Generative AI**
-- **Conversational AI**
-- **Speech**
-- **Computer Vision**
-- **Information Extraction**
-- **Document Processing**
+- **Regression** (Prediction)
+- **Classification** (Prediction)
+- **Clustering** (Prediction)
+- **Anomaly Detection** (Prediction)
+- **Natural Language Processing and Text Analysis** (Language and Search)
+- **Knowledge Mining** (Language and Search)
+- **Generative AI** (Language and Search)
+- **Conversational AI** (Language and Search)
+- **Speech** (Voice)
+- **Computer Vision** (Vision)
+- **Information Extraction** (Docs)
+- **Document Processing** (Docs)
 
 
 ## Workloads and What They Do
