@@ -1271,3 +1271,60 @@ Wrong because **Computer Vision** is for analyzing visual input such as images. 
 - [Create an Azure AI Search solution](https://learn.microsoft.com/en-us/training/modules/create-azure-cognitive-search-solution/)  
 - [Azure Document Intelligence documentation](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/?view=doc-intel-4.0.0)  
 - [Extract data with Azure Document Intelligence](https://learn.microsoft.com/en-us/training/modules/extract-data-with-document-intelligence/)  
+
+**Question:** [028]  
+A company needs to support multiple language scenarios:
+
+1. Translate **written product descriptions** from English to French  
+2. Translate a **spoken customer message** from Spanish into English text  
+3. Convert a support article into **spoken audio**  
+4. Convert a recorded meeting into a **written transcript**  
+
+Which option correctly maps each case to the most appropriate capability?
+
+**Options:**  
+A. 1 = Text Translation, 2 = Speech Translation, 3 = Text-to-Speech, 4 = Speech-to-Text  
+B. 1 = Speech Translation, 2 = Text Translation, 3 = Speech-to-Text, 4 = Text-to-Speech  
+C. 1 = Text Translation, 2 = Speech-to-Text, 3 = Speech Translation, 4 = Text-to-Speech  
+D. 1 = Text-to-Speech, 2 = Speech Translation, 3 = Text Translation, 4 = Speech-to-Text  
+
+**Correct Answer(s):** A
+
+**Explanation:**  
+The correct mapping is:
+- **Text to Text = Text Translation**
+- **Spoken Audio to Translated Text = Speech Translation**
+- **Text to Audio = Text-to-Speech**
+- **Audio to Text = Speech-to-Text**
+
+**Why the Correct Answer Is Correct:**  
+- **1 = Text Translation** because the input is written text and the output is translated text. Azure Translator is the text translation service.  
+- **2 = Speech Translation** because the input is spoken audio and the output is translated text in another language. Azure Speech supports speech-to-text translation of audio streams.  
+- **3 = Text-to-Speech** because the input is text and the output is spoken audio. Azure Speech includes text-to-speech capabilities.  
+- **4 = Speech-to-Text** because the input is recorded audio and the goal is a written transcript. Azure Speech supports speech recognition and transcription.  
+
+**Why the Other Options Are Wrong:**  
+
+**B. 1 = Speech Translation, 2 = Text Translation, 3 = Speech-to-Text, 4 = Text-to-Speech**  
+Wrong because **written product descriptions** are a **Text Translation** case, not Speech Translation. It also swaps **Speech-to-Text** and **Text-to-Speech**.  
+
+**C. 1 = Text Translation, 2 = Speech-to-Text, 3 = Speech Translation, 4 = Text-to-Speech**  
+Wrong because **spoken audio translated into another language** is **Speech Translation**, not plain Speech-to-Text. It also incorrectly maps **text to spoken audio** to Speech Translation.  
+
+**D. 1 = Text-to-Speech, 2 = Speech Translation, 3 = Text Translation, 4 = Speech-to-Text**  
+Wrong because **written product descriptions** need **Text Translation**, not Text-to-Speech. It also maps **text to spoken audio** incorrectly as Text Translation.  
+
+**Tips and Tricks:**  
+- **Text to Text = Text Translation**  
+- **Spoken Audio to Translated Text = Speech Translation**  
+- **Text to Audio = Text-to-Speech**  
+- **Audio to Text = Speech-to-Text**
+
+> [!IMPORTANT]  
+> The easiest way to separate these capabilities is to check both the **input type** and the **output type**. If audio is involved, think **Speech**. If it is only written text going to written text, think **Translator**.  
+
+**Source:**  
+- [Azure Translator in Foundry Tools documentation](https://learn.microsoft.com/en-us/azure/ai-services/translator/)  
+- [What is Azure Text translation in Foundry Tools?](https://learn.microsoft.com/en-us/azure/ai-services/translator/text-translation/overview)  
+- [What Is Azure Speech?](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/overview)  
+- [Speech translation overview - Speech service - Foundry Tools](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/speech-translation)  
