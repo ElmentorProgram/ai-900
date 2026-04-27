@@ -853,3 +853,50 @@ Wrong because **Speech** is an audio-language workload, not one of these machine
 - [How to select a machine learning algorithm](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-select-algorithms?view=azureml-api-1)  
 - [Machine Learning Algorithm Cheat Sheet](https://learn.microsoft.com/en-us/azure/machine-learning/algorithm-cheat-sheet?view=azureml-api-1)  
 - [What is Azure Machine Learning?](https://learn.microsoft.com/en-us/azure/machine-learning/overview-what-is-azure-machine-learning?view=azureml-api-2)  
+
+
+**Question:** [020]  
+Which set contains only workloads most closely related to **language processing, search, and generated responses**?
+
+**Options:**  
+A. Natural Language Processing and Text Analysis, Knowledge Mining, Generative AI, Conversational AI  
+B. Natural Language Processing and Text Analysis, Knowledge Mining, Speech, Conversational AI  
+C. Generative AI, Computer Vision, Knowledge Mining, Conversational AI  
+D. Natural Language Processing and Text Analysis, Document Processing, Generative AI, Knowledge Mining  
+
+**Correct Answer(s):** A
+
+**Explanation:**  
+The correct set is **Natural Language Processing and Text Analysis, Knowledge Mining, Generative AI, and Conversational AI**. These workloads all center on working with language, searchable content, or response generation.
+
+**Why the Correct Answer Is Correct:**  
+- **Natural Language Processing and Text Analysis** focuses on understanding and analyzing text.  
+- **Knowledge Mining** focuses on making large amounts of content searchable.  
+- **Generative AI** focuses on producing new content such as summaries, rewrites, or chat responses.  
+- **Conversational AI** focuses on interacting with users through chat patterns such as intent recognition or question answering.  
+
+**Why the Other Options Are Wrong:**  
+
+**B. Natural Language Processing and Text Analysis, Knowledge Mining, Speech, Conversational AI**  
+Wrong because **Speech** is primarily an audio workload, not a language/search/generation workload.
+
+**C. Generative AI, Computer Vision, Knowledge Mining, Conversational AI**  
+Wrong because **Computer Vision** is a visual workload for analyzing images and video, not a language/search workload.
+
+**D. Natural Language Processing and Text Analysis, Document Processing, Generative AI, Knowledge Mining**  
+Wrong because **Document Processing** focuses on extracting structure and content from documents, which is different from text analysis, search, or generated responses.
+
+**Tips and Tricks:**  
+- If the workload is about **understanding text**, think **NLP and Text Analysis**.  
+- If it is about **searching across a lot of content**, think **Knowledge Mining**.  
+- If it is about **creating new content**, think **Generative AI**.  
+- If it is about **chatting with a user**, think **Conversational AI**.  
+
+> [!IMPORTANT]  
+> A common trap is mixing **language workloads** with nearby but different workloads such as **Speech**, **Computer Vision**, or **Document Processing**. Match the option to the primary input and outcome first.
+
+**Source:**  
+- [Study guide for Exam AI-900: Microsoft Azure AI Fundamentals](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-900)  
+- [What is Azure Language in Foundry Tools?](https://learn.microsoft.com/en-us/azure/ai-services/language-service/overview)  
+- [Conversational Language Understanding - Foundry Tools](https://learn.microsoft.com/en-us/azure/ai-services/language-service/conversational-language-understanding/overview)  
+- [Create question answering solutions with Azure Language](https://learn.microsoft.com/en-us/training/modules/create-question-answer-solution-ai-language/)  
