@@ -1385,3 +1385,117 @@ Wrong because extracting sentiment, key phrases, and entities is **Azure AI Lang
 - [Introduction to Azure AI Search](https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search)  
 - [Create a knowledge mining solution with Azure AI Search](https://learn.microsoft.com/en-us/training/modules/ai-knowldge-mining/)  
 - [What is Azure Document Intelligence in Foundry Tools?](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview?view=doc-intel-4.0.0)  
+
+**Question:** [029]  
+A team is mapping solution requirements to Azure service families:
+
+1. Analyze text to detect **sentiment**, extract **key phrases**, and identify **entities**  
+2. Build a **searchable index** over large volumes of content with enrichment  
+3. Convert recorded speech into **text transcripts**  
+4. Extract **text, key/value pairs, and tables** from scanned documents  
+
+Which option correctly maps each case to the most appropriate Azure service family?
+
+**Options:**  
+A. 1 = Azure AI Language, 2 = Azure AI Search, 3 = Azure AI Speech, 4 = Azure AI Document Intelligence  
+B. 1 = Azure AI Search, 2 = Azure AI Language, 3 = Azure AI Document Intelligence, 4 = Azure AI Speech  
+C. 1 = Azure AI Language, 2 = Azure AI Speech, 3 = Azure AI Search, 4 = Azure AI Document Intelligence  
+D. 1 = Azure AI Document Intelligence, 2 = Azure AI Search, 3 = Azure AI Speech, 4 = Azure AI Language  
+
+**Correct Answer(s):** A
+
+**Explanation:**  
+The correct mapping is:
+- **Text Analysis = Azure AI Language**
+- **Searchable Index = Azure AI Search**
+- **Audio to Text = Azure AI Speech**
+- **Extract Text, Fields, and Tables From Documents = Azure AI Document Intelligence**
+
+**Why the Correct Answer Is Correct:**  
+- **1 = Azure AI Language** because sentiment analysis, key phrase extraction, and entity recognition are language-analysis capabilities in Azure AI Language.  
+- **2 = Azure AI Search** because the goal is to create a searchable index over large amounts of content, often with enrichment.  
+- **3 = Azure AI Speech** because speech services handle speech-to-text transcription.  
+- **4 = Azure AI Document Intelligence** because it is used to extract text and structure such as key/value pairs and tables from documents.  
+
+**Why the Other Options Are Wrong:**  
+
+**B. 1 = Azure AI Search, 2 = Azure AI Language, 3 = Azure AI Document Intelligence, 4 = Azure AI Speech**  
+Wrong because text analysis belongs to **Azure AI Language**, not Azure AI Search. It also swaps **Azure AI Speech** and **Azure AI Document Intelligence**.  
+
+**C. 1 = Azure AI Language, 2 = Azure AI Speech, 3 = Azure AI Search, 4 = Azure AI Document Intelligence**  
+Wrong because building a searchable index is **Azure AI Search**, not Azure AI Speech. It also maps transcription incorrectly to Azure AI Search.  
+
+**D. 1 = Azure AI Document Intelligence, 2 = Azure AI Search, 3 = Azure AI Speech, 4 = Azure AI Language**  
+Wrong because extracting sentiment, key phrases, and entities is **Azure AI Language**, while document extraction belongs to **Azure AI Document Intelligence**.  
+
+**Tips and Tricks:**  
+- **Text Analysis = Azure AI Language**  
+- **Searchable Index = Azure AI Search**  
+- **Audio to Text = Azure AI Speech**  
+- **Extract Text, Fields, and Tables From Documents = Azure AI Document Intelligence**
+
+> [!IMPORTANT]  
+> A common trap is mixing the **workload** with the **service family**. First identify the need, then map it to the Azure service that is built for that need.
+
+**Source:**  
+- [What is Azure Language in Foundry Tools?](https://learn.microsoft.com/en-us/azure/ai-services/language-service/overview)  
+- [Introduction to Azure AI Search](https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search)  
+- [Create a knowledge mining solution with Azure AI Search](https://learn.microsoft.com/en-us/training/modules/ai-knowldge-mining/)  
+- [What is Azure Document Intelligence in Foundry Tools?](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview?view=doc-intel-4.0.0)
+
+**Question:** [030]  
+A team is choosing between Azure OpenAI model types for four different needs:
+
+1. Generate a **summary** of a long document and rewrite it in a simpler style  
+2. Convert product descriptions into **vectors** for semantic search and similarity matching  
+3. Create a **new image** from a text prompt  
+4. Transcribe a recorded meeting into **text**  
+
+Which option correctly maps each case to the most appropriate Azure OpenAI model type?
+
+**Options:**  
+A. 1 = GPT Models, 2 = Embedding Models, 3 = Image Generation Models, 4 = Audio Models  
+B. 1 = Embedding Models, 2 = GPT Models, 3 = Audio Models, 4 = Image Generation Models  
+C. 1 = GPT Models, 2 = Image Generation Models, 3 = Embedding Models, 4 = Audio Models  
+D. 1 = Audio Models, 2 = Embedding Models, 3 = GPT Models, 4 = Image Generation Models  
+
+**Correct Answer(s):** A
+
+**Explanation:**  
+The correct mapping is:
+- **Generate or Transform Text = GPT Models**
+- **Text to Vectors = Embedding Models**
+- **Generate Images = Image Generation Models**
+- **Audio to Text = Audio Models**
+
+**Why the Correct Answer Is Correct:**  
+- **1 = GPT Models** because summarization and rewriting are text-generation and text-transformation tasks. Azure OpenAI documentation describes GPT models as being used for chat and text generation tasks.  
+- **2 = Embedding Models** because semantic search and similarity matching require text to be converted into vector representations. Microsoft Learn describes Azure OpenAI embeddings as supporting search and similarity scenarios.  
+- **3 = Image Generation Models** because the goal is to create a new image from a prompt.  
+- **4 = Audio Models** because transcription is an audio task.  
+
+**Why the Other Options Are Wrong:**  
+
+**B. 1 = Embedding Models, 2 = GPT Models, 3 = Audio Models, 4 = Image Generation Models**  
+Wrong because **summarization** is a GPT-style text task, not an embedding task. It also swaps **audio** and **image generation**.  
+
+**C. 1 = GPT Models, 2 = Image Generation Models, 3 = Embedding Models, 4 = Audio Models**  
+Wrong because **semantic search vectors** use **Embedding Models**, not Image Generation Models. It also maps image creation incorrectly to Embedding Models.  
+
+**D. 1 = Audio Models, 2 = Embedding Models, 3 = GPT Models, 4 = Image Generation Models**  
+Wrong because **summarization** is not an audio-model task, and **transcription** is not an image-generation task.  
+
+**Tips and Tricks:**  
+- **Generate or Transform Text = GPT Models**  
+- **Text to Vectors = Embedding Models**  
+- **Generate Images = Image Generation Models**  
+- **Audio to Text = Audio Models**
+
+> [!IMPORTANT]  
+> A common trap is confusing **GPT Models** with **Embedding Models**. GPT models generate or transform content, while Embedding Models convert text into numeric vectors for similarity, retrieval, and semantic search.
+
+**Source:**  
+- [How to work with Azure OpenAI models](https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/working-with-models)  
+- [How to generate embeddings with Azure OpenAI in Microsoft Foundry Models](https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/embeddings)  
+- [Azure OpenAI image generation models](https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/dall-e)  
+- [Azure OpenAI in Microsoft Foundry Models embeddings tutorial](https://learn.microsoft.com/en-us/azure/foundry/openai/tutorials/embeddings)  
