@@ -900,3 +900,49 @@ Wrong because **Document Processing** focuses on extracting structure and conten
 - [What is Azure Language in Foundry Tools?](https://learn.microsoft.com/en-us/azure/ai-services/language-service/overview)  
 - [Conversational Language Understanding - Foundry Tools](https://learn.microsoft.com/en-us/azure/ai-services/language-service/conversational-language-understanding/overview)  
 - [Create question answering solutions with Azure Language](https://learn.microsoft.com/en-us/training/modules/create-question-answer-solution-ai-language/)  
+
+
+**Question:** [021]  
+Which set contains only workloads that match **voice, vision, or document-focused processing**?
+
+**Options:**  
+A. Speech, Computer Vision, Information Extraction, Document Processing  
+B. Speech, Knowledge Mining, Computer Vision, Document Processing  
+C. Generative AI, Computer Vision, Information Extraction, Speech  
+D. Speech, Computer Vision, Natural Language Processing and Text Analysis, Information Extraction  
+
+**Correct Answer(s):** A
+
+**Explanation:**  
+The correct set is **Speech, Computer Vision, Information Extraction, and Document Processing**. Microsoft documentation treats **Speech** as audio-focused, **Computer Vision** as image/video-focused, and **Document Intelligence / document processing** as extracting text, fields, tables, and other structured information from documents.
+
+**Why the Correct Answer Is Correct:**  
+- **Speech** is used for spoken-language scenarios such as speech-to-text, text-to-speech, and speech translation.  
+- **Computer Vision** is used when the input is visual, such as images or video. This includes analysis of visual content.  
+- **Information Extraction** and **Document Processing** fit document-heavy scenarios where the system extracts useful information from forms, scans, and other files. Azure Document Intelligence is specifically described as OCR and intelligent document processing for extracting key data from forms and documents.
+
+**Why the Other Options Are Wrong:**  
+
+**B. Speech, Knowledge Mining, Computer Vision, Document Processing**  
+Wrong because **Knowledge Mining** is search-oriented. It is about making large amounts of content searchable, not a voice, vision, or document-extraction workload.
+
+**C. Generative AI, Computer Vision, Information Extraction, Speech**  
+Wrong because **Generative AI** is a content-generation workload, not a voice, vision, or document-processing workload.
+
+**D. Speech, Computer Vision, Natural Language Processing and Text Analysis, Information Extraction**  
+Wrong because **Natural Language Processing and Text Analysis** is primarily a text/language-analysis workload, not a voice, vision, or document-processing workload.
+
+**Tips and Tricks:**  
+- If the input is **audio**, think **Speech**.  
+- If the input is **images or video**, think **Computer Vision**.  
+- If the input is a **document, form, PDF, or scan** and you need extracted text, fields, or tables, think **Document Processing / Information Extraction**.  
+- Eliminate options that mix in **search**, **text analysis**, or **generation** workloads when the chunk is about audio, visual, and document-focused processing.
+
+> [!IMPORTANT]  
+> A common trap is confusing **document extraction** with **text analysis**. If you first need to pull text, fields, or tables out of a document, that points to document-focused processing before deeper language analysis.
+
+**Source:**  
+- [What Is Azure Speech?](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/overview)  
+- [Study guide for Exam AI-900: Microsoft Azure AI Fundamentals](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-900)  
+- [What is Azure Document Intelligence in Foundry Tools?](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview?view=doc-intel-4.0.0)  
+- [Azure Document Intelligence documentation](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/?view=doc-intel-4.0.0)  
