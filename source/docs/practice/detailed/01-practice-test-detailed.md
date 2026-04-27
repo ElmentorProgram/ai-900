@@ -1003,3 +1003,61 @@ Wrong because it swaps **Clustering** and **Anomaly Detection**. Grouping custom
 - [How to select a machine learning algorithm](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-select-algorithms?view=azureml-api-1)  
 - [Machine Learning Algorithm Cheat Sheet](https://learn.microsoft.com/en-us/azure/machine-learning/algorithm-cheat-sheet?view=azureml-api-1)  
 - [Train and evaluate classification models](https://learn.microsoft.com/en-us/training/modules/train-evaluate-classification-models/)  
+
+
+**Question:** [023]  
+A team is choosing between four machine learning approaches for different business needs:
+
+1. Predict the **delivery time in minutes** for an order  
+2. Predict whether an email is **spam or not spam**  
+3. Organize news articles into **similar topic groups** without predefined labels  
+4. Detect **rare credit card transactions** that differ from normal spending behavior  
+
+Which option correctly maps each case to the most appropriate machine learning workload?
+
+**Options:**  
+A. 1 = Regression, 2 = Classification, 3 = Clustering, 4 = Anomaly Detection  
+B. 1 = Classification, 2 = Regression, 3 = Clustering, 4 = Anomaly Detection  
+C. 1 = Regression, 2 = Classification, 3 = Anomaly Detection, 4 = Clustering  
+D. 1 = Clustering, 2 = Classification, 3 = Regression, 4 = Anomaly Detection  
+
+**Correct Answer(s):** A
+
+**Explanation:**  
+The correct mapping is:
+- **Number = Regression**
+- **Label = Classification**
+- **Group Without Labels = Clustering**
+- **Unusual Pattern = Anomaly Detection**
+
+**Why the Correct Answer Is Correct:**  
+- **1 = Regression** because delivery time is a **numeric value**. Regression is used for predicting numbers.  
+- **2 = Classification** because spam or not spam is a **category/label**. Classification is used when the output is a class.  
+- **3 = Clustering** because the goal is to form **groups based on similarity** without known labels. K-means clustering is an unsupervised learning algorithm.  
+- **4 = Anomaly Detection** because the task is to find **rare or unusual behavior** compared to normal patterns.  
+
+**Why the Other Options Are Wrong:**  
+
+**B. 1 = Classification, 2 = Regression, 3 = Clustering, 4 = Anomaly Detection**  
+Wrong because it swaps the first two cases. **Delivery time** is a number, so it is **Regression**. **Spam or not spam** is a category, so it is **Classification**.  
+
+**C. 1 = Regression, 2 = Classification, 3 = Anomaly Detection, 4 = Clustering**  
+Wrong because it swaps **Clustering** and **Anomaly Detection**. Grouping similar articles is clustering, while unusual transactions are anomalies.  
+
+**D. 1 = Clustering, 2 = Classification, 3 = Regression, 4 = Anomaly Detection**  
+Wrong because **delivery time** is not grouping, and **organizing articles into groups without labels** is not regression.  
+
+**Tips and Tricks:**  
+- **Number = Regression**  
+- **Label = Classification**  
+- **Group Without Labels = Clustering**  
+- **Unusual Pattern = Anomaly Detection**
+
+> [!IMPORTANT]  
+> The fastest way to separate these workloads is to identify the **output goal** first: number, label, group, or unusual behavior.  
+
+**Source:**  
+- [Introduction to machine learning concepts](https://learn.microsoft.com/en-us/training/modules/fundamentals-machine-learning/)  
+- [How to select a machine learning algorithm](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-select-algorithms?view=azureml-api-1)  
+- [Machine Learning Algorithm Cheat Sheet](https://learn.microsoft.com/en-us/azure/machine-learning/algorithm-cheat-sheet?view=azureml-api-1)  
+- [Component: K-Means Clustering](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference/k-means-clustering?view=azureml-api-2)  
