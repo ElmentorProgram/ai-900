@@ -1328,3 +1328,60 @@ Wrong because **written product descriptions** need **Text Translation**, not Te
 - [What is Azure Text translation in Foundry Tools?](https://learn.microsoft.com/en-us/azure/ai-services/translator/text-translation/overview)  
 - [What Is Azure Speech?](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/overview)  
 - [Speech translation overview - Speech service - Foundry Tools](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/speech-translation)  
+
+**Question:** [029]  
+A team is mapping solution requirements to Azure service families:
+
+1. Analyze text to detect **sentiment**, extract **key phrases**, and identify **entities**  
+2. Build a **searchable index** over large volumes of content with enrichment  
+3. Convert recorded speech into **text transcripts**  
+4. Extract **text, key/value pairs, and tables** from scanned documents  
+
+Which option correctly maps each case to the most appropriate Azure service family?
+
+**Options:**  
+A. 1 = Azure AI Language, 2 = Azure AI Search, 3 = Azure AI Speech, 4 = Azure AI Document Intelligence  
+B. 1 = Azure AI Search, 2 = Azure AI Language, 3 = Azure AI Document Intelligence, 4 = Azure AI Speech  
+C. 1 = Azure AI Language, 2 = Azure AI Speech, 3 = Azure AI Search, 4 = Azure AI Document Intelligence  
+D. 1 = Azure AI Document Intelligence, 2 = Azure AI Search, 3 = Azure AI Speech, 4 = Azure AI Language  
+
+**Correct Answer(s):** A
+
+**Explanation:**  
+The correct mapping is:
+- **Text Analysis = Azure AI Language**
+- **Searchable Index = Azure AI Search**
+- **Audio to Text = Azure AI Speech**
+- **Extract Text, Fields, and Tables From Documents = Azure AI Document Intelligence**
+
+**Why the Correct Answer Is Correct:**  
+- **1 = Azure AI Language** because sentiment analysis, key phrase extraction, and entity recognition are language-analysis capabilities in Azure AI Language.  
+- **2 = Azure AI Search** because the goal is to create a searchable index over large amounts of content, often with enrichment.  
+- **3 = Azure AI Speech** because speech services handle speech-to-text transcription.  
+- **4 = Azure AI Document Intelligence** because it is used to extract text and structure such as key/value pairs and tables from documents.  
+
+**Why the Other Options Are Wrong:**  
+
+**B. 1 = Azure AI Search, 2 = Azure AI Language, 3 = Azure AI Document Intelligence, 4 = Azure AI Speech**  
+Wrong because text analysis belongs to **Azure AI Language**, not Azure AI Search. It also swaps **Azure AI Speech** and **Azure AI Document Intelligence**.  
+
+**C. 1 = Azure AI Language, 2 = Azure AI Speech, 3 = Azure AI Search, 4 = Azure AI Document Intelligence**  
+Wrong because building a searchable index is **Azure AI Search**, not Azure AI Speech. It also maps transcription incorrectly to Azure AI Search.  
+
+**D. 1 = Azure AI Document Intelligence, 2 = Azure AI Search, 3 = Azure AI Speech, 4 = Azure AI Language**  
+Wrong because extracting sentiment, key phrases, and entities is **Azure AI Language**, while document extraction belongs to **Azure AI Document Intelligence**.  
+
+**Tips and Tricks:**  
+- **Text Analysis = Azure AI Language**  
+- **Searchable Index = Azure AI Search**  
+- **Audio to Text = Azure AI Speech**  
+- **Extract Text, Fields, and Tables From Documents = Azure AI Document Intelligence**
+
+> [!IMPORTANT]  
+> A common trap is mixing the **workload** with the **service family**. First identify the need, then map it to the Azure service that is built for that need.
+
+**Source:**  
+- [What is Azure Language in Foundry Tools?](https://learn.microsoft.com/en-us/azure/ai-services/language-service/overview)  
+- [Introduction to Azure AI Search](https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search)  
+- [Create a knowledge mining solution with Azure AI Search](https://learn.microsoft.com/en-us/training/modules/ai-knowldge-mining/)  
+- [What is Azure Document Intelligence in Foundry Tools?](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview?view=doc-intel-4.0.0)  
