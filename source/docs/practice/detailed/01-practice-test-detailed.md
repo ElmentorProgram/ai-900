@@ -1061,3 +1061,61 @@ Wrong because **delivery time** is not grouping, and **organizing articles into 
 - [How to select a machine learning algorithm](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-select-algorithms?view=azureml-api-1)  
 - [Machine Learning Algorithm Cheat Sheet](https://learn.microsoft.com/en-us/azure/machine-learning/algorithm-cheat-sheet?view=azureml-api-1)  
 - [Component: K-Means Clustering](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference/k-means-clustering?view=azureml-api-2)  
+
+
+**Question:** [024]  
+A solutions architect is reviewing four proposed AI workloads:
+
+1. Analyze customer reviews to detect **sentiment** and extract key phrases  
+2. Make thousands of company documents **searchable** through indexing and enrichment  
+3. Generate a **summary** of a long report from a prompt  
+4. Build a chatbot that can understand what a user wants and respond through conversation  
+
+Which option correctly maps each case to the most appropriate workload?
+
+**Options:**  
+A. 1 = Natural Language Processing and Text Analysis, 2 = Knowledge Mining, 3 = Generative AI, 4 = Conversational AI  
+B. 1 = Knowledge Mining, 2 = Natural Language Processing and Text Analysis, 3 = Conversational AI, 4 = Generative AI  
+C. 1 = Natural Language Processing and Text Analysis, 2 = Generative AI, 3 = Knowledge Mining, 4 = Conversational AI  
+D. 1 = Conversational AI, 2 = Knowledge Mining, 3 = Natural Language Processing and Text Analysis, 4 = Generative AI  
+
+**Correct Answer(s):** A
+
+**Explanation:**  
+The correct mapping is:
+- **Text Meaning = Natural Language Processing and Text Analysis**
+- **Searchable Content = Knowledge Mining**
+- **Generated Content = Generative AI**
+- **User Interaction Through Chat = Conversational AI**
+
+**Why the Correct Answer Is Correct:**  
+- **1 = Natural Language Processing and Text Analysis** because sentiment analysis and key phrase extraction are text-analysis tasks. Azure Language provides NLP features for understanding and analyzing text.  
+- **2 = Knowledge Mining** because the goal is to make a large volume of content searchable through indexing and enrichment.  
+- **3 = Generative AI** because summarizing a long report from a prompt is a content-generation task.  
+- **4 = Conversational AI** because the system must understand user input and respond in a conversational flow.  
+
+**Why the Other Options Are Wrong:**  
+
+**B. 1 = Knowledge Mining, 2 = Natural Language Processing and Text Analysis, 3 = Conversational AI, 4 = Generative AI**  
+Wrong because **sentiment** and **key phrase extraction** are NLP tasks, not knowledge mining. It also swaps **Generative AI** and **Conversational AI**.  
+
+**C. 1 = Natural Language Processing and Text Analysis, 2 = Generative AI, 3 = Knowledge Mining, 4 = Conversational AI**  
+Wrong because making documents searchable is **Knowledge Mining**, not **Generative AI**. Also, generating a summary from a prompt is **Generative AI**, not **Knowledge Mining**.  
+
+**D. 1 = Conversational AI, 2 = Knowledge Mining, 3 = Natural Language Processing and Text Analysis, 4 = Generative AI**  
+Wrong because analyzing reviews for sentiment is **Natural Language Processing and Text Analysis**, not **Conversational AI**. Also, understanding user intent and responding through conversation fits **Conversational AI**, not **Generative AI**.  
+
+**Tips and Tricks:**  
+- **Text Meaning = Natural Language Processing and Text Analysis**  
+- **Searchable Content = Knowledge Mining**  
+- **Generated Content = Generative AI**  
+- **User Interaction Through Chat = Conversational AI**
+
+> [!IMPORTANT]  
+> A common trap is confusing **Knowledge Mining** with **Natural Language Processing and Text Analysis** and **Generative AI**. **Knowledge Mining** is about making content searchable, **Natural Language Processing and Text Analysis** is about analyzing meaning in text, and **Generative AI** is about producing new content from prompts.
+
+**Source:**  
+- [Study guide for Exam AI-900: Microsoft Azure AI Fundamentals](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-900)  
+- [What is Azure Language in Foundry Tools?](https://learn.microsoft.com/en-us/azure/ai-services/language-service/overview)  
+- [Conversational Language Understanding - Foundry Tools](https://learn.microsoft.com/en-us/azure/ai-services/language-service/conversational-language-understanding/overview)  
+- [Build a conversational language understanding model](https://learn.microsoft.com/en-us/training/modules/build-language-understanding-model/)  
