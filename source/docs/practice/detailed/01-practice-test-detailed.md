@@ -807,3 +807,49 @@ Wrong because AI and ML are not identical, and deep learning is used beyond lang
 - [Introduction to machine learning concepts](https://learn.microsoft.com/en-us/training/modules/fundamentals-machine-learning/)  
 - [Deep Learning vs. Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-deep-learning-vs-machine-learning?view=azureml-api-2)  
 - [Introduction to generative AI and agents](https://learn.microsoft.com/en-us/training/modules/fundamentals-generative-ai/)  
+
+
+**Question:** [019]  
+Which set contains only **prediction-oriented machine learning workloads**?
+
+**Options:**  
+A. Regression, Classification, Clustering, Anomaly Detection  
+B. Regression, Knowledge Mining, Clustering, Anomaly Detection  
+C. Classification, Generative AI, Clustering, Document Processing  
+D. Regression, Classification, Speech, Anomaly Detection  
+
+**Correct Answer(s):** A
+
+**Explanation:**  
+The correct set is **Regression, Classification, Clustering, and Anomaly Detection**. Microsoft documentation commonly presents these as core machine learning task types. They all work with data to produce predictions, groupings, or unusual-pattern detection results.
+
+**Why the Correct Answer Is Correct:**  
+- **Regression** predicts a numeric value.  
+- **Classification** predicts a label or category.  
+- **Clustering** groups similar items based on patterns in the data.  
+- **Anomaly Detection** identifies unusual data points or rare behavior.  
+
+**Why the Other Options Are Wrong:**  
+
+**B. Regression, Knowledge Mining, Clustering, Anomaly Detection**  
+Wrong because **Knowledge Mining** is a search-oriented workload, not one of these core machine learning prediction-oriented tasks.
+
+**C. Classification, Generative AI, Clustering, Document Processing**  
+Wrong because **Generative AI** focuses on generating new content, and **Document Processing** focuses on extracting structure from documents.
+
+**D. Regression, Classification, Speech, Anomaly Detection**  
+Wrong because **Speech** is an audio-language workload, not one of these machine learning task types.
+
+**Tips and Tricks:**  
+- When you see **Regression**, **Classification**, **Clustering**, and **Anomaly Detection** together, think of common **machine learning workload types**.  
+- Eliminate any option that mixes in search, document, speech, or generative workloads.  
+- Check every item in the option, not just the first two.
+
+> [!IMPORTANT]  
+> A common trap is mixing one unrelated workload into an otherwise correct set. Verify that **all four items** belong together.
+
+**Source:**  
+- [Introduction to machine learning concepts](https://learn.microsoft.com/en-us/training/modules/fundamentals-machine-learning/)  
+- [How to select a machine learning algorithm](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-select-algorithms?view=azureml-api-1)  
+- [Machine Learning Algorithm Cheat Sheet](https://learn.microsoft.com/en-us/azure/machine-learning/algorithm-cheat-sheet?view=azureml-api-1)  
+- [What is Azure Machine Learning?](https://learn.microsoft.com/en-us/azure/machine-learning/overview-what-is-azure-machine-learning?view=azureml-api-2)  
