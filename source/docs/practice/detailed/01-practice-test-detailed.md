@@ -946,3 +946,60 @@ Wrong because **Natural Language Processing and Text Analysis** is primarily a t
 - [Study guide for Exam AI-900: Microsoft Azure AI Fundamentals](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-900)  
 - [What is Azure Document Intelligence in Foundry Tools?](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview?view=doc-intel-4.0.0)  
 - [Azure Document Intelligence documentation](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/?view=doc-intel-4.0.0)  
+
+**Question:** [022]  
+A data team is reviewing four proposed AI solutions:
+
+1. Predict the **selling price** of a house from features such as size and location  
+2. Predict whether a transaction is **fraudulent or not**  
+3. Group customers into **segments** when no predefined categories exist  
+4. Flag **unusual sensor readings** that do not match normal machine behavior  
+
+Which option correctly maps each scenario to the most appropriate machine learning workload?
+
+**Options:**  
+A. 1 = Regression, 2 = Classification, 3 = Clustering, 4 = Anomaly Detection  
+B. 1 = Classification, 2 = Regression, 3 = Clustering, 4 = Anomaly Detection  
+C. 1 = Regression, 2 = Clustering, 3 = Classification, 4 = Anomaly Detection  
+D. 1 = Regression, 2 = Classification, 3 = Anomaly Detection, 4 = Clustering  
+
+**Correct Answer(s):** A
+
+**Explanation:**  
+The correct mapping is:
+- **Number = Regression**
+- **Label = Classification**
+- **Group Without Labels = Clustering**
+- **Unusual Pattern = Anomaly Detection**
+
+**Why the Correct Answer Is Correct:**  
+- **1 = Regression** because house price is a **number**. Regression is used for numeric outcomes.  
+- **2 = Classification** because fraud/not fraud is a **label**. Classification is used to assign items to classes.  
+- **3 = Clustering** because the goal is to create **groups based on similarity** without known labels.  
+- **4 = Anomaly Detection** because the task is to identify readings that are **unusual compared to normal behavior**.  
+
+**Why the Other Options Are Wrong:**  
+
+**B. 1 = Classification, 2 = Regression, 3 = Clustering, 4 = Anomaly Detection**  
+Wrong because it swaps the first two cases. **House price** is numeric, so it is **Regression**, while **fraud/not fraud** is categorical, so it is **Classification**.  
+
+**C. 1 = Regression, 2 = Clustering, 3 = Classification, 4 = Anomaly Detection**  
+Wrong because it swaps **Classification** and **Clustering**. Fraud detection uses known labels, while customer segmentation without predefined categories is clustering.  
+
+**D. 1 = Regression, 2 = Classification, 3 = Anomaly Detection, 4 = Clustering**  
+Wrong because it swaps **Clustering** and **Anomaly Detection**. Grouping customers into segments is clustering, while unusual sensor readings are anomalies.  
+
+**Tips and Tricks:**  
+- **Number = Regression**  
+- **Label = Classification**  
+- **Group Without Labels = Clustering**  
+- **Unusual Pattern = Anomaly Detection**  
+
+> [!IMPORTANT]  
+> A strong exam shortcut is to identify the **output goal** first: numeric value, category, grouping, or unusual behavior. That usually leads you to the right workload immediately.  
+
+**Source:**  
+- [Introduction to machine learning concepts](https://learn.microsoft.com/en-us/training/modules/fundamentals-machine-learning/)  
+- [How to select a machine learning algorithm](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-select-algorithms?view=azureml-api-1)  
+- [Machine Learning Algorithm Cheat Sheet](https://learn.microsoft.com/en-us/azure/machine-learning/algorithm-cheat-sheet?view=azureml-api-1)  
+- [Train and evaluate classification models](https://learn.microsoft.com/en-us/training/modules/train-evaluate-classification-models/)  
