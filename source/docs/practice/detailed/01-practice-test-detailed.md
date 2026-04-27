@@ -1119,3 +1119,61 @@ Wrong because analyzing reviews for sentiment is **Natural Language Processing a
 - [What is Azure Language in Foundry Tools?](https://learn.microsoft.com/en-us/azure/ai-services/language-service/overview)  
 - [Conversational Language Understanding - Foundry Tools](https://learn.microsoft.com/en-us/azure/ai-services/language-service/conversational-language-understanding/overview)  
 - [Build a conversational language understanding model](https://learn.microsoft.com/en-us/training/modules/build-language-understanding-model/)  
+
+
+**Question:** [025]  
+A design team is reviewing four proposed AI solutions:
+
+1. Convert a recorded customer call into **written text**  
+2. Analyze product photos to identify **objects and visual content**  
+3. Extract **follow-up actions** and useful facts from meeting recordings and other unstructured content  
+4. Extract **text, key/value pairs, and tables** from scanned forms and PDF files  
+
+Which option correctly maps each case to the most appropriate workload?
+
+**Options:**  
+A. 1 = Speech, 2 = Computer Vision, 3 = Information Extraction, 4 = Document Processing  
+B. 1 = Computer Vision, 2 = Speech, 3 = Document Processing, 4 = Information Extraction  
+C. 1 = Speech, 2 = Information Extraction, 3 = Computer Vision, 4 = Document Processing  
+D. 1 = Document Processing, 2 = Computer Vision, 3 = Speech, 4 = Information Extraction  
+
+**Correct Answer(s):** A
+
+**Explanation:**  
+The correct mapping is:
+- **Audio = Speech**
+- **Visual Input = Computer Vision**
+- **Extract Facts or Actions = Information Extraction**
+- **Extract Text, Fields, and Tables From Documents = Document Processing**
+
+**Why the Correct Answer Is Correct:**  
+- **1 = Speech** because converting spoken audio into text is a speech-to-text scenario. Microsoft describes Azure Speech as supporting speech to text, text to speech, and spoken translation.  
+- **2 = Computer Vision** because the input is images, and the goal is to analyze visual content. Azure Vision is described as processing images and returning information.  
+- **3 = Information Extraction** because the goal is to pull useful facts or action items from unstructured content. That matches the page’s information-extraction idea of unlocking useful information from sources such as audio/video recordings and other unstructured content.  
+- **4 = Document Processing** because the task is to extract text, key/value pairs, and tables from forms and PDFs. Microsoft describes Document Intelligence as OCR and intelligent document processing for extracting key data from forms and documents.  
+
+**Why the Other Options Are Wrong:**  
+
+**B. 1 = Computer Vision, 2 = Speech, 3 = Document Processing, 4 = Information Extraction**  
+Wrong because **recorded audio to text** is **Speech**, not Computer Vision. It also swaps **Information Extraction** and **Document Processing**.  
+
+**C. 1 = Speech, 2 = Information Extraction, 3 = Computer Vision, 4 = Document Processing**  
+Wrong because **analyzing product photos** is **Computer Vision**, not Information Extraction. It also incorrectly maps extracting facts/actions from unstructured content to Computer Vision.  
+
+**D. 1 = Document Processing, 2 = Computer Vision, 3 = Speech, 4 = Information Extraction**  
+Wrong because **recorded calls** are an audio workload, so they fit **Speech**, not Document Processing. Also, extracting text, fields, and tables from forms is **Document Processing**, not Information Extraction.  
+
+**Tips and Tricks:**  
+- **Audio = Speech**  
+- **Visual Input = Computer Vision**  
+- **Extract Facts or Actions = Information Extraction**  
+- **Extract Text, Fields, and Tables From Documents = Document Processing**
+
+> [!IMPORTANT]  
+> A common trap is confusing **Information Extraction** with **Document Processing**. If the task is specifically about pulling **text, fields, and tables** from files such as forms or PDFs, that points to **Document Processing** first.  
+
+**Source:**  
+- [Study guide for Exam AI-900: Microsoft Azure AI Fundamentals](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-900)  
+- [What Is Azure Speech?](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/overview)  
+- [What is Azure Vision in Foundry Tools?](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview)  
+- [What is Azure Document Intelligence in Foundry Tools?](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview?view=doc-intel-4.0.0)  
