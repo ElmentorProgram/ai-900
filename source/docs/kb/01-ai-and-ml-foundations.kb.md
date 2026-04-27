@@ -314,7 +314,7 @@ Now let’s map the AI and ML concepts in this document to Azure services like *
 - **Document Processing (OCR, Key/Value, Tables)** → Azure AI Document Intelligence (Document Intelligence)  
 - **Bots and Channels (Bot Runtime/Connector)** → Azure AI Bot Service (Bot Service)  
 
-### Azure OpenAI Model Types
+## Azure OpenAI Model Types
 
 This section is a fast routing guide for choosing the right model category inside **Azure OpenAI Service** after you already know that Azure OpenAI is the right service family for your scenario.
 
