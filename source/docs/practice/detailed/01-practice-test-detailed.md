@@ -1177,3 +1177,53 @@ Wrong because **recorded calls** are an audio workload, so they fit **Speech**, 
 - [What Is Azure Speech?](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/overview)  
 - [What is Azure Vision in Foundry Tools?](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview)  
 - [What is Azure Document Intelligence in Foundry Tools?](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview?view=doc-intel-4.0.0)  
+
+
+**Question:** [026]  
+A company receives thousands of **scanned PDF forms**. It wants to first extract the **text, key/value pairs, and tables**, and then analyze the extracted text to identify **sentiment, key phrases, and entities**.
+
+Which option best describes the correct workload flow?
+
+**Options:**  
+A. Natural Language Processing and Text Analysis → Document Processing  
+B. Document Processing → Natural Language Processing and Text Analysis  
+C. Knowledge Mining → Computer Vision  
+D. Generative AI → Document Processing  
+
+**Correct Answer(s):** B
+
+**Explanation:**  
+The correct flow is:
+- **Extract Text, Fields, and Tables From Documents = Document Processing**
+- **Analyze Text Meaning = Natural Language Processing and Text Analysis**
+
+**Why the Correct Answer Is Correct:**  
+- **Document Processing** comes first because the input is a **scanned PDF**, and the system must extract text and structure from the document. Microsoft Document Intelligence is designed to extract **text, key/value pairs, and tables** from documents.  
+- **Natural Language Processing and Text Analysis** comes after that because sentiment analysis, key phrase extraction, and entity recognition work on **text that has already been extracted**. Azure Language is used to analyze meaning in text.  
+- This follows the common rule: when the text is inside a scan or image, first extract it, then analyze it.
+
+**Why the Other Options Are Wrong:**  
+
+**A. Natural Language Processing and Text Analysis → Document Processing**  
+Wrong because Natural Language Processing and Text Analysis analyzes **text meaning**, but in this case the text is still inside scanned documents. The text must be extracted first.
+
+**C. Knowledge Mining → Computer Vision**  
+Wrong because the main need here is not building a searchable index or analyzing general visual content. The first task is document extraction, followed by text analysis.
+
+**D. Generative AI → Document Processing**  
+Wrong because Generative AI is for creating or transforming content, not for first extracting text, fields, and tables from scanned forms.
+
+**Tips and Tricks:**  
+- **Scanned Document First = Document Processing**  
+- **Meaning in Extracted Text = Natural Language Processing and Text Analysis**  
+- If the text is trapped inside a PDF or image, do not start with Natural Language Processing and Text Analysis.  
+- First get the text out, then analyze the text.
+
+> [!IMPORTANT]  
+> A common trap is confusing **Document Processing** with **Natural Language Processing and Text Analysis**. **Document Processing** extracts text and structure from files, while **Natural Language Processing and Text Analysis** analyzes meaning after the text is already available.
+
+**Source:**  
+- [What is Azure Document Intelligence in Foundry Tools?](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview?view=doc-intel-4.0.0)  
+- [Read model OCR data extraction - Document Intelligence - Foundry Tools](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/read?view=doc-intel-4.0.0)  
+- [What is Azure Language in Foundry Tools?](https://learn.microsoft.com/en-us/azure/ai-services/language-service/overview)  
+- [Introduction to natural language processing concepts](https://learn.microsoft.com/en-us/training/modules/introduction-language/)  
