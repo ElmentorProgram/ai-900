@@ -314,11 +314,14 @@ Now let’s map the AI and ML concepts in this document to Azure services like *
 - **Document Processing (OCR, Key/Value, Tables)** → Azure AI Document Intelligence (Document Intelligence)  
 - **Bots and Channels (Bot Runtime/Connector)** → Azure AI Bot Service (Bot Service)  
 
-### Azure OpenAI Model Types (Fast Routing)
-- **GPT Models:** Generate or transform text (chat, summarization, extraction)  
-- **Embeddings Models:** Convert text to vectors for semantic search and similarity  
-- **DALL-E:** Generate images from text prompts  
-- **Whisper:** Speech-to-text transcription  
+### Azure OpenAI Model Types
+
+This section is a fast routing guide for choosing the right model category inside **Azure OpenAI Service** after you already know that Azure OpenAI is the right service family for your scenario.
+
+- **GPT Models** → Generate or transform text, such as chat, summarization, extraction, and rewriting
+- **Embedding Models** → Convert text to vectors for semantic search, retrieval, and similarity
+- **Image Generation Models** (**DALL-E**, now typically **gpt-image**) → Generate images from prompts
+- **Audio Models** (**Whisper**) → Transcribe speech and handle audio-based generation tasks
 
 
 ## Summary
