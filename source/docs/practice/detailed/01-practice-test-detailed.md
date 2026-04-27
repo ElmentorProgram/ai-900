@@ -1227,3 +1227,47 @@ Wrong because Generative AI is for creating or transforming content, not for fir
 - [Read model OCR data extraction - Document Intelligence - Foundry Tools](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/read?view=doc-intel-4.0.0)  
 - [What is Azure Language in Foundry Tools?](https://learn.microsoft.com/en-us/azure/ai-services/language-service/overview)  
 - [Introduction to natural language processing concepts](https://learn.microsoft.com/en-us/training/modules/introduction-language/)  
+
+**Question:** [027]  
+A company has millions of files such as PDFs, images, and reports. It wants users to **search across all that content**, while also using AI enrichment to improve the searchable results. Which workload best fits this primary goal?
+
+**Options:**  
+A. Document Processing  
+B. Knowledge Mining  
+C. Natural Language Processing and Text Analysis  
+D. Computer Vision  
+
+**Correct Answer(s):** B
+
+**Explanation:**  
+This is **Knowledge Mining** because the main goal is to make a large volume of content **searchable** through indexing and enrichment.
+
+**Why the Correct Answer Is Correct:**  
+- **Knowledge Mining** is the best fit when the primary goal is **searchable content at scale**.  
+- It commonly uses indexing plus enrichment so users can search across many documents and files more effectively.  
+- OCR or document extraction can be part of the pipeline, but the main outcome here is still **search**, which points to **Knowledge Mining**.  
+
+**Why the Other Options Are Wrong:**  
+
+**A. Document Processing**  
+Wrong because **Document Processing** focuses on extracting **text, key/value pairs, and tables** from documents. That can be part of a larger solution, but it is not the primary workload when the goal is to build a searchable content system across many files.  
+
+**C. Natural Language Processing and Text Analysis**  
+Wrong because **Natural Language Processing and Text Analysis** focuses on understanding meaning in text, such as sentiment, entities, or key phrases. The scenario’s main goal is large-scale searchable content, not text-meaning analysis by itself.  
+
+**D. Computer Vision**  
+Wrong because **Computer Vision** is for analyzing visual input such as images. Here, the main requirement is cross-content search and indexing, not general image analysis.  
+
+**Tips and Tricks:**  
+- **Searchable Content at Scale = Knowledge Mining**  
+- **Extract Text, Fields, and Tables From Documents = Document Processing**  
+- If the question says **indexing**, **enrichment**, and **search across lots of content**, think **Knowledge Mining**.  
+
+> [!IMPORTANT]  
+> A common trap is choosing **Document Processing** just because documents are involved. If the **primary goal** is to make large amounts of content searchable, the better answer is **Knowledge Mining**.  
+
+**Source:**  
+- [Create a knowledge mining solution with Azure AI Search](https://learn.microsoft.com/en-us/training/modules/ai-knowldge-mining/)  
+- [Create an Azure AI Search solution](https://learn.microsoft.com/en-us/training/modules/create-azure-cognitive-search-solution/)  
+- [Azure Document Intelligence documentation](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/?view=doc-intel-4.0.0)  
+- [Extract data with Azure Document Intelligence](https://learn.microsoft.com/en-us/training/modules/extract-data-with-document-intelligence/)  
