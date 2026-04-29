@@ -212,3 +212,52 @@ Wrong because the presence of a known target to predict makes this a **supervise
 - [Train Clustering Model: Component Reference - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference/train-clustering-model?view=azureml-api-2)  
 - [Offline feature retrieval using a point-in-time join - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/offline-retrieval-point-in-time-join-concepts?view=azureml-api-2)  
 - [What is automated ML? AutoML - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-automated-ml?view=azureml-api-2)  
+
+
+**Question:** [035]  
+A team is building a fraud detection model. It trains on one part of the data, compares model versions by adjusting thresholds and hyperparameters on another part, and then runs one last check on a separate unseen subset after all decisions are finished.
+
+Which statement best describes the role of these three subsets?
+
+**Options:**  
+A. The training set is used to learn patterns, the validation set is used during development to compare and tune models, and the test set is the final unbiased check  
+B. The training set is used for learning, the test set is used during tuning, and the validation set is the final unbiased check  
+C. The validation set is used to fit the model, the training set is used to compare versions, and the test set is optional if accuracy already looks good  
+D. The training, validation, and test sets all serve the same purpose, so using any one of them for tuning or final evaluation is acceptable  
+
+**Correct Answer(s):** A
+
+**Explanation:**  
+The correct role split is:
+- **Training Set = Learn Patterns**
+- **Validation Set = Compare and Tune During Development**
+- **Test Set = Final Unbiased Check**
+
+**Why the Correct Answer Is Correct:**  
+- The **training set** is the subset the model learns from. Azure Machine Learning documentation describes training data as the data used to fit the model.  
+- The **validation set** is used during development to compare model versions and tune settings such as thresholds or hyperparameters.  
+- The **test set** is kept separate until the end so it remains an unbiased final check on unseen data.  
+
+**Why the Other Options Are Wrong:**  
+
+**B. The training set is used for learning, the test set is used during tuning, and the validation set is the final unbiased check**  
+Wrong because this swaps **validation** and **test**. Once you use the **test set** during tuning, it is no longer a trustworthy final check.  
+
+**C. The validation set is used to fit the model, the training set is used to compare versions, and the test set is optional if accuracy already looks good**  
+Wrong because the **training set** is used to fit the model, not the validation set. It is also wrong to treat the **test set** as optional when you need a final unbiased evaluation on unseen data.  
+
+**D. The training, validation, and test sets all serve the same purpose, so using any one of them for tuning or final evaluation is acceptable**  
+Wrong because these subsets have different roles. Mixing them weakens the reliability of evaluation and can hide overfitting.  
+
+**Tips and Tricks:**  
+- Ask yourself **when** the subset is used. If it is used **during model improvement**, that is usually **validation**.  
+- If it is the subset kept untouched until everything is finalized, that is the **test set**.  
+- A strong exam shortcut is: **Train = Learn, Validation = Tune, Test = Final Check**.
+
+> [!IMPORTANT]  
+> A common trap is mixing **validation** and **test**. Use **validation** during iteration, and keep the **test set** untouched until the end so it remains a trustworthy final check.
+
+**Source:**  
+- [Data splits and cross-validation in automated machine learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-configure-cross-validation-data-splits?view=azureml-api-1)  
+- [Prevent overfitting and imbalanced data with automated ML](https://learn.microsoft.com/en-us/azure/machine-learning/concept-manage-ml-pitfalls?view=azureml-api-2)  
+- [Build and train models with Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-train-machine-learning-model?view=azureml-api-2)  
