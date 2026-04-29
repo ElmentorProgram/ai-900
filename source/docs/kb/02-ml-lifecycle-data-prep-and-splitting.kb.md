@@ -32,6 +32,9 @@ A typical end-to-end lifecycle looks like:
 
 > [!NOTE]
 > **Data Ingestion** means collecting/loading data into your pipeline. **Inference (Scoring)** means using a trained model to make predictions.
+> **Prepare Data** is a broad lifecycle stage, not one fully completed step before splitting.
+> Some preparation happens before the split, and some preparation must happen after the split using training data only.
+> In other words, data preparation starts before the split, then continues after the split in a training-based way before training, validation, and final testing.
 
 ### Metrics Targets and Iteration (How It Works)
 
