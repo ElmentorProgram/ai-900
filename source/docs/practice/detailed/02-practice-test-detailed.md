@@ -633,3 +633,57 @@ Wrong because deployment concerns come later. Preparation is about making the ra
 - [Transform data in the designer - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-designer-transform-data?view=azureml-api-1)  
 - [Clean Missing Data: Component Reference - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference/clean-missing-data?view=azureml-api-2)  
 - [Edit Metadata: Component reference - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference/edit-metadata?view=azureml-api-2)  
+
+**Question:** [043]  
+A team is preparing a dataset for supervised learning. It notices two issues:
+
+- Some rows are missing the **target label**
+- Other rows are missing one or two **input feature values**
+
+The team also sees that one important feature has many missing values, and removing every affected row would shrink the dataset so much that the remaining data may become biased.
+
+Which statement is the most accurate?
+
+**Options:**  
+A. Missing labels and missing feature values should always be handled the same way, so the team should impute both and keep all rows  
+B. Missing target labels are usually a bigger problem for supervised training, while missing feature values may sometimes be handled by imputation if dropping rows would bias the dataset  
+C. Missing feature values are always worse than missing labels, because the model can still learn the target from the rest of the row  
+D. The safest approach is always to remove every row with any missing value, because imputation always weakens the dataset  
+
+**Correct Answer(s):** B
+
+**Explanation:**  
+The correct idea is:
+- **Missing Labels and Missing Features Are Not the Same Problem**
+- **Supervised Training Usually Needs Known Target Labels**
+- **Missing Feature Values May Be Removed or Imputed Depending on the Scenario**
+- **Dropping Too Many Rows Can Bias the Dataset**
+
+**Why the Correct Answer Is Correct:**  
+- In supervised learning, the label is the outcome the model is trying to learn. If the label is missing, that row usually cannot serve as a standard supervised training example. Microsoft’s supervised-learning components require labeled datasets with a label value for the rows used in training.  
+- Missing **feature** values are different. Microsoft’s Clean Missing Data guidance supports several scenario-based choices, including removing rows or columns, replacing values, or inferring missing values.  
+- If removing too many rows would distort the remaining dataset, imputation can be a better choice than aggressive deletion. Microsoft’s missing-data guidance explicitly includes replacement and inference methods, not only deletion.  
+
+**Why the Other Options Are Wrong:**  
+
+**A. Missing labels and missing feature values should always be handled the same way, so the team should impute both and keep all rows**  
+Wrong because missing labels and missing feature values play different roles. In supervised learning, the label is the answer the model is supposed to learn, so treating it like an ordinary feature gap is not the same thing.  
+
+**C. Missing feature values are always worse than missing labels, because the model can still learn the target from the rest of the row**  
+Wrong because supervised training depends on known labels. A row without the target usually cannot function as a normal labeled training example.  
+
+**D. The safest approach is always to remove every row with any missing value, because imputation always weakens the dataset**  
+Wrong because Microsoft’s missing-data guidance explicitly supports multiple handling methods, including replacement or inference, depending on the situation. Always deleting rows can throw away too much data and distort the dataset.  
+
+**Tips and Tricks:**  
+- Ask first: **Is the missing field the answer I want to predict, or just one of the inputs?** That changes the decision.  
+- “Drop everything with a null” is rarely a smart default. Think about how much data you lose and whether that loss changes the dataset.  
+- Missing-value handling is usually a **scenario choice**, not a one-rule-fits-all step.
+
+> [!IMPORTANT]  
+> A common trap is treating all missing values the same way. In supervised learning, a missing **label** can block the row from normal training use, while a missing **feature** may be handled in different ways depending on how much data would be lost and how much bias that loss would introduce.  
+
+**Source:**  
+- [Clean Missing Data: Component Reference - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference/clean-missing-data?view=azureml-api-2)  
+- [AutoML Text Multi-label Classification - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference-v2/text-classification-multilabel?view=azureml-api-2)  
+- [Data Featurization in Automated Machine Learning - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-configure-auto-features?view=azureml-api-1)  
