@@ -161,3 +161,54 @@ Wrong because using the label directly can make evaluation look better than real
 - [Data Featurization in Automated Machine Learning - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-configure-auto-features?view=azureml-api-1)  
 - [Offline feature retrieval using a point-in-time join - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/offline-retrieval-point-in-time-join-concepts?view=azureml-api-2)  
 - [Design training data for AI workloads on Azure](https://learn.microsoft.com/en-us/azure/well-architected/ai/training-data-design)  
+
+**Question:** [034]  
+A team is building a model from a housing dataset. Each row represents one house sale. Available columns include **HouseID**, **LivingAreaSqFt**, **Bedrooms**, **Neighborhood**, and **SalePrice**. The team wants to predict sale price on future houses.
+
+Which statement is the most accurate?
+
+**Options:**  
+A. **HouseID** is a strong feature because unique identifiers help the model recognize each house, and **SalePrice** should also be included as an input to improve training  
+B. **LivingAreaSqFt**, **Bedrooms**, and **Neighborhood** are reasonable features, **SalePrice** is the label, and **HouseID** is usually not a safe feature because it can encourage memorization instead of generalization  
+C. **SalePrice** should be treated as a feature because it is numeric, and **Neighborhood** should be the label because it is categorical  
+D. This is an unsupervised learning problem because the dataset contains rows and columns, so no label is needed  
+
+**Correct Answer(s):** B
+
+**Explanation:**  
+The correct idea is:
+- **Features are the inputs the model uses**
+- **The label is the value the model is trying to predict**
+- **IDs are usually unsafe features**
+- **If you have a known target, this is supervised learning**
+
+**Why the Correct Answer Is Correct:**  
+- **LivingAreaSqFt**, **Bedrooms**, and **Neighborhood** are reasonable candidate features because they can be known at prediction time and may help explain price.  
+- **SalePrice** is the **label** because it is the target the model is trying to predict.  
+- **HouseID** is usually not a good feature because identifiers often let the model memorize records instead of learning patterns that generalize.  
+- Because the dataset has a known target column, this is a **supervised learning** setup, not clustering.  
+
+**Why the Other Options Are Wrong:**  
+
+**A. HouseID is a strong feature because unique identifiers help the model recognize each house, and SalePrice should also be included as an input to improve training**  
+Wrong because IDs usually encourage memorization rather than generalization, and using the target itself as an input is leakage.  
+
+**C. SalePrice should be treated as a feature because it is numeric, and Neighborhood should be the label because it is categorical**  
+Wrong because numeric does not automatically mean feature, and categorical does not automatically mean label. The label is the field you want to predict. Here, the team wants to predict **SalePrice**, so **SalePrice** is the label.  
+
+**D. This is an unsupervised learning problem because the dataset contains rows and columns, so no label is needed**  
+Wrong because the presence of a known target to predict makes this a **supervised** problem. Microsoft’s clustering guidance describes clustering as **unsupervised** and based on unlabeled data.  
+
+**Tips and Tricks:**  
+- First ask: **What am I trying to predict?** That field is usually the **label**.  
+- Then ask: **What will I still know at prediction time?** Those fields are the safer **feature** candidates.  
+- Be suspicious of **IDs** and of any field that directly reveals the answer.
+
+> [!IMPORTANT]  
+> A simple rule: if you will not know it at prediction time, it is not a safe feature, even if it makes the metrics look better.  
+
+**Source:**  
+- [How to select a machine learning algorithm](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-select-algorithms?view=azureml-api-1)  
+- [Train Clustering Model: Component Reference - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference/train-clustering-model?view=azureml-api-2)  
+- [Offline feature retrieval using a point-in-time join - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/offline-retrieval-point-in-time-join-concepts?view=azureml-api-2)  
+- [What is automated ML? AutoML - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-automated-ml?view=azureml-api-2)  
