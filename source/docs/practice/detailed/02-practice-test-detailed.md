@@ -741,3 +741,52 @@ Wrong because the last part is wrong. Evaluation for generalization is based on 
 - [Data splits and cross-validation in automated machine learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-configure-cross-validation-data-splits?view=azureml-api-1)  
 - [Split Data: Component reference - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference/split-data?view=azureml-api-2)  
 - [Data preparation for classification - Azure Databricks](https://learn.microsoft.com/en-us/azure/databricks/machine-learning/automl/classification-data-prep)  
+
+**Question:** [045]  
+A team has already trained a machine learning model and now wants to use it on **new incoming data** to generate outputs. One engineer calls this **inference**, while another calls it **scoring**.
+
+Which statement is the most accurate?
+
+**Options:**  
+A. Inference and scoring both refer to using a trained model on new data to generate outputs, while training is the earlier phase where the model learns from examples  
+B. Inference means tuning the model on validation data, while scoring means running the final unbiased test  
+C. Scoring is the same as data ingestion, because both happen before deployment  
+D. Inference only applies to classification models, while scoring only applies to regression models  
+
+**Correct Answer(s):** A
+
+**Explanation:**  
+The correct idea is:
+- **Training = Learn From Data**
+- **Inference or Scoring = Use the Trained Model on New Data**
+- **Outputs Can Be Predictions or Other Model Results**
+
+**Why the Correct Answer Is Correct:**  
+- Microsoft defines **inference** as applying new input data to a trained model or pipeline to generate outputs. Those outputs are often called predictions, but they can also be outputs for tasks such as classification or clustering.  
+- Microsoft also uses the term **scoring** for generating predictions with a trained model. The Azure Machine Learning **Score Model** component is described as generating predictions using a trained classification or regression model.  
+- This happens **after training**, not during model fitting. In Azure Machine Learning, inference is commonly exposed through **endpoints** for real-time or batch use.  
+
+**Why the Other Options Are Wrong:**  
+
+**B. Inference means tuning the model on validation data, while scoring means running the final unbiased test**  
+Wrong because **inference/scoring** means using the trained model to generate outputs on new data. Tuning on validation data is part of model development, not inference.  
+
+**C. Scoring is the same as data ingestion, because both happen before deployment**  
+Wrong because **data ingestion** is about bringing raw data into the workflow, while **scoring** is about applying a trained model to input data to generate outputs. They are different lifecycle stages.  
+
+**D. Inference only applies to classification models, while scoring only applies to regression models**  
+Wrong because Microsoft uses inference and scoring across model types. Inference can generate outputs for classification, clustering, and other tasks, and scoring is not restricted to one model family.  
+
+**Tips and Tricks:**  
+- When the question says **trained model + new input data + generate output**, think **inference/scoring**, not training.  
+- Separate the phases mentally: **train = learn**, **inference = use**.  
+- Do not over-focus on the exact word. In many ML contexts, **inference** and **scoring** point to the same practical step.
+
+> [!IMPORTANT]  
+> A common trap is mixing **training** with **inference/scoring**. Training is where the model learns from examples. Inference or scoring is where the already trained model is used on new data to produce outputs.  
+
+**Source:**  
+- [Endpoints for inference - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-endpoints?view=azureml-api-2)  
+- [Online endpoints for real-time inference - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-endpoints-online?view=azureml-api-2)  
+- [Score Model: Component Reference - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference/score-model?view=azureml-api-2)  
+- [What are batch endpoints? - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-endpoints-batch?view=azureml-api-2)  
