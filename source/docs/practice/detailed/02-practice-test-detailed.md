@@ -105,3 +105,59 @@ Wrong because dropping every incomplete row can bias the dataset, IDs are usuall
 - [Build and train models with Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-train-machine-learning-model?view=azureml-api-2)  
 - [Clean Missing Data: Component Reference - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference/clean-missing-data?view=azureml-api-2)  
 - [Design training data for AI workloads on Azure](https://learn.microsoft.com/en-us/azure/well-architected/ai/training-data-design)  
+
+**Question:** [033]  
+A team is building a model to predict **house sale price**. They start with fields such as **LivingAreaSqFt**, **Bedrooms**, **Neighborhood**, **YearBuilt**, and **SaleDate**. During preparation, they consider these changes:
+
+- Create **HouseAge** from SaleYear minus YearBuilt  
+- Convert **SaleDate** into **SaleMonth**  
+- Keep only the most useful input fields and drop weak or noisy ones  
+- Add **PricePerSqFt** using SalePrice divided by LivingAreaSqFt  
+
+Which statement is the most accurate?
+
+**Options:**  
+A. Creating **HouseAge** and **SaleMonth** is feature selection, while dropping weak fields is feature engineering  
+B. Creating **HouseAge** and **SaleMonth** is feature engineering, dropping weak fields is feature selection, and **PricePerSqFt** should not be used because it leaks the target  
+C. All four actions are feature engineering because they all change the dataset before training  
+D. **PricePerSqFt** is a strong feature because it uses the label directly, so it should be kept for better accuracy  
+
+**Correct Answer(s):** B
+
+**Explanation:**  
+The correct idea is:
+- **Create or Transform Inputs = Feature Engineering**
+- **Choose Which Inputs to Keep = Feature Selection**
+- **Use Only Information Available at Prediction Time = Safe Feature**
+- **Use the Target Inside a Feature = Leakage**
+
+**Why the Correct Answer Is Correct:**  
+- Creating **HouseAge** and **SaleMonth** means transforming raw fields into more useful signals. That is **feature engineering**. Microsoft describes featurization and feature engineering as transforming data into features that help models learn better.  
+- Dropping weak or noisy fields is **feature selection** because you are choosing which inputs to keep. Microsoft documentation describes feature selection as identifying the most useful predictive features.  
+- **PricePerSqFt** uses **SalePrice**, which is the label being predicted. That makes it unsafe because it uses information that would not be available at prediction time. Microsoft describes this as data leakage or target leakage.  
+
+**Why the Other Options Are Wrong:**  
+
+**A. Creating HouseAge and SaleMonth is feature selection, while dropping weak fields is feature engineering**  
+Wrong because it reverses the definitions. Creating new or transformed inputs is **feature engineering**, while choosing which existing inputs to keep is **feature selection**.  
+
+**C. All four actions are feature engineering because they all change the dataset before training**  
+Wrong because **feature selection** is different from feature engineering, and using the target inside a feature is not a valid preparation step. It creates leakage.  
+
+**D. PricePerSqFt is a strong feature because it uses the label directly, so it should be kept for better accuracy**  
+Wrong because using the label directly can make evaluation look better than real life, but the model would not have that information at prediction time. That is leakage, not good feature design.  
+
+**Tips and Tricks:**  
+- **Create New Signals = Feature Engineering**  
+- **Choose Which Features Stay = Feature Selection**  
+- **Known Only After Outcome = Leakage**  
+- **Safe Feature = Available at Prediction Time**
+
+> [!IMPORTANT]  
+> A common pitfall is engineering a feature using information you would not know at prediction time. That creates leakage, even if the feature looks helpful.
+
+**Source:**  
+- [Filter Based Feature Selection: Component reference - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference/filter-based-feature-selection?view=azureml-api-2)  
+- [Data Featurization in Automated Machine Learning - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-configure-auto-features?view=azureml-api-1)  
+- [Offline feature retrieval using a point-in-time join - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/offline-retrieval-point-in-time-join-concepts?view=azureml-api-2)  
+- [Design training data for AI workloads on Azure](https://learn.microsoft.com/en-us/azure/well-architected/ai/training-data-design)  
