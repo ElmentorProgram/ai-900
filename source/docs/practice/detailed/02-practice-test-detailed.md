@@ -687,3 +687,57 @@ Wrong because Microsoft’s missing-data guidance explicitly supports multiple h
 - [Clean Missing Data: Component Reference - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference/clean-missing-data?view=azureml-api-2)  
 - [AutoML Text Multi-label Classification - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference-v2/text-classification-multilabel?view=azureml-api-2)  
 - [Data Featurization in Automated Machine Learning - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-configure-auto-features?view=azureml-api-1)  
+
+**Question:** [044]  
+A team is deciding how to split its dataset before training:
+
+- One engineer wants a **quick experiment** with only a training set and a final test set  
+- Another wants a more **disciplined tuning workflow** with separate training, validation, and test sets  
+- A third says the dataset is **large**, so giving more rows to evaluation could provide a stronger signal  
+- A fourth says that if the task is **imbalanced classification**, each split should keep a similar class ratio  
+
+Which option is the most appropriate?
+
+**Options:**  
+A. Quick experiment = **80/20** train/test, disciplined tuning = **70/15/15** train/validation/test, large dataset with stronger evaluation signal = **60/20/20**, and imbalanced classification should use a **stratified split**  
+B. Quick experiment = **60/20/20**, disciplined tuning = **80/20**, large dataset with stronger evaluation signal = **70/15/15**, and imbalanced classification should avoid stratification  
+C. Quick experiment = **70/15/15**, disciplined tuning = **60/20/20**, large dataset with stronger evaluation signal = **80/20**, and imbalanced classification should always use random split only  
+D. Quick experiment = **80/20**, disciplined tuning = **70/15/15**, large dataset with stronger evaluation signal = **60/20/20**, and imbalanced classification should be evaluated by splitting columns instead of rows  
+
+**Correct Answer(s):** A
+
+**Explanation:**  
+The best match is:
+- **80/20 = Quick Experiment**
+- **70/15/15 = Disciplined Tuning**
+- **60/20/20 = Larger Dataset, Stronger Evaluation Signal**
+- **Imbalanced Classification = Stratified Split**
+
+**Why the Correct Answer Is Correct:**  
+- Using a separate **validation** set supports a more disciplined tuning workflow because it lets the team compare models and settings without touching the final test set. Microsoft documents the distinct roles of training, validation, and test data for development and final evaluation.  
+- For imbalanced classification, a **stratified split** is the right idea because it keeps class proportions more consistent across subsets, which makes evaluation more meaningful. Microsoft guidance explicitly notes this for classification data preparation.  
+- The exact ratios in this question are best treated as **practical starting defaults**, not a mandatory Microsoft rule. The key idea is matching the split pattern to the workflow goal: quick experimentation, disciplined tuning, or stronger evaluation signal.  
+
+**Why the Other Options Are Wrong:**  
+
+**B. Quick experiment = 60/20/20, disciplined tuning = 80/20, large dataset with stronger evaluation signal = 70/15/15, and imbalanced classification should avoid stratification**  
+Wrong because it reverses the practical defaults and also gets the imbalance rule backwards. A disciplined tuning workflow is the one that benefits from a separate validation set, and imbalanced classification is exactly where stratification helps.  
+
+**C. Quick experiment = 70/15/15, disciplined tuning = 60/20/20, large dataset with stronger evaluation signal = 80/20, and imbalanced classification should always use random split only**  
+Wrong because **80/20** is the simpler quick-experiment pattern, while larger datasets can afford a stronger evaluation signal with more held-out data. It is also wrong to say imbalanced classification should always rely on plain random split only.  
+
+**D. Quick experiment = 80/20, disciplined tuning = 70/15/15, large dataset with stronger evaluation signal = 60/20/20, and imbalanced classification should be evaluated by splitting columns instead of rows**  
+Wrong because the last part is wrong. Evaluation for generalization is based on holding out **rows**, not splitting **columns**. Splitting columns changes the available inputs rather than testing new unseen examples.  
+
+**Tips and Tricks:**  
+- Do not memorize the ratios by themselves. First ask: **Do I need only a quick check, or do I need a clean tune-and-test workflow?**  
+- A separate **validation** set becomes more useful when you expect real iteration and model comparison.  
+- If class imbalance matters, watch for **stratified split** as the safer answer.
+
+> [!IMPORTANT]  
+> The exam-value idea is not that one percentage is always correct. The real rule is to choose a split pattern that matches the workflow, and to use **stratified split** when imbalanced classification needs class proportions preserved.  
+
+**Source:**  
+- [Data splits and cross-validation in automated machine learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-configure-cross-validation-data-splits?view=azureml-api-1)  
+- [Split Data: Component reference - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference/split-data?view=azureml-api-2)  
+- [Data preparation for classification - Azure Databricks](https://learn.microsoft.com/en-us/azure/databricks/machine-learning/automl/classification-data-prep)  
