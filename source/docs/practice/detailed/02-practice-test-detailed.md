@@ -583,3 +583,53 @@ Wrong because **fine-tuning** is a narrower term. In many classic ML workflows, 
 - [Model monitoring in production - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-model-monitoring?view=azureml-api-2)  
 - [Hyperparameter tuning a model (v2) - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters?view=azureml-api-2)  
 - [Build and train models with Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-train-machine-learning-model?view=azureml-api-2)  
+
+**Question:** [042]  
+A team is preparing data for a supervised learning model. Its raw data comes from several files and systems, some records are duplicated, some numeric fields were imported as text, some categorical fields need encoding, and some rows contain missing values or unusual outlier values.
+
+Which action plan best fits the **data preparation** stage?
+
+**Options:**  
+A. Merge the datasets, remove duplicates, fix data types, standardize formats, handle missing values using a scenario-appropriate choice, deal with outliers, select relevant columns, and encode categorical values before training  
+B. Skip most preparation, train the model first, and only fix the data later if the training job fails  
+C. Use the test set to decide which preparation steps give the best score, then apply a different cleaned version of the data in production  
+D. Focus only on deployment format and endpoint design, because preparation is mainly about how the trained model will be called  
+
+**Correct Answer(s):** A
+
+**Explanation:**  
+The correct idea is:
+- **Preparation Builds a Trainable Dataset**
+- **Preparation Includes Cleaning, Transforming, and Structuring the Data**
+- **Preparation Happens Before Training**
+- **Preparation Should Support Reliable Learning, Not Shortcut Evaluation**
+
+**Why the Correct Answer Is Correct:**  
+- Data preparation commonly includes combining data sources, handling missing values, fixing schema and data types, transforming values, and preparing columns so the model can learn from them. Azure Machine Learning documentation describes importing data, transforming it, cleaning missing values, changing metadata such as data types, and normalization as standard preparation actions.  
+- Handling missing values is not one-size-fits-all. Microsoft’s Clean Missing Data guidance explicitly supports removing, replacing, or inferring missing values depending on the scenario.  
+- Selecting relevant columns and encoding or transforming features also belong to preparation and featurization, because they help produce a usable dataset for learning.  
+
+**Why the Other Options Are Wrong:**  
+
+**B. Skip most preparation, train the model first, and only fix the data later if the training job fails**  
+Wrong because preparation is part of building a usable dataset before training. Missing values, incorrect types, and unprepared features can reduce quality or break downstream steps.  
+
+**C. Use the test set to decide which preparation steps give the best score, then apply a different cleaned version of the data in production**  
+Wrong because the test set should not drive development decisions, and preparation should be repeatable so the same transformation logic is applied consistently rather than changed between evaluation and production.  
+
+**D. Focus only on deployment format and endpoint design, because preparation is mainly about how the trained model will be called**  
+Wrong because deployment concerns come later. Preparation is about making the raw data reliable and usable for training.  
+
+**Tips and Tricks:**  
+- If the action changes the **raw dataset into something trainable**, it usually belongs to **data preparation**.  
+- Watch for mixed lists that sneak in **evaluation**, **test-set peeking**, or **deployment** steps; those do not define preparation.  
+- Preparation is usually about **quality, consistency, and usability** of data before learning starts.
+
+> [!IMPORTANT]  
+> A common trap is to treat data preparation as only “cleaning nulls.” In practice, it can also include combining sources, fixing types, standardizing values, selecting columns, and encoding categories so the model receives a reliable dataset.  
+
+**Source:**  
+- [Data concepts in Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-data?view=azureml-api-2)  
+- [Transform data in the designer - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-designer-transform-data?view=azureml-api-1)  
+- [Clean Missing Data: Component Reference - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference/clean-missing-data?view=azureml-api-2)  
+- [Edit Metadata: Component reference - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference/edit-metadata?view=azureml-api-2)  
