@@ -476,3 +476,60 @@ Wrong because although the calculations are correct, the action is wrong. The te
 - [Data splits and cross-validation in automated machine learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-configure-cross-validation-data-splits?view=azureml-api-1)  
 - [Custom text classification evaluation metrics - Foundry Tools](https://learn.microsoft.com/en-us/azure/ai-services/language-service/custom-text-classification/concepts/evaluation-metrics)  
 - [Prevent overfitting and imbalanced data with automated ML](https://learn.microsoft.com/en-us/azure/machine-learning/concept-manage-ml-pitfalls?view=azureml-api-2)  
+
+**Question:** [040]  
+A manufacturing team is building a model to detect **defective products** before shipment. It sets these success targets for held-out data:
+
+- **Recall must be at least 0.90** so most defective items are caught  
+- **Precision must be at least 0.60** so too many good items are not sent for unnecessary reinspection  
+
+After training, the team evaluates the model on the **validation set**. The model flags **200** products as defective. Out of those, **140** are truly defective. In the whole validation set, there are **160** real defective products.
+
+What is the best conclusion?
+
+**Options:**  
+A. Precision = 0.70 and Recall = 0.875, so the model meets both targets and should move straight to deployment  
+B. Precision = 0.875 and Recall = 0.70, so the model misses both targets and should be retrained from scratch immediately  
+C. Precision = 0.70 and Recall = 0.875, so the model meets the precision target but misses the recall target, and the team should iterate on the validation set  
+D. Precision = 0.60 and Recall = 0.90, so the model exactly meets both targets and should now be tested by tuning on the test set  
+
+**Correct Answer(s):** C
+
+**Explanation:**  
+The correct result is:
+- **Precision = 140 / 200 = 0.70**
+- **Recall = 140 / 160 = 0.875**
+- **Precision Target Is Met**
+- **Recall Target Is Missed**
+- **Next Step = Iterate on the Validation Set**
+
+**Why the Correct Answer Is Correct:**  
+- **Precision** is the ratio of correct positive predictions to all positive predictions. Here that is **140 / 200 = 0.70**.  
+- **Recall** is the ratio of correct positive predictions to all actual positives. Here that is **140 / 160 = 0.875**.  
+- The model **meets** the precision target of **0.60** but **misses** the recall target of **0.90**, so it is not ready for a final test yet.  
+- During development, the team should keep iterating on the **validation set** by adjusting thresholds, features, or model settings. The **test set** should remain the final unbiased check after model decisions stop.  
+
+**Why the Other Options Are Wrong:**  
+
+**A. Precision = 0.70 and Recall = 0.875, so the model meets both targets and should move straight to deployment**  
+Wrong because the calculations are correct, but the conclusion is wrong. The model still **misses the recall target** of **0.90**.  
+
+**B. Precision = 0.875 and Recall = 0.70, so the model misses both targets and should be retrained from scratch immediately**  
+Wrong because the calculations are reversed. Precision comes from **predicted positives**, while recall comes from **actual positives**. It is also too strong to conclude that the only next step is retraining from scratch. Iteration can include threshold changes, feature updates, or hyperparameter tuning.  
+
+**D. Precision = 0.60 and Recall = 0.90, so the model exactly meets both targets and should now be tested by tuning on the test set**  
+Wrong because those are the **target thresholds**, not the measured results. It is also wrong to use the **test set** for tuning.  
+
+**Tips and Tricks:**  
+- First calculate the metrics from the counts. Only after that should you compare them to the target thresholds.  
+- A model is **not ready** just because one metric looks good. Check whether **all required targets** were met.  
+- If development decisions are still being made, stay on the **validation set**.
+
+> [!IMPORTANT]  
+> Another common trap is meeting **one** target and assuming the model is ready. In practice, you compare the validation results against **all required success targets**, and you keep iterating until the full target condition is satisfied.  
+
+**Source:**  
+- [Evaluate AutoML experiment results - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-understand-automated-ml?view=azureml-api-2)  
+- [Data splits and cross-validation in automated machine learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-configure-cross-validation-data-splits?view=azureml-api-1)  
+- [Custom text classification evaluation metrics - Foundry Tools](https://learn.microsoft.com/en-us/azure/ai-services/language-service/custom-text-classification/concepts/evaluation-metrics)  
+- [Hyperparameter tuning a model (v2) - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters?view=azureml-api-2)  
