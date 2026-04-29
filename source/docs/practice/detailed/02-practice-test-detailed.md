@@ -261,3 +261,59 @@ Wrong because these subsets have different roles. Mixing them weakens the reliab
 - [Data splits and cross-validation in automated machine learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-configure-cross-validation-data-splits?view=azureml-api-1)  
 - [Prevent overfitting and imbalanced data with automated ML](https://learn.microsoft.com/en-us/azure/machine-learning/concept-manage-ml-pitfalls?view=azureml-api-2)  
 - [Build and train models with Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-train-machine-learning-model?view=azureml-api-2)  
+
+**Question:** [036]  
+A team is preparing an ML dataset and debating how to split it for evaluation:
+
+- One engineer wants to split by **rows** so the model is tested on unseen examples  
+- Another wants to split by **columns** so some input fields are removed during evaluation  
+- A third wants to use a **random split** on time-ordered sales data  
+- A fourth says that if multiple rows belong to the same patient, those rows should stay in only one subset  
+
+Which statement is the most accurate?
+
+**Options:**  
+A. Splitting by columns is the standard way to test generalization, and random split is always safe even for time-ordered data  
+B. Splitting by rows is usually correct for evaluation, time-ordered data often needs a time-based split, and grouped records such as the same patient should stay in only one split  
+C. Random split should always be avoided, and grouped records should appear in every subset so the model sees enough examples  
+D. Splitting by columns is better than splitting by rows because it proves the model can handle unseen cases with less information  
+
+**Correct Answer(s):** B
+
+**Explanation:**  
+The correct idea is:
+- **Generalization Is Tested by Holding Out Rows**
+- **Splitting by Columns Changes the Problem**
+- **Time-Ordered Data Often Needs Past-to-Future Splitting**
+- **Grouped Records Should Stay in One Split to Avoid Leakage**
+
+**Why the Correct Answer Is Correct:**  
+- **Splitting by rows** is the usual evaluation method because it tests performance on **new examples** the model did not train on. Azure ML split guidance focuses on dividing data into subsets for training and evaluation.  
+- **Splitting by columns** does not answer the main evaluation question. It changes the task into whether the model can work with fewer inputs, not whether it can generalize to new cases.  
+- For **time-ordered data**, random split is often not the best choice. A past-to-future split better matches real deployment.  
+- If multiple rows belong to the same **patient, user, or device**, keeping that group in one split helps avoid leakage and unrealistic evaluation.
+
+**Why the Other Options Are Wrong:**  
+
+**A. Splitting by columns is the standard way to test generalization, and random split is always safe even for time-ordered data**  
+Wrong because generalization is usually tested by holding out **rows**, not columns. It is also unsafe to assume random split is always appropriate for time-ordered data.  
+
+**C. Random split should always be avoided, and grouped records should appear in every subset so the model sees enough examples**  
+Wrong because **random split** is still a common default when rows are independent. It is also wrong to spread grouped records across subsets when that can leak identity patterns.  
+
+**D. Splitting by columns is better than splitting by rows because it proves the model can handle unseen cases with less information**  
+Wrong because removing columns changes the information available, but it does not simulate evaluation on **new cases**. That is a different question from generalization.  
+
+**Tips and Tricks:**  
+- When the goal is **generalization**, think about **new rows**, not missing columns.  
+- If the data has a real **time order**, ask whether evaluation should mimic the future instead of a random shuffle.  
+- If several rows belong to the same real-world entity, be alert for **identity leakage** across splits.
+
+> [!IMPORTANT]  
+> A common trap is using the wrong split pattern for the data shape. **Rows** are usually held out to test generalization, **time-based split** is safer for time-ordered data, and **group-based split** is safer when multiple rows belong to the same person, device, or patient.
+
+**Source:**  
+- [Split Data: Component reference - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference/split-data?view=azureml-api-2)  
+- [Data splits and cross-validation in automated machine learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-configure-cross-validation-data-splits?view=azureml-api-1)  
+- [Set up AutoML for time-series forecasting - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-auto-train-forecast?view=azureml-api-2)  
+- [Build & train models - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-train-machine-learning-model?view=azureml-api-2)  
