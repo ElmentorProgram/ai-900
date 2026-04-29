@@ -317,3 +317,57 @@ Wrong because removing columns changes the information available, but it does no
 - [Data splits and cross-validation in automated machine learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-configure-cross-validation-data-splits?view=azureml-api-1)  
 - [Set up AutoML for time-series forecasting - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-auto-train-forecast?view=azureml-api-2)  
 - [Build & train models - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-train-machine-learning-model?view=azureml-api-2)  
+
+**Question:** [037]  
+A team trains a model and gets these results:
+
+- Training score is **very high**
+- Validation score is **much lower**
+- During development, the team keeps checking the **test set** after each change
+- One feature uses information that is only known **after the real outcome happens**
+
+Which statement is the most accurate?
+
+**Options:**  
+A. The model is underfitting, checking the test set repeatedly is fine, and using post-outcome information is acceptable if it improves accuracy  
+B. The model is overfitting, repeatedly checking the test set is peeking, and using post-outcome information is leakage  
+C. The model is generalizing well, the test set should guide tuning, and post-outcome information is a valid engineered feature  
+D. The model is underfitting, the validation set should be avoided, and leakage only happens when rows are duplicated  
+
+**Correct Answer(s):** B
+
+**Explanation:**  
+The correct idea is:
+- **High Training Score + Much Lower Validation Score = Overfitting**
+- **Using the Test Set During Tuning = Peeking**
+- **Using Information Not Available at Prediction Time = Leakage**
+
+**Why the Correct Answer Is Correct:**  
+- A model that performs very well on training data but drops on validation data is showing **overfitting**. Microsoft describes overfitting as fitting the training data too well and then failing to predict unseen data accurately.  
+- Repeatedly checking the **test set** during model changes turns it into part of the development loop, so it no longer serves as a trustworthy final check. Microsoft’s data-split guidance separates tuning-time data from final evaluation data.  
+- Using a feature that is only known **after** the outcome happens is **leakage** because that information would not exist at real prediction time. Microsoft warns that leakage can make performance look unrealistically strong.  
+
+**Why the Other Options Are Wrong:**  
+
+**A. The model is underfitting, checking the test set repeatedly is fine, and using post-outcome information is acceptable if it improves accuracy**  
+Wrong because the pattern described is **overfitting**, not underfitting. It is also wrong to use the **test set** repeatedly during tuning, and wrong to use post-outcome information as a feature.  
+
+**C. The model is generalizing well, the test set should guide tuning, and post-outcome information is a valid engineered feature**  
+Wrong because a large gap between training and validation performance is evidence against good generalization. The **test set** should not guide tuning, and post-outcome information is leakage, not valid feature engineering.  
+
+**D. The model is underfitting, the validation set should be avoided, and leakage only happens when rows are duplicated**  
+Wrong because underfitting usually means weak performance on both training and validation data. The **validation set** is useful during development, and leakage is broader than duplication.  
+
+**Tips and Tricks:**  
+- If **training looks great** but **validation drops**, suspect **memorization**, not success.  
+- If a field is only known **after the outcome**, treat it as unsafe immediately.  
+- If you are still making model decisions, you are not ready to touch the **test set**.
+
+> [!IMPORTANT]  
+> Leakage and peeking can make a model look better than it really is. Keep answer-revealing information out of features, and keep the **test set** untouched until the end so your final score stays trustworthy.  
+
+**Source:**  
+- [Prevent overfitting and imbalanced data with automated ML](https://learn.microsoft.com/en-us/azure/machine-learning/concept-manage-ml-pitfalls?view=azureml-api-2)  
+- [Data splits and cross-validation in automated machine learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-configure-cross-validation-data-splits?view=azureml-api-1)  
+- [Frequently asked questions about forecasting in automated ML](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-automl-forecasting-faq?view=azureml-api-2)  
+- [Build and train models with Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-train-machine-learning-model?view=azureml-api-2)  
