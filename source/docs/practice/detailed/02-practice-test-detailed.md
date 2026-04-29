@@ -420,3 +420,59 @@ Wrong because compute planning for training and inference is a broader ML and AI
 - [Understand compute targets in Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-compute-target?view=azureml-api-2)  
 - [Azure OpenAI in Microsoft Foundry Models performance and latency](https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/latency)  
 - [Azure OpenAI in Microsoft Foundry Models quotas and limits](https://learn.microsoft.com/en-us/azure/foundry/openai/quotas-limits)  
+
+**Question:** [039]  
+A fraud detection team defines these success targets for its model on held-out data:
+
+- **Recall must be at least 0.80** to catch most fraud cases  
+- **Precision must be at least 0.20** to limit false alarms  
+
+After training, the team evaluates the model on the **validation set**. The model flags **500** transactions as fraud. Out of those, **50** are truly fraud. In the whole validation set, there are **100** real fraud cases.
+
+What should the team conclude?
+
+**Options:**  
+A. Precision = 0.50 and Recall = 0.10, so the model already meets both targets and should go straight to the final test set  
+B. Precision = 0.10 and Recall = 0.50, so the model misses both targets and the team should iterate using the validation set  
+C. Precision = 0.20 and Recall = 0.80, so the model exactly meets both targets and should be deployed immediately  
+D. Precision = 0.10 and Recall = 0.50, so the model should now be tuned by repeatedly checking the test set until the targets are met  
+
+**Correct Answer(s):** B
+
+**Explanation:**  
+The correct result is:
+- **Precision = 50 / 500 = 0.10**
+- **Recall = 50 / 100 = 0.50**
+- **Both Targets Are Missed**
+- **Next Step = Iterate on the Validation Set**
+
+**Why the Correct Answer Is Correct:**  
+- **Precision** measures how many predicted positives were actually correct. Microsoft defines precision as the ratio of correctly identified positives to all identified positives. Here that is **50 / 500 = 0.10**.  
+- **Recall** measures how many actual positives the model successfully found. Here that is **50 / 100 = 0.50**.  
+- The targets were **precision ≥ 0.20** and **recall ≥ 0.80**, so this model misses both targets.  
+- Because this is still the development stage, the team should iterate using the **validation set** by adjusting thresholds, features, or model choices. The **test set** should remain a final unbiased check.  
+
+**Why the Other Options Are Wrong:**  
+
+**A. Precision = 0.50 and Recall = 0.10, so the model already meets both targets and should go straight to the final test set**  
+Wrong because the calculations are reversed. Precision is **50 / 500 = 0.10**, not 0.50, and recall is **50 / 100 = 0.50**, not 0.10. It also does not meet either target.  
+
+**C. Precision = 0.20 and Recall = 0.80, so the model exactly meets both targets and should be deployed immediately**  
+Wrong because those numbers are the **target thresholds**, not the actual results from the validation set. The actual results are much lower.  
+
+**D. Precision = 0.10 and Recall = 0.50, so the model should now be tuned by repeatedly checking the test set until the targets are met**  
+Wrong because although the calculations are correct, the action is wrong. The team should iterate on the **validation set**, not keep checking the **test set**, because the test set is supposed to remain the final unbiased check.  
+
+**Tips and Tricks:**  
+- When you see counts, calculate **precision** from **predicted positives** and **recall** from **actual positives**.  
+- Do not confuse **target thresholds** with **measured results**.  
+- If the model misses the target during development, that means **iterate on validation**, not **peek at test**.
+
+> [!IMPORTANT]  
+> A common trap is doing the math correctly but taking the wrong next step. Missing the target on the **validation set** means you should keep iterating there. The **test set** is only for the final unbiased confirmation after changes stop.  
+
+**Source:**  
+- [Evaluate AutoML experiment results - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-understand-automated-ml?view=azureml-api-2)  
+- [Data splits and cross-validation in automated machine learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-configure-cross-validation-data-splits?view=azureml-api-1)  
+- [Custom text classification evaluation metrics - Foundry Tools](https://learn.microsoft.com/en-us/azure/ai-services/language-service/custom-text-classification/concepts/evaluation-metrics)  
+- [Prevent overfitting and imbalanced data with automated ML](https://learn.microsoft.com/en-us/azure/machine-learning/concept-manage-ml-pitfalls?view=azureml-api-2)  
