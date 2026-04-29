@@ -371,3 +371,52 @@ Wrong because underfitting usually means weak performance on both training and v
 - [Data splits and cross-validation in automated machine learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-configure-cross-validation-data-splits?view=azureml-api-1)  
 - [Frequently asked questions about forecasting in automated ML](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-automl-forecasting-faq?view=azureml-api-2)  
 - [Build and train models with Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-train-machine-learning-model?view=azureml-api-2)  
+
+**Question:** [038]  
+A team is comparing two model options for the same task. One model is much larger and has many more parameters. The team discusses both the **training phase** and the **inference phase**.
+
+Which statement is the most accurate?
+
+**Options:**  
+A. More parameters mainly matter during training, but they usually do not affect inference latency, throughput, or cost  
+B. More parameters usually mean more work during training and more work during inference, so larger models often need more training resources and can also increase serving latency or cost  
+C. More parameters mainly reduce the amount of data and memory needed, because a larger model learns faster by default  
+D. Parameter count matters only for generative AI models, not for other machine learning models or production serving decisions  
+
+**Correct Answer(s):** B
+
+**Explanation:**  
+The correct idea is:
+- **More Parameters Increase Training Work**
+- **More Parameters Also Affect Inference Serving**
+- **Larger Models Usually Cost More to Build and Run**
+
+**Why the Correct Answer Is Correct:**  
+- During **training**, a larger model generally means more values must be updated, which increases compute and memory demands. Microsoft guidance on AI infrastructure says hardware selection should match **model complexity**, **data size**, and **training needs**.  
+- During **inference**, the compute target and serving setup affect cost and availability, and Microsoft’s Azure OpenAI performance guidance explicitly discusses **latency** and **throughput** as key serving concerns.  
+- For language models in particular, inference cost and performance also depend on factors such as **input size**, **output size**, and throughput limits.  
+
+**Why the Other Options Are Wrong:**  
+
+**A. More parameters mainly matter during training, but they usually do not affect inference latency, throughput, or cost**  
+Wrong because serving and inference performance are influenced by model size and deployment characteristics. Microsoft documentation explicitly treats **latency**, **throughput**, and inference compute targets as important production concerns.  
+
+**C. More parameters mainly reduce the amount of data and memory needed, because a larger model learns faster by default**  
+Wrong because Microsoft guidance points the other way: larger and more complex workloads usually require more suitable compute planning, not less memory or less compute by default.  
+
+**D. Parameter count matters only for generative AI models, not for other machine learning models or production serving decisions**  
+Wrong because compute planning for training and inference is a broader ML and AI deployment concern, not something limited only to generative models. Microsoft’s Azure ML and Azure infrastructure guidance discusses training and inference compute more generally.  
+
+**Tips and Tricks:**  
+- If the question mentions **model size**, do not think only about training time. Also think about **serving impact** later.  
+- A larger model can create pressure in two places: **while learning** and **while answering requests**.  
+- For inference questions, watch for words like **latency**, **throughput**, **endpoint**, and **cost per request**.
+
+> [!IMPORTANT]  
+> A common mistake is to think compute sizing matters only during training. It matters in **both** phases: training affects build cost and time, while inference affects production latency, throughput, and serving cost.  
+
+**Source:**  
+- [Compute recommendations for AI workloads on Azure infrastructure](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai/infrastructure/compute)  
+- [Understand compute targets in Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-compute-target?view=azureml-api-2)  
+- [Azure OpenAI in Microsoft Foundry Models performance and latency](https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/latency)  
+- [Azure OpenAI in Microsoft Foundry Models quotas and limits](https://learn.microsoft.com/en-us/azure/foundry/openai/quotas-limits)  
