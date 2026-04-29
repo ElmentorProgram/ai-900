@@ -533,3 +533,53 @@ Wrong because those are the **target thresholds**, not the measured results. It 
 - [Data splits and cross-validation in automated machine learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-configure-cross-validation-data-splits?view=azureml-api-1)  
 - [Custom text classification evaluation metrics - Foundry Tools](https://learn.microsoft.com/en-us/azure/ai-services/language-service/custom-text-classification/concepts/evaluation-metrics)  
 - [Hyperparameter tuning a model (v2) - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters?view=azureml-api-2)  
+
+**Question:** [041]  
+A team improves its model’s validation score after tuning thresholds and features. One engineer says, “Great, iteration is only about getting a higher metric.” Another engineer disagrees and says iteration also helps reduce real-world risk before deployment.
+
+Which statement is the most accurate?
+
+**Options:**  
+A. Iteration is only for increasing the validation score. Once the score improves, stability and production behavior are separate concerns  
+B. Iteration is mainly for making the training score look stronger. Generalization matters less if the training performance is high  
+C. Iteration helps improve held-out performance, but it also helps check generalization, choose a more stable configuration, and reduce production surprises  
+D. Iteration and fine-tuning mean the same thing in all machine learning cases, so any model adjustment is best described as fine-tuning  
+
+**Correct Answer(s):** C
+
+**Explanation:**  
+The correct idea is:
+- **Iteration Is Not Only About a Better Score**
+- **Iteration Also Tests Generalization**
+- **Iteration Helps Find a More Stable Setup**
+- **Iteration Reduces Production Surprises**
+
+**Why the Correct Answer Is Correct:**  
+- Iteration is used to improve results on held-out data, but that is not the whole story. The real goal is a model that works well on **new, unseen inputs**, not just one that looks good on a development score. Azure ML guidance on ML pitfalls emphasizes generalization and avoiding overfitting.  
+- Iteration also helps the team choose a configuration that stays reliable when conditions shift slightly, which is part of building a more stable solution before deployment. Microsoft’s production monitoring guidance also reinforces that models can drift over time, so reducing surprises before deployment matters.  
+- During iteration, teams may adjust thresholds, features, models, or hyperparameters. That is usually described as **tuning** or **iteration** in classic ML, not automatically **fine-tuning**. Fine-tuning is a more specific term, commonly used for adapting a pre-trained model with additional training.  
+
+**Why the Other Options Are Wrong:**  
+
+**A. Iteration is only for increasing the validation score. Once the score improves, stability and production behavior are separate concerns**  
+Wrong because iteration is not just about pushing one metric upward. It also helps reveal whether the model generalizes, behaves consistently, and is less likely to create surprises later in production.  
+
+**B. Iteration is mainly for making the training score look stronger. Generalization matters less if the training performance is high**  
+Wrong because strong **training** performance alone is not trustworthy. Microsoft’s guidance on overfitting warns that a model can perform well on training data and still fail on unseen data.  
+
+**D. Iteration and fine-tuning mean the same thing in all machine learning cases, so any model adjustment is best described as fine-tuning**  
+Wrong because **fine-tuning** is a narrower term. In many classic ML workflows, teams say **train**, **tune**, or **iterate** rather than fine-tune.  
+
+**Tips and Tricks:**  
+- A better validation score is important, but ask one more question: **Will this still work on real future data?**  
+- Be careful when a choice improves one score but makes the system more fragile or less trustworthy.  
+- In classic ML, think **iterate / tune** first. Use **fine-tuning** only when the context truly fits that term.
+
+> [!IMPORTANT]  
+> A common trap is reducing iteration to “make the number bigger.” The stronger goal is to improve the model in a way that also supports **generalization**, **stability**, and safer behavior in production.  
+
+**Source:**  
+- [Prevent overfitting and imbalanced data with automated ML](https://learn.microsoft.com/en-us/azure/machine-learning/concept-manage-ml-pitfalls?view=azureml-api-2)  
+- [Model monitoring in production - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-model-monitoring?view=azureml-api-2)  
+- [Hyperparameter tuning a model (v2) - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters?view=azureml-api-2)  
+- [Build and train models with Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-train-machine-learning-model?view=azureml-api-2)  
