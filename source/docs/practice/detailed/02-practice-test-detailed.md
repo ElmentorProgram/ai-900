@@ -52,3 +52,56 @@ Wrong because evaluation is usually simulated by **splitting rows**, not columns
 - [Build and train models with Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-train-machine-learning-model?view=azureml-api-2)  
 - [Data splits and cross-validation in automated machine learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-configure-cross-validation-data-splits?view=azureml-api-1)  
 - [Model monitoring in production - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-model-monitoring?view=azureml-api-2)  
+
+**Question:** [032]  
+A team is preparing data for a supervised learning model. Their raw data comes from files and logs, some fields are missing, some rows are duplicated, and a few columns need type fixes and category encoding. They also want to avoid making validation and test results look better than real life.
+
+Which action plan is the most appropriate?
+
+**Options:**  
+A. Ingest the raw data, prepare the full dataset, calculate evaluation metrics, and then train on the prepared data  
+B. Ingest the raw data, split it first, fit transformation steps on the training set, apply the same steps to validation and test, then train and evaluate later  
+C. Skip data preparation, train the model first, and use missing-value handling only if training fails  
+D. Ingest the raw data, remove every row with any missing value, use IDs as features, and evaluate quality during preparation  
+
+**Correct Answer(s):** B
+
+**Explanation:**  
+The correct plan is:
+- **Get Raw Data Into the Pipeline = Data Ingestion**
+- **Split Before Fitting Transformations = Avoid Leakage**
+- **Fit Transformations on Training Data Only = Keep Evaluation Fair**
+- **Apply the Same Transformations to Validation and Test = Stay Consistent**
+- **Evaluate After Training = Not During Data Preparation**
+
+**Why the Correct Answer Is Correct:**  
+- **Data ingestion** is about getting raw data from sources such as files, databases, or logs into a usable dataset.  
+- Splitting first helps prevent preparation steps from learning from validation and test data.  
+- Fitting transformation steps on the **training set only** and then applying the same steps to validation and test helps keep evaluation realistic.  
+- Model evaluation belongs later in the lifecycle, after training, using held-out data.  
+
+**Why the Other Options Are Wrong:**  
+
+**A. Ingest the raw data, prepare the full dataset, calculate evaluation metrics, and then train on the prepared data**  
+Wrong because preparing the **full dataset before splitting** can leak information into validation and test data. It is also wrong to calculate evaluation metrics before training.  
+
+**C. Skip data preparation, train the model first, and use missing-value handling only if training fails**  
+Wrong because data preparation is part of building a usable training dataset. Missing values, duplicates, and incorrect types can reduce model quality or even break training.  
+
+**D. Ingest the raw data, remove every row with any missing value, use IDs as features, and evaluate quality during preparation**  
+Wrong because dropping every incomplete row can bias the dataset, IDs are usually unsafe features, and evaluation belongs after training rather than during preparation.  
+
+**Tips and Tricks:**  
+- **Get Raw Data In = Data Ingestion**  
+- **Split First = Safer Preparation**  
+- **Fit on Training Only = Avoid Leakage**  
+- **Evaluate Later = After Training**
+
+> [!IMPORTANT]  
+> A common trap is treating data preparation as the place where you prove the model is good. It is not. Data preparation builds a reliable dataset; trustworthy performance checking happens later on held-out data.  
+
+**Source:**  
+- [Azure Machine Learning documentation](https://learn.microsoft.com/en-us/azure/machine-learning/?view=azureml-api-2)  
+- [Build and train models with Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-train-machine-learning-model?view=azureml-api-2)  
+- [Clean Missing Data: Component Reference - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference/clean-missing-data?view=azureml-api-2)  
+- [Design training data for AI workloads on Azure](https://learn.microsoft.com/en-us/azure/well-architected/ai/training-data-design)  
