@@ -1386,7 +1386,7 @@ Wrong because extracting sentiment, key phrases, and entities is **Azure AI Lang
 - [Create a knowledge mining solution with Azure AI Search](https://learn.microsoft.com/en-us/training/modules/ai-knowldge-mining/)  
 - [What is Azure Document Intelligence in Foundry Tools?](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview?view=doc-intel-4.0.0)  
 
-**Question:** [029]  
+**Question:** [030]  
 A team is mapping solution requirements to Azure service families:
 
 1. Analyze text to detect **sentiment**, extract **key phrases**, and identify **entities**  
@@ -1443,7 +1443,7 @@ Wrong because extracting sentiment, key phrases, and entities is **Azure AI Lang
 - [Create a knowledge mining solution with Azure AI Search](https://learn.microsoft.com/en-us/training/modules/ai-knowldge-mining/)  
 - [What is Azure Document Intelligence in Foundry Tools?](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview?view=doc-intel-4.0.0)
 
-**Question:** [030]  
+**Question:** [031]  
 A team is choosing between Azure OpenAI model types for four different needs:
 
 1. Generate a **summary** of a long document and rewrite it in a simpler style  
