@@ -142,3 +142,164 @@
      B. ML is one way to build AI, Deep Learning is a neural-network approach inside ML, and Generative AI focuses on generating new content  
      C. Deep Learning and Generative AI are the same thing, and both replace machine learning  
      D. AI and ML are identical terms, while Deep Learning refers only to language models  
+
+019. Which set contains only **prediction-oriented machine learning workloads**?
+
+     A. Regression, Classification, Clustering, Anomaly Detection  
+     B. Regression, Knowledge Mining, Clustering, Anomaly Detection  
+     C. Classification, Generative AI, Clustering, Document Processing  
+     D. Regression, Classification, Speech, Anomaly Detection  
+
+
+020. Which set contains only workloads most closely related to **language processing, search, and generated responses**?
+
+     A. Natural Language Processing and Text Analysis, Knowledge Mining, Generative AI, Conversational AI  
+     B. Natural Language Processing and Text Analysis, Knowledge Mining, Speech, Conversational AI  
+     C. Generative AI, Computer Vision, Knowledge Mining, Conversational AI  
+     D. Natural Language Processing and Text Analysis, Document Processing, Generative AI, Knowledge Mining  
+
+
+021. Which set contains only workloads that match **voice, vision, or document-focused processing**?
+
+     A. Speech, Computer Vision, Information Extraction, Document Processing  
+     B. Speech, Knowledge Mining, Computer Vision, Document Processing  
+     C. Generative AI, Computer Vision, Information Extraction, Speech  
+     D. Speech, Computer Vision, Natural Language Processing and Text Analysis, Information Extraction  
+
+
+022. A data team is reviewing four proposed AI solutions:
+
+     1. Predict the **selling price** of a house from features such as size and location  
+     2. Predict whether a transaction is **fraudulent or not**  
+     3. Group customers into **segments** when no predefined categories exist  
+     4. Flag **unusual sensor readings** that do not match normal machine behavior  
+
+     Which option correctly maps each scenario to the most appropriate machine learning workload?
+
+     A. 1 = Regression, 2 = Classification, 3 = Clustering, 4 = Anomaly Detection  
+     B. 1 = Classification, 2 = Regression, 3 = Clustering, 4 = Anomaly Detection  
+     C. 1 = Regression, 2 = Clustering, 3 = Classification, 4 = Anomaly Detection  
+     D. 1 = Regression, 2 = Classification, 3 = Anomaly Detection, 4 = Clustering  
+
+
+023. A team is choosing between four machine learning approaches for different business needs:
+
+     1. Predict the **delivery time in minutes** for an order  
+     2. Predict whether an email is **spam or not spam**  
+     3. Organize news articles into **similar topic groups** without predefined labels  
+     4. Detect **rare credit card transactions** that differ from normal spending behavior  
+
+     Which option correctly maps each case to the most appropriate machine learning workload?
+
+     A. 1 = Regression, 2 = Classification, 3 = Clustering, 4 = Anomaly Detection  
+     B. 1 = Classification, 2 = Regression, 3 = Clustering, 4 = Anomaly Detection  
+     C. 1 = Regression, 2 = Classification, 3 = Anomaly Detection, 4 = Clustering  
+     D. 1 = Clustering, 2 = Classification, 3 = Regression, 4 = Anomaly Detection  
+
+
+024. A solutions architect is reviewing four proposed AI workloads:
+
+     1. Analyze customer reviews to detect **sentiment** and extract key phrases  
+     2. Make thousands of company documents **searchable** through indexing and enrichment  
+     3. Generate a **summary** of a long report from a prompt  
+     4. Build a chatbot that can understand what a user wants and respond through conversation  
+
+     Which option correctly maps each case to the most appropriate workload?
+
+     A. 1 = Natural Language Processing and Text Analysis, 2 = Knowledge Mining, 3 = Generative AI, 4 = Conversational AI  
+     B. 1 = Knowledge Mining, 2 = Natural Language Processing and Text Analysis, 3 = Conversational AI, 4 = Generative AI  
+     C. 1 = Natural Language Processing and Text Analysis, 2 = Generative AI, 3 = Knowledge Mining, 4 = Conversational AI  
+     D. 1 = Conversational AI, 2 = Knowledge Mining, 3 = Natural Language Processing and Text Analysis, 4 = Generative AI  
+
+
+025. A design team is reviewing four proposed AI solutions:
+
+     1. Convert a recorded customer call into **written text**  
+     2. Analyze product photos to identify **objects and visual content**  
+     3. Extract **follow-up actions** and useful facts from meeting recordings and other unstructured content  
+     4. Extract **text, key/value pairs, and tables** from scanned forms and PDF files  
+
+     Which option correctly maps each case to the most appropriate workload?
+
+     A. 1 = Speech, 2 = Computer Vision, 3 = Information Extraction, 4 = Document Processing  
+     B. 1 = Computer Vision, 2 = Speech, 3 = Document Processing, 4 = Information Extraction  
+     C. 1 = Speech, 2 = Information Extraction, 3 = Computer Vision, 4 = Document Processing  
+     D. 1 = Document Processing, 2 = Computer Vision, 3 = Speech, 4 = Information Extraction  
+
+
+026. A company receives thousands of **scanned PDF forms**. It wants to first extract the **text, key/value pairs, and tables**, and then analyze the extracted text to identify **sentiment, key phrases, and entities**.
+
+     Which option best describes the correct workload flow?
+
+     A. Natural Language Processing and Text Analysis → Document Processing  
+     B. Document Processing → Natural Language Processing and Text Analysis  
+     C. Knowledge Mining → Computer Vision  
+     D. Generative AI → Document Processing  
+
+
+027. A company has millions of files such as PDFs, images, and reports. It wants users to **search across all that content**, while also using AI enrichment to improve the searchable results. Which workload best fits this primary goal?
+
+     A. Document Processing  
+     B. Knowledge Mining  
+     C. Natural Language Processing and Text Analysis  
+     D. Computer Vision  
+
+
+028. A company needs to support multiple language scenarios:
+
+     1. Translate **written product descriptions** from English to French  
+     2. Translate a **spoken customer message** from Spanish into English text  
+     3. Convert a support article into **spoken audio**  
+     4. Convert a recorded meeting into a **written transcript**  
+
+     Which option correctly maps each case to the most appropriate capability?
+
+     A. 1 = Text Translation, 2 = Speech Translation, 3 = Text-to-Speech, 4 = Speech-to-Text  
+     B. 1 = Speech Translation, 2 = Text Translation, 3 = Speech-to-Text, 4 = Text-to-Speech  
+     C. 1 = Text Translation, 2 = Speech-to-Text, 3 = Speech Translation, 4 = Text-to-Speech  
+     D. 1 = Text-to-Speech, 2 = Speech Translation, 3 = Text Translation, 4 = Speech-to-Text  
+
+
+029. A team is mapping solution requirements to Azure service families:
+
+     1. Analyze text to detect **sentiment**, extract **key phrases**, and identify **entities**  
+     2. Build a **searchable index** over large volumes of content with enrichment  
+     3. Convert recorded speech into **text transcripts**  
+     4. Extract **text, key/value pairs, and tables** from scanned documents  
+
+     Which option correctly maps each case to the most appropriate Azure service family?
+
+     A. 1 = Azure AI Language, 2 = Azure AI Search, 3 = Azure AI Speech, 4 = Azure AI Document Intelligence  
+     B. 1 = Azure AI Search, 2 = Azure AI Language, 3 = Azure AI Document Intelligence, 4 = Azure AI Speech  
+     C. 1 = Azure AI Language, 2 = Azure AI Speech, 3 = Azure AI Search, 4 = Azure AI Document Intelligence  
+     D. 1 = Azure AI Document Intelligence, 2 = Azure AI Search, 3 = Azure AI Speech, 4 = Azure AI Language  
+
+
+029. A team is mapping solution requirements to Azure service families:
+
+     1. Analyze text to detect **sentiment**, extract **key phrases**, and identify **entities**  
+     2. Build a **searchable index** over large volumes of content with enrichment  
+     3. Convert recorded speech into **text transcripts**  
+     4. Extract **text, key/value pairs, and tables** from scanned documents  
+
+     Which option correctly maps each case to the most appropriate Azure service family?
+
+     A. 1 = Azure AI Language, 2 = Azure AI Search, 3 = Azure AI Speech, 4 = Azure AI Document Intelligence  
+     B. 1 = Azure AI Search, 2 = Azure AI Language, 3 = Azure AI Document Intelligence, 4 = Azure AI Speech  
+     C. 1 = Azure AI Language, 2 = Azure AI Speech, 3 = Azure AI Search, 4 = Azure AI Document Intelligence  
+     D. 1 = Azure AI Document Intelligence, 2 = Azure AI Search, 3 = Azure AI Speech, 4 = Azure AI Language  
+
+
+030. A team is choosing between Azure OpenAI model types for four different needs:
+
+     1. Generate a **summary** of a long document and rewrite it in a simpler style  
+     2. Convert product descriptions into **vectors** for semantic search and similarity matching  
+     3. Create a **new image** from a text prompt  
+     4. Transcribe a recorded meeting into **text**  
+
+     Which option correctly maps each case to the most appropriate Azure OpenAI model type?
+
+     A. 1 = GPT Models, 2 = Embedding Models, 3 = Image Generation Models, 4 = Audio Models  
+     B. 1 = Embedding Models, 2 = GPT Models, 3 = Audio Models, 4 = Image Generation Models  
+     C. 1 = GPT Models, 2 = Image Generation Models, 3 = Embedding Models, 4 = Audio Models  
+     D. 1 = Audio Models, 2 = Embedding Models, 3 = GPT Models, 4 = Image Generation Models
