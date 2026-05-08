@@ -303,3 +303,50 @@
      B. 1 = Embedding Models, 2 = GPT Models, 3 = Audio Models, 4 = Image Generation Models  
      C. 1 = GPT Models, 2 = Image Generation Models, 3 = Embedding Models, 4 = Audio Models  
      D. 1 = Audio Models, 2 = Embedding Models, 3 = GPT Models, 4 = Image Generation Models
+
+032. A company is building an internal support assistant. Employees must access it through **Microsoft Teams** and a **web chat widget**. The team already uses separate AI capabilities for **Question Answering** and **Language Understanding (Intent & Entities)**, but now needs the layer that manages bot runtime behavior and connects the assistant to multiple channels.
+
+     Which Azure service family best fits the missing requirement?
+
+     A. Azure AI Language  
+     B. Azure AI Bot Service  
+     C. Azure AI Search  
+     D. Azure OpenAI Service  
+
+
+033. A retailer is designing two image-analysis features:
+
+     - **Generate general captions and tags** for ordinary product shelf photos  
+     - **Train a custom model** on its own labeled product images to classify products and detect business-specific defects  
+
+     Which mapping is most appropriate?
+
+     A. 1 = Azure AI Custom Vision, 2 = Azure AI Vision  
+     B. 1 = Azure AI Vision, 2 = Azure AI Custom Vision  
+     C. 1 = Azure AI Face, 2 = Azure AI Document Intelligence  
+     D. 1 = Azure AI Search, 2 = Azure AI Language  
+
+
+034. A company has thousands of scanned contracts. It wants to extract **tables and key/value pairs**, enrich the extracted text with **entities and key phrases**, and then let users search across the enriched results.
+
+     Which option describes the most appropriate workload chain?
+
+     A. Knowledge Mining → Document Processing → Natural Language Processing and Text Analysis  
+     B. Document Processing → Natural Language Processing and Text Analysis → Knowledge Mining  
+     C. Natural Language Processing and Text Analysis → Knowledge Mining → Document Processing  
+     D. Generative AI → Knowledge Mining → Document Processing  
+
+
+035. A chatbot receives two user messages:
+
+     - **Reset my password for account user27.**  
+     - **What is the company password policy?**  
+
+     The system must choose the correct conversational pattern for each message.
+
+     Which option is most appropriate?
+
+     A. 1 = Question Answering, 2 = Language Understanding (Intent & Entities)  
+     B. 1 = Language Understanding (Intent & Entities), 2 = Question Answering  
+     C. 1 = Knowledge Mining, 2 = Document Processing  
+     D. 1 = Generative AI, 2 = Speech Translation  
