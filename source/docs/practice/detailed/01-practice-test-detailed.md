@@ -1554,8 +1554,8 @@ Wrong because Azure OpenAI Service provides generative AI models such as GPT, em
 **Question:** [033]  
 A retailer is designing two image-analysis features:
 
-     - **1 = Generate general captions and tags** for ordinary product shelf photos  
-     - **2 = Train a custom model** on its own labeled product images to classify products and detect business-specific defects  
+ - **1 = Generate general captions and tags** for ordinary product shelf photos  
+ - **2 = Train a custom model** on its own labeled product images to classify products and detect business-specific defects  
 
 Which mapping is most appropriate?
 
@@ -1658,8 +1658,8 @@ Wrong because the scenario is not asking to generate new content from a prompt. 
 **Question:** [035]  
 A chatbot receives two user messages:
 
-     - **1 = Reset my password for account user27.**  
-     - **2 = What is the company password policy?**  
+- **1 = Reset my password for account user27.**  
+- **2 = What is the company password policy?**  
 
 The system must choose the correct conversational pattern for each message.
 
