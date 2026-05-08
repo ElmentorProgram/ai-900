@@ -48,7 +48,7 @@
      D. Predicting whether a loan will be approved by using historical labeled cases  
 
 
-007. A team says, “We have labeled data, so the model will learn from examples where the correct answer is already known.” Which concept are they describing?
+007. A team says they have labeled data, so the model will learn from examples where the correct answer is already known. Which concept are they describing?
 
      A. Inference  
      B. Supervised learning  
@@ -143,6 +143,7 @@
      C. Deep Learning and Generative AI are the same thing, and both replace machine learning  
      D. AI and ML are identical terms, while Deep Learning refers only to language models  
 
+
 019. Which set contains only **prediction-oriented machine learning workloads**?
 
      A. Regression, Classification, Clustering, Anomaly Detection  
@@ -169,10 +170,10 @@
 
 022. A data team is reviewing four proposed AI solutions:
 
-     1. Predict the **selling price** of a house from features such as size and location  
-     2. Predict whether a transaction is **fraudulent or not**  
-     3. Group customers into **segments** when no predefined categories exist  
-     4. Flag **unusual sensor readings** that do not match normal machine behavior  
+     - **1 = Predict the selling price** of a house from features such as size and location  
+     - **2 = Predict whether a transaction is fraudulent or not**  
+     - **3 = Group customers into segments** when no predefined categories exist  
+     - **4 = Flag unusual sensor readings** that do not match normal machine behavior  
 
      Which option correctly maps each scenario to the most appropriate machine learning workload?
 
@@ -184,10 +185,10 @@
 
 023. A team is choosing between four machine learning approaches for different business needs:
 
-     1. Predict the **delivery time in minutes** for an order  
-     2. Predict whether an email is **spam or not spam**  
-     3. Organize news articles into **similar topic groups** without predefined labels  
-     4. Detect **rare credit card transactions** that differ from normal spending behavior  
+     - **1 = Predict the delivery time in minutes** for an order  
+     - **2 = Predict whether an email is spam or not spam**  
+     - **3 = Organize news articles into similar topic groups** without predefined labels  
+     - **4 = Detect rare credit card transactions** that differ from normal spending behavior  
 
      Which option correctly maps each case to the most appropriate machine learning workload?
 
@@ -199,10 +200,10 @@
 
 024. A solutions architect is reviewing four proposed AI workloads:
 
-     1. Analyze customer reviews to detect **sentiment** and extract key phrases  
-     2. Make thousands of company documents **searchable** through indexing and enrichment  
-     3. Generate a **summary** of a long report from a prompt  
-     4. Build a chatbot that can understand what a user wants and respond through conversation  
+     - **1 = Analyze customer reviews** to detect sentiment and extract key phrases  
+     - **2 = Make thousands of company documents searchable** through indexing and enrichment  
+     - **3 = Generate a summary** of a long report from a prompt  
+     - **4 = Build a chatbot** that can understand what a user wants and respond through conversation  
 
      Which option correctly maps each case to the most appropriate workload?
 
@@ -214,10 +215,10 @@
 
 025. A design team is reviewing four proposed AI solutions:
 
-     1. Convert a recorded customer call into **written text**  
-     2. Analyze product photos to identify **objects and visual content**  
-     3. Extract **follow-up actions** and useful facts from meeting recordings and other unstructured content  
-     4. Extract **text, key/value pairs, and tables** from scanned forms and PDF files  
+     - **1 = Convert a recorded customer call into written text**  
+     - **2 = Analyze product photos** to identify objects and visual content  
+     - **3 = Extract follow-up actions and useful facts** from meeting recordings and other unstructured content  
+     - **4 = Extract text, key/value pairs, and tables** from scanned forms and PDF files  
 
      Which option correctly maps each case to the most appropriate workload?
 
@@ -247,10 +248,10 @@
 
 028. A company needs to support multiple language scenarios:
 
-     1. Translate **written product descriptions** from English to French  
-     2. Translate a **spoken customer message** from Spanish into English text  
-     3. Convert a support article into **spoken audio**  
-     4. Convert a recorded meeting into a **written transcript**  
+     - **1 = Translate written product descriptions** from English to French  
+     - **2 = Translate a spoken customer message** from Spanish into English text  
+     - **3 = Convert a support article into spoken audio**  
+     - **4 = Convert a recorded meeting into a written transcript**  
 
      Which option correctly maps each case to the most appropriate capability?
 
@@ -262,10 +263,10 @@
 
 029. A team is mapping solution requirements to Azure service families:
 
-     1. Analyze text to detect **sentiment**, extract **key phrases**, and identify **entities**  
-     2. Build a **searchable index** over large volumes of content with enrichment  
-     3. Convert recorded speech into **text transcripts**  
-     4. Extract **text, key/value pairs, and tables** from scanned documents  
+     - **1 = Analyze text** to detect sentiment, extract key phrases, and identify entities  
+     - **2 = Build a searchable index** over large volumes of content with enrichment  
+     - **3 = Convert recorded speech into text transcripts**  
+     - **4 = Extract text, key/value pairs, and tables** from scanned documents  
 
      Which option correctly maps each case to the most appropriate Azure service family?
 
@@ -277,10 +278,10 @@
 
 030. A team is mapping solution requirements to Azure service families:
 
-     1. Analyze text to detect **sentiment**, extract **key phrases**, and identify **entities**  
-     2. Build a **searchable index** over large volumes of content with enrichment  
-     3. Convert recorded speech into **text transcripts**  
-     4. Extract **text, key/value pairs, and tables** from scanned documents  
+     - **1 = Analyze text** to detect sentiment, extract key phrases, and identify entities  
+     - **2 = Build a searchable index** over large volumes of content with enrichment  
+     - **3 = Convert recorded speech into text transcripts**  
+     - **4 = Extract text, key/value pairs, and tables** from scanned documents  
 
      Which option correctly maps each case to the most appropriate Azure service family?
 
@@ -292,17 +293,18 @@
 
 031. A team is choosing between Azure OpenAI model types for four different needs:
 
-     1. Generate a **summary** of a long document and rewrite it in a simpler style  
-     2. Convert product descriptions into **vectors** for semantic search and similarity matching  
-     3. Create a **new image** from a text prompt  
-     4. Transcribe a recorded meeting into **text**  
+     - **1 = Generate a summary** of a long document and rewrite it in a simpler style  
+     - **2 = Convert product descriptions into vectors** for semantic search and similarity matching  
+     - **3 = Create a new image** from a text prompt  
+     - **4 = Transcribe a recorded meeting into text**  
 
      Which option correctly maps each case to the most appropriate Azure OpenAI model type?
 
      A. 1 = GPT Models, 2 = Embedding Models, 3 = Image Generation Models, 4 = Audio Models  
      B. 1 = Embedding Models, 2 = GPT Models, 3 = Audio Models, 4 = Image Generation Models  
      C. 1 = GPT Models, 2 = Image Generation Models, 3 = Embedding Models, 4 = Audio Models  
-     D. 1 = Audio Models, 2 = Embedding Models, 3 = GPT Models, 4 = Image Generation Models
+     D. 1 = Audio Models, 2 = Embedding Models, 3 = GPT Models, 4 = Image Generation Models  
+
 
 032. A company is building an internal support assistant. Employees must access it through **Microsoft Teams** and a **web chat widget**. The team already uses separate AI capabilities for **Question Answering** and **Language Understanding (Intent & Entities)**, but now needs the layer that manages bot runtime behavior and connects the assistant to multiple channels.
 
@@ -316,8 +318,8 @@
 
 033. A retailer is designing two image-analysis features:
 
-     - **Generate general captions and tags** for ordinary product shelf photos  
-     - **Train a custom model** on its own labeled product images to classify products and detect business-specific defects  
+     - **1 = Generate general captions and tags** for ordinary product shelf photos  
+     - **2 = Train a custom model** on its own labeled product images to classify products and detect business-specific defects  
 
      Which mapping is most appropriate?
 
@@ -339,8 +341,8 @@
 
 035. A chatbot receives two user messages:
 
-     - **Reset my password for account user27.**  
-     - **What is the company password policy?**  
+     - **1 = Reset my password for account user27.**  
+     - **2 = What is the company password policy?**  
 
      The system must choose the correct conversational pattern for each message.
 
