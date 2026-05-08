@@ -1499,3 +1499,211 @@ Wrong because **summarization** is not an audio-model task, and **transcription*
 - [How to generate embeddings with Azure OpenAI in Microsoft Foundry Models](https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/embeddings)  
 - [Azure OpenAI image generation models](https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/dall-e)  
 - [Azure OpenAI in Microsoft Foundry Models embeddings tutorial](https://learn.microsoft.com/en-us/azure/foundry/openai/tutorials/embeddings)  
+
+# Detailed Practice Test 01 - Answer Sheet & Explanation
+
+**Question:** [032]  
+A company is building an internal support assistant. Employees must access it through **Microsoft Teams** and a **web chat widget**. The team already uses separate AI capabilities for **Question Answering** and **Language Understanding (Intent & Entities)**, but now needs the layer that manages bot runtime behavior and connects the assistant to multiple channels.
+
+Which Azure service family best fits the missing requirement?
+
+**Options:**  
+A. Azure AI Language  
+B. Azure AI Bot Service  
+C. Azure AI Search  
+D. Azure OpenAI Service
+
+**Correct Answer(s):** B
+
+**Explanation:**  
+The correct answer is **Azure AI Bot Service** because the missing requirement is not the language intelligence itself. The team already has **Question Answering** and **Language Understanding (Intent & Entities)**. What they need now is the bot layer that connects the assistant to channels such as Microsoft Teams and Web Chat.
+
+**Why the Correct Answer Is Correct:**  
+- Azure AI Bot Service is used to build, connect, deploy, and manage bots.  
+- Bot channels connect communication applications to a bot.  
+- Microsoft Teams and Web Chat are channel scenarios for bots.  
+- The scenario is asking for the runtime/channel layer, not the NLP capability.
+
+**Why the Other Options Are Wrong:**  
+
+**A. Azure AI Language**  
+Wrong because Azure AI Language provides language capabilities such as **Question Answering** and **Conversational Language Understanding (CLU)**. In the scenario, those capabilities already exist. The missing part is connecting the assistant to Teams and a web chat widget.
+
+**C. Azure AI Search**  
+Wrong because Azure AI Search is used for indexing and searching content. It can support searchable knowledge scenarios, but it is not the service family used to connect a bot to multiple communication channels.
+
+**D. Azure OpenAI Service**  
+Wrong because Azure OpenAI Service provides generative AI models such as GPT, embeddings, image generation, and audio models. It does not replace the bot runtime/channel connection layer described in this scenario.
+
+**Tips and Tricks:**  
+- If the question says **Teams**, **Web Chat**, **channels**, or **bot runtime**, think **Azure AI Bot Service**.  
+- If the question says **intent and entities**, think **Azure AI Language (CLU)**.  
+- If the question says **answer from known FAQs or documents**, think **Question Answering**.  
+- Do not choose the AI capability when the missing requirement is the bot delivery/channel layer.
+
+> [!IMPORTANT]  
+> **Azure AI Language** can provide the language intelligence, but **Azure AI Bot Service** is the service family used for bot runtime and channel connection scenarios.
+
+**Source:**  
+- [Configure an Azure AI Bot Service bot to run on one or more channels](https://learn.microsoft.com/en-us/azure/bot-service/bot-service-manage-channels?view=azure-bot-service-4.0)  
+- [Connect a Bot Framework bot to Microsoft Teams](https://learn.microsoft.com/en-us/azure/bot-service/channel-connect-teams?view=azure-bot-service-4.0)  
+- [Connect a bot to Web Chat in the Bot Framework SDK](https://learn.microsoft.com/en-us/azure/bot-service/bot-service-channel-connect-webchat?view=azure-bot-service-4.0)  
+- [Basics of the Microsoft Bot Framework](https://learn.microsoft.com/en-us/azure/bot-service/bot-builder-basics?view=azure-bot-service-4.0)  
+
+
+**Question:** [033]  
+A retailer is designing two image-analysis features:
+
+     - **1 = Generate general captions and tags** for ordinary product shelf photos  
+     - **2 = Train a custom model** on its own labeled product images to classify products and detect business-specific defects  
+
+Which mapping is most appropriate?
+
+**Options:**  
+A. 1 = Azure AI Custom Vision, 2 = Azure AI Vision  
+B. 1 = Azure AI Vision, 2 = Azure AI Custom Vision  
+C. 1 = Azure AI Face, 2 = Azure AI Document Intelligence  
+D. 1 = Azure AI Search, 2 = Azure AI Language
+
+**Correct Answer(s):** B
+
+**Explanation:**  
+The correct mapping is **1 = Azure AI Vision** and **2 = Azure AI Custom Vision**. Azure AI Vision can analyze images and return general visual features such as tags and captions. Azure AI Custom Vision is used when you need to train your own image classification or object detection model using your own labeled images.
+
+**Why the Correct Answer Is Correct:**  
+- Azure AI Vision supports general image analysis features such as captions and tags.  
+- Azure AI Custom Vision lets you build custom image classifiers and object detection models.  
+- The second requirement is business-specific and depends on the retailer’s own labeled images.  
+- Custom defect detection is more specific than general image tagging or captioning.
+
+**Why the Other Options Are Wrong:**  
+
+**A. 1 = Azure AI Custom Vision, 2 = Azure AI Vision**  
+Wrong because this reverses the mapping. General captions and tags fit Azure AI Vision. A custom model trained on the retailer’s own labeled product images fits Azure AI Custom Vision.
+
+**C. 1 = Azure AI Face, 2 = Azure AI Document Intelligence**  
+Wrong because Azure AI Face is for face detection and face-related operations, not general product shelf captions. Azure AI Document Intelligence is for extracting text, fields, key/value pairs, and tables from documents, not training custom image defect models.
+
+**D. 1 = Azure AI Search, 2 = Azure AI Language**  
+Wrong because Azure AI Search is for indexing and searching content, while Azure AI Language is for NLP over text. Neither is the best match for general image captions/tags or custom image classification/detection.
+
+**Tips and Tricks:**  
+- **General image analysis** such as captions and tags → **Azure AI Vision**.  
+- **Train your own image classifier or detector** → **Azure AI Custom Vision**.  
+- Do not choose **Azure AI Face** unless the scenario is specifically about faces.  
+- Do not choose **Document Intelligence** unless the input is a document and the goal is structured document extraction.
+
+> [!IMPORTANT]  
+> The key split is **general visual analysis** vs **custom trained visual model**.
+
+**Source:**  
+- [What is Image Analysis?](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview-image-analysis)  
+- [Content tags - Azure Vision in Foundry Tools](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/concept-tagging-images)  
+- [Image captions - Image Analysis 4.0](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/concept-describe-images-40)  
+- [Custom Vision documentation](https://learn.microsoft.com/en-us/azure/ai-services/custom-vision-service/)  
+- [Quickstart: Image classification with Custom Vision SDK](https://learn.microsoft.com/en-us/azure/ai-services/custom-vision-service/quickstarts/image-classification)  
+
+
+**Question:** [034]  
+A company has thousands of scanned contracts. It wants to extract **tables and key/value pairs**, enrich the extracted text with **entities and key phrases**, and then let users search across the enriched results.
+
+Which option describes the most appropriate workload chain?
+
+**Options:**  
+A. Knowledge Mining → Document Processing → Natural Language Processing and Text Analysis  
+B. Document Processing → Natural Language Processing and Text Analysis → Knowledge Mining  
+C. Natural Language Processing and Text Analysis → Knowledge Mining → Document Processing  
+D. Generative AI → Knowledge Mining → Document Processing
+
+**Correct Answer(s):** B
+
+**Explanation:**  
+The correct chain is **Document Processing → Natural Language Processing and Text Analysis → Knowledge Mining**. The contracts are scanned documents, so the first step is to extract text, tables, and key/value pairs. After text is available, NLP can identify entities and key phrases. Then Knowledge Mining / Azure AI Search can use indexing and enrichment to make the content searchable.
+
+**Why the Correct Answer Is Correct:**  
+- Scanned contracts require document extraction before text analysis can be useful.  
+- Document Processing extracts text, tables, and key/value pairs.  
+- NLP and text analysis can then extract entities and key phrases from the extracted text.  
+- Knowledge Mining makes enriched content searchable through indexing and search.
+
+**Why the Other Options Are Wrong:**  
+
+**A. Knowledge Mining → Document Processing → Natural Language Processing and Text Analysis**  
+Wrong because search/indexing should not be the first conceptual step when the text and structure still need to be extracted from scanned contracts. The document content must be extracted and enriched before it becomes useful searchable content.
+
+**C. Natural Language Processing and Text Analysis → Knowledge Mining → Document Processing**  
+Wrong because NLP needs text as input. With scanned contracts, the text is inside document images or PDFs, so Document Processing must happen first.
+
+**D. Generative AI → Knowledge Mining → Document Processing**  
+Wrong because the scenario is not asking to generate new content from a prompt. It is asking to extract document structure, enrich text, and search the results.
+
+**Tips and Tricks:**  
+- If text is trapped inside scans or PDFs, use **Document Processing first**.  
+- If you need entities or key phrases, use **Natural Language Processing and Text Analysis** after text is available.  
+- If the final goal is searchable enriched content, use **Knowledge Mining / Azure AI Search**.  
+- Watch for options that put search before extraction or NLP before OCR/document extraction.
+
+> [!IMPORTANT]  
+> The usual chain is: **extract from documents first**, **analyze the extracted text second**, **make the enriched content searchable third**.
+
+**Source:**  
+- [Azure Document Intelligence documentation](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/?view=doc-intel-4.0.0)  
+- [General key-value extraction - Document Intelligence](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/general-document?view=doc-intel-4.0.0)  
+- [What is key phrase extraction in Azure Language?](https://learn.microsoft.com/en-us/azure/ai-services/language-service/key-phrase-extraction/overview)  
+- [Azure Text Analytics client library for Python](https://learn.microsoft.com/en-us/python/api/overview/azure/ai-textanalytics-readme?view=azure-python)  
+- [AI enrichment overview - Azure AI Search](https://learn.microsoft.com/en-us/azure/search/cognitive-search-concept-intro)  
+- [Skillset concepts - Azure AI Search](https://learn.microsoft.com/en-us/azure/search/cognitive-search-working-with-skillsets)  
+
+
+**Question:** [035]  
+A chatbot receives two user messages:
+
+     - **1 = Reset my password for account user27.**  
+     - **2 = What is the company password policy?**  
+
+The system must choose the correct conversational pattern for each message.
+
+Which option is most appropriate?
+
+**Options:**  
+A. 1 = Question Answering, 2 = Language Understanding (Intent & Entities)  
+B. 1 = Language Understanding (Intent & Entities), 2 = Question Answering  
+C. 1 = Knowledge Mining, 2 = Document Processing  
+D. 1 = Generative AI, 2 = Speech Translation
+
+**Correct Answer(s):** B
+
+**Explanation:**  
+The correct mapping is **1 = Language Understanding (Intent & Entities)** and **2 = Question Answering**. The password reset message is an action request: the system must identify the user’s intent and extract entities such as the account name. The password policy message is a knowledge question: the system should retrieve an answer from known content such as FAQs, manuals, or policy documents.
+
+**Why the Correct Answer Is Correct:**  
+- **Language Understanding (Intent & Entities)** is used when the system needs to understand what action the user wants and extract important details from the utterance.  
+- **Reset my password for account user27** contains an action intent and an entity-like detail.  
+- **Question Answering** is used to answer questions from known content such as FAQs, manuals, and documents.  
+- **What is the company password policy?** asks for information from known company policy content.
+
+**Why the Other Options Are Wrong:**  
+
+**A. 1 = Question Answering, 2 = Language Understanding (Intent & Entities)**  
+Wrong because this reverses the patterns. A password reset request is a “do something” message, so it fits intent/entity extraction. A password policy question is a “tell me something” message, so it fits Question Answering.
+
+**C. 1 = Knowledge Mining, 2 = Document Processing**  
+Wrong because Knowledge Mining is about making large content searchable, and Document Processing is about extracting text, fields, key/value pairs, and tables from documents. These are not the best conversational patterns for the two chatbot messages.
+
+**D. 1 = Generative AI, 2 = Speech Translation**  
+Wrong because the scenario is not about generating new content or translating spoken language. Both inputs are text chat messages, and the core decision is conversational routing.
+
+**Tips and Tricks:**  
+- If the message means **do something**, look for **Language Understanding (Intent & Entities)**.  
+- If the message means **tell me something from known content**, look for **Question Answering**.  
+- Intent = the action or goal.  
+- Entities = important details needed to complete or identify that action.
+
+> [!IMPORTANT]  
+> In conversational AI, **Language Understanding (Intent & Entities)** is for action-oriented requests, while **Question Answering** is for information lookup from known content.
+
+**Source:**  
+- [Conversational Language Understanding](https://learn.microsoft.com/en-us/azure/ai-services/language-service/conversational-language-understanding/overview)  
+- [Send prediction requests to a conversational language understanding deployment](https://learn.microsoft.com/en-us/azure/ai-services/language-service/conversational-language-understanding/how-to/call-api)  
+- [Definitions used in conversational language understanding](https://learn.microsoft.com/en-us/azure/ai-services/language-service/conversational-language-understanding/glossary)  
+- [What is custom question answering?](https://learn.microsoft.com/en-us/azure/ai-services/language-service/question-answering/overview)  
