@@ -275,7 +275,7 @@
      D. 1 = Azure AI Document Intelligence, 2 = Azure AI Search, 3 = Azure AI Speech, 4 = Azure AI Language  
 
 
-029. A team is mapping solution requirements to Azure service families:
+030. A team is mapping solution requirements to Azure service families:
 
      1. Analyze text to detect **sentiment**, extract **key phrases**, and identify **entities**  
      2. Build a **searchable index** over large volumes of content with enrichment  
@@ -290,7 +290,7 @@
      D. 1 = Azure AI Document Intelligence, 2 = Azure AI Search, 3 = Azure AI Speech, 4 = Azure AI Language  
 
 
-030. A team is choosing between Azure OpenAI model types for four different needs:
+031. A team is choosing between Azure OpenAI model types for four different needs:
 
      1. Generate a **summary** of a long document and rewrite it in a simpler style  
      2. Convert product descriptions into **vectors** for semantic search and similarity matching  
