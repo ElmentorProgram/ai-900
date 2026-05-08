@@ -1,5 +1,6 @@
 # Detailed Practice Test 02 - Answer Sheet & Explanation
-**Question:** [031]  
+
+**Question:** [036]  
 A team is building a machine learning solution to **forecast demand**. They agree on the target output and success metric, prepare the dataset, train several versions, compare them on held-out data, run one final unbiased check, and then deploy the chosen model while monitoring it in production.
 
 Which option best matches the correct end-to-end lifecycle flow?
@@ -53,7 +54,8 @@ Wrong because evaluation is usually simulated by **splitting rows**, not columns
 - [Data splits and cross-validation in automated machine learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-configure-cross-validation-data-splits?view=azureml-api-1)  
 - [Model monitoring in production - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-model-monitoring?view=azureml-api-2)  
 
-**Question:** [032]  
+
+**Question:** [037]  
 A team is preparing data for a supervised learning model. Their raw data comes from files and logs, some fields are missing, some rows are duplicated, and a few columns need type fixes and category encoding. They also want to avoid making validation and test results look better than real life.
 
 Which action plan is the most appropriate?
@@ -106,7 +108,8 @@ Wrong because dropping every incomplete row can bias the dataset, IDs are usuall
 - [Clean Missing Data: Component Reference - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference/clean-missing-data?view=azureml-api-2)  
 - [Design training data for AI workloads on Azure](https://learn.microsoft.com/en-us/azure/well-architected/ai/training-data-design)  
 
-**Question:** [033]  
+
+**Question:** [038]  
 A team is building a model to predict **house sale price**. They start with fields such as **LivingAreaSqFt**, **Bedrooms**, **Neighborhood**, **YearBuilt**, and **SaleDate**. During preparation, they consider these changes:
 
 - Create **HouseAge** from SaleYear minus YearBuilt  
@@ -162,7 +165,8 @@ Wrong because using the label directly can make evaluation look better than real
 - [Offline feature retrieval using a point-in-time join - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/offline-retrieval-point-in-time-join-concepts?view=azureml-api-2)  
 - [Design training data for AI workloads on Azure](https://learn.microsoft.com/en-us/azure/well-architected/ai/training-data-design)  
 
-**Question:** [034]  
+
+**Question:** [039]  
 A team is building a model from a housing dataset. Each row represents one house sale. Available columns include **HouseID**, **LivingAreaSqFt**, **Bedrooms**, **Neighborhood**, and **SalePrice**. The team wants to predict sale price on future houses.
 
 Which statement is the most accurate?
@@ -214,7 +218,7 @@ Wrong because the presence of a known target to predict makes this a **supervise
 - [What is automated ML? AutoML - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-automated-ml?view=azureml-api-2)  
 
 
-**Question:** [035]  
+**Question:** [040]  
 A team is building a fraud detection model. It trains on one part of the data, compares model versions by adjusting thresholds and hyperparameters on another part, and then runs one last check on a separate unseen subset after all decisions are finished.
 
 Which statement best describes the role of these three subsets?
@@ -262,7 +266,8 @@ Wrong because these subsets have different roles. Mixing them weakens the reliab
 - [Prevent overfitting and imbalanced data with automated ML](https://learn.microsoft.com/en-us/azure/machine-learning/concept-manage-ml-pitfalls?view=azureml-api-2)  
 - [Build and train models with Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-train-machine-learning-model?view=azureml-api-2)  
 
-**Question:** [036]  
+
+**Question:** [041]  
 A team is preparing an ML dataset and debating how to split it for evaluation:
 
 - One engineer wants to split by **rows** so the model is tested on unseen examples  
@@ -318,7 +323,8 @@ Wrong because removing columns changes the information available, but it does no
 - [Set up AutoML for time-series forecasting - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-auto-train-forecast?view=azureml-api-2)  
 - [Build & train models - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-train-machine-learning-model?view=azureml-api-2)  
 
-**Question:** [037]  
+
+**Question:** [042]  
 A team trains a model and gets these results:
 
 - Training score is **very high**
@@ -372,7 +378,8 @@ Wrong because underfitting usually means weak performance on both training and v
 - [Frequently asked questions about forecasting in automated ML](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-automl-forecasting-faq?view=azureml-api-2)  
 - [Build and train models with Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-train-machine-learning-model?view=azureml-api-2)  
 
-**Question:** [038]  
+
+**Question:** [043]  
 A team is comparing two model options for the same task. One model is much larger and has many more parameters. The team discusses both the **training phase** and the **inference phase**.
 
 Which statement is the most accurate?
@@ -421,7 +428,8 @@ Wrong because compute planning for training and inference is a broader ML and AI
 - [Azure OpenAI in Microsoft Foundry Models performance and latency](https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/latency)  
 - [Azure OpenAI in Microsoft Foundry Models quotas and limits](https://learn.microsoft.com/en-us/azure/foundry/openai/quotas-limits)  
 
-**Question:** [039]  
+
+**Question:** [044]  
 A fraud detection team defines these success targets for its model on held-out data:
 
 - **Recall must be at least 0.80** to catch most fraud cases  
@@ -477,7 +485,8 @@ Wrong because although the calculations are correct, the action is wrong. The te
 - [Custom text classification evaluation metrics - Foundry Tools](https://learn.microsoft.com/en-us/azure/ai-services/language-service/custom-text-classification/concepts/evaluation-metrics)  
 - [Prevent overfitting and imbalanced data with automated ML](https://learn.microsoft.com/en-us/azure/machine-learning/concept-manage-ml-pitfalls?view=azureml-api-2)  
 
-**Question:** [040]  
+
+**Question:** [045]  
 A manufacturing team is building a model to detect **defective products** before shipment. It sets these success targets for held-out data:
 
 - **Recall must be at least 0.90** so most defective items are caught  
@@ -534,7 +543,8 @@ Wrong because those are the **target thresholds**, not the measured results. It 
 - [Custom text classification evaluation metrics - Foundry Tools](https://learn.microsoft.com/en-us/azure/ai-services/language-service/custom-text-classification/concepts/evaluation-metrics)  
 - [Hyperparameter tuning a model (v2) - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters?view=azureml-api-2)  
 
-**Question:** [041]  
+
+**Question:** [046]  
 A team improves its model’s validation score after tuning thresholds and features. One engineer says, “Great, iteration is only about getting a higher metric.” Another engineer disagrees and says iteration also helps reduce real-world risk before deployment.
 
 Which statement is the most accurate?
@@ -584,7 +594,8 @@ Wrong because **fine-tuning** is a narrower term. In many classic ML workflows, 
 - [Hyperparameter tuning a model (v2) - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters?view=azureml-api-2)  
 - [Build and train models with Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/concept-train-machine-learning-model?view=azureml-api-2)  
 
-**Question:** [042]  
+
+**Question:** [047]  
 A team is preparing data for a supervised learning model. Its raw data comes from several files and systems, some records are duplicated, some numeric fields were imported as text, some categorical fields need encoding, and some rows contain missing values or unusual outlier values.
 
 Which action plan best fits the **data preparation** stage?
@@ -634,7 +645,8 @@ Wrong because deployment concerns come later. Preparation is about making the ra
 - [Clean Missing Data: Component Reference - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference/clean-missing-data?view=azureml-api-2)  
 - [Edit Metadata: Component reference - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference/edit-metadata?view=azureml-api-2)  
 
-**Question:** [043]  
+
+**Question:** [048]  
 A team is preparing a dataset for supervised learning. It notices two issues:
 
 - Some rows are missing the **target label**
@@ -688,7 +700,8 @@ Wrong because Microsoft’s missing-data guidance explicitly supports multiple h
 - [AutoML Text Multi-label Classification - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference-v2/text-classification-multilabel?view=azureml-api-2)  
 - [Data Featurization in Automated Machine Learning - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-configure-auto-features?view=azureml-api-1)  
 
-**Question:** [044]  
+
+**Question:** [049]  
 A team is deciding how to split its dataset before training:
 
 - One engineer wants a **quick experiment** with only a training set and a final test set  
@@ -742,7 +755,8 @@ Wrong because the last part is wrong. Evaluation for generalization is based on 
 - [Split Data: Component reference - Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/component-reference/split-data?view=azureml-api-2)  
 - [Data preparation for classification - Azure Databricks](https://learn.microsoft.com/en-us/azure/databricks/machine-learning/automl/classification-data-prep)  
 
-**Question:** [045]  
+
+**Question:** [050]  
 A team has already trained a machine learning model and now wants to use it on **new incoming data** to generate outputs. One engineer calls this **inference**, while another calls it **scoring**.
 
 Which statement is the most accurate?
