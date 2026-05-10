@@ -95,3 +95,8 @@ Use this version after attempting the Raw version, especially when you want to r
 | Vision and Document Workloads | Practice Test 05 | [View Detailed File](source/docs/practice/detailed/05-practice-test-detailed.md) |
 | Responsible AI and Generative AI Safety | Practice Test 06 | [View Detailed File](source/docs/practice/detailed/06-practice-test-detailed.md) |
 | Azure Mapping: ML, Search, and Services Reference | Practice Test 07 | [View Detailed File](source/docs/practice/detailed/07-practice-test-detailed.md) |
+
+
+## Final Note
+Use the docs to build understanding, the slides to make the ideas visual, and the practice files to check what still needs repair.
+The goal is not just to pass AI-900, but to understand the foundations well enough to recognize the right AI workload, service, and evaluation approach.
