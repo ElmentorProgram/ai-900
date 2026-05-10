@@ -82,23 +82,16 @@ Use this version first when you want to test yourself honestly before checking t
 | Responsible AI and Generative AI Safety | Practice Test 06 | [View Raw File](source/docs/practice/raw/06-practice-test-raw.md) |
 | Azure Mapping: ML, Search, and Services Reference | Practice Test 07 | [View Raw File](source/docs/practice/raw/07-practice-test-raw.md) |
 
-### Detailed Practice Tests (Deep Explanations And References)
-This version beside the question and the correct answer, it includes deep explanations, breakdowns, and additional clarifications.
+## Detailed Practice Tests: Answers and Explanations
+This version includes the same questions as the Raw version, but with correct answers, explanations, tips, and clarifications.
+Use this version after attempting the Raw version, especially when you want to repair weak understanding.
 
-It is designed to help repair weak understanding, not just tell you whether an answer is right or wrong.
-
-| Practice Test | Markdown Study File | Microsoft Form Quiz |
-| ------------- | ------------------- | ------------------- |
-| Practice Test 01 | [View Study File](/docs/practice/detailed/01-practice-test.detailed.md) | Open Quiz |
-| Practice Test 02 | [View Study File](/docs/practice/detailed/02-practice-test.detailed.md) | Open Quiz |
-
-### Compressed Practice Tests (High-Coverage And Low-Volume Review)
-This version reduces question volume while preserving the most important concepts and exam signals.
-
-It is designed for faster revision when you want maximum coverage with less reading.
-
-| Practice Test | Markdown Study File | Microsoft Form Quiz |
-| ------------- | ------------------- | ------------------- |
-| Practice Test 01 | [View Study File](/docs/practice/compressed/01-practice-test.compressed.md) | Open Quiz |
-| Practice Test 02 | [View Study File](/docs/practice/compressed/02-practice-test.compressed.md) | Open Quiz |
-
+| Documentation Page | Practice Test | Detailed Practice File |
+| ------------------ | ------------- | ---------------------- |
+| AI and ML Foundations | Practice Test 01 | [View Detailed File](source/docs/practice/detailed/01-practice-test-detailed.md) |
+| ML Lifecycle: Data Prep and Splitting | Practice Test 02 | [View Detailed File](source/docs/practice/detailed/02-practice-test-detailed.md) |
+| Choosing ML Problem Types and Metrics | Practice Test 03 | [View Detailed File](source/docs/practice/detailed/03-practice-test-detailed.md) |
+| Language and Conversational Workloads | Practice Test 04 | [View Detailed File](source/docs/practice/detailed/04-practice-test-detailed.md) |
+| Vision and Document Workloads | Practice Test 05 | [View Detailed File](source/docs/practice/detailed/05-practice-test-detailed.md) |
+| Responsible AI and Generative AI Safety | Practice Test 06 | [View Detailed File](source/docs/practice/detailed/06-practice-test-detailed.md) |
+| Azure Mapping: ML, Search, and Services Reference | Practice Test 07 | [View Detailed File](source/docs/practice/detailed/07-practice-test-detailed.md) |
