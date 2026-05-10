@@ -46,7 +46,7 @@ Use them when you want to see workflows, mental models, and how concepts connect
 1. **Learn:** Start with the documents in order. Each document builds on the previous one.
 2. **Visualize:** Review the PowerPoint slides and visual explanations to strengthen your mental model.
 3. **Practice:** Use the Raw practice files first to test your understanding without seeing the answer.
-4. **Repair:** When you miss a question, use the Detailed version to repair the underlying concept, not to memorize the answer.
+4. **Repair:** Missing a question? Use the Detailed version to repair the underlying concept, not to memorize the answer.
 5. **Revise:** Revisit the documents when you want a fast, high signal refresher.
 
 ## Documentation
