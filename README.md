@@ -60,22 +60,13 @@ Use them when you want to see workflows, mental models, and how concepts connect
 
 ## Practice Tests
 This repo includes practice tests to validate understanding and catch common confusion points. The goal is not only to test recall, but to make sure the concepts are clear and usable in real scenarios.
+Practice files are provided as GitHub Markdown files.
+The practice tests are designed as a connected set with two types:
+- **Raw practice files:** Questions only, with no answers.
+- **Detailed practice files:** The same questions as the Raw version, with answers, explanations, tips, and clarifications.  
 
-These practice tests are designed as a connected set with three types:
-
-- The Raw version is the source of truth for all questions.
-- Every Raw question is mirrored one-to-one in the Detailed version. The Detailed version adds deep explanations, clarifications, and exam-focused guidance.
-- The Compressed version covers the same key points with fewer questions, making it useful for faster revision and high-impact review.
-
-Practice tests come in several formats:
-- Markdown study files (study focused, includes answers, works well as a reference)
-- Microsoft Forms quizzes (practice focused, exam-style, with explanations where available)
-
-> [!CAUTION]
-> **Practice test links are not working yet** they’re still under development.
-> Please **star** this repo and click **Watch → Releases** (or **All activity**) to get updates as soon as the practice tests become available.
-
-Practice tests come in three types:
+Each main documentation page has a matching Raw practice file and a matching Detailed practice file.
+The relationship is one-to-one: Each Raw practice file aligns with the same documentation page as its Detailed version.
 
 ### Raw Practice Tests (Questions And Correct Answers Only)
 This includes all questions with no explanations, just the question and the correct answer.
