@@ -36,13 +36,18 @@ If you feel **overwhelmed by the high volume of knowledge** and want **distilled
 
 Use **official docs** when you want the **full depth in details** and **original context**. Use this repo when you want to **learn faster**, **stay accurate**, and still understand the **“why”** without having to **wade through everything**.
 
+## Review Slides and Visualizations
+The PowerPoint slides and visual explanations support the written material in this repo.  
+Use them when you want to see workflows, mental models, and how concepts connect together.  
+[Review PowerPoint Slides and Visualizations](https://devopsvisions230-my.sharepoint.com/:f:/g/personal/mohamed_radwan_devopsvisions_com/IgDan4cyUd6PQ4ZMgV5xRQIzAWwIJruS8mY4V9hGcOZE65s?e=STZJDm
+)
+
 ## How to use this repo
-1. Start with the documents in order. Each document builds on the previous one.
-2. Read for understanding first, then revisit documents when you want a fast, high signal refresher (definitions, decision rules, etc).
-3. Use the practice tests as a diagnostic: they tell you what to revisit, not just what you got wrong.
-4. When you miss a question, use the Detailed version to repair the underlying concept—not to memorize the answer.
-5. Use the Compressed version for high impact revision especially on the night before the exam (maximum coverage, low volume).
-6. As you revise, prioritize clarity: aim to explain each concept in your own words before moving on.
+1. **Learn:** Start with the documents in order. Each document builds on the previous one.
+2. **Visualize:** Review the PowerPoint slides and visual explanations to strengthen your mental model.
+3. **Practice:** Use the Raw practice files first to test your understanding without seeing the answer.
+4. **Repair:** When you miss a question, use the Detailed version to repair the underlying concept, not to memorize the answer.
+5. **Revise:** Revisit the documents when you want a fast, high signal refresher.
 
 ## Documentation
 1. [AI and ML Foundations](source/docs/kb/01-ai-and-ml-foundations.kb.md)
