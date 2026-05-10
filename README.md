@@ -68,15 +68,19 @@ The practice tests are designed as a connected set with two types:
 Each main documentation page has a matching Raw practice file and a matching Detailed practice file.
 The relationship is one-to-one: Each Raw practice file aligns with the same documentation page as its Detailed version.
 
-### Raw Practice Tests (Questions And Correct Answers Only)
-This includes all questions with no explanations, just the question and the correct answer.
+## Raw Practice Tests: Questions Only
+This includes practice questions with no answers or explanations.
+Use this version first when you want to test yourself honestly before checking the answer.
 
-It acts like the source material.
-
-| Practice Test | Markdown Study File | Microsoft Form Quiz |
-| ------------- | ------------------- | ------------------- |
-| Practice Test 01 | [View Study File](/docs/practice/raw/01-practice-test.raw.md) | Open Quiz |
-| Practice Test 02 | [View Study File](/docs/practice/raw/02-practice-test.raw.md) | Open Quiz |
+| Documentation Page | Practice Test | Raw Practice File |
+| ------------------ | ------------- | ----------------- |
+| AI and ML Foundations | Practice Test 01 | [View Raw File](source/docs/practice/raw/01-practice-test-raw.md) |
+| ML Lifecycle: Data Prep and Splitting | Practice Test 02 | [View Raw File](source/docs/practice/raw/02-practice-test-raw.md) |
+| Choosing ML Problem Types and Metrics | Practice Test 03 | [View Raw File](source/docs/practice/raw/03-practice-test-raw.md) |
+| Language and Conversational Workloads | Practice Test 04 | [View Raw File](source/docs/practice/raw/04-practice-test-raw.md) |
+| Vision and Document Workloads | Practice Test 05 | [View Raw File](source/docs/practice/raw/05-practice-test-raw.md) |
+| Responsible AI and Generative AI Safety | Practice Test 06 | [View Raw File](source/docs/practice/raw/06-practice-test-raw.md) |
+| Azure Mapping: ML, Search, and Services Reference | Practice Test 07 | [View Raw File](source/docs/practice/raw/07-practice-test-raw.md) |
 
 ### Detailed Practice Tests (Deep Explanations And References)
 This version beside the question and the correct answer, it includes deep explanations, breakdowns, and additional clarifications.
