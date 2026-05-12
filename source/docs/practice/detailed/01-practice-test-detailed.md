@@ -1500,8 +1500,6 @@ Wrong because **summarization** is not an audio-model task, and **transcription*
 - [Azure OpenAI image generation models](https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/dall-e)  
 - [Azure OpenAI in Microsoft Foundry Models embeddings tutorial](https://learn.microsoft.com/en-us/azure/foundry/openai/tutorials/embeddings)  
 
-# Detailed Practice Test 01 - Answer Sheet & Explanation
-
 **Question:** [032]  
 A company is building an internal support assistant. Employees must access it through **Microsoft Teams** and a **web chat widget**. The team already uses separate AI capabilities for **Question Answering** and **Language Understanding (Intent & Entities)**, but now needs the layer that manages bot runtime behavior and connects the assistant to multiple channels.
 
